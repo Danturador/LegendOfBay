@@ -1,7 +1,7 @@
 ```mermaid
 graph TD;
-    A-->B;
-    A-->C;
+    Bootstrap-->Player Module;
+    Bootstrap-->Level Module;
     B-->D;
     C-->D;
 ```
