@@ -1,13 +1,25 @@
 ```mermaid
 flowchart BT
-    Bootstrap-->|Entry Point| Init(Initialization);
-    Bootstrap-->|Zenject| Dep(Dependencies);
+    classDef bar stroke:#0f0
+    classDef red stroke:#cc0000
+    classDef main fill:#006195
+    Bootstrap:::main-->Init(Initialization);
+    Bootstrap-->Dep(Dependencies);
     
     Init-->Mods@{ shape: procs, label: "Modules"}
-
     
     Dep-->SceneContext;
-    SceneContext<-.->Mods;
+    Zenject:::bar@{ shape: hex, label: "Zenject" }-->Dep;
+    EntryPoint:::bar@{ shape: hex, label: "Entry Point" }-->Init;
+    Addressables:::bar@{ shape: hex, label: "Addressables" }-->LocalContentLoader;
+    SceneContext(Scene Context)<-.->Mods;
+    Mods-->ModuleGraph;
+    
+    subgraph ModuleGraph [Module Instance]
+    direction BT
+    IModule:::red-->MonoInstaller(Mono Installer);
+    IModule-->Prefab(Prefab);
+    end
 
     subgraph Modules
     direction RL
@@ -17,4 +29,7 @@ flowchart BT
     end
 
     Mods-->Modules;
+    Init<-->LocalContentLoader@{ shape: cyl, label: "Local Content Loader" };
+
+    
 ```
