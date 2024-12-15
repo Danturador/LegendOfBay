@@ -1,3 +1,5 @@
+# Модульная архитектура проекта
+
 ```mermaid
 flowchart BT
     classDef bar stroke:#0f0
