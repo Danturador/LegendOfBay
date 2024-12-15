@@ -1,4 +1,4 @@
-# Модульная архитектура проекта
+# Модульная архитектура
 
 ```mermaid
 flowchart BT
@@ -33,4 +33,29 @@ flowchart BT
 
     Mods-->Modules;
     Init<-->LocalContentLoader@{ shape: cyl, label: "Local Content Loader" };
+```
+
+# Файловая архитектура
+
+```mermaid
+flowchart TD
+    Pr(Project Files)-->FF
+    Pr(Project Files)-->Misc3
+
+    subgraph Misc3 [Misc]
+    Misc(Misc)-->Scenes
+    Misc-->URP
+    Misc-->Misc1(...)
+    end
+    
+    subgraph FF [Features]
+    direction RL
+    Features@{ shape: docs, label: "Features" }-->Feature1(Feature)
+
+    Feature1-.-Scripts(Scripts)
+    Feature1-.-Animations(Animations)
+    Feature1-.-Sprites(Sprites)
+    Feature1-.-VFX(VFX)
+    Feature1-.-Misc5(Misc)
+    end
 ```
