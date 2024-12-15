@@ -59,3 +59,94 @@ flowchart TD
     Feature1-.-Misc5(Misc)
     end
 ```
+
+## Структура имени
+
+```
+[Категория]_[Подкатегория]_[Название/Назначение]_[Доп. атрибуты/Характеристики]
+```
+
+---
+
+# Система нейминга файлов
+
+### 1. Анимации
+```
+Anim_[Объект]_[Действие]_[Состояние/Доп. атрибуты]
+```
+- **Примеры**:
+  - `Anim_Player_Run_Loop`
+  - `Anim_Enemy_Attack_Fast`
+  - `Anim_UI_ButtonClick`
+
+### 2. Текстуры
+```
+Tex_[Тип объекта]_[Описание/Характеристики]_[Размер/Версия]
+```
+- **Примеры**:
+  - `Tex_Environment_Grass_1024`
+  - `Tex_UI_Button_Normal`
+  - `Tex_Character_Head_Diffuse_2048`
+
+### 3. Материалы
+```
+Mat_[Объект/Назначение]_[Характеристика]
+```
+- **Примеры**:
+  - `Mat_Environment_Grass`
+  - `Mat_Character_Skin`
+  - `Mat_UI_Button`
+
+### 4. Спрайты
+```
+Sprite_[Категория]_[Название/Состояние]_[Размер/Версия]
+```
+- **Примеры**:
+  - `Sprite_Icons_Coin_64x64`
+  - `Sprite_Character_Jump_128x128`
+  - `Sprite_UI_Menu_Highlight`
+
+### 5. Префабы
+```
+Prefab_[Объект]_[Назначение/Тип]
+```
+- **Примеры**:
+  - `Prefab_Enemy_Goblin`
+  - `Prefab_Player_MainCharacter`
+  - `Prefab_UI_PauseMenu`
+
+### 6. Аудио
+```
+Audio_[Категория]_[Описание]_[Формат/Длина]
+```
+- **Примеры**:
+  - `Audio_UI_Click_Short`
+  - `Audio_Environment_Wind_Loop`
+  - `Audio_Character_Footstep_Grass`
+
+### 7. Шрифты
+```
+Font_[Название]_[Размер/Характеристики]
+```
+- **Примеры**:
+  - `Font_Arial_Regular_14pt`
+  - `Font_ComicSans_Bold`
+
+### 8. Сцены
+```
+Scene_[Категория]_[Название]
+```
+- **Примеры**:
+  - `Scene_MainMenu`
+  - `Scene_Level1_Forest`
+  - `Scene_Tutorial`
+
+### 9. Шейдеры
+```
+Shader_[Категория]_[Тип/Особенности]
+```
+- **Примеры**:
+  - `Shader_UI_Outline`
+  - `Shader_Environment_Water`
+
+---
