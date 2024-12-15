@@ -2,9 +2,10 @@
 flowchart BT
     classDef bar stroke:#0f0
     classDef red stroke:#cc0000
+    classDef yellow stroke:#ffd966
     classDef main fill:#006195
-    Bootstrap:::main-->Init(Initialization);
-    Bootstrap-->Dep(Dependencies);
+    Bootstrap:::main-->Init(Initialization):::yellow;
+    Bootstrap-->Dep(Dependencies):::yellow;
     
     Init-->Mods@{ shape: procs, label: "Modules"}
     
@@ -30,6 +31,4 @@ flowchart BT
 
     Mods-->Modules;
     Init<-->LocalContentLoader@{ shape: cyl, label: "Local Content Loader" };
-
-    
 ```
