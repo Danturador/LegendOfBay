@@ -3249,19 +3249,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1802980429060777722, guid: bb13e1afd82d2db459a82b0b8e845d3a, type: 3}
       propertyPath: m_SpriteTilingProperty.border.w
-      value: 0.049999997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1802980429060777722, guid: bb13e1afd82d2db459a82b0b8e845d3a, type: 3}
       propertyPath: m_SpriteTilingProperty.border.x
-      value: 0.049999997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1802980429060777722, guid: bb13e1afd82d2db459a82b0b8e845d3a, type: 3}
       propertyPath: m_SpriteTilingProperty.border.y
-      value: 0.049999997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1802980429060777722, guid: bb13e1afd82d2db459a82b0b8e845d3a, type: 3}
       propertyPath: m_SpriteTilingProperty.border.z
-      value: 0.049999997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1802980429060777722, guid: bb13e1afd82d2db459a82b0b8e845d3a, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -3273,11 +3273,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1802980429060777722, guid: bb13e1afd82d2db459a82b0b8e845d3a, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.16
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1802980429060777722, guid: bb13e1afd82d2db459a82b0b8e845d3a, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.16
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4978776395051118018, guid: bb13e1afd82d2db459a82b0b8e845d3a, type: 3}
       propertyPath: m_Size.x
@@ -3337,6 +3337,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6140623938376369825, guid: bb13e1afd82d2db459a82b0b8e845d3a, type: 3}
       propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6855767695267040729, guid: bb13e1afd82d2db459a82b0b8e845d3a, type: 3}
+      propertyPath: _particleSystem
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []

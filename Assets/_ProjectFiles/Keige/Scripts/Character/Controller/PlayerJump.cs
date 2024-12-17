@@ -10,7 +10,7 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private float bufferTime = 0.2f;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayers;
-    
+
     private Rigidbody2D _rb;
     private bool _isGrounded;
     private bool _isJumping;
@@ -20,7 +20,7 @@ public class PlayerJump : MonoBehaviour
     private float _originalGravity;
     private float _coyoteTimer;
     private float _jumpBufferCounter;
-    
+
 
     public void Initialize(Rigidbody2D rigidbody)
     {
@@ -103,9 +103,11 @@ public class PlayerJump : MonoBehaviour
     private void HandleHoldJump()
     {
         float currentHeight = transform.position.y;
-        if (_isJumping && _doubleJumpCount == 1)
+
+        if (_isJumping)
         {
             _rb.AddForce(new Vector2(_rb.velocity.x, jumpForce * 2), ForceMode2D.Force);
+
             if (currentHeight > _jumpStartY + maxJumpHeight)
             {
                 _rb.velocity = new Vector2(_rb.velocity.x, Mathf.Lerp(_rb.velocity.y * 1f, 0, Time.fixedDeltaTime));
@@ -118,7 +120,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (_doubleJump)
         {
-            _doubleJumpCount++;
+            _doubleJumpCount +=2;
             _rb.AddForce(Vector2.up * jumpForce * 1.5f, ForceMode2D.Impulse);
             _doubleJump = false;
         }
@@ -135,12 +137,12 @@ public class PlayerJump : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (_jumpBufferCounter <= 0) 
+        if (_jumpBufferCounter <= 0)
         {
-            _jumpBufferCounter = bufferTime; 
+            _jumpBufferCounter = bufferTime;
         }
-        
-        if (!_isGrounded && _doubleJumpCount == 1)
+
+        if (!_isGrounded && _doubleJumpCount <= 1 && _coyoteTimer <=0)
         {
             _doubleJump = true;
         }
