@@ -70,7 +70,10 @@ public class PlayerJump : MonoBehaviour
 
     private void CheckGroundedStatus()
     {
-        _isGrounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(transform.localScale.x, 0.1f), 0, groundLayers);
+        if(_rb.velocity.y == 0)
+        {
+            _isGrounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(transform.localScale.x, 0.1f), 0, groundLayers);
+        }
     }
 
     private void HandleJump()
@@ -120,8 +123,9 @@ public class PlayerJump : MonoBehaviour
     {
         if (_doubleJump)
         {
-            _doubleJumpCount +=2;
-            _rb.AddForce(Vector2.up * jumpForce * 1.5f, ForceMode2D.Impulse);
+            _doubleJumpCount += 2;
+           // _rb.AddForce(Vector2.up * jumpForce * 1.5f, ForceMode2D.Impulse);
+            _rb.velocity =  Vector2.up * jumpForce;
             _doubleJump = false;
         }
     }
@@ -168,4 +172,5 @@ public class PlayerJump : MonoBehaviour
     {
         _isJumping = holdJump;
     }
+
 }

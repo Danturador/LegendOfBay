@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerJump playerJump;
     private Rigidbody2D rb;
     private InputController _inputController;
+    private bool _platformTrigger;
 
     void Awake()
     {
@@ -45,13 +46,24 @@ public class PlayerController : MonoBehaviour
         {
             playerMovement.Move(moveInput);
         }
-        
+        if(rb.velocity.y > 0 && _platformTrigger)
+        {
+            Physics2D.IgnoreLayerCollision(6, 7, true);
+        }
     }
 
     private void OnJump(InputAction.CallbackContext context)
     {
-        playerJump.Jump(context);
-        playerJump.HoldJump(true);
+        if(_inputController.Gameplay.Movement.ReadValue<Vector2>().y < 0 && _platformTrigger)
+        {
+            Physics2D.IgnoreLayerCollision(6, 7, true);
+        }
+        else
+        {
+            playerJump.Jump(context);
+            playerJump.HoldJump(true);
+        }
+       
     }
 
     private void exitJump(InputAction.CallbackContext context)
@@ -62,5 +74,22 @@ public class PlayerController : MonoBehaviour
     private void OnDash(InputAction.CallbackContext context)
     {
         playerDash.PerformDash(new Vector2(rb.velocity.x, 0f).normalized);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("PlatformTrigger")) 
+        {
+            _platformTrigger = true;
+            Debug.Log("triggerIn");
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("PlatformTrigger"))
+        {
+            _platformTrigger = false;
+            Physics2D.IgnoreLayerCollision(7, 6, false);
+            Debug.Log("TriggerOut");
+        }
     }
 }
