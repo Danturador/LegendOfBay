@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private InputController _inputController;
     private bool _platformTrigger;
+    private string _platformtriggerName = "PlatformTrigger";
 
     void Awake()
     {
@@ -46,10 +47,6 @@ public class PlayerController : MonoBehaviour
         {
             playerMovement.Move(moveInput);
         }
-        if(rb.velocity.y > 0 && _platformTrigger)
-        {
-            Physics2D.IgnoreLayerCollision(6, 7, true);
-        }
     }
 
     private void OnJump(InputAction.CallbackContext context)
@@ -77,19 +74,16 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("PlatformTrigger")) 
+        if (collision.gameObject.layer == LayerMask.NameToLayer(_platformtriggerName)) 
         {
             _platformTrigger = true;
-            Debug.Log("triggerIn");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("PlatformTrigger"))
-        {
-            _platformTrigger = false;
-            Physics2D.IgnoreLayerCollision(7, 6, false);
-            Debug.Log("TriggerOut");
-        }
+         if (collision.gameObject.layer == LayerMask.NameToLayer(_platformtriggerName))
+         {
+             _platformTrigger = false;
+         }
     }
 }

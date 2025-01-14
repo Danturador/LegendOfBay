@@ -20,6 +20,7 @@ public class PlayerJump : MonoBehaviour
     private float _originalGravity;
     private float _coyoteTimer;
     private float _jumpBufferCounter;
+    private float _jumpImpulseTime;
 
 
     public void Initialize(Rigidbody2D rigidbody)
@@ -46,6 +47,8 @@ public class PlayerJump : MonoBehaviour
         HandleHoldJump();
         HandleDoubleJump();
         ApplyMinimumJumpHeight();
+        JumpImpulseTime();
+
     }
 
     private void DecreaseJumpBufferCounter()
@@ -68,9 +71,17 @@ public class PlayerJump : MonoBehaviour
         }
     }
 
+    private void JumpImpulseTime()
+    {
+        if (_jumpImpulseTime > 0 & _rb.velocity.y > 0)
+        {
+            _rb.velocity = new Vector2(_rb.velocity.x, _rb.velocity.y / 1.1f);
+        }
+    }
     private void CheckGroundedStatus()
     {
-        if(_rb.velocity.y == 0)
+       
+        if (_rb.velocity.y == 0)
         {
             _isGrounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(transform.localScale.x, 0.1f), 0, groundLayers);
         }
@@ -100,7 +111,8 @@ public class PlayerJump : MonoBehaviour
         _isGrounded = false;
         _coyoteTimer = 0;
         _jumpBufferCounter = 0;
-        _rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        _rb.AddForce(Vector2.up * jumpForce*3, ForceMode2D.Impulse);
+        _jumpImpulseTime = 0.1f;
     }
 
     private void HandleHoldJump()
@@ -124,8 +136,7 @@ public class PlayerJump : MonoBehaviour
         if (_doubleJump)
         {
             _doubleJumpCount += 2;
-           // _rb.AddForce(Vector2.up * jumpForce * 1.5f, ForceMode2D.Impulse);
-            _rb.velocity =  Vector2.up * jumpForce;
+            _rb.velocity =  Vector2.up * jumpForce*1.5f;
             _doubleJump = false;
         }
     }
