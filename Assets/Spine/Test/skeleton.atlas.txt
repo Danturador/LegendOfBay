@@ -1,0 +1,146 @@
+
+skeleton.png
+size: 1229,1061
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+belt
+  rotate: false
+  xy: 637, 367
+  size: 203, 162
+  orig: 203, 162
+  offset: 0, 0
+  index: -1
+boot_L
+  rotate: false
+  xy: 877, 211
+  size: 98, 170
+  orig: 98, 170
+  offset: 0, 0
+  index: -1
+boot_R
+  rotate: true
+  xy: 837, 7
+  size: 174, 94
+  orig: 174, 94
+  offset: 0, 0
+  index: -1
+bottom_back
+  rotate: true
+  xy: 2, 3
+  size: 510, 443
+  orig: 510, 443
+  offset: 0, 0
+  index: -1
+bottom_front
+  rotate: true
+  xy: 430, 531
+  size: 528, 423
+  orig: 528, 423
+  offset: 0, 0
+  index: -1
+elbow_L
+  rotate: false
+  xy: 1066, 102
+  size: 141, 127
+  orig: 141, 127
+  offset: 0, 0
+  index: -1
+elbow_R
+  rotate: false
+  xy: 933, 62
+  size: 131, 147
+  orig: 131, 147
+  offset: 0, 0
+  index: -1
+hair
+  rotate: false
+  xy: 688, 2
+  size: 147, 164
+  orig: 147, 164
+  offset: 0, 0
+  index: -1
+hand_L
+  rotate: false
+  xy: 1144, 23
+  size: 80, 77
+  orig: 80, 77
+  offset: 0, 0
+  index: -1
+hand_R
+  rotate: true
+  xy: 447, 7
+  size: 110, 90
+  orig: 110, 90
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 539, 17
+  size: 100, 147
+  orig: 100, 147
+  offset: 0, 0
+  index: -1
+hip_L
+  rotate: false
+  xy: 855, 728
+  size: 363, 331
+  orig: 363, 331
+  offset: 0, 0
+  index: -1
+hip_R
+  rotate: false
+  xy: 855, 383
+  size: 352, 343
+  orig: 352, 343
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: false
+  xy: 977, 231
+  size: 250, 150
+  orig: 250, 150
+  offset: 0, 0
+  index: -1
+leg_R
+  rotate: false
+  xy: 447, 119
+  size: 118, 262
+  orig: 118, 262
+  offset: 0, 0
+  index: -1
+neck
+  rotate: true
+  xy: 1066, 17
+  size: 83, 76
+  orig: 83, 76
+  offset: 0, 0
+  index: -1
+pelvis
+  rotate: false
+  xy: 693, 183
+  size: 182, 182
+  orig: 182, 182
+  offset: 0, 0
+  index: -1
+shoulder_L
+  rotate: true
+  xy: 447, 385
+  size: 144, 188
+  orig: 144, 188
+  offset: 0, 0
+  index: -1
+shoulder_r
+  rotate: true
+  xy: 567, 168
+  size: 197, 124
+  orig: 197, 124
+  offset: 0, 0
+  index: -1
+top
+  rotate: true
+  xy: 2, 515
+  size: 544, 426
+  orig: 544, 426
+  offset: 0, 0
+  index: -1
