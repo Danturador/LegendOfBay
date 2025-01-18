@@ -1,0 +1,104 @@
+
+Hundun.png
+size: 670,1051
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Hundun_0000_wing_L
+  rotate: false
+  xy: 2, 349
+  size: 336, 211
+  orig: 336, 211
+  offset: 0, 0
+  index: -1
+Hundun_0001_hand_first_L
+  rotate: true
+  xy: 340, 336
+  size: 137, 262
+  orig: 137, 262
+  offset: 0, 0
+  index: -1
+Hundun_0003_Leg_L
+  rotate: false
+  xy: 174, 13
+  size: 131, 224
+  orig: 131, 224
+  offset: 0, 0
+  index: -1
+Hundun_0004_hand_second_L
+  rotate: true
+  xy: 2, 239
+  size: 108, 250
+  orig: 108, 250
+  offset: 0, 0
+  index: -1
+Hundun_0005_feathers
+  rotate: true
+  xy: 463, 762
+  size: 121, 190
+  orig: 121, 190
+  offset: 0, 0
+  index: -1
+Hundun_0006_helmet
+  rotate: true
+  xy: 357, 475
+  size: 285, 311
+  orig: 285, 311
+  offset: 0, 0
+  index: -1
+Hundun_0007_body
+  rotate: false
+  xy: 2, 791
+  size: 459, 258
+  orig: 459, 258
+  offset: 0, 0
+  index: -1
+Hundun_0008_glare
+  rotate: true
+  xy: 604, 376
+  size: 97, 63
+  orig: 97, 63
+  offset: 0, 0
+  index: -1
+Hundun_0009_eye_front
+  rotate: true
+  xy: 466, 14
+  size: 162, 156
+  orig: 162, 156
+  offset: 0, 0
+  index: -1
+Hundun_0010_eye_side
+  rotate: false
+  xy: 466, 178
+  size: 167, 156
+  orig: 167, 156
+  offset: 0, 0
+  index: -1
+Hundun_0012_hand_first_R
+  rotate: false
+  xy: 307, 92
+  size: 157, 242
+  orig: 157, 242
+  offset: 0, 0
+  index: -1
+Hundun_0013_Leg_R
+  rotate: true
+  xy: 463, 885
+  size: 164, 190
+  orig: 164, 190
+  offset: 0, 0
+  index: -1
+Hundun_0014_hand_second_R
+  rotate: false
+  xy: 2, 2
+  size: 170, 235
+  orig: 170, 235
+  offset: 0, 0
+  index: -1
+Hundun_0015_wing_R
+  rotate: true
+  xy: 2, 562
+  size: 227, 353
+  orig: 227, 353
+  offset: 0, 0
+  index: -1
