@@ -6,24 +6,23 @@ public class EnemyContainer : MonoBehaviour
     [SerializeField] private EnemyInfo enemyInfo;
     [SerializeField] private EnemyAttackInfo attackInfo;
     [SerializeField] private EnemyNavigationInfo navigationInfo;
+    [SerializeField] private new Collider2D collider;
     private Enemy _enemy;
-    private Renderer _renderer;
+    private RenderVisibility _visibility;
 
     private void Start()
     {
-        _renderer = GetComponent<Renderer>();
+        _visibility = new RenderVisibility(collider);
         Initialize();
     }
 
     private void Update()
     {
-        _enemy.State.IsVisibleByPlayer = _renderer.isVisible;
+        _enemy.State.IsVisibleByPlayer = _visibility.IsVisible;
         _enemy.State.Update();
     }
-
-    public bool IsVisi
     
-    public void Initialize( /*EnemyInfo enemyInfo, EnemyAttackInfo attackInfo, EnemyNavigationInfo navigationInfo*/)
+    public void Initialize()
     {
         _enemy = new Enemy(enemyInfo, attackInfo, navigationInfo);
     }

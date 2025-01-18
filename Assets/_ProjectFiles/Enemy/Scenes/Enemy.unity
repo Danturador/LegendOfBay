@@ -336,7 +336,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.14, y: -7.4864, z: 0}
-  m_LocalScale: {x: 38.10925, y: 12.679441, z: 1}
+  m_LocalScale: {x: 113.7866, y: 12.679441, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -447,10 +447,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 654433332}
-  - component: {fileID: 654433331}
   - component: {fileID: 654433333}
   - component: {fileID: 654433335}
   - component: {fileID: 654433334}
+  - component: {fileID: 654433331}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -473,6 +473,7 @@ MonoBehaviour:
   enemyInfo: {fileID: 11400000, guid: a6c802c24f785c04c820c18d041548f1, type: 2}
   attackInfo: {fileID: 11400000, guid: 2724a126a23afcc42806c576f4a51e92, type: 2}
   navigationInfo: {fileID: 11400000, guid: 5c9d883ca6bf1f84182c3a7592a86ae8, type: 2}
+  collider: {fileID: 654433334}
 --- !u!4 &654433332
 Transform:
   m_ObjectHideFlags: 0
