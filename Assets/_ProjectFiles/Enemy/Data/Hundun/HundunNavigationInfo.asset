@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   provocationRadius: 0
+  dashTimeInterval: 1
+  dashTime: 1

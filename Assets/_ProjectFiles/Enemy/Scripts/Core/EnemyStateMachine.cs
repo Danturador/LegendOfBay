@@ -1,17 +1,25 @@
+using System.Linq;
+
 namespace _ProjectFiles.Enemy.Scripts.Core
 {
     public class EnemyStateMachine : StateMachine
     {
+        private readonly ActiveState _activeState;
         private readonly EnemyAttackInfo _attackInfo;
+        private readonly EnemyContainer _container;
         private readonly EnemyNavigationInfo _navigationInfo;
 
-        public EnemyStateMachine(EnemyAttackInfo attackInfo, EnemyNavigationInfo navigationInfo)
-        {
-            _attackInfo = attackInfo;
-            _navigationInfo = navigationInfo;
-        }
+        private bool _isVisibleByPlayer;
 
-        public bool IsVisibleByPlayer { get; set; }
+        public EnemyStateMachine(EnemyInfoContainer infoContainer, EnemyContainer container)
+        {
+            _attackInfo = infoContainer.AttackInfo;
+            _navigationInfo = infoContainer.NavigationInfo;
+            _container = container;
+
+            var activeState = (ActiveState)_states.ToList().First(x => x.GetType() == typeof(ActiveState));
+            activeState.Container = container;
+        }
 
         protected override (IState[] states, Transition[] transitions) SetMachineBehaviour()
         {
@@ -28,20 +36,24 @@ namespace _ProjectFiles.Enemy.Scripts.Core
 
         private bool CanAttack()
         {
-            //var canAttack = DistanceFromPlayer <= _attackInfo.AttackRange;
             return false;
         }
 
         private bool CanChase()
         {
-            var canChase = IsVisibleByPlayer;
+            var canChase = _isVisibleByPlayer;
             return canChase;
         }
 
         private bool CannotChase()
         {
-            var canChase = !IsVisibleByPlayer;
+            var canChase = !_isVisibleByPlayer;
             return canChase;
+        }
+
+        public void SetVisibility(bool isVisible)
+        {
+            _isVisibleByPlayer = isVisible;
         }
     }
 }

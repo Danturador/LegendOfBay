@@ -7,8 +7,12 @@ namespace _ProjectFiles.Enemy.Scripts.Core
     {
         [SerializeField] private float moveSpeed;
         [SerializeField] private float provocationRadius;
+        [SerializeField] private float dashTimeInterval;
+        [SerializeField] private float dashTime;
 
         public float MoveSpeed => moveSpeed;
         public float ProvocationRadius => provocationRadius;
+        public float DashTimeInterval => dashTimeInterval;
+        public float DashTime => dashTime;
     }
 }

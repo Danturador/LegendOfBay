@@ -1,29 +1,55 @@
-using _ProjectFiles.Enemy.Scripts.Core;
+using _ProjectFiles.Enemy.Scripts._PLAYER_;
+using _ProjectFiles.Enemy.Scripts.Behaviour.Strategy;
 using UnityEngine;
 
-public class EnemyContainer : MonoBehaviour
+namespace _ProjectFiles.Enemy.Scripts.Core
 {
-    [SerializeField] private EnemyInfo enemyInfo;
-    [SerializeField] private EnemyAttackInfo attackInfo;
-    [SerializeField] private EnemyNavigationInfo navigationInfo;
-    [SerializeField] private new Collider2D collider;
-    private Enemy _enemy;
-    private RenderVisibility _visibility;
+    public class EnemyContainer : MonoBehaviour
+    {
+        [Header("Components")] [SerializeField]
+        private new Collider2D collider;
 
-    private void Start()
-    {
-        _visibility = new RenderVisibility(collider);
-        Initialize();
-    }
+        [SerializeField] private new Rigidbody2D rigidbody;
 
-    private void Update()
-    {
-        _enemy.State.IsVisibleByPlayer = _visibility.IsVisible;
-        _enemy.State.Update();
-    }
-    
-    public void Initialize()
-    {
-        _enemy = new Enemy(enemyInfo, attackInfo, navigationInfo);
+        [Header("Behaviour")] [SerializeField] private EnemyNavigation enemyNavigation;
+
+        [SerializeField] private AnimationCurve speedCurve;
+
+        [Header("Data")] [SerializeField] private EnemyInfoContainer infoContainer;
+
+        private Enemy _enemy;
+        public EnemyNavigation Navigation => enemyNavigation;
+
+        private void Start()
+        {
+            Initialize();
+        }
+
+        private void Update()
+        {
+            _enemy.State.Update();
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.TryGetComponent(out EnemyDetectionZone zone))
+            {
+                _enemy.State.SetVisibility(true);
+                Navigation.Target = zone.Player.transform;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.TryGetComponent(out EnemyDetectionZone zone)) _enemy.State.SetVisibility(false);
+        }
+
+        private void Initialize()
+        {
+            _enemy = new Enemy(infoContainer, this);
+
+            enemyNavigation.Initialize(infoContainer.NavigationInfo,
+                new HundunNavigation(rigidbody, infoContainer.NavigationInfo, speedCurve));
+        }
     }
 }

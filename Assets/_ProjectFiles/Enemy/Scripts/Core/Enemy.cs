@@ -6,13 +6,13 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         private EnemyInfo _enemyInfo;
         private EnemyNavigationInfo _navigationInfo;
 
-        public Enemy(EnemyInfo enemyInfo, EnemyAttackInfo attackInfo, EnemyNavigationInfo navigationInfo)
+        public Enemy(EnemyInfoContainer infoContainer, EnemyContainer container)
         {
-            _enemyInfo = enemyInfo;
-            _attackInfo = attackInfo;
-            _navigationInfo = navigationInfo;
+            _enemyInfo = infoContainer.EnemyInfo;
+            _attackInfo = infoContainer.AttackInfo;
+            _navigationInfo = infoContainer.NavigationInfo;
 
-            State = new EnemyStateMachine(attackInfo, navigationInfo);
+            State = new EnemyStateMachine(infoContainer, container);
         }
 
         public EnemyStateMachine State { get; }
