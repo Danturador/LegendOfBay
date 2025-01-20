@@ -19,6 +19,8 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
 
         public override IEnumerator Execute(Transform target)
         {
+            yield return new WaitForSeconds(_info.StartDashDelay);
+
             while (true)
             {
                 Vector2 currentTargetPosition = target.position;

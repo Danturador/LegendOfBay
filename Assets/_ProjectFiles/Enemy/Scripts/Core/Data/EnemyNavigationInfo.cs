@@ -6,12 +6,12 @@ namespace _ProjectFiles.Enemy.Scripts.Core
     public class EnemyNavigationInfo : ScriptableObject
     {
         [SerializeField] private float moveSpeed;
-        [SerializeField] private float provocationRadius;
+        [SerializeField] private float startDashDelay;
         [SerializeField] private float dashTimeInterval;
         [SerializeField] private float dashTime;
 
         public float MoveSpeed => moveSpeed;
-        public float ProvocationRadius => provocationRadius;
+        public float StartDashDelay => startDashDelay;
         public float DashTimeInterval => dashTimeInterval;
         public float DashTime => dashTime;
     }

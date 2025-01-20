@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: HundunNavigationInfo
   m_EditorClassIdentifier: 
   moveSpeed: 0
-  provocationRadius: 0
+  startDashDelay: 1
   dashTimeInterval: 1
   dashTime: 1
