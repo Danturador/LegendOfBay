@@ -31,6 +31,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         public void Stop()
         {
             StopAllCoroutines();
+            _rigidbody.velocity = Vector2.zero;
         }
     }
 }
