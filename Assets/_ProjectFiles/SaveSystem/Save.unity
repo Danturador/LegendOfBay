@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 835225903}
   - component: {fileID: 835225902}
   m_Layer: 0
-  m_Name: StorageInstaller
+  m_Name: SaveInstaller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
