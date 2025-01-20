@@ -1,104 +1,146 @@
 
 Hundun.png
-size: 670,1051
+size: 1850,491
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Hundun_0000_wing_L
-  rotate: false
-  xy: 2, 349
+  rotate: true
+  xy: 712, 153
   size: 336, 211
   orig: 336, 211
   offset: 0, 0
   index: -1
 Hundun_0001_hand_first_L
-  rotate: true
-  xy: 340, 336
-  size: 137, 262
-  orig: 137, 262
+  rotate: false
+  xy: 1330, 229
+  size: 137, 260
+  orig: 137, 260
   offset: 0, 0
   index: -1
 Hundun_0003_Leg_L
-  rotate: false
-  xy: 174, 13
+  rotate: true
+  xy: 262, 3
   size: 131, 224
   orig: 131, 224
   offset: 0, 0
   index: -1
 Hundun_0004_hand_second_L
-  rotate: true
-  xy: 2, 239
-  size: 108, 250
-  orig: 108, 250
+  rotate: false
+  xy: 1469, 240
+  size: 106, 249
+  orig: 106, 249
   offset: 0, 0
   index: -1
 Hundun_0005_feathers
   rotate: true
-  xy: 463, 762
+  xy: 488, 13
   size: 121, 190
   orig: 121, 190
   offset: 0, 0
   index: -1
 Hundun_0006_helmet
-  rotate: true
-  xy: 357, 475
-  size: 285, 311
-  orig: 285, 311
+  rotate: false
+  xy: 1039, 179
+  size: 289, 310
+  orig: 289, 310
   offset: 0, 0
   index: -1
 Hundun_0007_body
-  rotate: false
-  xy: 2, 791
+  rotate: true
+  xy: 2, 30
   size: 459, 258
   orig: 459, 258
   offset: 0, 0
   index: -1
 Hundun_0008_glare
-  rotate: true
-  xy: 604, 376
-  size: 97, 63
-  orig: 97, 63
-  offset: 0, 0
+  rotate: false
+  xy: 1577, 251
+  size: 113, 79
+  orig: 119, 86
+  offset: 2, 7
   index: -1
 Hundun_0009_eye_front
-  rotate: true
-  xy: 466, 14
+  rotate: false
+  xy: 1636, 6
   size: 162, 156
   orig: 162, 156
   offset: 0, 0
   index: -1
 Hundun_0010_eye_side
-  rotate: false
-  xy: 466, 178
-  size: 167, 156
-  orig: 167, 156
+  rotate: true
+  xy: 1692, 164
+  size: 166, 156
+  orig: 166, 156
   offset: 0, 0
   index: -1
 Hundun_0012_hand_first_R
-  rotate: false
-  xy: 307, 92
+  rotate: true
+  xy: 1577, 332
   size: 157, 242
   orig: 157, 242
   offset: 0, 0
   index: -1
 Hundun_0013_Leg_R
-  rotate: true
-  xy: 463, 885
-  size: 164, 190
+  rotate: false
+  xy: 1471, 49
+  size: 163, 189
   orig: 164, 190
-  offset: 0, 0
+  offset: 1, 0
   index: -1
 Hundun_0014_hand_second_R
-  rotate: false
-  xy: 2, 2
+  rotate: true
+  xy: 1134, 7
   size: 170, 235
   orig: 170, 235
   offset: 0, 0
   index: -1
 Hundun_0015_wing_R
-  rotate: true
-  xy: 2, 562
+  rotate: false
+  xy: 262, 136
   size: 227, 353
   orig: 227, 353
   offset: 0, 0
+  index: -1
+Hundun_0017_wing_L_down
+  rotate: true
+  xy: 491, 151
+  size: 338, 219
+  orig: 338, 219
+  offset: 0, 0
+  index: -1
+Hundun_0018_wing_L_middle
+  rotate: true
+  xy: 925, 159
+  size: 330, 112
+  orig: 330, 113
+  offset: 0, 0
+  index: -1
+Hundun_0019_eyelid_upper
+  rotate: false
+  xy: 946, 2
+  size: 186, 155
+  orig: 187, 157
+  offset: 1, 1
+  index: -1
+Hundun_0020_eyelid_upper_middle
+  rotate: true
+  xy: 1371, 18
+  size: 209, 98
+  orig: 209, 101
+  offset: 0, 3
+  index: -1
+Hundun_0021_eyelid_upper_closed
+  rotate: false
+  xy: 739, 11
+  size: 205, 140
+  orig: 206, 140
+  offset: 0, 0
+  index: -1
+Hundun_0022_eyelid_lower
+  rotate: true
+  xy: 680, 5
+  size: 144, 57
+  orig: 144, 67
+  offset: 0, 10
   index: -1

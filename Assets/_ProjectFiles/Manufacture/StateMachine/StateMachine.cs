@@ -3,7 +3,7 @@ using System.Linq;
 
 public abstract class StateMachine
 {
-    private readonly IState[] _states;
+    protected readonly IState[] _states;
     private readonly Transition[] _transitions;
     private IState _current;
 

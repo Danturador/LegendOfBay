@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de615d76-5392-4624-a2d1-d4901732ccf9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/RenderVisibility.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/RenderVisibility.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.atlas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.atlas.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun_Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun_Controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/HundunNavigationInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/HundunNavigationInfo.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scenes/Enemy.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scenes/Enemy.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Hundun/HundunNavigation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Hundun/HundunNavigation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyNavigationInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyNavigationInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/FeaturesLevel/LevelElements/Water/WaterShaderGraph.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/FeaturesLevel/LevelElements/Water/WaterShaderGraph.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +27,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/779cc116a5954f1c9b92496e62345641175c00/c3/ec890364/AnimationCurve.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e46e9bb88b78469fbd4d3d1c372264d61fe00/29/709e9dd7/CharacterController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_ProjectFiles/Tools/AnimationCurveExtensions.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -37,7 +48,7 @@
   &quot;keyToString&quot;: {
     &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/Enemy/Core&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;new/feature/Enemy/Core&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -100,6 +111,8 @@
       <workItem from="1736349116092" duration="6390000" />
       <workItem from="1736716342701" duration="6428000" />
       <workItem from="1737196964746" duration="586000" />
+      <workItem from="1737285792207" duration="13338000" />
+      <workItem from="1737316076070" duration="643000" />
     </task>
     <servers />
   </component>
