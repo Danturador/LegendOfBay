@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f71748dc929463ca7b88896e0426f53, type: 3}
+  m_Name: HundunInfoContainer
+  m_EditorClassIdentifier: 
+  enemyInfo: {fileID: 11400000, guid: a6c802c24f785c04c820c18d041548f1, type: 2}
+  navigationInfo: {fileID: 11400000, guid: 5c9d883ca6bf1f84182c3a7592a86ae8, type: 2}
+  attackInfo: {fileID: 11400000, guid: 2724a126a23afcc42806c576f4a51e92, type: 2}

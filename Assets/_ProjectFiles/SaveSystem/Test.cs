@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
@@ -10,12 +9,10 @@ namespace _ProjectFiles.SaveSystem
         [SerializeField] private GameObject obj;
         [SerializeField] private Button saveButton;
         [SerializeField] private Button loadButton;
-        [Inject] private IStorage _storage;
-        private GameData _gameData;
-        
+        [Inject] private SaveSystemController _saveSystem;
+
         private void Start()
         {
-            _gameData = new GameData();
             saveButton.onClick.AddListener(SaveObjectData);
             loadButton.onClick.AddListener(LoadObjectData);
         }
@@ -28,23 +25,23 @@ namespace _ProjectFiles.SaveSystem
 
         private void LoadObjectData()
         {
-            object data = _storage.Load();
+            var data = _saveSystem.LoadProgress();
             if (data is null)
             {
                 Debug.LogError("Loaded data is null");
                 return;
             }
-            
-            _gameData = (GameData)data;
-            Debug.Log($"Health: {_gameData.health}");
-            obj.transform.position = _gameData.position;
+
+            var gameData = (GameData)data;
+            Debug.Log($"Health: {gameData.PlayerHealth}");
+            obj.transform.position = gameData.Position;
         }
-        
+
         private void SaveObjectData()
         {
-            _gameData.health = Time.time;
-            _gameData.position = obj.transform.position;
-            _storage.Save(_gameData);
+            _saveSystem.UpdateHealth(Time.time);
+            _saveSystem.UpdatePosition(obj.transform.position);
+            _saveSystem.SaveProgress();
             Debug.Log("Saved");
         }
     }

@@ -1,19 +1,20 @@
-using UnityEngine;
+using _ProjectFiles.Enemy.Scripts.Core;
 
 public class ActiveState : IEnterState, IUpdateState, IExitState
 {
+    public EnemyContainer Container { get; set; }
+
     public void Enter()
     {
-        Debug.Log("Chase enter");
+        Container.Navigation.Execute();
     }
 
     public void Exit()
     {
-        Debug.Log("Chase exit");
+        Container.Navigation.Stop();
     }
 
     public void Update()
     {
-        Debug.Log("Chase update");
     }
 }
