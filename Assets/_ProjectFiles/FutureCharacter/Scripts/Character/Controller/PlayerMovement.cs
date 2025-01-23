@@ -11,17 +11,28 @@ public class PlayerMovement : MonoBehaviour
     {
         _rb = rigidbody;
     }
-
+ 
     public void Move(Vector2 input)
     {
         _move = input;
+        if(input.x < 0)
+        {
+            _move = new Vector2(-1f, input.y);
+        } else if (input.x > 0) 
+        { 
+            _move = new Vector2(1f, input.y);
+        }
+        else
+        {
+            _move = Vector2.zero;
+        }
 
         if (_move != Vector2.zero)
         {
             Vector2 targetVelocity = new Vector2(_move.x, 0f) * moveSpeed;
             if (_rb.velocity.y != 0) 
             {
-                _rb.velocity = new Vector2(targetVelocity.x*0.8f, _rb.velocity.y);
+                _rb.velocity = new Vector2(targetVelocity.x, _rb.velocity.y);
             }
             else
             {
