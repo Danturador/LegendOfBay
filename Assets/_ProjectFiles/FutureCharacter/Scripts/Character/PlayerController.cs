@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerDash playerDash;
     [SerializeField] private PlayerJump playerJump;
     private Rigidbody2D rb;
-    private InputController _inputController;
+    public InputController inputController {  get; private set; }
     private bool _platformTrigger;
     private string _platformtriggerName = "PlatformTrigger";
 
@@ -17,8 +17,8 @@ public class PlayerController : MonoBehaviour
         playerMovement.Initialize(rb);
         playerDash.Initialize(rb);
         playerJump.Initialize(rb);
-        _inputController = new InputController();
-        _inputController.Enable();    
+        inputController = new InputController();
+        inputController.Enable();    
     }
     private void Start()
     {
@@ -28,21 +28,37 @@ public class PlayerController : MonoBehaviour
     private void OnEnabled()
    {
         
-        _inputController.Gameplay.Jump.performed += OnJump;
-        _inputController.Gameplay.Jump.canceled += exitJump;
-        _inputController.Gameplay.Dash.performed += OnDash;
+        inputController.Gameplay.Jump.performed += OnJump;
+        inputController.Gameplay.Jump.canceled += exitJump;
+        inputController.Gameplay.Dash.performed += OnDash;
+        inputController.Gameplay.Escape.performed += OnEscape;
    }
 
     private void OnDisabled()
     {
-        _inputController.Gameplay.Jump.performed -= OnJump;
-        _inputController.Gameplay.Jump.canceled -= exitJump;
-        _inputController.Gameplay.Dash.performed -= OnDash;
+        inputController.Gameplay.Jump.performed -= OnJump;
+        inputController.Gameplay.Jump.canceled -= exitJump;
+        inputController.Gameplay.Dash.performed -= OnDash;
+        inputController.Gameplay.Escape.performed -= OnEscape;
     }
-
+    private void Update()
+    {
+        if (inputController.Gameplay.Movement.ReadValue<Vector2>().x < 0)
+        {
+            gameObject.transform.localScale = new Vector2(-1, 1);
+        }
+        else if (inputController.Gameplay.Movement.ReadValue<Vector2>().x > 0)
+        {
+            gameObject.transform.localScale = new Vector2(1, 1);
+        }
+        else 
+        { 
+        
+        }
+    }
     void FixedUpdate()
     {
-        Vector2 moveInput = _inputController.Gameplay.Movement.ReadValue<Vector2>();
+        Vector2 moveInput = inputController.Gameplay.Movement.ReadValue<Vector2>();
         if (!playerDash.IsDashing())
         {
             playerMovement.Move(moveInput);
@@ -51,7 +67,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnJump(InputAction.CallbackContext context)
     {
-        if(_inputController.Gameplay.Movement.ReadValue<Vector2>().y < 0 && _platformTrigger)
+        if(inputController.Gameplay.Movement.ReadValue<Vector2>().y < 0 && _platformTrigger)
         {
             Physics2D.IgnoreLayerCollision(6, 7, true);
         }
@@ -85,5 +101,15 @@ public class PlayerController : MonoBehaviour
          {
              _platformTrigger = false;
          }
+    }
+
+    private void OnEscape(InputAction.CallbackContext context) 
+    { 
+        Application.Quit();
+    }
+
+    public InputController GetInputController()
+    {
+        return inputController;
     }
 }

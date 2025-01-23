@@ -11,8 +11,10 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayers;
 
+    [SerializeField] private bool g;
+
     private Rigidbody2D _rb;
-    private bool _isGrounded;
+    [SerializeField] public bool _isGrounded { get; private set; }
     private bool _isJumping;
     private bool _doubleJump;
     private int _doubleJumpCount = 0;
@@ -35,6 +37,7 @@ public class PlayerJump : MonoBehaviour
 
     private void Update()
     {
+        g = _isGrounded;
         DecreaseJumpBufferCounter();
         UpdateCoyoteTimer();
     }
@@ -80,11 +83,7 @@ public class PlayerJump : MonoBehaviour
     }
     private void CheckGroundedStatus()
     {
-       
-        if (_rb.velocity.y == 0)
-        {
-            _isGrounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(transform.localScale.x, 0.1f), 0, groundLayers);
-        }
+        _isGrounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(transform.localScale.x, 0.1f), 0, groundLayers); 
     }
 
     private void HandleJump()
