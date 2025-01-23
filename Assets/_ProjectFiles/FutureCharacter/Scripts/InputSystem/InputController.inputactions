@@ -1,5 +1,5 @@
 {
-    "name": "InputController",
+    "name": "New Controls",
     "maps": [
         {
             "name": "Gameplay",
@@ -36,15 +36,6 @@
                     "name": "Use(Action)",
                     "type": "Button",
                     "id": "75a35417-e6ea-4ff6-9c82-6eb1f20d57a3",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Escape",
-                    "type": "Button",
-                    "id": "291fda23-41d2-4c7e-b0ae-5465e597c679",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -137,17 +128,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Use(Action)",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4db12a25-53b9-4191-a951-17ba6184a0cb",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Escape",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
