@@ -10,7 +10,7 @@ namespace _ProjectFiles.SaveSystem
         public SaveSystemController(IStorage storage)
         {
             _storage = storage;
-            _data = (GameData)_storage.Load(new GameData());
+            _data = (GameData)_storage.Load(new GameData(), PlayerPrefs.GetInt(Storage.PrefsKey) == 0);
         }
 
         public void SaveProgress() => _storage.Save(_data);

@@ -8,6 +8,7 @@ namespace _ProjectFiles.SaveSystem
 {
     public class Storage : IStorage
     {
+        public const string PrefsKey = "use-save";
         private const string FileName = "GameData.save";
         private string _filePath;
         private string _fileDirectory;
@@ -19,9 +20,9 @@ namespace _ProjectFiles.SaveSystem
             InitBinaryFormatter();
         }
         
-        public object Load(object defaultData = null)
+        public object Load(object defaultData = null, bool newGame = false)
         {
-            if (!File.Exists(_filePath))
+            if (!File.Exists(_filePath) || newGame)
             {
                 if(defaultData != null)
                     Save(defaultData);

@@ -1,21 +1,20 @@
 using UnityEngine;
 using UnityEngine.Events;
 using Zenject;
-using Zenject.SpaceFighter;
 
 namespace _ProjectFiles.SaveSystem
 {
     public class SaveTrigger : MonoBehaviour
     {
-        public UnityEvent onSaveTriggered;
         [Inject] private SaveSystemController _saveSystemController;
+        public UnityEvent onSaveTriggered;
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.gameObject.TryGetComponent(out Player player)) 
+            if (!other.gameObject.TryGetComponent(out PlayerController player)) 
                 return;
             
-            _saveSystemController.UpdatePosition(player.Position);
-            _saveSystemController.UpdateHealth(player.Health);
+            _saveSystemController.UpdatePosition(player.transform.position);
+            _saveSystemController.UpdateHealth(100);
             onSaveTriggered?.Invoke();
         }
     }

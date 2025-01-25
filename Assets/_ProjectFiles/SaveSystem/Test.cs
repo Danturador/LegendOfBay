@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
@@ -10,9 +11,10 @@ namespace _ProjectFiles.SaveSystem
         [SerializeField] private Button saveButton;
         [SerializeField] private Button loadButton;
         [Inject] private SaveSystemController _saveSystem;
-
+        
         private void Start()
         {
+            LoadObjectData();
             saveButton.onClick.AddListener(SaveObjectData);
             loadButton.onClick.AddListener(LoadObjectData);
         }

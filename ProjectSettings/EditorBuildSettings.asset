@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_ProjectFiles/FutureCharacter/Scenes/testMovementScene.unity
     guid: 87f1cddb2a2d9d74b8bf906de86c3186
+  - enabled: 1
+    path: Assets/_ProjectFiles/Menu/Menu.unity
+    guid: 8c996d8b0a3f10d45823933088cad24b
+  - enabled: 1
+    path: Assets/_ProjectFiles/SaveSystem/Save.unity
+    guid: bf6680371e556604db611335e01ffc27
   m_configObjects: {}
