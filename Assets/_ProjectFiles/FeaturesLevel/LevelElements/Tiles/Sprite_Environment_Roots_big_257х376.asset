@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: "Sprite_Environment_Lotus_169\u0445149"
+  m_Name: "Sprite_Environment_Roots_big_257\u0445376"
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 53ca55291be74664ea23b641d3008e92, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fb2828c8f99245e459b6c7642bd30d7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
