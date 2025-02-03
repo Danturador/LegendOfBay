@@ -71,6 +71,24 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SmallAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""a1878f53-bf8d-4ef9-b5b5-dc8a35591c9d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MediumAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""7f91654a-9e39-452f-ab8f-9bd93515727d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -172,6 +190,28 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""action"": ""Escape"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""68466c0e-9ffe-439d-ac12-5c442e62d434"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SmallAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""613ccd1c-8eba-41d0-b22a-39f2200b1d1d"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MediumAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -213,6 +253,8 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         m_Gameplay_Dash = m_Gameplay.FindAction("Dash", throwIfNotFound: true);
         m_Gameplay_UseAction = m_Gameplay.FindAction("Use(Action)", throwIfNotFound: true);
         m_Gameplay_Escape = m_Gameplay.FindAction("Escape", throwIfNotFound: true);
+        m_Gameplay_SmallAttack = m_Gameplay.FindAction("SmallAttack", throwIfNotFound: true);
+        m_Gameplay_MediumAttack = m_Gameplay.FindAction("MediumAttack", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Newaction = m_UI.FindAction("New action", throwIfNotFound: true);
@@ -282,6 +324,8 @@ public partial class @InputController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Dash;
     private readonly InputAction m_Gameplay_UseAction;
     private readonly InputAction m_Gameplay_Escape;
+    private readonly InputAction m_Gameplay_SmallAttack;
+    private readonly InputAction m_Gameplay_MediumAttack;
     public struct GameplayActions
     {
         private @InputController m_Wrapper;
@@ -291,6 +335,8 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         public InputAction @Dash => m_Wrapper.m_Gameplay_Dash;
         public InputAction @UseAction => m_Wrapper.m_Gameplay_UseAction;
         public InputAction @Escape => m_Wrapper.m_Gameplay_Escape;
+        public InputAction @SmallAttack => m_Wrapper.m_Gameplay_SmallAttack;
+        public InputAction @MediumAttack => m_Wrapper.m_Gameplay_MediumAttack;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -315,6 +361,12 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             @Escape.started += instance.OnEscape;
             @Escape.performed += instance.OnEscape;
             @Escape.canceled += instance.OnEscape;
+            @SmallAttack.started += instance.OnSmallAttack;
+            @SmallAttack.performed += instance.OnSmallAttack;
+            @SmallAttack.canceled += instance.OnSmallAttack;
+            @MediumAttack.started += instance.OnMediumAttack;
+            @MediumAttack.performed += instance.OnMediumAttack;
+            @MediumAttack.canceled += instance.OnMediumAttack;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -334,6 +386,12 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             @Escape.started -= instance.OnEscape;
             @Escape.performed -= instance.OnEscape;
             @Escape.canceled -= instance.OnEscape;
+            @SmallAttack.started -= instance.OnSmallAttack;
+            @SmallAttack.performed -= instance.OnSmallAttack;
+            @SmallAttack.canceled -= instance.OnSmallAttack;
+            @MediumAttack.started -= instance.OnMediumAttack;
+            @MediumAttack.performed -= instance.OnMediumAttack;
+            @MediumAttack.canceled -= instance.OnMediumAttack;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -404,6 +462,8 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         void OnDash(InputAction.CallbackContext context);
         void OnUseAction(InputAction.CallbackContext context);
         void OnEscape(InputAction.CallbackContext context);
+        void OnSmallAttack(InputAction.CallbackContext context);
+        void OnMediumAttack(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -5,4 +5,8 @@ public enum PlayerAnimationType
     PlayerJump,
     PlayerDoubleJump,
     PlayerFall,
+    PlayerLanding,
+    PlayerDash,
+    PlayerSmallAttack,
+    PlayerMediumAttack,
 }
