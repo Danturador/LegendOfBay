@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class MinimapManager : MonoBehaviour
 {
-	[SerializeField] private Camera mainCamera;
+	[SerializeField] private Camera minimapCamera;
 	[SerializeField] private float zoomStep, minCameraSize, maxCameraSize;
 	
 	[SerializeField] private SpriteRenderer mapRenderer;
 	private float mapMinX, mapMaxX, mapMinY, mapMaxY;
 
 	private Vector3 dragOrigin;
+	private bool isMinimapActive = false;
 
 	private void Awake()
 	{
@@ -19,51 +20,58 @@ public class MinimapManager : MonoBehaviour
 
 		mapMinY = mapRenderer.transform.position.y - mapRenderer.bounds.size.y / 2f;
 		mapMaxY = mapRenderer.transform.position.y + mapRenderer.bounds.size.y / 2f;
+
+		minimapCamera.gameObject.SetActive(false);
 	}	
 
 	private void Update()
 	{
-		PanCamera();
+		ToggleMinimap();
 
-		float scroll = Input.GetAxis("Mouse ScrollWheel");
-		
-		if (scroll  > 0f)
-			ZoomIn();
-		else if (scroll < 0f) ZoomOut();
+		if (isMinimapActive)
+		{
+			PanCamera();
+
+			float scroll = Input.GetAxis("Mouse ScrollWheel");
+			if (scroll > 0f)
+				ZoomIn();
+			else if (scroll < 0f)
+				ZoomOut();
+		}
 	}
 
 	private void PanCamera()
 	{
 		if (Input.GetMouseButtonDown(0))
-			dragOrigin = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+			dragOrigin = minimapCamera.ScreenToWorldPoint(Input.mousePosition);
 
 		if (Input.GetMouseButton(0))
 		{
-			Vector3 difference = dragOrigin - mainCamera.ScreenToWorldPoint(Input.mousePosition);
+			Vector3 difference = dragOrigin - minimapCamera.ScreenToWorldPoint(Input.mousePosition);
 
-			mainCamera.transform.position = ClampCamera(mainCamera.transform.position + difference);
+			minimapCamera.transform.position = ClampCamera(minimapCamera.transform.position + difference);
 		}
 	}
 	
 	private void ZoomIn()
 	{
-		float newSize = mainCamera.orthographicSize - zoomStep;
-		mainCamera.orthographicSize = Mathf.Clamp(newSize, minCameraSize,maxCameraSize);
+		float newSize = minimapCamera.orthographicSize - zoomStep;
+		minimapCamera.orthographicSize = Mathf.Clamp(newSize, minCameraSize,maxCameraSize);
 
-		mainCamera.transform.position = ClampCamera(mainCamera.transform.position);
+		minimapCamera.transform.position = ClampCamera(minimapCamera.transform.position);
 	}
 	private void ZoomOut()
 	{
-		float newSize = mainCamera.orthographicSize + zoomStep;
-		mainCamera.orthographicSize = Mathf.Clamp(newSize, minCameraSize,maxCameraSize);
+		float newSize = minimapCamera.orthographicSize + zoomStep;
+		minimapCamera.orthographicSize = Mathf.Clamp(newSize, minCameraSize,maxCameraSize);
 		
-		mainCamera.transform.position = ClampCamera(mainCamera.transform.position);
+		minimapCamera.transform.position = ClampCamera(minimapCamera.transform.position);
 	}
 
 	private Vector3 ClampCamera(Vector3 targetPosition)
 	{
-		float cameraHeight = mainCamera.orthographicSize;
-		float cameraWidth = mainCamera.orthographicSize * mainCamera.aspect;
+		float cameraHeight = minimapCamera.orthographicSize;
+		float cameraWidth = minimapCamera.orthographicSize * minimapCamera.aspect;
 
 		float minX = mapMinX + cameraWidth;
 		float maxX = mapMaxX - cameraWidth;
@@ -74,5 +82,13 @@ public class MinimapManager : MonoBehaviour
 		float newY = Mathf.Clamp(targetPosition.y, minY, maxY);
 		
 		return new Vector3(newX, newY, targetPosition.z);
+	}
+	private void ToggleMinimap()
+	{
+		if (Input.GetKeyDown(KeyCode.M))
+		{
+			isMinimapActive = !isMinimapActive;
+			minimapCamera.gameObject.SetActive(isMinimapActive);
+		}
 	}
 }
