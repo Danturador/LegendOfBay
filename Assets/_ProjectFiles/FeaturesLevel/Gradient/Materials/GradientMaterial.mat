@@ -42,17 +42,17 @@ Material:
     m_Ints: []
     m_Floats:
     - PixelSnap: 0
-    - _Color0Boundary: 0.883
+    - _Color0Boundary: 0.95
     - _Color1Boundary: 0
     - _EnableExternalAlpha: 0
     - _GradientEnd: 0
-    - _GradientScale: 0.16
+    - _GradientScale: 0.1
     - _GradientStart: 0.002
     - _MixFactor: 0.599
-    - _TransitionSize0: 0.404
-    - _TransitionSize1: 0.01
+    - _TransitionSize0: 0.36
+    - _TransitionSize1: 1
     m_Colors:
-    - _Color: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
+    - _Color: {r: 0.8666667, g: 0.8666667, b: 0.8666667, a: 1}
     - _Color0: {r: 0, g: 0, b: 1, a: 0}
     - _Color1: {r: 0, g: 0, b: 0, a: 1}
     - _Color2: {r: 0, g: 0, b: 0, a: 1}
