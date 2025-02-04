@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnEscape(InputAction.CallbackContext context) 
     { 
-        Application.Quit();
+       // Application.Quit();
     }
 
     public InputController GetInputController()
