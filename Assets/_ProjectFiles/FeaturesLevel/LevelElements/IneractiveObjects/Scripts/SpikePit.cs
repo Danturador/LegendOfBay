@@ -9,7 +9,6 @@ public class SpikePit : MonoBehaviour
         if (collision.GetComponent<PlayerController>() != null)
         {
             collision.transform.position = teleportDestination.position;
-            Debug.Log("Entered");
         }
     }
 }

@@ -37,7 +37,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 8400000, guid: 5ffe62cdf2a49fd40a0bef5ba0c74c7c, type: 2}
+        m_Texture: {fileID: 8400000, guid: 4e253b9ffb275e1408fad5e862e67908, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_000b2707d3624e6886505b268753fbc6_Texture_1_Texture2D:
+        m_Texture: {fileID: 8400000, guid: 4e253b9ffb275e1408fad5e862e67908, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_c8ce618985474107b8f57b483cf0d4a8_Texture_1_Texture2D:
@@ -61,6 +65,17 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
-    m_Colors: []
+    m_Floats:
+    - _Power: 6.5
+    - _ReflectionAmount: 0.93
+    - _ShorelineHeight: 6.84
+    - _WaterDensity: 11.52
+    - _WavesMovement: 2.52
+    m_Colors:
+    - _Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _ShorelineColor: {r: 0.1273585, g: 0.75996023, b: 1, a: 1}
+    - _Tiling: {r: 1, g: 1, b: 0, a: 0}
+    - _WaterColor: {r: 0.2971698, g: 1, b: 0.96561223, a: 1}
+    - _WaterSpeed: {r: 0.02, g: 0.03, b: 0, a: 0}
+    - _WavesColor: {r: 0, g: 1.0853292, b: 1.2821634, a: 1}
   m_BuildTextureStacks: []
