@@ -8,6 +8,7 @@ public class MinimapManager : MonoBehaviour
 	[SerializeField] private float zoomStep, minCameraSize, maxCameraSize;
 	
 	[SerializeField] private SpriteRenderer mapRenderer;
+	[SerializeField] private InputController _inputController;
 	private float mapMinX, mapMaxX, mapMinY, mapMaxY;
 
 	private Vector3 dragOrigin;
@@ -22,9 +23,13 @@ public class MinimapManager : MonoBehaviour
 		mapMaxY = mapRenderer.transform.position.y + mapRenderer.bounds.size.y / 2f;
 
 		minimapCamera.gameObject.SetActive(false);
-	}	
+	}
 
-	private void Update()
+    private void Start()
+    {
+        _inputController = FindAnyObjectByType<PlayerController>().inputController;
+    }
+    private void Update()
 	{
 		ToggleMinimap();
 
@@ -89,6 +94,15 @@ public class MinimapManager : MonoBehaviour
 		{
 			isMinimapActive = !isMinimapActive;
 			minimapCamera.gameObject.SetActive(isMinimapActive);
+			if (isMinimapActive)
+			{
+				_inputController.Gameplay.Disable();
+			}
+			else 
+			{
+				_inputController.Gameplay.Enable();
+			}
+			
 		}
 	}
 }

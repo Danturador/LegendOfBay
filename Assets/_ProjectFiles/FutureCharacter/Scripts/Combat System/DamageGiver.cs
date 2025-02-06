@@ -11,7 +11,7 @@ public class DamageGiver : MonoBehaviour
     private GameObject _damageGiver;
     private ParticleSystem _damageParticleSystem;
 
-    private void Awake()
+    private void Start()
     {
         _damageGiver = GameObject.Find("PlayerDamageGiver");
         _damageParticleSystem = GameObject.Find("DamageParicleSystem").GetComponent<ParticleSystem>();
