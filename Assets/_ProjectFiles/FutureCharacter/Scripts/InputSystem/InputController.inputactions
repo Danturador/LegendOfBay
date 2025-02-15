@@ -240,6 +240,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Map",
+            "id": "2aba3a52-3577-4d32-96bd-ab1b388eddc3",
+            "actions": [
+                {
+                    "name": "ToggleMinimap",
+                    "type": "Button",
+                    "id": "50e0c4b0-b96b-4b13-9c46-bbd218ead6e1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "14b3b575-5370-406a-95e8-84d32ab948ce",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleMinimap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
