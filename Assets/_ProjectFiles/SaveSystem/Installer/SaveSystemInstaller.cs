@@ -12,7 +12,7 @@ namespace _ProjectFiles.SaveSystem.Installer
 
         private void BindStorage()
         {
-            Container.BindInterfacesTo<Storage>().AsSingle();
+            Container.BindInterfacesAndSelfTo<Storage>().AsSingle();
         }
 
         private void BindSaveSystemController()
