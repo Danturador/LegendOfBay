@@ -89,6 +89,15 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenMap"",
+                    ""type"": ""Button"",
+                    ""id"": ""db8e3798-3c7f-4b4c-86ee-06dec7031589"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -212,6 +221,17 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""action"": ""MediumAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f06c4b82-0624-4403-a2f8-02e88633b272"",
+                    ""path"": ""<Keyboard>/#(M)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenMap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -223,6 +243,15 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""name"": ""New action"",
                     ""type"": ""Button"",
                     ""id"": ""3c8b2207-c406-4468-9bf9-a8ccb887ca71"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""6de59fb8-8b3f-4a6a-b090-ba82e99f900b"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -240,6 +269,65 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""action"": ""New action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""edf09d75-6dda-4f0f-a659-20a7400d0054"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Map"",
+            ""id"": ""7769a715-d881-489b-8df5-87b7877050b2"",
+            ""actions"": [
+                {
+                    ""name"": ""CloseMap"",
+                    ""type"": ""Button"",
+                    ""id"": ""ae6d74e5-8714-42ca-9424-7c390123d551"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MapMovement"",
+                    ""type"": ""Button"",
+                    ""id"": ""4867ddd9-c35e-49a4-af31-4f9518200ee7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""7747912c-20f3-47b4-82c6-eceaf600706d"",
+                    ""path"": ""<Keyboard>/#(M)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CloseMap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ec26390f-b0bd-4458-9750-ab0f1bb6d488"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MapMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -255,9 +343,15 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         m_Gameplay_Escape = m_Gameplay.FindAction("Escape", throwIfNotFound: true);
         m_Gameplay_SmallAttack = m_Gameplay.FindAction("SmallAttack", throwIfNotFound: true);
         m_Gameplay_MediumAttack = m_Gameplay.FindAction("MediumAttack", throwIfNotFound: true);
+        m_Gameplay_OpenMap = m_Gameplay.FindAction("OpenMap", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Newaction = m_UI.FindAction("New action", throwIfNotFound: true);
+        m_UI_Escape = m_UI.FindAction("Escape", throwIfNotFound: true);
+        // Map
+        m_Map = asset.FindActionMap("Map", throwIfNotFound: true);
+        m_Map_CloseMap = m_Map.FindAction("CloseMap", throwIfNotFound: true);
+        m_Map_MapMovement = m_Map.FindAction("MapMovement", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -326,6 +420,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Escape;
     private readonly InputAction m_Gameplay_SmallAttack;
     private readonly InputAction m_Gameplay_MediumAttack;
+    private readonly InputAction m_Gameplay_OpenMap;
     public struct GameplayActions
     {
         private @InputController m_Wrapper;
@@ -337,6 +432,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         public InputAction @Escape => m_Wrapper.m_Gameplay_Escape;
         public InputAction @SmallAttack => m_Wrapper.m_Gameplay_SmallAttack;
         public InputAction @MediumAttack => m_Wrapper.m_Gameplay_MediumAttack;
+        public InputAction @OpenMap => m_Wrapper.m_Gameplay_OpenMap;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -367,6 +463,9 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             @MediumAttack.started += instance.OnMediumAttack;
             @MediumAttack.performed += instance.OnMediumAttack;
             @MediumAttack.canceled += instance.OnMediumAttack;
+            @OpenMap.started += instance.OnOpenMap;
+            @OpenMap.performed += instance.OnOpenMap;
+            @OpenMap.canceled += instance.OnOpenMap;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -392,6 +491,9 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             @MediumAttack.started -= instance.OnMediumAttack;
             @MediumAttack.performed -= instance.OnMediumAttack;
             @MediumAttack.canceled -= instance.OnMediumAttack;
+            @OpenMap.started -= instance.OnOpenMap;
+            @OpenMap.performed -= instance.OnOpenMap;
+            @OpenMap.canceled -= instance.OnOpenMap;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -414,11 +516,13 @@ public partial class @InputController: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_UI;
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
     private readonly InputAction m_UI_Newaction;
+    private readonly InputAction m_UI_Escape;
     public struct UIActions
     {
         private @InputController m_Wrapper;
         public UIActions(@InputController wrapper) { m_Wrapper = wrapper; }
         public InputAction @Newaction => m_Wrapper.m_UI_Newaction;
+        public InputAction @Escape => m_Wrapper.m_UI_Escape;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -431,6 +535,9 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             @Newaction.started += instance.OnNewaction;
             @Newaction.performed += instance.OnNewaction;
             @Newaction.canceled += instance.OnNewaction;
+            @Escape.started += instance.OnEscape;
+            @Escape.performed += instance.OnEscape;
+            @Escape.canceled += instance.OnEscape;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -438,6 +545,9 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             @Newaction.started -= instance.OnNewaction;
             @Newaction.performed -= instance.OnNewaction;
             @Newaction.canceled -= instance.OnNewaction;
+            @Escape.started -= instance.OnEscape;
+            @Escape.performed -= instance.OnEscape;
+            @Escape.canceled -= instance.OnEscape;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -455,6 +565,60 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Map
+    private readonly InputActionMap m_Map;
+    private List<IMapActions> m_MapActionsCallbackInterfaces = new List<IMapActions>();
+    private readonly InputAction m_Map_CloseMap;
+    private readonly InputAction m_Map_MapMovement;
+    public struct MapActions
+    {
+        private @InputController m_Wrapper;
+        public MapActions(@InputController wrapper) { m_Wrapper = wrapper; }
+        public InputAction @CloseMap => m_Wrapper.m_Map_CloseMap;
+        public InputAction @MapMovement => m_Wrapper.m_Map_MapMovement;
+        public InputActionMap Get() { return m_Wrapper.m_Map; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MapActions set) { return set.Get(); }
+        public void AddCallbacks(IMapActions instance)
+        {
+            if (instance == null || m_Wrapper.m_MapActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_MapActionsCallbackInterfaces.Add(instance);
+            @CloseMap.started += instance.OnCloseMap;
+            @CloseMap.performed += instance.OnCloseMap;
+            @CloseMap.canceled += instance.OnCloseMap;
+            @MapMovement.started += instance.OnMapMovement;
+            @MapMovement.performed += instance.OnMapMovement;
+            @MapMovement.canceled += instance.OnMapMovement;
+        }
+
+        private void UnregisterCallbacks(IMapActions instance)
+        {
+            @CloseMap.started -= instance.OnCloseMap;
+            @CloseMap.performed -= instance.OnCloseMap;
+            @CloseMap.canceled -= instance.OnCloseMap;
+            @MapMovement.started -= instance.OnMapMovement;
+            @MapMovement.performed -= instance.OnMapMovement;
+            @MapMovement.canceled -= instance.OnMapMovement;
+        }
+
+        public void RemoveCallbacks(IMapActions instance)
+        {
+            if (m_Wrapper.m_MapActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IMapActions instance)
+        {
+            foreach (var item in m_Wrapper.m_MapActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_MapActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public MapActions @Map => new MapActions(this);
     public interface IGameplayActions
     {
         void OnMovement(InputAction.CallbackContext context);
@@ -464,9 +628,16 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         void OnEscape(InputAction.CallbackContext context);
         void OnSmallAttack(InputAction.CallbackContext context);
         void OnMediumAttack(InputAction.CallbackContext context);
+        void OnOpenMap(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
         void OnNewaction(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
+    }
+    public interface IMapActions
+    {
+        void OnCloseMap(InputAction.CallbackContext context);
+        void OnMapMovement(InputAction.CallbackContext context);
     }
 }
