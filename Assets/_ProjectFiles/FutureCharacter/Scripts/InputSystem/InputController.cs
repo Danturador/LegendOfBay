@@ -285,7 +285,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         },
         {
             ""name"": ""Map"",
-            ""id"": ""7769a715-d881-489b-8df5-87b7877050b2"",
+            ""id"": ""2aba3a52-3577-4d32-96bd-ab1b388eddc3"",
             ""actions"": [
                 {
                     ""name"": ""CloseMap"",
@@ -298,9 +298,18 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""MapMovement"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""4867ddd9-c35e-49a4-af31-4f9518200ee7"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MapZoom"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""98b2779a-d4df-4db7-8371-d45587bcd40e"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -320,8 +329,19 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""ec26390f-b0bd-4458-9750-ab0f1bb6d488"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""id"": ""be10d1b0-4eba-4257-97c9-071bcaae72a2"",
+                    ""path"": ""*/{ScrollVertical}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MapZoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d0ce3f73-bd52-461f-8360-91f06e035eb0"",
+                    ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -352,6 +372,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         m_Map = asset.FindActionMap("Map", throwIfNotFound: true);
         m_Map_CloseMap = m_Map.FindAction("CloseMap", throwIfNotFound: true);
         m_Map_MapMovement = m_Map.FindAction("MapMovement", throwIfNotFound: true);
+        m_Map_MapZoom = m_Map.FindAction("MapZoom", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -571,12 +592,14 @@ public partial class @InputController: IInputActionCollection2, IDisposable
     private List<IMapActions> m_MapActionsCallbackInterfaces = new List<IMapActions>();
     private readonly InputAction m_Map_CloseMap;
     private readonly InputAction m_Map_MapMovement;
+    private readonly InputAction m_Map_MapZoom;
     public struct MapActions
     {
         private @InputController m_Wrapper;
         public MapActions(@InputController wrapper) { m_Wrapper = wrapper; }
         public InputAction @CloseMap => m_Wrapper.m_Map_CloseMap;
         public InputAction @MapMovement => m_Wrapper.m_Map_MapMovement;
+        public InputAction @MapZoom => m_Wrapper.m_Map_MapZoom;
         public InputActionMap Get() { return m_Wrapper.m_Map; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -592,6 +615,9 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             @MapMovement.started += instance.OnMapMovement;
             @MapMovement.performed += instance.OnMapMovement;
             @MapMovement.canceled += instance.OnMapMovement;
+            @MapZoom.started += instance.OnMapZoom;
+            @MapZoom.performed += instance.OnMapZoom;
+            @MapZoom.canceled += instance.OnMapZoom;
         }
 
         private void UnregisterCallbacks(IMapActions instance)
@@ -602,6 +628,9 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             @MapMovement.started -= instance.OnMapMovement;
             @MapMovement.performed -= instance.OnMapMovement;
             @MapMovement.canceled -= instance.OnMapMovement;
+            @MapZoom.started -= instance.OnMapZoom;
+            @MapZoom.performed -= instance.OnMapZoom;
+            @MapZoom.canceled -= instance.OnMapZoom;
         }
 
         public void RemoveCallbacks(IMapActions instance)
@@ -639,5 +668,6 @@ public partial class @InputController: IInputActionCollection2, IDisposable
     {
         void OnCloseMap(InputAction.CallbackContext context);
         void OnMapMovement(InputAction.CallbackContext context);
+        void OnMapZoom(InputAction.CallbackContext context);
     }
 }

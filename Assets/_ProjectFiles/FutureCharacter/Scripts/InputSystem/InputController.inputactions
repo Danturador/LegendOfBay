@@ -266,34 +266,6 @@
             "id": "2aba3a52-3577-4d32-96bd-ab1b388eddc3",
             "actions": [
                 {
-                    "name": "ToggleMinimap",
-                    "type": "Button",
-                    "id": "50e0c4b0-b96b-4b13-9c46-bbd218ead6e1",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
-                    "name": "",
-                    "id": "14b3b575-5370-406a-95e8-84d32ab948ce",
-                    "path": "<Keyboard>/m",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ToggleMinimap",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                }
-            ]
-        },
-        {
-            "name": "Map",
-            "id": "7769a715-d881-489b-8df5-87b7877050b2",
-            "actions": [
-                {
                     "name": "CloseMap",
                     "type": "Button",
                     "id": "ae6d74e5-8714-42ca-9424-7c390123d551",
@@ -304,9 +276,18 @@
                 },
                 {
                     "name": "MapMovement",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "4867ddd9-c35e-49a4-af31-4f9518200ee7",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "MapZoom",
+                    "type": "PassThrough",
+                    "id": "98b2779a-d4df-4db7-8371-d45587bcd40e",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -326,8 +307,19 @@
                 },
                 {
                     "name": "",
-                    "id": "ec26390f-b0bd-4458-9750-ab0f1bb6d488",
-                    "path": "<Mouse>/leftButton",
+                    "id": "be10d1b0-4eba-4257-97c9-071bcaae72a2",
+                    "path": "*/{ScrollVertical}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MapZoom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d0ce3f73-bd52-461f-8360-91f06e035eb0",
+                    "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

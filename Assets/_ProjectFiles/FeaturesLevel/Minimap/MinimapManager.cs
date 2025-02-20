@@ -12,7 +12,7 @@ public class MinimapManager : MonoBehaviour
 
     private float mapMinX, mapMaxX, mapMinY, mapMaxY;
     private Vector3 dragOrigin;
-    private bool isMinimapActive = false;
+    private bool isMinimapActive;
 
     private void Awake()
     {
@@ -27,19 +27,33 @@ public class MinimapManager : MonoBehaviour
     private void Start()
     {
         _inputController = FindAnyObjectByType<PlayerController>().inputController;
-        _inputController.Map.ToggleMinimap.performed += ctx => ToggleMinimap();
-    }
 
-    private void Update()
-    {
-        if (isMinimapActive)
-        {
-            PanCamera();
-            HandleZoom();
-        }
-    }
+        isMinimapActive = true;
+        ToggleMinimap();
 
-    private void HandleZoom()
+        _inputController.Gameplay.OpenMap.performed += ctx => ToggleMinimap();
+        _inputController.Map.CloseMap.performed += ctx => ToggleMinimap();
+
+        //_inputController.Map.MapMovement.performed += ctx => PanCamera();
+        _inputController.Map.MapZoom.performed += ctx => HandleZoom();
+    }
+	private void OnDestroy()
+	{
+        _inputController.Gameplay.OpenMap.performed -= ctx => ToggleMinimap();
+        _inputController.Map.CloseMap.performed -= ctx => ToggleMinimap();
+
+        //_inputController.Map.MapMovement.performed -= ctx => PanCamera();
+        _inputController.Map.MapZoom.performed -= ctx => HandleZoom();
+	}
+	private void Update()
+	{
+		if (isMinimapActive)
+		{
+			PanCamera();
+		}
+	}
+
+	private void HandleZoom()
     {
         float scroll = Mouse.current.scroll.ReadValue().y;
         if (scroll > 0f)
@@ -102,9 +116,11 @@ public class MinimapManager : MonoBehaviour
             minimapCamera.orthographicSize = Mathf.Clamp(minCameraSize, minCameraSize, maxCameraSize);
 
             _inputController.Gameplay.Disable();
+            _inputController.Map.Enable();
         }
         else
         {
+            _inputController.Map.Disable();
             _inputController.Gameplay.Enable();
         }
     }
