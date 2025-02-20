@@ -89,6 +89,15 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenMap"",
+                    ""type"": ""Button"",
+                    ""id"": ""db8e3798-3c7f-4b4c-86ee-06dec7031589"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -212,6 +221,17 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""action"": ""MediumAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f06c4b82-0624-4403-a2f8-02e88633b272"",
+                    ""path"": ""<Keyboard>/#(M)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenMap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -265,12 +285,21 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         },
         {
             ""name"": ""Map"",
-            ""id"": ""2aba3a52-3577-4d32-96bd-ab1b388eddc3"",
+            ""id"": ""7769a715-d881-489b-8df5-87b7877050b2"",
             ""actions"": [
                 {
-                    ""name"": ""ToggleMinimap"",
+                    ""name"": ""CloseMap"",
                     ""type"": ""Button"",
-                    ""id"": ""50e0c4b0-b96b-4b13-9c46-bbd218ead6e1"",
+                    ""id"": ""ae6d74e5-8714-42ca-9424-7c390123d551"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MapMovement"",
+                    ""type"": ""Button"",
+                    ""id"": ""4867ddd9-c35e-49a4-af31-4f9518200ee7"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -280,12 +309,23 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""14b3b575-5370-406a-95e8-84d32ab948ce"",
-                    ""path"": ""<Keyboard>/m"",
+                    ""id"": ""7747912c-20f3-47b4-82c6-eceaf600706d"",
+                    ""path"": ""<Keyboard>/#(M)"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""ToggleMinimap"",
+                    ""action"": ""CloseMap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ec26390f-b0bd-4458-9750-ab0f1bb6d488"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MapMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -303,13 +343,15 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         m_Gameplay_Escape = m_Gameplay.FindAction("Escape", throwIfNotFound: true);
         m_Gameplay_SmallAttack = m_Gameplay.FindAction("SmallAttack", throwIfNotFound: true);
         m_Gameplay_MediumAttack = m_Gameplay.FindAction("MediumAttack", throwIfNotFound: true);
+        m_Gameplay_OpenMap = m_Gameplay.FindAction("OpenMap", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Newaction = m_UI.FindAction("New action", throwIfNotFound: true);
         m_UI_Escape = m_UI.FindAction("Escape", throwIfNotFound: true);
         // Map
         m_Map = asset.FindActionMap("Map", throwIfNotFound: true);
-        m_Map_ToggleMinimap = m_Map.FindAction("ToggleMinimap", throwIfNotFound: true);
+        m_Map_CloseMap = m_Map.FindAction("CloseMap", throwIfNotFound: true);
+        m_Map_MapMovement = m_Map.FindAction("MapMovement", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -378,6 +420,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Escape;
     private readonly InputAction m_Gameplay_SmallAttack;
     private readonly InputAction m_Gameplay_MediumAttack;
+    private readonly InputAction m_Gameplay_OpenMap;
     public struct GameplayActions
     {
         private @InputController m_Wrapper;
@@ -389,6 +432,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         public InputAction @Escape => m_Wrapper.m_Gameplay_Escape;
         public InputAction @SmallAttack => m_Wrapper.m_Gameplay_SmallAttack;
         public InputAction @MediumAttack => m_Wrapper.m_Gameplay_MediumAttack;
+        public InputAction @OpenMap => m_Wrapper.m_Gameplay_OpenMap;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -419,6 +463,9 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             @MediumAttack.started += instance.OnMediumAttack;
             @MediumAttack.performed += instance.OnMediumAttack;
             @MediumAttack.canceled += instance.OnMediumAttack;
+            @OpenMap.started += instance.OnOpenMap;
+            @OpenMap.performed += instance.OnOpenMap;
+            @OpenMap.canceled += instance.OnOpenMap;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -444,6 +491,9 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             @MediumAttack.started -= instance.OnMediumAttack;
             @MediumAttack.performed -= instance.OnMediumAttack;
             @MediumAttack.canceled -= instance.OnMediumAttack;
+            @OpenMap.started -= instance.OnOpenMap;
+            @OpenMap.performed -= instance.OnOpenMap;
+            @OpenMap.canceled -= instance.OnOpenMap;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -519,12 +569,14 @@ public partial class @InputController: IInputActionCollection2, IDisposable
     // Map
     private readonly InputActionMap m_Map;
     private List<IMapActions> m_MapActionsCallbackInterfaces = new List<IMapActions>();
-    private readonly InputAction m_Map_ToggleMinimap;
+    private readonly InputAction m_Map_CloseMap;
+    private readonly InputAction m_Map_MapMovement;
     public struct MapActions
     {
         private @InputController m_Wrapper;
         public MapActions(@InputController wrapper) { m_Wrapper = wrapper; }
-        public InputAction @ToggleMinimap => m_Wrapper.m_Map_ToggleMinimap;
+        public InputAction @CloseMap => m_Wrapper.m_Map_CloseMap;
+        public InputAction @MapMovement => m_Wrapper.m_Map_MapMovement;
         public InputActionMap Get() { return m_Wrapper.m_Map; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -534,16 +586,22 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_MapActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_MapActionsCallbackInterfaces.Add(instance);
-            @ToggleMinimap.started += instance.OnToggleMinimap;
-            @ToggleMinimap.performed += instance.OnToggleMinimap;
-            @ToggleMinimap.canceled += instance.OnToggleMinimap;
+            @CloseMap.started += instance.OnCloseMap;
+            @CloseMap.performed += instance.OnCloseMap;
+            @CloseMap.canceled += instance.OnCloseMap;
+            @MapMovement.started += instance.OnMapMovement;
+            @MapMovement.performed += instance.OnMapMovement;
+            @MapMovement.canceled += instance.OnMapMovement;
         }
 
         private void UnregisterCallbacks(IMapActions instance)
         {
-            @ToggleMinimap.started -= instance.OnToggleMinimap;
-            @ToggleMinimap.performed -= instance.OnToggleMinimap;
-            @ToggleMinimap.canceled -= instance.OnToggleMinimap;
+            @CloseMap.started -= instance.OnCloseMap;
+            @CloseMap.performed -= instance.OnCloseMap;
+            @CloseMap.canceled -= instance.OnCloseMap;
+            @MapMovement.started -= instance.OnMapMovement;
+            @MapMovement.performed -= instance.OnMapMovement;
+            @MapMovement.canceled -= instance.OnMapMovement;
         }
 
         public void RemoveCallbacks(IMapActions instance)
@@ -570,6 +628,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         void OnEscape(InputAction.CallbackContext context);
         void OnSmallAttack(InputAction.CallbackContext context);
         void OnMediumAttack(InputAction.CallbackContext context);
+        void OnOpenMap(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
@@ -578,6 +637,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
     }
     public interface IMapActions
     {
-        void OnToggleMinimap(InputAction.CallbackContext context);
+        void OnCloseMap(InputAction.CallbackContext context);
+        void OnMapMovement(InputAction.CallbackContext context);
     }
 }
