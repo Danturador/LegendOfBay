@@ -10,6 +10,8 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private float bufferTime = 0.2f;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayers;
+    [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private ParticleSystem _particleSystem2;
 
     [SerializeField] private bool g;
 
@@ -33,6 +35,7 @@ public class PlayerJump : MonoBehaviour
         _jumpStartY = transform.position.y;
         jumpForce = Mathf.Sqrt(maxJumpHeight * (Physics2D.gravity.y * _rb.gravityScale) * -2) * _rb.mass;
         groundCheck = GetComponentInChildren<Transform>().Find("GroundCheck");
+       
     }
 
     private void Update()
@@ -83,7 +86,7 @@ public class PlayerJump : MonoBehaviour
     }
     private void CheckGroundedStatus()
     {
-        _isGrounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(transform.localScale.x, 0.6f), 0, groundLayers); 
+        _isGrounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(transform.localScale.x, 0.4f), 0, groundLayers); 
     }
 
     private void HandleJump()
@@ -166,7 +169,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (_rb.velocity.y < 0 && _rb.gravityScale < 6f)
         {
-            _rb.gravityScale += 0.1f;
+            _rb.gravityScale += 0.3f;
         }
         else if (_rb.velocity.y > 0 && _rb.gravityScale < 6f)
         {

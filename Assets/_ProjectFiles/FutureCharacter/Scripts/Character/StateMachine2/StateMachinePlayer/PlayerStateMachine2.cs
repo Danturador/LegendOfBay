@@ -16,6 +16,7 @@ public class PlayerStateMachine2 : MonoBehaviour
     private StateMachine2 _stateMachine;
     private PlayerJump _playerJump;
     private PlayerDash _playerDash;
+    [SerializeField]private bool _isLanding;
     private bool _isGrounded => _playerJump._isGrounded;
     private bool _isDashing => _playerDash.IsDashing();
     private void Awake()
@@ -36,9 +37,16 @@ public class PlayerStateMachine2 : MonoBehaviour
     {
         velocityX = _rigidbody2D.velocity.x; //for test
         velocityY = _rigidbody2D.velocity.y; //for test
+        if (_rigidbody2D.velocity.y < -15f) 
+        { 
+            _isLanding = true;
+        }
+       
         _stateMachine.OnUpdate();
         currentState = _stateMachine.CurrentState.ToString();
+        
     }
+   
     private void InitializeStateMachine()
     {
         var playerAnimationController = new PlayerAnimationController(_animator);
@@ -58,10 +66,11 @@ public class PlayerStateMachine2 : MonoBehaviour
         runState.AddTransition(new StateTransition(jumpFallState, new FuncStateCondition(() => _rigidbody2D.velocity.y < -1f && _isGrounded == false)));
         jumpState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isGrounded && _rigidbody2D.velocity.y == 0)));
         jumpState.AddTransition(new StateTransition(jumpFallState, new FuncStateCondition(() => _isGrounded == false && _rigidbody2D.velocity.y < -1f)));
-        jumpFallState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isGrounded && _rigidbody2D.velocity.x == 0)));
-        jumpFallState.AddTransition(new StateTransition(runState, new FuncStateCondition(() => _isGrounded && _rigidbody2D.velocity.x != 0)));
+        jumpFallState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isGrounded && _rigidbody2D.velocity.x == 0 && _isLanding ==false)));
+        jumpFallState.AddTransition(new StateTransition(runState, new FuncStateCondition(() => _isGrounded && _rigidbody2D.velocity.x != 0 && _isLanding == false)));
         jumpFallState.AddTransition(new StateTransition(jumpState, new FuncStateCondition(() => _rigidbody2D.velocity.y > 1f && _isGrounded == false)));
-        
+
+        jumpFallState.AddTransition(new StateTransition(landingState, new FuncStateCondition(() => _isLanding && _isGrounded)));
         landingState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isGrounded )));
 
         runState.AddTransition(new StateTransition(dashState, new FuncStateCondition(() => _isDashing)));

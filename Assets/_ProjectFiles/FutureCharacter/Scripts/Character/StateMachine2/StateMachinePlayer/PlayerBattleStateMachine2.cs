@@ -14,7 +14,11 @@ public class PlayerBattleStateMachine2 : MonoBehaviour
     private InputController _inputController;
     private StateMachine2 _stateMachine;
     private bool _isSmallAttack;
-    private bool _isMediumAttack;
+   [SerializeField] private bool comboWindow = true;
+   [SerializeField] private int currentComboCount = 0;
+    private int maxComboCount = 3;
+    private Coroutine currentCoroutine;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -26,18 +30,37 @@ public class PlayerBattleStateMachine2 : MonoBehaviour
     {
         _inputController = GetComponentInParent<PlayerController>().inputController;
         _inputController.Gameplay.SmallAttack.performed += OnSmallAttack;
-        _inputController.Gameplay.MediumAttack.performed += OnMediumAttack;
 
-    }
-
-    private void OnMediumAttack(InputAction.CallbackContext context)
-    {
-       _isMediumAttack = true;
     }
 
     private void OnSmallAttack(InputAction.CallbackContext context)
     {
-        _isSmallAttack = true;
+        if (comboWindow && currentComboCount < maxComboCount)
+        {
+            comboWindow = false;
+            currentComboCount++;
+            _isSmallAttack = true;
+
+            if (currentCoroutine != null)
+            {
+                StopCoroutine(currentCoroutine);
+            }
+
+            if(currentComboCount == 3)
+            {
+                currentCoroutine = StartCoroutine(AttackTime(1.2f));
+            }
+            else
+            {
+                currentCoroutine = StartCoroutine(AttackTime(0.4f));
+            }
+            
+        }
+        else 
+        {
+            _isSmallAttack = false;
+        }
+
     }
 
     private void Update()
@@ -45,25 +68,48 @@ public class PlayerBattleStateMachine2 : MonoBehaviour
         _stateMachine.OnUpdate();
         currentState = _stateMachine.CurrentState.ToString();
         _isSmallAttack = false;
-        _isMediumAttack = false;
     }
-    
+
+    public void ResetComboWindow()
+    {
+        comboWindow = true;
+    }
+    public void ResetCombo()
+    {
+        currentComboCount = 0;
+        comboWindow = true;
+        
+    }
+
 
     private void InitializeStateMachine()
     {
         var playerAnimationController = new PlayerAnimationController(_animator);
 
-        var emptyState = new PlayerEmptyState2();
-        var smallAttackState = new PlayerSmallAttackState2(playerAnimationController);
-        var mediumAttackState = new PlayerMediumAttackState2(playerAnimationController);
+        var emptyState = new PlayerEmptyState2(playerAnimationController);
+        var comboAttack1 = new ComboAttackState(playerAnimationController, 1);
+        var comboAttack2 = new ComboAttackState(playerAnimationController, 2);
+        var comboAttack3 = new ComboAttackState(playerAnimationController, 3);
 
-        emptyState.AddTransition(new StateTransition(smallAttackState, new FuncStateCondition(() => _isSmallAttack )));
-        emptyState.AddTransition(new StateTransition(mediumAttackState, new FuncStateCondition(() => _isMediumAttack )));
-        smallAttackState.AddTransition(new StateTransition(emptyState, new FuncStateCondition(() => _isSmallAttack == false && _isMediumAttack == false)));
-        mediumAttackState.AddTransition(new StateTransition(emptyState, new FuncStateCondition(() => _isSmallAttack == false && _isMediumAttack == false)));
+        emptyState.AddTransition(new StateTransition(comboAttack1, new FuncStateCondition(() => _isSmallAttack && currentComboCount == 1)));
+        comboAttack1.AddTransition(new StateTransition(comboAttack2, new FuncStateCondition(() => _isSmallAttack && currentComboCount == 2)));
+        comboAttack2.AddTransition(new StateTransition(comboAttack3, new FuncStateCondition(() => _isSmallAttack && currentComboCount == 3)));
 
+        comboAttack1.AddTransition(new StateTransition(emptyState, new FuncStateCondition(() => currentComboCount == 0)));
+        comboAttack2.AddTransition(new StateTransition(emptyState, new FuncStateCondition(() => currentComboCount == 0)));
+        comboAttack3.AddTransition(new StateTransition(emptyState, new FuncStateCondition(() => currentComboCount == 0)));
+
+        
 
 
         _stateMachine = new StateMachine2(emptyState);
     }
+
+    private IEnumerator AttackTime(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        ResetCombo();
+    }
+
+
 }

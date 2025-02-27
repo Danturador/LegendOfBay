@@ -1,17 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PlayerHealth : HealthManager, IDamageable
+public class PlayerHealth : HealthManager
 {
     public float invulnerabilityDuration = 1.0f;
     private bool isInvulnerable = false;
+    private ParticleSystem _particleSystem;
+
+
     public override void TakeDamage(int damage)
     {
         if (isInvulnerable == false) 
         {
-            currentHealth -= damage;
+            if(isInvulnerable == false)
+            {
 
+                currentHealth -= damage;
+                StartCoroutine(InvulnerabilityCoroutine());
+            }
             if (currentHealth <= 0)
             {
                 Die();
@@ -29,6 +37,8 @@ public class PlayerHealth : HealthManager, IDamageable
 
     protected override void Die()
     {
+
         Debug.Log("Player Die");
+      //  SceneManager.LoadScene(1);
     }
 }
