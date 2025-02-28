@@ -40,6 +40,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Plan-06 (back)
+    uniqueID: 1622502239
+    locked: 0
+  - name: Plan-05
+    uniqueID: 1022114667
+    locked: 0
+  - name: Plan-04
+    uniqueID: 2924459873
+    locked: 0
+  - name: Plan-03
+    uniqueID: 309361477
+    locked: 0
+  - name: Plan-02
+    uniqueID: 3136448013
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Plan-01
+    uniqueID: 1817326507
     locked: 0
