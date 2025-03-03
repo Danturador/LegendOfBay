@@ -11,6 +11,7 @@ public class BossPassiveState : State2
 	}
 	public override void OnStateEnter()
 	{
+		_stateMachine.isPassive = true;
 		_stateMachine.StartCoroutine(BackAggrassive());
 	}
 
