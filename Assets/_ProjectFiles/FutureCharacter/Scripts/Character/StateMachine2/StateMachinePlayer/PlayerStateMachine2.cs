@@ -77,7 +77,7 @@ public class PlayerStateMachine2 : MonoBehaviour
         jumpState.AddTransition(new StateTransition(dashState, new FuncStateCondition(() => _isDashing)));
         jumpFallState.AddTransition(new StateTransition(dashState, new FuncStateCondition(() => _isDashing)));
         dashState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isDashing == false && _isGrounded && _rigidbody2D.velocity.x == 0)));
-        dashState.AddTransition(new StateTransition(runState, new FuncStateCondition(() => _isDashing == false && _isGrounded && _rigidbody2D.velocity.x != 0)));
+        dashState.AddTransition(new StateTransition(runState, new FuncStateCondition(() => _isDashing == false && _isGrounded && _rigidbody2D.velocity.x != 0))); // fix it!
         dashState.AddTransition(new StateTransition(jumpFallState, new FuncStateCondition(() => _isDashing == false && _isGrounded == false && _rigidbody2D.velocity.y <= 0)));
 
 

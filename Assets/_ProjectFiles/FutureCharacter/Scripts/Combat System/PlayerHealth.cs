@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class PlayerHealth : HealthManager
 {
@@ -18,6 +19,7 @@ public class PlayerHealth : HealthManager
             {
 
                 currentHealth -= damage;
+                CinemachineShake.Instance.ShakeCamera(5f, 0.1f);
                 StartCoroutine(InvulnerabilityCoroutine());
             }
             if (currentHealth <= 0)

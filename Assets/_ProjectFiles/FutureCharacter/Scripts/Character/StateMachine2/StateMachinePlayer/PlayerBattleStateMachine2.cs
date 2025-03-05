@@ -52,7 +52,7 @@ public class PlayerBattleStateMachine2 : MonoBehaviour
             }
             else
             {
-                currentCoroutine = StartCoroutine(AttackTime(0.4f));
+                currentCoroutine = StartCoroutine(AttackTime(1f));
             }
             
         }

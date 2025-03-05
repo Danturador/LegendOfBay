@@ -28,6 +28,7 @@ public class PlayerDamageGiver : MonoBehaviour
             {
                 item.GetComponent<IDamageable>().TakeDamage(_damage);
                 CreateHitEffect(item.transform);
+                CameraShake();
             }
         }
     }
@@ -46,5 +47,10 @@ public class PlayerDamageGiver : MonoBehaviour
             Destroy(effect, 2f);
             _currentEffectIndex = (_currentEffectIndex + 1) % _hitEffects.Length;
         }
+    }
+
+    private void CameraShake()
+    {
+        CinemachineShake.Instance.ShakeCamera(5f, 0.1f);
     }
 }
