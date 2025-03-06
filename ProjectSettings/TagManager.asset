@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GroundCheck
   - ThroughPlatformCheck
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -42,4 +43,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Decor1
+    uniqueID: 3339366865
+    locked: 0
+  - name: Decor2
+    uniqueID: 3152278463
+    locked: 0
+  - name: Player
+    uniqueID: 3402382439
+    locked: 0
+  - name: Monsters
+    uniqueID: 2642465071
+    locked: 0
+  - name: Decor3
+    uniqueID: 4135896953
+    locked: 0
+  - name: Decor4
+    uniqueID: 345281905
+    locked: 0
+  - name: Decor5
+    uniqueID: 1134017725
     locked: 0
