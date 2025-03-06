@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossDashState : AbstractBossState
+public class BossDashState : State2
 {
-	public BossDashState(BossStateMachine bossStateMachine) : base(bossStateMachine) { }
+	private BossHumanFormStateMachine _stateMachine;
+	private BossBehaviour _behaviour;
+	public BossDashState(BossHumanFormStateMachine bossStateMachine, BossBehaviour bossBehaviour)
+	{
+		_stateMachine = bossStateMachine;
+	}
 
 	public override void OnStateEnter()
 	{
-		base.OnStateEnter();
+		_stateMachine.isAttackEnded = false;
 
-		Debug.Log("Boss is dashing!");
 		_stateMachine.StartCoroutine(UseAttack());
 	}
 	private IEnumerator UseAttack()
@@ -19,6 +23,6 @@ public class BossDashState : AbstractBossState
 		
 		yield return _stateMachine.StartCoroutine(_behaviour.MoveTowardsPlayerCoroutine());
 
-		HandleAttackCompletion();
+		_stateMachine.HandleHumanAttackCompletion();
 	}
 }

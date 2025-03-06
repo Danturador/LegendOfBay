@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BossPassiveState : State2
 {
-	private BossStateMachine _stateMachine;
-	public BossPassiveState(BossStateMachine bossStateMachine)
+	private BossHumanFormStateMachine _stateMachine;
+	public BossPassiveState(BossHumanFormStateMachine bossStateMachine)
 	{
 		_stateMachine = bossStateMachine;
 	}

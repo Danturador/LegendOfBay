@@ -8,6 +8,7 @@ public class BossBehaviour : MonoBehaviour
 	[SerializeField] private float attackRange = 2f;
 	[SerializeField] private float dashDistance = 7f;
 	public bool isReadyToAttack = false;
+	public bool isPlayerNear = false;
 
 	public IEnumerator MoveTowardsPlayerCoroutine()
 	{
@@ -78,5 +79,15 @@ public class BossBehaviour : MonoBehaviour
 		Debug.Log($"Attack at position: {attackPosition}");
 
 		// Damage
+	}
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.GetComponent<PlayerController>() != null)
+			isPlayerNear = true;
+	}
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		if (collision.GetComponent<PlayerController>() != null)
+			isPlayerNear = false;
 	}
 }

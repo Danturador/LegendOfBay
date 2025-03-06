@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-using static BossStateMachine.TypesOfAttack;
+using static BossHumanFormStateMachine.TypesOfAttack;
 
-public class BossStateMachine : MonoBehaviour
+public class BossHumanFormStateMachine : MonoBehaviour
 {
 	[SerializeField] private Animator _animator;
 	[SerializeField] private Rigidbody2D _rigidbody2D;
@@ -17,7 +17,7 @@ public class BossStateMachine : MonoBehaviour
 		}
 	}
 
-	public BossBehaviour behaviour;
+	public BossBehaviour humanBehaviour;
 	public bool isPassive;
 	public int countOfAttack;
 	public bool isAttackEnded;
@@ -35,9 +35,9 @@ public class BossStateMachine : MonoBehaviour
 		InitializeStateMachine();
 
 		isPassive = true;
-		isAttackEnded = true;
+		isAttackEnded = false;
 		countOfAttack = 0;
-		currentAttack = GetRandomAttackType();
+		currentAttack = ChooseNextAttack();
 	}
 	private void Update()
 	{
@@ -47,11 +47,11 @@ public class BossStateMachine : MonoBehaviour
 	private void InitializeStateMachine()
 	{
 		BossPassiveState passiveState = new BossPassiveState(this);
-		BossSwordComboAttachState swordComboAttachState = new BossSwordComboAttachState(this);
-		BossDashState dashState = new BossDashState(this);
+		BossSwordComboAttachState swordComboAttachState = new BossSwordComboAttachState(this, humanBehaviour);
+		BossDashState dashState = new BossDashState(this, humanBehaviour);
 
 		/// From PassiveState
-		AddTransitionToState(passiveState, swordComboAttachState, () => 
+		AddTransitionToState(passiveState, swordComboAttachState, () =>
 			!isPassive
 			&& currentAttack.Is(ComboTypeAttack)
 		);
@@ -104,23 +104,43 @@ public class BossStateMachine : MonoBehaviour
 
 		_stateMachine = new StateMachine2(passiveState);
 	}
-	public void AddTransitionToState<T1, T2>(T1 state1, T2 state2, Func<bool> condition) 
+	public void HandleHumanAttackCompletion()
+	{
+		countOfAttack++;
+
+		if (countOfAttack == 4)
+		{
+			countOfAttack = 0;
+			isPassive = true;
+		}
+
+		isAttackEnded = true;
+
+		currentAttack = ChooseNextAttack();
+	}
+	public static void AddTransitionToState<T1, T2>(T1 state1, T2 state2, Func<bool> condition) 
 	where T1 : State2
 	where T2 : State2
 	{
 		var transition = new StateTransition(state2, new FuncStateCondition(condition));
 		state1.AddTransition(transition);
 	}
-	public static TypesOfAttack GetRandomAttackType()
+	public TypesOfAttack ChooseNextAttack()
 	{
-		Array values = Enum.GetValues(typeof(TypesOfAttack));
-		return (TypesOfAttack)values.GetValue(random.Next(values.Length));
+		if (humanBehaviour.isPlayerNear)
+		{
+			return TypesOfAttack.ComboTypeAttack;
+		}
+		else
+		{
+			return TypesOfAttack.DashTypeAttack;
+		}
 	}
 }
 public static class AttackExtensions
 {
-	public static bool Is(this BossStateMachine.TypesOfAttack currentAttack, BossStateMachine.TypesOfAttack attackType)
-	{
-		return currentAttack == attackType;
-	}
+    public static bool Is<T>(this T currentAttack, T attackType) where T : System.Enum
+    {
+        return currentAttack.Equals(attackType);
+    }
 }

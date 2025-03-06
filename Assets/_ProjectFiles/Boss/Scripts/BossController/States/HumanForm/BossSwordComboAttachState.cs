@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossSwordComboAttachState : AbstractBossState
+public class BossSwordComboAttachState : State2
 {
-	public BossSwordComboAttachState(BossStateMachine bossStateMachine) : base(bossStateMachine) { }
+	private BossHumanFormStateMachine _stateMachine;
+	private BossBehaviour _behaviour;
+	public BossSwordComboAttachState(BossHumanFormStateMachine bossStateMachine, BossBehaviour bossBehaviour)
+	{
+		_stateMachine = bossStateMachine;
+	}
 
 	public override void OnStateEnter()
 	{
-		base.OnStateEnter();
+		_stateMachine.isAttackEnded = false;
 
-		Debug.Log("Boss is attacking!");
 		_stateMachine.StartCoroutine(UseAttack());
 	}
 	private IEnumerator UseAttack()
@@ -19,7 +23,7 @@ public class BossSwordComboAttachState : AbstractBossState
 
 		yield return _stateMachine.StartCoroutine(_behaviour.MoveTowardsPlayerCoroutine());
 
-		HandleAttackCompletion();
+		_stateMachine.HandleHumanAttackCompletion();
 	}
 
 }
