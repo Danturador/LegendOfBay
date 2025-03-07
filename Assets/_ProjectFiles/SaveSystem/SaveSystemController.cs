@@ -1,3 +1,5 @@
+using _GameAssets.Scripts.Spawner;
+using _ProjectFiles.Spawner.Models;
 using UnityEngine;
 
 namespace _ProjectFiles.SaveSystem
@@ -20,5 +22,7 @@ namespace _ProjectFiles.SaveSystem
         public void UpdatePosition(Vector3 position) => _data.SetPosition(position);
 
         public void UpdateHealth(float health) => _data.SetPlayerHealth(health);
+        
+        public void UpdateSpawners(SpawnersHolderData data) => _data.SetSpawners(data);
     }
 }
