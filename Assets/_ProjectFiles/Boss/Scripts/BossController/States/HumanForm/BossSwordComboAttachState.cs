@@ -9,6 +9,7 @@ public class BossSwordComboAttachState : State2
 	public BossSwordComboAttachState(BossHumanFormStateMachine bossStateMachine, BossBehaviour bossBehaviour)
 	{
 		_stateMachine = bossStateMachine;
+		_behaviour = bossBehaviour;
 	}
 
 	public override void OnStateEnter()

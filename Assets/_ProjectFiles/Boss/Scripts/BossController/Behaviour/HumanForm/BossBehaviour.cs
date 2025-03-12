@@ -28,7 +28,7 @@ public class BossBehaviour : MonoBehaviour
 			}
 			else
 			{
-				isReadyToAttack = true; // check work when boss has touched the player
+				isReadyToAttack = true;
 				Debug.Log("Enemy attacks!");
 				break;
 			}

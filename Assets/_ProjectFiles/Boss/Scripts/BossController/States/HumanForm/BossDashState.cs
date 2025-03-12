@@ -9,6 +9,7 @@ public class BossDashState : State2
 	public BossDashState(BossHumanFormStateMachine bossStateMachine, BossBehaviour bossBehaviour)
 	{
 		_stateMachine = bossStateMachine;
+		_behaviour = bossBehaviour;
 	}
 
 	public override void OnStateEnter()
