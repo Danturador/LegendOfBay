@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using Cinemachine;
+using System;
 
 public class PlayerHealth : HealthManager
 {
@@ -10,20 +10,21 @@ public class PlayerHealth : HealthManager
     private bool isInvulnerable = false;
     private ParticleSystem _particleSystem;
 
+    public event Action<float> HealthChanged;
 
     public override void TakeDamage(int damage)
     {
         if (isInvulnerable == false) 
         {
-            if(isInvulnerable == false)
-            {
-
-                currentHealth -= damage;
-                CinemachineShake.Instance.ShakeCamera(5f, 0.1f);
-                StartCoroutine(InvulnerabilityCoroutine());
-            }
+            currentHealth -= damage;
+            CinemachineShake.Instance.ShakeCamera(5f, 0.1f);
+            StartCoroutine(InvulnerabilityCoroutine());
+            float curentHealthPercantage = (float) currentHealth/maxHealth;
+            HealthChanged?.Invoke(curentHealthPercantage);
+            
             if (currentHealth <= 0)
             {
+                HealthChanged?.Invoke(0);
                 Die();
             }
         }
@@ -41,6 +42,6 @@ public class PlayerHealth : HealthManager
     {
 
         Debug.Log("Player Die");
-      //  SceneManager.LoadScene(1);
+        
     }
 }
