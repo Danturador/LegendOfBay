@@ -5,10 +5,11 @@ using System.Collections;
 
 public class TutorialStep : MonoBehaviour
 {
-	public Text textMesh;
+	public Text textMesh; // replace with TextMeshProUGUI
 	[TextArea] public string displayText;
 	public float fadeDuration = 1f;
-	//private bool isEntered;
+
+	private Coroutine currentFadeCoroutine;
 
 	private void Awake()
 	{
@@ -16,15 +17,17 @@ public class TutorialStep : MonoBehaviour
 		Color color = textMesh.color;
 		color.a = 0f;
 		textMesh.color = color;
-
-		//isEntered = false;
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.GetComponent<PlayerController>() != null)
 		{
-			StartCoroutine(FadeIn());
+			if (currentFadeCoroutine != null)
+			{
+				StopCoroutine(currentFadeCoroutine);
+			}
+			currentFadeCoroutine = StartCoroutine(FadeIn());
 		}
 	}
 
@@ -32,16 +35,19 @@ public class TutorialStep : MonoBehaviour
 	{
 		if (other.GetComponent<PlayerController>() != null)
 		{
-			StartCoroutine(FadeOut());
+			if (currentFadeCoroutine != null)
+			{
+				StopCoroutine(currentFadeCoroutine);
+			}
+			currentFadeCoroutine = StartCoroutine(FadeOut());
 		}
 	}
 
 	private IEnumerator FadeIn()
 	{
-		//isEntered = true;
-
 		Color color = textMesh.color;
 		textMesh.text = displayText;
+
 		while (color.a < 1f)
 		{
 			color.a += Time.deltaTime / fadeDuration;
@@ -62,7 +68,5 @@ public class TutorialStep : MonoBehaviour
 		}
 
 		textMesh.text = string.Empty;
-
-		//isEntered = false;
 	}
 }

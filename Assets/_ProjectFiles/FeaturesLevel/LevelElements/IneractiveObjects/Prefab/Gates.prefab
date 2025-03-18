@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8778944110730026100}
   - component: {fileID: 4842452999398166623}
+  - component: {fileID: 2591597029948858644}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3baa1841d628845448bba245b7039853, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 77b996be12006b847a0392b86000672c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,6 +85,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2591597029948858644
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3089975750148204737}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -1.518167}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6.55, y: 7.53}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 6.55, y: 4.4936666}
+  m_EdgeRadius: 0
 --- !u!1 &5319598783816087380
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +141,7 @@ GameObject:
   - component: {fileID: 983305614895675191}
   - component: {fileID: 8804290348018856908}
   - component: {fileID: -60533420314349856}
+  - component: {fileID: 5412360548758544949}
   m_Layer: 0
   m_Name: Gates
   m_TagString: Untagged
@@ -205,7 +252,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0.55}
     oldSize: {x: 6.58, y: 6.9}
     newSize: {x: 6.58, y: 6.9}
     adaptiveTilingThreshold: 0.5
@@ -222,3 +269,18 @@ PolygonCollider2D:
       - {x: 3.8006978, y: 2.2440271}
       - {x: 1.2284949, y: 3.4587586}
   m_UseDelaunayMesh: 0
+--- !u!114 &5412360548758544949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5319598783816087380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcdc83e169dc9564b91219e1e4eabaad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gates: {fileID: 4842452999398166623}
+  openedGatesSprite: {fileID: 0}
+  doorCollider: {fileID: 2591597029948858644}
