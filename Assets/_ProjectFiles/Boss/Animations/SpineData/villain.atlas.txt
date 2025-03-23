@@ -1,0 +1,216 @@
+
+villain.png
+size: 1981,1985
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Villain_0000_Слой2
+  rotate: true
+  xy: 1240, 1026
+  size: 53, 87
+  orig: 53, 87
+  offset: 0, 0
+  index: -1
+Villain_0001_Sword
+  rotate: true
+  xy: 1452, 1476
+  size: 507, 378
+  orig: 522, 402
+  offset: 0, 24
+  index: -1
+Villain_0002_Elbow_Right
+  rotate: false
+  xy: 1903, 484
+  size: 73, 157
+  orig: 73, 157
+  offset: 0, 0
+  index: -1
+Villain_0003_Shoulder_Right
+  rotate: false
+  xy: 1857, 1380
+  size: 122, 277
+  orig: 123, 278
+  offset: 1, 0
+  index: -1
+Villain_0004_Belt
+  rotate: false
+  xy: 1731, 15
+  size: 140, 58
+  orig: 140, 65
+  offset: 0, 0
+  index: -1
+Villain_0005_Dress_Front
+  rotate: true
+  xy: 675, 1025
+  size: 347, 563
+  orig: 347, 563
+  offset: 0, 0
+  index: -1
+Villain_0006_Foot_Right
+  rotate: false
+  xy: 1614, 11
+  size: 115, 62
+  orig: 115, 62
+  offset: 0, 0
+  index: -1
+Villain_0007_Leg_Right
+  rotate: true
+  xy: 1610, 1383
+  size: 91, 245
+  orig: 91, 245
+  offset: 0, 0
+  index: -1
+Villain_0008_Foot_Left
+  rotate: false
+  xy: 1503, 5
+  size: 109, 68
+  orig: 110, 69
+  offset: 0, 0
+  index: -1
+Villain_0009_Leg_Left
+  rotate: false
+  xy: 588, 95
+  size: 91, 243
+  orig: 91, 243
+  offset: 0, 0
+  index: -1
+Villain_0010_Pelvis
+  rotate: false
+  xy: 1452, 1379
+  size: 156, 95
+  orig: 160, 97
+  offset: 4, 1
+  index: -1
+Villain_0011_Hip_Right
+  rotate: false
+  xy: 1832, 1659
+  size: 123, 324
+  orig: 124, 325
+  offset: 1, 0
+  index: -1
+Villain_0012_Hip_Left
+  rotate: false
+  xy: 464, 13
+  size: 122, 325
+  orig: 122, 325
+  offset: 0, 0
+  index: -1
+Villain_0013_Dress_Back
+  rotate: true
+  xy: 1397, 75
+  size: 367, 555
+  orig: 367, 555
+  offset: 0, 0
+  index: -1
+Villain_0014_Body
+  rotate: false
+  xy: 1240, 1081
+  size: 173, 291
+  orig: 173, 292
+  offset: 0, 0
+  index: -1
+Villain_0015_Hand_Left
+  rotate: true
+  xy: 1329, 1026
+  size: 53, 63
+  orig: 54, 63
+  offset: 0, 0
+  index: -1
+Villain_0016_Mask
+  rotate: true
+  xy: 1419, 497
+  size: 144, 367
+  orig: 147, 368
+  offset: 3, 0
+  index: -1
+Villain_0017_Elbow_Left
+  rotate: true
+  xy: 588, 12
+  size: 81, 143
+  orig: 81, 152
+  offset: 0, 1
+  index: -1
+Villain_0018_Shoulder_Left
+  rotate: true
+  xy: 2, 27
+  size: 92, 382
+  orig: 92, 383
+  offset: 0, 0
+  index: -1
+Villain_0019_Hair_bang_front
+  rotate: true
+  xy: 1397, 2
+  size: 71, 104
+  orig: 72, 104
+  offset: 0, 0
+  index: -1
+Villain_0020_Head
+  rotate: false
+  xy: 1788, 478
+  size: 113, 163
+  orig: 114, 166
+  offset: 1, 2
+  index: -1
+Villain_0021_Neck
+  rotate: true
+  xy: 1419, 451
+  size: 44, 47
+  orig: 45, 47
+  offset: 1, 0
+  index: -1
+Villain_0022_Hair_bang_back
+  rotate: true
+  xy: 1468, 464
+  size: 31, 117
+  orig: 38, 118
+  offset: 0, 0
+  index: -1
+Villain_0023_Hair_back
+  rotate: false
+  xy: 1419, 643
+  size: 535, 729
+  orig: 535, 729
+  offset: 0, 0
+  index: -1
+shash06
+  rotate: true
+  xy: 2, 121
+  size: 217, 460
+  orig: 1280, 720
+  offset: 824, 0
+  index: -1
+shash_big01
+  rotate: false
+  xy: 675, 1374
+  size: 775, 609
+  orig: 1280, 720
+  offset: 260, 73
+  index: -1
+slash_0000_Layer-6
+  rotate: true
+  xy: 2, 1007
+  size: 976, 671
+  orig: 1092, 685
+  offset: 108, 7
+  index: -1
+slash_0001_Layer-7
+  rotate: false
+  xy: 2, 340
+  size: 742, 665
+  orig: 763, 672
+  offset: 11, 3
+  index: -1
+slash_0002_Layer-8
+  rotate: true
+  xy: 746, 444
+  size: 579, 671
+  orig: 601, 680
+  offset: 11, 6
+  index: -1
+slash_0003_Layer-9
+  rotate: true
+  xy: 746, 25
+  size: 417, 649
+  orig: 435, 656
+  offset: 13, 3
+  index: -1

@@ -7,9 +7,7 @@ using static BossHumanFormStateMachine.TypesOfAttack;
 public class BossHumanFormStateMachine : MonoBehaviour
 {
 	[SerializeField] private Animator _animator;
-	[SerializeField] private Rigidbody2D _rigidbody2D;
-	//[SerializeField] private InputController _inputController;
-	//public BossAnimationController bossAnimationController { get; private set; }
+	public BossAnimationController bossAnimationController { get; private set; }
 	private StateMachine2 _stateMachine;
 	public string currentState { 
 		get { 
@@ -21,7 +19,7 @@ public class BossHumanFormStateMachine : MonoBehaviour
 	public bool isPassive;
 	public int countOfAttack;
 	public bool isAttackEnded;
-	public TypesOfAttack currentAttack;
+	public TypesOfAttack nextAttack;
 
 	private static System.Random random = new System.Random();
 	public enum TypesOfAttack
@@ -37,7 +35,7 @@ public class BossHumanFormStateMachine : MonoBehaviour
 		isPassive = true;
 		isAttackEnded = false;
 		countOfAttack = 0;
-		currentAttack = ChooseNextAttack();
+		nextAttack = ChooseNextAttack();
 	}
 	private void Update()
 	{
@@ -46,30 +44,32 @@ public class BossHumanFormStateMachine : MonoBehaviour
 	}
 	private void InitializeStateMachine()
 	{
-		BossPassiveState passiveState = new BossPassiveState(this);
-		BossSwordComboAttachState swordComboAttachState = new BossSwordComboAttachState(this, humanBehaviour);
-		BossDashState dashState = new BossDashState(this, humanBehaviour);
+		BossAnimationController animationController = new(_animator);
+
+		BossPassiveState passiveState = new BossPassiveState(this, animationController);
+		BossSwordComboAttachState swordComboAttachState = new BossSwordComboAttachState(this, humanBehaviour, animationController);
+		BossDashState dashState = new BossDashState(this, humanBehaviour, animationController);
 
 		/// From PassiveState
 		AddTransitionToState(passiveState, swordComboAttachState, () =>
 			!isPassive
-			&& currentAttack.Is(ComboTypeAttack)
+			&& nextAttack.Is(ComboTypeAttack)
 		);
 		AddTransitionToState(passiveState, dashState, () =>
 			!isPassive
-			&& currentAttack.Is(DashTypeAttack)
+			&& nextAttack.Is(DashTypeAttack)
 		);
 		///
 
 		/// From Attack to Attack
 		AddTransitionToState(dashState, swordComboAttachState, () =>
 			isAttackEnded
-			&& currentAttack.Is(ComboTypeAttack)
+			&& nextAttack.Is(ComboTypeAttack)
 			&& countOfAttack < 4
 		); ;
 		AddTransitionToState(dashState, dashState, () =>
 			isAttackEnded
-			&& currentAttack.Is(DashTypeAttack)
+			&& nextAttack.Is(DashTypeAttack)
 			&& currentState == nameof(BossDashState)
 			&& countOfAttack < 4
 		);
@@ -77,13 +77,13 @@ public class BossHumanFormStateMachine : MonoBehaviour
 		AddTransitionToState(swordComboAttachState, dashState, () =>
 			//behaviour.isReadyToAttack 
 			isAttackEnded
-			&& currentAttack.Is(DashTypeAttack)
+			&& nextAttack.Is(DashTypeAttack)
 			&& countOfAttack < 4
 		);
 		AddTransitionToState(swordComboAttachState, swordComboAttachState, () =>
 			//behaviour.isReadyToAttack
 			isAttackEnded
-			&& currentAttack.Is(ComboTypeAttack)
+			&& nextAttack.Is(ComboTypeAttack)
 			&& currentState == nameof(BossSwordComboAttachState)
 			&& countOfAttack < 4
 		);
@@ -116,7 +116,7 @@ public class BossHumanFormStateMachine : MonoBehaviour
 
 		isAttackEnded = true;
 
-		currentAttack = ChooseNextAttack();
+		nextAttack = ChooseNextAttack();
 	}
 	public static void AddTransitionToState<T1, T2>(T1 state1, T2 state2, Func<bool> condition) 
 	where T1 : State2
