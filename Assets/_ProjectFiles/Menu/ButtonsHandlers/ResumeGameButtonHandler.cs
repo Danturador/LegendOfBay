@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 namespace _ProjectFiles.Menu.ButtonsHandlers
 {
-    public class ResumeGameButtonHandler : ButtonHandler
+    public class ResumeGameButtonHandler : MenuButtonHandler
     {
         protected override void OnClick()
         {
