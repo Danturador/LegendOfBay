@@ -29,6 +29,10 @@ public class PlayerAnimationController : MonoBehaviour
         _animator.SetFloat(hashStorage[animationType], value);
     }
 
+    public void SetInt(PlayerAnimationType animationType, int value)
+    {
+        _animator.SetInteger(hashStorage[animationType], value);
+    }
     public void SetPlay(PlayerAnimationType characterAnimationType)
     {
         _animator.Play((hashStorage[characterAnimationType]));

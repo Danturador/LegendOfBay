@@ -6,6 +6,7 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private float dashPower = 30f;
     [SerializeField] private float dashingTime = 0.2f;
     [SerializeField] private float dashCooldown = 1f;
+    [SerializeField] private ParticleSystem _particleSystem;
 
     private Rigidbody2D _rb;
     private bool _canDash = true;
@@ -33,6 +34,7 @@ public class PlayerDash : MonoBehaviour
         _rb.gravityScale = 0f;
         _rb.velocity = new Vector2(moveDirection.x * dashPower, 0f);
         yield return new WaitForSeconds(dashingTime);
+       // _particleSystem.gameObject.SetActive(false);
         _rb.gravityScale = _originalGravity;
         _rb.velocity = Vector2.zero;
         _isDashing = false;

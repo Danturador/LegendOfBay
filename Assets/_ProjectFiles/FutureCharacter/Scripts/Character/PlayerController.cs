@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,7 +31,7 @@ public class PlayerController : MonoBehaviour
         inputController.Gameplay.Jump.performed += OnJump;
         inputController.Gameplay.Jump.canceled += exitJump;
         inputController.Gameplay.Dash.performed += OnDash;
-        inputController.UI.Escape.performed += OnEscape;
+        inputController.Gameplay.Escape.performed += OnEscape;
    }
 
     private void OnDisabled()
@@ -40,7 +39,7 @@ public class PlayerController : MonoBehaviour
         inputController.Gameplay.Jump.performed -= OnJump;
         inputController.Gameplay.Jump.canceled -= exitJump;
         inputController.Gameplay.Dash.performed -= OnDash;
-        inputController.UI.Escape.performed -= OnEscape;
+        inputController.Gameplay.Escape.performed -= OnEscape;
     }
     private void Update()
     {
@@ -105,9 +104,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnEscape(InputAction.CallbackContext context) 
-    {
-        OnDisabled();
-        SceneManager.LoadScene(0);
+    { 
+        Application.Quit();
     }
 
     public InputController GetInputController()

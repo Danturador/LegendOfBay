@@ -9,4 +9,10 @@ public enum PlayerAnimationType
     PlayerDash,
     PlayerSmallAttack,
     PlayerMediumAttack,
+    PlayerAttack,
+    AttackNumber,
+    PlayerComboAttack1,
+    PlayerComboAttack2,
+    PlayerComboAttack3,
+    EmptyState,
 }
