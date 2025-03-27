@@ -66,6 +66,11 @@ public class PlayerStateMachine2 : MonoBehaviour
         runState.AddTransition(new StateTransition(jumpFallState, new FuncStateCondition(() => _rigidbody2D.velocity.y < -1f && _isGrounded == false)));
         jumpState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isGrounded && _rigidbody2D.velocity.y == 0)));
         jumpState.AddTransition(new StateTransition(jumpFallState, new FuncStateCondition(() => _isGrounded == false && _rigidbody2D.velocity.y < -1f)));
+
+        //  jumpState.AddTransition(new StateTransition(doubleJumpState, new FuncStateCondition(() => )));
+        doubleJumpState.AddTransition(new StateTransition(jumpFallState, new FuncStateCondition(() => _isGrounded == false && _rigidbody2D.velocity.y < -1f)));
+        doubleJumpState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isGrounded && _rigidbody2D.velocity.y == 0)));
+
         jumpFallState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isGrounded && _rigidbody2D.velocity.x == 0 && _isLanding ==false)));
         jumpFallState.AddTransition(new StateTransition(runState, new FuncStateCondition(() => _isGrounded && _rigidbody2D.velocity.x != 0 && _isLanding == false)));
         jumpFallState.AddTransition(new StateTransition(jumpState, new FuncStateCondition(() => _rigidbody2D.velocity.y > 1f && _isGrounded == false)));
@@ -75,6 +80,7 @@ public class PlayerStateMachine2 : MonoBehaviour
 
         runState.AddTransition(new StateTransition(dashState, new FuncStateCondition(() => _isDashing)));
         jumpState.AddTransition(new StateTransition(dashState, new FuncStateCondition(() => _isDashing)));
+        doubleJumpState.AddTransition(new StateTransition(dashState, new FuncStateCondition(() => _isDashing)));
         jumpFallState.AddTransition(new StateTransition(dashState, new FuncStateCondition(() => _isDashing)));
         dashState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isDashing == false && _isGrounded && _rigidbody2D.velocity.x == 0)));
         dashState.AddTransition(new StateTransition(runState, new FuncStateCondition(() => _isDashing == false && _isGrounded && _rigidbody2D.velocity.x != 0))); // fix it!

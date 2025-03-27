@@ -34,7 +34,6 @@ public class PlayerDash : MonoBehaviour
         _rb.gravityScale = 0f;
         _rb.velocity = new Vector2(moveDirection.x * dashPower, 0f);
         yield return new WaitForSeconds(dashingTime);
-       // _particleSystem.gameObject.SetActive(false);
         _rb.gravityScale = _originalGravity;
         _rb.velocity = Vector2.zero;
         _isDashing = false;
