@@ -83,7 +83,7 @@ public class PlayerJump : MonoBehaviour
     }
     private void CheckGroundedStatus()
     {
-        _isGrounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(transform.localScale.x, 0.6f), 0, groundLayers); 
+        _isGrounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(transform.localScale.x, 0.4f), 0, groundLayers); 
     }
 
     private void HandleJump()
@@ -135,7 +135,8 @@ public class PlayerJump : MonoBehaviour
         if (_doubleJump)
         {
             _doubleJumpCount += 2;
-            _rb.velocity =  Vector2.up * jumpForce*1.5f;
+            _rb.velocity = new Vector2(_rb.velocity.x,0);
+            _rb.velocity =  Vector2.up * jumpForce*2f;
             _doubleJump = false;
         }
     }
@@ -166,7 +167,7 @@ public class PlayerJump : MonoBehaviour
     {
         if (_rb.velocity.y < 0 && _rb.gravityScale < 6f)
         {
-            _rb.gravityScale += 0.1f;
+            _rb.gravityScale += 0.3f;
         }
         else if (_rb.velocity.y > 0 && _rb.gravityScale < 6f)
         {
@@ -184,3 +185,5 @@ public class PlayerJump : MonoBehaviour
     }
 
 }
+
+

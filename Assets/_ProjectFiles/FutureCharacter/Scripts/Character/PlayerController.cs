@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PlayerDash playerDash;
     [SerializeField] private PlayerJump playerJump;
+    [SerializeField] private GrapplingHook grapplingHook;
+    [SerializeField] private bool grappingHookEnable;
     private Rigidbody2D rb;
     public InputController inputController {  get; private set; }
     private bool _platformTrigger;
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        grapplingHook = GetComponent<GrapplingHook>();
         playerMovement.Initialize(rb);
         playerDash.Initialize(rb);
         playerJump.Initialize(rb);
@@ -32,7 +34,7 @@ public class PlayerController : MonoBehaviour
         inputController.Gameplay.Jump.performed += OnJump;
         inputController.Gameplay.Jump.canceled += exitJump;
         inputController.Gameplay.Dash.performed += OnDash;
-        inputController.UI.Escape.performed += OnEscape;
+        inputController.Gameplay.Escape.performed += OnEscape;
    }
 
     private void OnDisabled()
@@ -40,7 +42,8 @@ public class PlayerController : MonoBehaviour
         inputController.Gameplay.Jump.performed -= OnJump;
         inputController.Gameplay.Jump.canceled -= exitJump;
         inputController.Gameplay.Dash.performed -= OnDash;
-        inputController.UI.Escape.performed -= OnEscape;
+        inputController.Gameplay.UseAction.performed -= OnUseAction;
+        inputController.Gameplay.Escape.performed -= OnEscape;
     }
     private void Update()
     {
@@ -60,10 +63,11 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 moveInput = inputController.Gameplay.Movement.ReadValue<Vector2>();
-        if (!playerDash.IsDashing())
+        if (!playerDash.IsDashing() && !grapplingHook.isGrappling)
         {
             playerMovement.Move(moveInput);
         }
+
     }
 
     private void OnJump(InputAction.CallbackContext context)
@@ -95,6 +99,8 @@ public class PlayerController : MonoBehaviour
         {
             _platformTrigger = true;
         }
+
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -102,12 +108,21 @@ public class PlayerController : MonoBehaviour
          {
              _platformTrigger = false;
          }
+         if(collision.gameObject.name == "GrappingHook" && grappingHookEnable == false)
+         {
+            grappingHookEnable = true;
+            inputController.Gameplay.UseAction.performed += OnUseAction;
+         }
     }
 
     private void OnEscape(InputAction.CallbackContext context) 
+    { 
+        Application.Quit();
+    }
+
+    private void OnUseAction(InputAction.CallbackContext context)
     {
-        OnDisabled();
-        SceneManager.LoadScene(0);
+        grapplingHook.StartGrapple();
     }
 
     public InputController GetInputController()

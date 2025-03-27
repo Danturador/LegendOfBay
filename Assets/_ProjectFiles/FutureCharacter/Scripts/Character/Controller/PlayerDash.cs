@@ -6,6 +6,7 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private float dashPower = 30f;
     [SerializeField] private float dashingTime = 0.2f;
     [SerializeField] private float dashCooldown = 1f;
+    [SerializeField] private ParticleSystem _particleSystem;
 
     private Rigidbody2D _rb;
     private bool _canDash = true;
