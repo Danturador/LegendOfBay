@@ -16,3 +16,4 @@ MonoBehaviour:
   startDashDelay: 1
   dashTimeInterval: 1
   dashTime: 1
+  randomTargetOffset: {x: 0.5, y: 1.5}

@@ -1,6 +1,9 @@
 using System.Collections;
+using System.Numerics;
 using _ProjectFiles.Enemy.Scripts.Core;
 using UnityEngine;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
 {
@@ -23,7 +26,8 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
 
             while (true)
             {
-                Vector2 currentTargetPosition = target.position;
+                int randomOffsetDirection = Random.Range(0, 2) == 1 ? -1 : 1;
+                Vector2 currentTargetPosition = target.position + (new Vector3(1, 1, 0)) * Random.Range(_info.RandomTargetOffset.x, _info.RandomTargetOffset.y) * randomOffsetDirection;
                 Vector2 moveDirection = (target.transform.position - _rigidbody.transform.position).normalized;
                 var moveTime = _info.DashTime;
                 var distanceToTarget = Vector2.Distance(currentTargetPosition, _rigidbody.transform.position);
