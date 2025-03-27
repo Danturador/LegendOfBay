@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="de615d76-5392-4624-a2d1-d4901732ccf9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunActiveState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunActiveState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunAttackState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunAttackState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunPassiveState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunPassiveState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Shishi.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Shishi/ShishiActiveState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Shishi/ShishiActiveState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Shishi/ShishiAttackState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Shishi/ShishiAttackState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Shishi/ShishiPassiveState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Shishi/ShishiPassiveState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Hundun/HundunNavigationInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Hundun/HundunNavigationInfo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Shishi/ShishiAttackInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Shishi/ShishiAttackInfo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Shishi/ShishiNavigationInfo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Shishi/ShishiNavigationInfo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyType.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/StateMachines.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/StateMachines/HundunStateMachine.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/StateMachines/HundunStateMachine.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/StateMachines/ShishiStateMachine.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/StateMachines/ShishiStateMachine.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Epic Toon FX/Upgrade/ETFX 2019.4.24f1 URP Upgrade.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/JMO Assets/Cartoon FX FREE (old legacy effects).unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.uxml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.uxml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Zenject-ReflectionBaking.csproj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Zenject-Signals.csproj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Zenject.csproj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.atlas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.atlas.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun_Atlas.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun_Atlas.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun_Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun_Controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun_Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun_Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun_SkeletonData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun_SkeletonData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Art.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Art/Hundun.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Art/Hundun.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/HundunInfoContainer.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/HundunInfoContainer.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/HundunNavigationInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/HundunNavigationInfo.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/HundunNavigationInfo.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/HundunNavigationInfo.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/AttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/AttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Hundun/HundunNavigation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Hundun/HundunNavigationExecutable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Hundun/HundunNavigation.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Hundun/HundunNavigationExecutable.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/INavigationExecutable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/INavigationExecutable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyAttackInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyAttackInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyInfoContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyInfoContainer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyProfile.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyNavigationInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyNavigationInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyNavigation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyNavigation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyStateMachine.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyStateMachine.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/FeaturesLevel/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/FeaturesLevel/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Manufacture/StateMachine/StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Manufacture/StateMachine/StateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/26/759d0383/NullReferenceException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/779cc116a5954f1c9b92496e62345641175c00/c3/ec890364/AnimationCurve.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7972c83a3a404377a5f87312a275658320a00/01/039ad553/Rigidbody2D.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e46e9bb88b78469fbd4d3d1c372264d61fe00/29/709e9dd7/CharacterController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_ProjectFiles/Tools/AnimationCurveExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2qrVtaet6iASHsjdhKp8ll7mHr6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Testing&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rider.code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propDebugger&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="E:\Frameworks\Unity\versions\2022.3.32f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath E:\Repositories\Unity\LegendOfBay -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="E:\Repositories\Unity\LegendOfBay" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="E:\Frameworks\Unity\versions\2022.3.32f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath E:\Repositories\Unity\LegendOfBay -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="E:\Repositories\Unity\LegendOfBay" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="de615d76-5392-4624-a2d1-d4901732ccf9" name="Changes" comment="" />
+      <created>1728639237867</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1728639237867</updated>
+      <workItem from="1728639241517" duration="11000" />
+      <workItem from="1735420985095" duration="1114000" />
+      <workItem from="1736348047896" duration="437000" />
+      <workItem from="1736349116092" duration="6390000" />
+      <workItem from="1736716342701" duration="6428000" />
+      <workItem from="1737196964746" duration="586000" />
+      <workItem from="1737285792207" duration="13338000" />
+      <workItem from="1737316076070" duration="643000" />
+      <workItem from="1737406428906" duration="745000" />
+      <workItem from="1741437213290" duration="5508000" />
+      <workItem from="1741554285958" duration="1259000" />
+      <workItem from="1741605017402" duration="8605000" />
+      <workItem from="1743021936267" duration="743000" />
+      <workItem from="1743091048445" duration="579000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
