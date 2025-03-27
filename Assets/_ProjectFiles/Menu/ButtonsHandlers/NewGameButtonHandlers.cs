@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 namespace _ProjectFiles.Menu.ButtonsHandlers
 {
-    public class NewGameButtonHandler : ButtonHandler
+    public class NewGameButtonHandler : MenuButtonHandler
     {
         protected override void OnClick()
         {
