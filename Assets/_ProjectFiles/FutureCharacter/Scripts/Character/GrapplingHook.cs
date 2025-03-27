@@ -5,8 +5,8 @@ using UnityEngine;
 public class GrapplingHook : MonoBehaviour
 {
     [SerializeField] private Transform[] grapplePoints;
-    [SerializeField] private float grappleSpeed = 10f;
-    [SerializeField] private float impulseForce = 10f;
+    [SerializeField] private float grappleSpeed = 5f;
+    [SerializeField] private float impulseForce = 5f;
     [SerializeField] private float maxGrappleDistance = 100f;
     private DistanceJoint2D distanceJoint;
     private float defaultGravityScale;
