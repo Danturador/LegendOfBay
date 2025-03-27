@@ -12,8 +12,9 @@ public class PlayerController : MonoBehaviour
     public InputController inputController {  get; private set; }
     private bool _platformTrigger;
     private string _platformtriggerName = "PlatformTrigger";
+	private Inventory inventory;
 
-    void Awake()
+	void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         grapplingHook = GetComponent<GrapplingHook>();
@@ -21,9 +22,23 @@ public class PlayerController : MonoBehaviour
         playerDash.Initialize(rb);
         playerJump.Initialize(rb);
         inputController = new InputController();
-        inputController.Enable();    
-    }
-    private void Start()
+        inputController.Enable();
+		inventory = GetComponent<Inventory>();
+	}
+
+	//public void TryOpenDoor(Door door)
+	//{
+	//	Key key = inventory.GetKey(door.doorID);
+	//	if (key != null)
+	//	{
+	//		door.TryOpen(key);
+	//	}
+	//	else
+	//	{
+	//		Debug.Log("У вас нет подходящего ключа для этой двери.");
+	//	}
+	//}
+	private void Start()
     {
         OnEnabled();
     }
