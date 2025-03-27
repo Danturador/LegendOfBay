@@ -6,23 +6,27 @@ namespace _ProjectFiles.Enemy.Scripts.Core
 {
     public class EnemyContainer : MonoBehaviour
     {
-        [Header("Components")] [SerializeField]
-        private new Collider2D collider;
-
+        [Header("Components")] 
+        [SerializeField] private new Collider2D collider;
         [SerializeField] private new Rigidbody2D rigidbody;
+        [SerializeField] private new EnemyRenderer renderer;
 
-        [Header("Behaviour")] [SerializeField] private EnemyNavigation enemyNavigation;
+        [Header("Behaviour")] 
+        [SerializeField] private EnemyNavigation enemyNavigation;
 
-        [SerializeField] private AnimationCurve speedCurve;
-
-        [Header("Data")] [SerializeField] private EnemyInfoContainer infoContainer;
+        [Header("Profile")]
+        [SerializeField] private EnemyProfile profile;
 
         private Enemy _enemy;
         public EnemyNavigation Navigation => enemyNavigation;
+        public EnemyRenderer Renderer => renderer;
+        public bool IsVisibleByPlayer { get; private set; }
+        public EnemyDetectionZone Target { get; private set; }
 
         private void Start()
         {
             Initialize();
+            Debug.Log(collider.bounds);
         }
 
         private void Update()
@@ -34,22 +38,44 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         {
             if (other.TryGetComponent(out EnemyDetectionZone zone))
             {
-                _enemy.State.SetVisibility(true);
-                Navigation.Target = zone.Player.transform;
+                IsVisibleByPlayer = true; 
+                Target = zone;
+                Navigation.Target = Target.transform;
             }
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.TryGetComponent(out EnemyDetectionZone zone)) _enemy.State.SetVisibility(false);
+            if (other.TryGetComponent(out EnemyDetectionZone zone))
+            {
+                Target = null;
+                IsVisibleByPlayer = false;
+                Navigation.Target = null;
+            };
         }
 
         private void Initialize()
         {
-            _enemy = new Enemy(infoContainer, this);
+            _enemy = new Enemy(profile, this);
+            INavigationExecutable executable = null;
 
-            enemyNavigation.Initialize(infoContainer.NavigationInfo,
-                new HundunNavigation(rigidbody, infoContainer.NavigationInfo, speedCurve));
+            switch (profile.Type)
+            {
+                case EnemyType.Hundun:
+                {
+                    executable = new HundunNavigationExecutable(this, profile.NavigationInfo);
+                    break;
+                }
+                
+                case EnemyType.Shishi:
+                {
+                    executable = new ShishiNavigationExecutable(this, profile.NavigationInfo);
+                    break;
+                }
+            }
+            
+            enemyNavigation.Initialize(profile.NavigationInfo,
+                executable);
         }
     }
 }

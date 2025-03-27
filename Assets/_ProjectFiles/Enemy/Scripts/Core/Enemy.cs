@@ -1,20 +1,34 @@
+using _ProjectFiles.Enemy.Scripts.Core.StateMachines;
+using Unity.VisualScripting.Dependencies.NCalc;
+
 namespace _ProjectFiles.Enemy.Scripts.Core
 {
     public class Enemy
     {
-        private EnemyAttackInfo _attackInfo;
-        private EnemyInfo _enemyInfo;
-        private EnemyNavigationInfo _navigationInfo;
+        private readonly EnemyProfile _profile;
+        private readonly EnemyContainer _container;
 
-        public Enemy(EnemyInfoContainer infoContainer, EnemyContainer container)
+        public Enemy(EnemyProfile profile, EnemyContainer container)
         {
-            _enemyInfo = infoContainer.EnemyInfo;
-            _attackInfo = infoContainer.AttackInfo;
-            _navigationInfo = infoContainer.NavigationInfo;
+            _profile = profile;
+            _container = container;
 
-            State = new EnemyStateMachine(infoContainer, container);
+            switch (profile.Type)
+            {
+                case EnemyType.Hundun:
+                {
+                    State = new HundunStateMachine(_container, _profile);
+                    break;
+                }
+                
+                case EnemyType.Shishi:
+                {
+                    State = new ShishiStateMachine(_container, _profile);
+                    break;
+                }
+            }
         }
 
-        public EnemyStateMachine State { get; }
+        public StateMachine State { get; }
     }
 }

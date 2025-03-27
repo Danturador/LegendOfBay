@@ -1,13 +1,24 @@
 using System;
 using System.Linq;
+using _ProjectFiles.Enemy.Scripts.Core;
 
 public abstract class StateMachine
 {
-    protected readonly IState[] _states;
-    private readonly Transition[] _transitions;
+    protected IState[] _states;
+    private Transition[] _transitions;
     private IState _current;
-
-    public StateMachine()
+    
+    protected EnemyContainer _container;
+    protected EnemyProfile _profile;
+        
+    public StateMachine(EnemyContainer container, EnemyProfile profile)
+    {
+        _container = container;
+        _profile = profile;
+        Initialize();
+    }
+    
+    public void Initialize()
     {
         var behaviour = SetMachineBehaviour();
         _states = behaviour.states;

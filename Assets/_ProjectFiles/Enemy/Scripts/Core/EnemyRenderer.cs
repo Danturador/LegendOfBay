@@ -8,6 +8,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
     {
         [SerializeField] private new Rigidbody2D rigidbody;
         [SerializeField] private SkeletonMecanim skeletonAnimation;
+        [SerializeField] private Animator animator;
         private float _defaultScale;
 
         private void Awake()
@@ -19,11 +20,21 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         {
             var scale = rigidbody.velocity.x > 0 ? _defaultScale : -_defaultScale;
             skeletonAnimation.Skeleton.ScaleX = scale;
+        }
 
-            // var scale = rigidbody.velocity.x > 0 ? new Vector3(1, 1, 1) : new Vector3(-1, 1, 1);
-            // transform.localScale = scale;
-            //
-            // Debug.Log(rigidbody.velocity.x > 0);
+        public void SetActiveStateEnabled(bool enabled)
+        {
+         animator.SetBool("activeState", enabled);   
+        }
+        
+        public void SetSAttackStateEnabled(bool enabled)
+        {
+            animator.SetBool("attackState", enabled);   
+        }
+        
+        public void SetPassiveStateEnabled(bool enabled)
+        {
+            animator.SetBool("passiveState", enabled);   
         }
     }
 }

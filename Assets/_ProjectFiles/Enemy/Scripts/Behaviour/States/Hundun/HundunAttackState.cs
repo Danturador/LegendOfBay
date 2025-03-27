@@ -1,13 +1,7 @@
-using _ProjectFiles.Enemy.Scripts.Core;
-using Cinemachine;
-using Newtonsoft.Json.Serialization;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class AttackState : IEnterState, IUpdateState, IExitState
+public class HundunAttackState : IEnterState, IUpdateState, IExitState
 {
-    
-    
     public void Enter()
     {
         Debug.Log("AttackState enter");
@@ -21,5 +15,10 @@ public class AttackState : IEnterState, IUpdateState, IExitState
     public void Update()
     {
         Debug.Log("AttackState update");
+    }
+
+    public bool CanAttack()
+    {
+        return false;
     }
 }

@@ -9,10 +9,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 275ef92192534aacb432e91223cdaf59, type: 3}
+  m_Script: {fileID: 11500000, guid: 42cc14f7e282424ea2c56e37303866d8, type: 3}
   m_Name: HundunNavigationInfo
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  startDashDelay: 1
+  moveSpeed: 1
+  startDashDelay: 0.5
   dashTimeInterval: 1
-  dashTime: 1
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -3.2584424
+      outSlope: -3.2584424
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.051974542
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

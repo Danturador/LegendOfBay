@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   atlasAssets:
   - {fileID: 11400000, guid: 1bbdfb8186171374db0a47d5feaff442, type: 2}
+<<<<<<< Updated upstream
   scale: 0.01
+=======
+  scale: 0.006
+>>>>>>> Stashed changes
   skeletonJSON: {fileID: 4900000, guid: a0c49c56280b82f4090f5934f0c9a898, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
@@ -28,4 +32,8 @@ MonoBehaviour:
   toAnimation: []
   duration: []
   defaultMix: 0.2
+<<<<<<< Updated upstream
   controller: {fileID: 0}
+=======
+  controller: {fileID: 9100000, guid: efa0aef9eadf9ef4e9b0f7f3bdc61c7b, type: 2}
+>>>>>>> Stashed changes

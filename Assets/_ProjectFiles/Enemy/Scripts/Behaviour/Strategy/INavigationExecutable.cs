@@ -3,8 +3,10 @@ using UnityEngine;
 
 namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
 {
-    public abstract class INavigationExecutable
+    public interface INavigationExecutable
     {
-        public abstract IEnumerator Execute(Transform target);
+        protected bool IsActive { get; set; }
+        public IEnumerator Execute(Transform target);
+        public void Stop();
     }
 }
