@@ -3,17 +3,22 @@ using System.Collections;
 
 public class SceneTransition : MonoBehaviour
 {
+	public static SceneTransition Instance;
 	public float fadeDuration = 1f;
-	private Camera mainCamera;
+	[SerializeField] private Camera mainCamera;
 
 	private void Awake()
 	{
-		mainCamera = Camera.main;
+		if (Instance == null)
+		{
+			Instance = this;
+		}
+
 		StartCoroutine(FadeIn());
 		DontDestroyOnLoad(this);
 	}
 
-	private IEnumerator FadeIn()
+	public IEnumerator FadeIn()
 	{
 		float alpha = 1f;
 		Color fadeColor = Color.black;
@@ -24,14 +29,9 @@ public class SceneTransition : MonoBehaviour
 			SetCameraBackgroundColor(new Color(fadeColor.r, fadeColor.g, fadeColor.b, alpha));
 			yield return null;
 		}
-	}
-
-	public void StartFadeOut()
-	{
 		StartCoroutine(FadeOut());
 	}
-
-	private IEnumerator FadeOut()
+	public IEnumerator FadeOut()
 	{
 		float alpha = 0f;
 		Color fadeColor = Color.black;
