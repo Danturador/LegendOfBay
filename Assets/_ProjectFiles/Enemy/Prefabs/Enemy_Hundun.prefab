@@ -159,6 +159,8 @@ GameObject:
   - component: {fileID: 6343016726998229691}
   - component: {fileID: 3897181793932938549}
   - component: {fileID: 7743745585983630010}
+  - component: {fileID: 1912336449257122221}
+  - component: {fileID: 5342948021666582843}
   m_Layer: 9
   m_Name: Enemy_Hundun
   m_TagString: Untagged
@@ -311,3 +313,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 716377433823225197}
   skeletonAnimation: {fileID: 565063608146890649}
+--- !u!114 &1912336449257122221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4757401579083615958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d04c4cec4219ee42aa0406a1a5f8f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitEffects: []
+  _damage: 5
+--- !u!114 &5342948021666582843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4757401579083615958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c00bc22d29f659438f8aa6622384369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  currentHealth: 10

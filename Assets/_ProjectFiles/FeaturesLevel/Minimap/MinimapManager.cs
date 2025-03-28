@@ -106,7 +106,6 @@ public class MinimapManager : MonoBehaviour
 
     private void ToggleMinimap()
     {
-		Debug.LogWarning("F");
         isMinimapActive = !isMinimapActive;
         minimapCamera.gameObject.SetActive(isMinimapActive);
 
