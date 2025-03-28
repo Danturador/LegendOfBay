@@ -42,13 +42,10 @@ public class BossBehaviour : MonoBehaviour
 
 	public IEnumerator DashTowardsPlayer()
 	{
-		// Вычисляем направление к игроку
 		float directionToPlayer = Mathf.Sign(player.position.x - transform.position.x); // 1 или -1
 
-		// Задаем фиксированное расстояние для дэша только по оси X
 		Vector3 targetPosition = transform.position + new Vector3(directionToPlayer * dashDistance, 0, 0);
 
-		// Поворачиваем в сторону игрока
 		RotateToPlayer(new Vector3(directionToPlayer, 0, 0));
 
 		yield return new WaitForSeconds(0.5f);
@@ -59,18 +56,16 @@ public class BossBehaviour : MonoBehaviour
 		// Делаем дэш
 		while (elapsedTime < dashDuration)
 		{
-			// Перемещение только по оси X
 			transform.position = new Vector3(
 				Mathf.Lerp(transform.position.x, targetPosition.x, (elapsedTime / dashDuration)),
-				transform.position.y, // Оставляем Y без изменений
-				transform.position.z  // Оставляем Z без изменений
+				transform.position.y,
+				transform.position.z
 			);
 
 			elapsedTime += Time.deltaTime;
 			yield return null;
 		}
 
-		// Устанавливаем окончательную позицию
 		transform.position = new Vector3(targetPosition.x, transform.position.y, transform.position.z);
 	}
 	public IEnumerator PerformComboAttack()
@@ -96,11 +91,8 @@ public class BossBehaviour : MonoBehaviour
 	{
 		Vector3 directionToPlayer = (player.position - transform.position).normalized;
 
-		//temp
 		Vector3 attackPosition = transform.position + directionToPlayer * distance;
 		Debug.Log($"Attack at position: {attackPosition}");
-
-		// Damage
 	}
 
 	private void RotateToPlayer(Vector3 directionToPlayer)
