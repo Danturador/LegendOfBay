@@ -53,7 +53,6 @@ public class BossBehaviour : MonoBehaviour
 		float elapsedTime = 0f;
 		float dashDuration = 1.5f;
 
-		// Делаем дэш
 		while (elapsedTime < dashDuration)
 		{
 			transform.position = new Vector3(
@@ -72,6 +71,7 @@ public class BossBehaviour : MonoBehaviour
 	{
 		float attackDistance = 2.0f;
 		int comboCount = 3;
+		float[] attacksLength = new float[3] { 0.667f, 0.733f, 0.567f };
 
 		for (int i = 0; i < comboCount; i++)
 		{
@@ -81,7 +81,7 @@ public class BossBehaviour : MonoBehaviour
 
 			Attack(attackDistance);
 
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(attacksLength[i]);
 		}
 
 		Debug.Log("Combo attack completed.");
