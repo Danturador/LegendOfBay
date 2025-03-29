@@ -7,16 +7,14 @@ public class BackgroundContoller : MonoBehaviour
     private float startPosition, length;
     public GameObject cam;
     public float parallaxEffect;
-
-    // Start is called before the first frame update
-    void Start()
+	private void Start()
     {
+		cam = FindObjectOfType<Camera>().gameObject;
         startPosition = transform.position.x;
         length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         float distance = cam.transform.position.x * parallaxEffect;
         float movement = cam.transform.position.x * (1 - parallaxEffect);
