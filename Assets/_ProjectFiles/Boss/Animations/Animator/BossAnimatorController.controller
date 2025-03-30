@@ -1220,10 +1220,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: IsDashState
+    m_ConditionEvent: IsWalking
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: IsWalking
+    m_ConditionEvent: IsDashState
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: IsComboAttackState

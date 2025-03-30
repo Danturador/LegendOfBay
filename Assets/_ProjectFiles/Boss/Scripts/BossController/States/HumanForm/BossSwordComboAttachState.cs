@@ -18,18 +18,18 @@ public class BossSwordComboAttachState : State2
 	public override void OnStateEnter()
 	{
 		_stateMachine.isAttackEnded = false;
+		_animationController.SetBool(IsComboAttackState, true);
 
 		_stateMachine.StartCoroutine(UseAttack());
 	}
 	public override void OnStateExit()
 	{
 		_animationController.SetBool(IsWalking, false);
+		_animationController.SetBool(IsComboAttackState, false);
 	}
 	private IEnumerator UseAttack()
 	{
-		_animationController.SetBool(IsComboAttackState, true);
 		yield return _stateMachine.StartCoroutine(_behaviour.PerformComboAttack());
-		_animationController.SetBool(IsComboAttackState, false);
 
 		_animationController.SetBool(IsWalking, true);
 		yield return _stateMachine.StartCoroutine(_behaviour.MoveTowardsPlayerCoroutine());

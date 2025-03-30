@@ -15,7 +15,7 @@ public class BossBehaviour : MonoBehaviour
 		float randomTime = Random.Range(0f, 1f);
 		float elapsedTime = 0f;
 
-		while (!isReadyToAttack && elapsedTime < randomTime)
+		while (/*!isReadyToAttack && */elapsedTime < randomTime)
 		{
 			float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 			
@@ -31,7 +31,7 @@ public class BossBehaviour : MonoBehaviour
 			}
 			else
 			{
-				isReadyToAttack = true;
+				//isReadyToAttack = true;
 				Debug.Log("Enemy attacks!");
 				break;
 			}
@@ -71,7 +71,7 @@ public class BossBehaviour : MonoBehaviour
 	{
 		float attackDistance = 2.0f;
 		int comboCount = 3;
-		float[] attacksLength = new float[3] { 0.667f, 0.733f, 0.567f };
+		float[] attacksLength = new float[3] { 0.7f, 0.75f, 0.6f };
 
 		for (int i = 0; i < comboCount; i++)
 		{

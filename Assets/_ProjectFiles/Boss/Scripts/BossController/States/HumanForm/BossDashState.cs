@@ -25,15 +25,14 @@ public class BossDashState : State2
 	public override void OnStateExit()
 	{
 		_animationController.SetBool(IsWalking, false);
+		_animationController.SetBool(IsDashState, false);
 	}
 	private IEnumerator UseAttack()
 	{
 		yield return _stateMachine.StartCoroutine(_behaviour.DashTowardsPlayer());
-		_animationController.SetBool(IsDashState, false);
 		
 		_animationController.SetBool(IsWalking, true);
 		yield return _stateMachine.StartCoroutine(_behaviour.MoveTowardsPlayerCoroutine());
-		_animationController.SetBool(IsWalking, false);
 
 		_stateMachine.HandleHumanAttackCompletion();
 	}

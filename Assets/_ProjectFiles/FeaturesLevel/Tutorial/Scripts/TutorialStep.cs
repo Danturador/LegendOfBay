@@ -27,7 +27,10 @@ public class TutorialStep : MonoBehaviour
 			{
 				StopCoroutine(currentFadeCoroutine);
 			}
-			currentFadeCoroutine = StartCoroutine(FadeIn());
+			if (gameObject.activeInHierarchy)
+			{
+				currentFadeCoroutine = StartCoroutine(FadeIn());
+			}
 		}
 	}
 
@@ -39,7 +42,10 @@ public class TutorialStep : MonoBehaviour
 			{
 				StopCoroutine(currentFadeCoroutine);
 			}
-			currentFadeCoroutine = StartCoroutine(FadeOut());
+			if (gameObject.activeInHierarchy)
+			{
+				currentFadeCoroutine = StartCoroutine(FadeOut());
+			}
 		}
 	}
 

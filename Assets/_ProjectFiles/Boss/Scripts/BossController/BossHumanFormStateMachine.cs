@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using static BossHumanFormStateMachine.TypesOfAttack;
+using static BossAnimationType;
 
 public class BossHumanFormStateMachine : MonoBehaviour
 {
@@ -53,11 +54,11 @@ public class BossHumanFormStateMachine : MonoBehaviour
 		/// From PassiveState
 		AddTransitionToState(passiveState, swordComboAttachState, () =>
 			!isPassive
-			&& nextAttack.Is(ComboTypeAttack)
+			//&& _animator.GetBool(nameof(IsComboAttackState))
 		);
 		AddTransitionToState(passiveState, dashState, () =>
 			!isPassive
-			&& nextAttack.Is(DashTypeAttack)
+			//&& _animator.GetBool(nameof(IsDashState))
 		);
 		///
 
