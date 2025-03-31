@@ -5,9 +5,9 @@ using UnityEngine;
 public class GrapplingHook : MonoBehaviour
 {
     [SerializeField] private Transform[] grapplePoints;
-    [SerializeField] private float grappleSpeed = 5f;
-    [SerializeField] private float impulseForce = 5f;
-    [SerializeField] private float maxGrappleDistance = 100f;
+    [SerializeField] private float grappleSpeed = 10f;
+    [SerializeField] private float impulseForce = 75f;
+    [SerializeField] private float maxGrappleDistance = 25f;
     private DistanceJoint2D distanceJoint;
     private float defaultGravityScale;
 
@@ -29,73 +29,36 @@ public class GrapplingHook : MonoBehaviour
         lineRenderer.enabled = false;
     }
 
-    private void Update()
-    {
-        if (isGrappling)
-        {
-            MoveTowardsGrapplePoint();
-        }
-    }
+     public void StartGrapple()
+     {
+         Transform closestPoint = FindClosestAvailableGrapplePoint();
+         if (closestPoint != null)
+         {
+             float distanceToClosestPoint = Vector2.Distance(transform.position, closestPoint.position);
+             if (distanceToClosestPoint <= maxGrappleDistance)
+             {
+                 distanceJoint.connectedAnchor = closestPoint.position;
+                 distanceJoint.enabled = true;
+                 isGrappling = true;
+                 lineRenderer.enabled = true;
+                 lastGrapplePoint = closestPoint;
 
-    public void StartGrapple()
-    {
-        Transform closestPoint = FindClosestAvailableGrapplePoint();
-        if (closestPoint != null)
-        {
-            float distanceToClosestPoint = Vector2.Distance(transform.position, closestPoint.position);
-            if (distanceToClosestPoint <= maxGrappleDistance)
-            {
-                distanceJoint.connectedAnchor = closestPoint.position;
-                distanceJoint.enabled = true;
-                isGrappling = true;
-                lineRenderer.enabled = true;
-                lastGrapplePoint = closestPoint;
-
-                if (grappleCooldownCoroutine != null)
-                {
-                    StopCoroutine(grappleCooldownCoroutine);
-                }
-                grappleCooldownCoroutine = StartCoroutine(GrappleCooldown());
-            }
-            else
-            {
-                Debug.Log("point out in distance");
-            }
-        }
-        else
-        {
-            Debug.Log("no grapping points");
-        }
-    }
-
-    private void StopGrapple()
-    {
-        distanceJoint.enabled = false;
-        StartCoroutine(Grappling());
-        lineRenderer.enabled = false;
-    }
-
-    private void MoveTowardsGrapplePoint()
-    {
-        distanceJoint.autoConfigureDistance = false;
-        distanceJoint.distance -= grappleSpeed;
-
-        lineRenderer.SetPosition(0, transform.position);
-        lineRenderer.SetPosition(1, distanceJoint.connectedAnchor);
-
-        if (Vector2.Distance(transform.position, distanceJoint.connectedAnchor) < 0.7f)
-        {
-            StopGrapple();
-
-            Vector2 directionToGrapplePoint = (distanceJoint.connectedAnchor - (Vector2)transform.position).normalized;
-
-            Vector2 currentVelocity = rb.velocity.normalized;
-
-            Vector2 finalDirection = (directionToGrapplePoint + currentVelocity).normalized;
-
-            rb.AddForce(finalDirection * impulseForce, ForceMode2D.Impulse);
-        }
-    }
+                 if (grappleCooldownCoroutine != null)
+                 {
+                     StopCoroutine(grappleCooldownCoroutine);
+                 }
+                 grappleCooldownCoroutine = StartCoroutine(GrappleCooldown());
+             }
+             else
+             {
+                 Debug.Log("point out in distance");
+             }
+         }
+         else
+         {
+             Debug.Log("no grapping points");
+         }
+     }
 
     private Transform FindClosestAvailableGrapplePoint()
     {
@@ -124,12 +87,64 @@ public class GrapplingHook : MonoBehaviour
         grappleCooldownCoroutine = null;
     }
 
+    private void Update()
+    {
+        if (isGrappling)
+        {
+            MoveTowardsGrapplePoint();
+        }
+    }
+
+    private void MoveTowardsGrapplePoint()
+    {
+        if (distanceJoint.connectedAnchor == null)
+        {
+            Debug.LogError("Connected anchor is null!");
+            StopGrapple();
+            return;
+        }
+
+        distanceJoint.autoConfigureDistance = false;
+
+        distanceJoint.distance -= grappleSpeed * Time.deltaTime;
+
+        if (distanceJoint.distance < 0)
+        {
+            distanceJoint.distance = 0;
+        }
+
+        lineRenderer.SetPosition(0, transform.position);
+        lineRenderer.SetPosition(1, distanceJoint.connectedAnchor);
+
+        if (Vector2.Distance(transform.position, distanceJoint.connectedAnchor) < 0.7f)
+        {
+            Debug.Log("Reached grapple point, stopping grapple.");
+            StopGrapple();
+            isGrappling = false;
+        }
+    }
+
+    private void StopGrapple()
+    {
+        Debug.Log("Stopping grapple.");
+        distanceJoint.enabled = false;
+        lineRenderer.enabled = false;
+        StartCoroutine(Grappling());
+    }
+
     private IEnumerator Grappling()
     {
-        defaultGravityScale = rb.gravityScale;
-        rb.gravityScale = 0;
-        yield return new WaitForSeconds(0.5f);
-        isGrappling = false;
-        rb.gravityScale = defaultGravityScale;
+        if (isGrappling) 
+        {
+            defaultGravityScale = rb.gravityScale;
+            rb.gravityScale = 0;
+            Vector2 directionToGrapplePoint = (distanceJoint.connectedAnchor - (Vector2)transform.position).normalized;
+            Vector2 currentVelocity = rb.velocity.normalized;
+            Vector2 finalDirection = (directionToGrapplePoint + currentVelocity).normalized;
+
+            rb.AddForce(finalDirection * impulseForce, ForceMode2D.Impulse);
+            yield return new WaitForSeconds(0.5f);
+            rb.gravityScale = defaultGravityScale;
+        }
     }
 }
