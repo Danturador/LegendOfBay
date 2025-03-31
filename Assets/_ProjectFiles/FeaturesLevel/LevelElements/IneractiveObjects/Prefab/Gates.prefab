@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2946488731814066917}
   - component: {fileID: 8698331666578926927}
   - component: {fileID: 3687198603751648283}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 3850736283540083620}
   - component: {fileID: 7407688037049325517}
   - component: {fileID: 7764682350105586330}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Gates
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,8 +204,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1158519283
-  m_SortingLayer: 0
+  m_SortingLayerID: -1142688833
+  m_SortingLayer: -1
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 3fa7396c66a651948bb121e08b91fde5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
