@@ -8,6 +8,7 @@ public class GrapplingHook : MonoBehaviour
     [SerializeField] private float grappleSpeed = 10f;
     [SerializeField] private float impulseForce = 75f;
     [SerializeField] private float maxGrappleDistance = 25f;
+    private RaycastHit2D _raycastHit2D;
     private DistanceJoint2D distanceJoint;
     private float defaultGravityScale;
 
