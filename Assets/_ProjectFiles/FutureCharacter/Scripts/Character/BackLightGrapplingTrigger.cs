@@ -12,7 +12,6 @@ public class BackLightGrapplingTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.layer + "enter");
         if ( collision.GetComponentInParent<PlayerController>() != null && collision.gameObject.layer != 8)
         {
             if(backLightGrapplingPoints != null)
@@ -24,7 +23,6 @@ public class BackLightGrapplingTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.layer + " exit");
         if (collision.GetComponentInParent<PlayerController>() != null && collision.gameObject.layer != 8)
         {
             

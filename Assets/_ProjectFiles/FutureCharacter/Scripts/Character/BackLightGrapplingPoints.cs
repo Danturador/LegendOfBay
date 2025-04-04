@@ -8,16 +8,10 @@ public  class BackLightGrapplingPoints : MonoBehaviour
     [SerializeField] private ParticleSystem grapplingBackLight;
     [SerializeField] private List<ParticleSystem> activeParticleEffect;
 
-    private void Start()
-    {
-        //Transform[] grapplingPoints = GetComponentsInChildren<Transform>();
-    }
-
     public void BackLightActivate()
     {
         if (activeParticleEffect.Count >= 1)
         {
-            Debug.Log("activeParticleEffect != null");
             foreach (ParticleSystem particleEffect in activeParticleEffect)
             {
                 particleEffect.Play();

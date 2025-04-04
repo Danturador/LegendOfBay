@@ -19,6 +19,7 @@ public class PlayerStateMachine2 : MonoBehaviour
     [SerializeField]private bool _isLanding;
     private bool _isGrounded => _playerJump._isGrounded;
     private bool _isDashing => _playerDash.IsDashing();
+    private bool _isDoubleJump => _playerJump.isDoubleJump;
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -37,16 +38,25 @@ public class PlayerStateMachine2 : MonoBehaviour
     {
         velocityX = _rigidbody2D.velocity.x; //for test
         velocityY = _rigidbody2D.velocity.y; //for test
-        if (_rigidbody2D.velocity.y < -15f) 
-        { 
+        if (_rigidbody2D.velocity.y < -25f)
+        {
             _isLanding = true;
         }
-       
+
         _stateMachine.OnUpdate();
         currentState = _stateMachine.CurrentState.ToString();
-        
+
+        if (_isLanding && _rigidbody2D.velocity.y == 0)
+        {
+            _isLanding = false;
+        }
     }
-   
+    private bool Landing()
+    {
+        Debug.Log("PlayerLandingState2");
+        _isLanding = false;
+        return _isLanding;
+    }
     private void InitializeStateMachine()
     {
         var playerAnimationController = new PlayerAnimationController(_animator);
@@ -67,7 +77,7 @@ public class PlayerStateMachine2 : MonoBehaviour
         jumpState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isGrounded && _rigidbody2D.velocity.y == 0)));
         jumpState.AddTransition(new StateTransition(jumpFallState, new FuncStateCondition(() => _isGrounded == false && _rigidbody2D.velocity.y < -1f)));
 
-        //  jumpState.AddTransition(new StateTransition(doubleJumpState, new FuncStateCondition(() => )));
+        jumpState.AddTransition(new StateTransition(doubleJumpState, new FuncStateCondition(() => _isDoubleJump )));
         doubleJumpState.AddTransition(new StateTransition(jumpFallState, new FuncStateCondition(() => _isGrounded == false && _rigidbody2D.velocity.y < -1f)));
         doubleJumpState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isGrounded && _rigidbody2D.velocity.y == 0)));
 
@@ -75,8 +85,8 @@ public class PlayerStateMachine2 : MonoBehaviour
         jumpFallState.AddTransition(new StateTransition(runState, new FuncStateCondition(() => _isGrounded && _rigidbody2D.velocity.x != 0 && _isLanding == false)));
         jumpFallState.AddTransition(new StateTransition(jumpState, new FuncStateCondition(() => _rigidbody2D.velocity.y > 1f && _isGrounded == false)));
 
-        jumpFallState.AddTransition(new StateTransition(landingState, new FuncStateCondition(() => _isLanding && _isGrounded)));
-        landingState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isGrounded )));
+        jumpFallState.AddTransition(new StateTransition(landingState, new FuncStateCondition(() =>  _isLanding && _isGrounded)));
+        landingState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => { Landing();return true; } )));
 
         runState.AddTransition(new StateTransition(dashState, new FuncStateCondition(() => _isDashing)));
         jumpState.AddTransition(new StateTransition(dashState, new FuncStateCondition(() => _isDashing)));

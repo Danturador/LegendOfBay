@@ -15,6 +15,7 @@ public class PlayerJump : MonoBehaviour
 
     private Rigidbody2D _rb;
     [SerializeField] public bool _isGrounded { get; private set; }
+    [SerializeField] public bool isDoubleJump {  get; private set; }
     private bool _isJumping;
     private bool _doubleJump;
     private int _doubleJumpCount = 0;
@@ -134,10 +135,15 @@ public class PlayerJump : MonoBehaviour
     {
         if (_doubleJump)
         {
+            isDoubleJump = true;
             _doubleJumpCount += 2;
-            _rb.velocity = new Vector2(_rb.velocity.x,0);
-            _rb.velocity =  Vector2.up * jumpForce*2f;
+            _rb.velocity = new Vector2(_rb.velocity.x, 0);
+            _rb.velocity = Vector2.up * jumpForce * 2f;
             _doubleJump = false;
+        }
+        else 
+        { 
+            isDoubleJump = false;
         }
     }
 
