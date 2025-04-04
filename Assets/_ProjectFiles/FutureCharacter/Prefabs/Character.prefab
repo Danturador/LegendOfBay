@@ -48,10 +48,10 @@ GameObject:
   - component: {fileID: 5730614205036202564}
   - component: {fileID: 4096132904660743118}
   - component: {fileID: 6466263472494397063}
-  - component: {fileID: 4377083477153932477}
   - component: {fileID: 3578785864603465052}
   - component: {fileID: 6602768859082045752}
   - component: {fileID: 4136002814234153152}
+  - component: {fileID: 112954821037355402}
   m_Layer: 7
   m_Name: Character
   m_TagString: Player
@@ -302,102 +302,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
---- !u!82 &4377083477153932477
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 509159137167803172}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cf97da2537575bd42aa6c27ac9d49f3c, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!120 &3578785864603465052
 LineRenderer:
   serializedVersion: 2
@@ -438,7 +342,7 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -892584857
-  m_SortingLayer: 4
+  m_SortingLayer: 0
   m_SortingOrder: 3
   m_Positions:
   - {x: 0, y: 0, z: 0}
@@ -514,10 +418,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f4d0af592ce8224d982929e601414e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grapplePoints: []
+  grapplePoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   grappleSpeed: 10
-  impulseForce: 10
-  maxGrappleDistance: 100
+  impulseForce: 75
+  maxGrappleDistance: 25
 --- !u!232 &4136002814234153152
 DistanceJoint2D:
   m_ObjectHideFlags: 0
@@ -536,8 +446,21 @@ DistanceJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 75.82943
+  m_Distance: 0.005
   m_MaxDistanceOnly: 0
+--- !u!114 &112954821037355402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509159137167803172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6b4756823d642245bcafbb327a95c36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keys: []
 --- !u!1 &2076402832849233201
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +618,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7e42087e0e364e746bfc6812d7cf9d0c, type: 2}
+  - {fileID: 2100000, guid: 5048e1e89c576444183b74dcdba7aca2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -713,9 +636,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -892584857
-  m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 5
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &5008483467754674623
 Animator:
@@ -727,7 +650,7 @@ Animator:
   m_GameObject: {fileID: 6463624170065969880}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5f5620e5ebe41df43a15b1b164fc76cd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 52255ea5c059f074e99957e5f310fdb2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -750,7 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9db98c60740638449864eb028fbe7ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: b09e0dfae3cbaac44b3aeea46c8d854f, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: e855b5aeccedc964382f36945974fbbc, type: 2}
   initialSkinName: 
   initialFlipX: 0
   initialFlipY: 0
@@ -979,7 +902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1626263523022860155, guid: 28b69d961598d4946a17332b615b522f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8466963620435663769, guid: 28b69d961598d4946a17332b615b522f, type: 3}
       propertyPath: m_LocalPosition.x
