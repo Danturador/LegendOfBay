@@ -24,15 +24,15 @@ public class BossSwordComboAttachState : State2
 	}
 	public override void OnStateExit()
 	{
-		_animationController.SetBool(IsWalking, false);
-		_animationController.SetBool(IsComboAttackState, false);
 	}
 	private IEnumerator UseAttack()
 	{
 		yield return _stateMachine.StartCoroutine(_behaviour.PerformComboAttack());
+		_animationController.SetBool(IsComboAttackState, false);
 
-		_animationController.SetBool(IsWalking, true);
+		_animationController.SetTrigger(Walk);
 		yield return _stateMachine.StartCoroutine(_behaviour.MoveTowardsPlayerCoroutine());
+		//_animationController.SetBool(IsWalking, false);
 
 		_stateMachine.HandleHumanAttackCompletion();
 	}

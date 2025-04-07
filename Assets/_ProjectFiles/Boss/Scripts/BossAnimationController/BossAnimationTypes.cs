@@ -3,5 +3,6 @@ public enum BossAnimationType
     IsPassive,
 	IsWalking,
 	IsDashState,
-	IsComboAttackState
+	IsComboAttackState,
+	Walk
 }
