@@ -1,22 +1,29 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using System.Collections;
 
 public class TutorialStep : MonoBehaviour
 {
-	public Text textMesh; // replace with TextMeshProUGUI
+	public Text text;
+	public Image image; // Reference to the image that will fade in and out
 	[TextArea] public string displayText;
 	public float fadeDuration = 1f;
+	public float textDelay = 0.2f;
 
 	private Coroutine currentFadeCoroutine;
+	private Coroutine currentFadeCoroutineImage;
 
 	private void Awake()
 	{
-		textMesh.text = string.Empty;
-		Color color = textMesh.color;
-		color.a = 0f;
-		textMesh.color = color;
+		// Initialize text and image transparency
+		text.text = string.Empty;
+		Color textColor = text.color;
+		textColor.a = 0f;
+		text.color = textColor;
+
+		Color imageColor = image.color;
+		imageColor.a = 0f;
+		image.color = imageColor;
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
@@ -27,9 +34,14 @@ public class TutorialStep : MonoBehaviour
 			{
 				StopCoroutine(currentFadeCoroutine);
 			}
+			if (currentFadeCoroutineImage != null)
+			{
+				StopCoroutine(currentFadeCoroutineImage);
+			}
 			if (gameObject.activeInHierarchy)
 			{
-				currentFadeCoroutine = StartCoroutine(FadeIn());
+				currentFadeCoroutineImage = StartCoroutine(FadeInImage());
+				currentFadeCoroutine = StartCoroutine(FadeInText());
 			}
 		}
 	}
@@ -42,37 +54,70 @@ public class TutorialStep : MonoBehaviour
 			{
 				StopCoroutine(currentFadeCoroutine);
 			}
+			if (currentFadeCoroutineImage != null)
+			{
+				StopCoroutine(currentFadeCoroutineImage);
+			}
 			if (gameObject.activeInHierarchy)
 			{
-				currentFadeCoroutine = StartCoroutine(FadeOut());
+				currentFadeCoroutine = StartCoroutine(FadeOutText());
+				currentFadeCoroutineImage = StartCoroutine(FadeOutImage());
 			}
 		}
 	}
 
-	private IEnumerator FadeIn()
+	private IEnumerator FadeInImage()
 	{
-		Color color = textMesh.color;
-		textMesh.text = displayText;
+		Color color = image.color;
 
 		while (color.a < 1f)
 		{
 			color.a += Time.deltaTime / fadeDuration;
-			textMesh.color = color;
+			image.color = color;
 			yield return null;
 		}
 	}
 
-	private IEnumerator FadeOut()
+	private IEnumerator FadeInText()
 	{
-		Color color = textMesh.color;
+		Color color = text.color;
+		text.text = displayText;
+
+		yield return new WaitForSeconds(textDelay);
+
+		while (color.a < 1f)
+		{
+			color.a += Time.deltaTime / fadeDuration;
+			text.color = color;
+			yield return null;
+		}
+	}
+
+	private IEnumerator FadeOutText()
+	{
+		Color color = text.color;
 
 		while (color.a > 0f)
 		{
 			color.a -= Time.deltaTime / fadeDuration;
-			textMesh.color = color;
+			text.color = color;
 			yield return null;
 		}
 
-		textMesh.text = string.Empty;
+		text.text = string.Empty;
+	}
+
+	private IEnumerator FadeOutImage()
+	{
+		Color color = image.color;
+
+		yield return new WaitForSeconds(textDelay * 2);
+
+		while (color.a > 0f)
+		{
+			color.a -= Time.deltaTime / fadeDuration;
+			image.color = color;
+			yield return null;
+		}
 	}
 }
