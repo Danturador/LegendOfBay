@@ -1,18 +1,21 @@
 using UnityEngine;
+using System.Collections;
 
 public class Door : MonoBehaviour
 {
 	[SerializeField] private string doorID;
-	[SerializeField] private SpriteRenderer gates;
-	[SerializeField] private Sprite openedGatesSprite;
+	[SerializeField] private Animation gatesOpenAnimation;
+	[SerializeField] private AnimationClip gatesAnimationClip;
 	[SerializeField] private BoxCollider2D doorCollider;
+	private bool isDoorsOpened;
+	private void Awake() => isDoorsOpened = false;
 	public bool TryOpen(Key key)
 	{
 		if (key != null)
 		{
 			if (key.keyID == doorID)
 			{
-				Open();
+				StartCoroutine(Open());
 				return true;
 			}
 			else
@@ -27,10 +30,14 @@ public class Door : MonoBehaviour
 		return false;
 	}
 
-	private void Open()
+	private IEnumerator Open()
 	{
-		gates.sprite = openedGatesSprite;
+		gatesOpenAnimation.Play();
+		
+		yield return new WaitForSeconds(gatesAnimationClip.length);
+		
 		doorCollider.enabled = false;
+		isDoorsOpened = true;
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
