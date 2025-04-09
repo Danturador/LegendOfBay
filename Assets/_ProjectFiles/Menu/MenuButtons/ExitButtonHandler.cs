@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace _ProjectFiles.Menu.ButtonsHandlers
+namespace _ProjectFiles.Menu.MenuButtons
 {
     public class ExitGameButtonHandler : MenuButtonHandler
     {

@@ -2,13 +2,13 @@ using _ProjectFiles.SaveSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace _ProjectFiles.Menu.ButtonsHandlers
+namespace _ProjectFiles.Menu.MenuButtons
 {
-    public class NewGameButtonHandler : MenuButtonHandler
+    public class ResumeGameButtonHandler : MenuButtonHandler
     {
         protected override void OnClick()
         {
-            PlayerPrefs.SetInt(Storage.PrefsKey, 0);
+            PlayerPrefs.SetInt(Storage.PrefsKey, 1);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
