@@ -258,6 +258,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonText: {fileID: 1358945339}
   textOutline: {fileID: 1358945341}
+  fontStartSize: 89
+  fontBumpSize: 100
   img: {fileID: 1004934489}
 --- !u!1 &165521335
 GameObject:
@@ -806,6 +808,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonText: {fileID: 1542226073}
   textOutline: {fileID: 1542226075}
+  fontStartSize: 89
+  fontBumpSize: 100
 --- !u!1 &689447455
 GameObject:
   m_ObjectHideFlags: 0
@@ -1648,6 +1652,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonText: {fileID: 1690964026}
   textOutline: {fileID: 1690964028}
+  fontStartSize: 89
+  fontBumpSize: 100
 --- !u!1 &1271183910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,6 +2000,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonText: {fileID: 1876044833}
   textOutline: {fileID: 1876044836}
+  fontStartSize: 89
+  fontBumpSize: 100
   img: {fileID: 1004934489}
 --- !u!114 &1437274042
 MonoBehaviour:
@@ -2961,6 +2969,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonText: {fileID: 165521337}
   textOutline: {fileID: 165521339}
+  fontStartSize: 89
+  fontBumpSize: 100
 --- !u!1 &1876044831
 GameObject:
   m_ObjectHideFlags: 0

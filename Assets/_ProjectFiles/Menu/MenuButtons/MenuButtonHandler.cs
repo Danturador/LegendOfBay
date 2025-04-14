@@ -10,8 +10,8 @@ namespace _ProjectFiles.Menu.MenuButtons
         [SerializeField] private Text buttonText;
         [SerializeField] private Outline textOutline;
 
-        [SerializeField, Min(0)] private int fontStartSize;
-        [SerializeField, Min(0)] private int fontBumpSize;
+        [SerializeField, Min(0)] private int fontStartSize = 89;
+        [SerializeField, Min(0)] private int fontBumpSize = 100;
 
         private void Start()
         {
