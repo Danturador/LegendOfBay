@@ -8,7 +8,7 @@ namespace _ProjectFiles.Menu
     {
         private Button _button;
 
-        public Button button 
+        protected Button button 
         { 
             get
             {
@@ -20,6 +20,7 @@ namespace _ProjectFiles.Menu
         protected virtual void Awake()
         {
             _button = GetComponent<Button>();
+            _button.onClick.AddListener(OnClick);
         }
 
         protected virtual void OnDestroy()

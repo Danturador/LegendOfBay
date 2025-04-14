@@ -5,14 +5,21 @@ namespace _ProjectFiles.Menu.InGameMenuButtons
 {
     public abstract class InGameMenuButtonHandler : ButtonHandler, IPointerEnterHandler, IPointerExitHandler
     {
+        private void OnDisable()
+        {
+            ChangeState(false);
+        }
+
         public void OnPointerEnter(PointerEventData eventData)
         {
-            button.image.color = Color.white;
+            ChangeState(true);
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
-            button.image.color = Color.clear;
+            ChangeState(false);
         }
+
+        private void ChangeState(bool showBg) => button.image.color = showBg ? Color.white : Color.clear;
     }
 }

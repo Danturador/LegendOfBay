@@ -5,36 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de615d76-5392-4624-a2d1-d4901732ccf9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameExitButtonHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameExitButtonHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameMenuButtonHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameMenuButtonHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameResumeButtonHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameResumeButtonHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameSettingsButtonHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameSettingsButtonHandler.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Epic Toon FX/Upgrade/ETFX 2019.4.24f1 URP Upgrade.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/JMO Assets/Cartoon FX FREE (old legacy effects).unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Zenject-ReflectionBaking.csproj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/OptionalExtras/Signals/Zenject-Signals.csproj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Zenject/Source/Zenject.csproj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonsHandlers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonsHandlers/BackSettingButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/BackSettingButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonsHandlers/BackSettingButton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/BackSettingButton.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonsHandlers/ButtonHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonsHandlers/ButtonHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonHandler.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonsHandlers/ExitButtonHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/ExitButtonHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonsHandlers/ExitButtonHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/ExitButtonHandler.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonsHandlers/MenuButtonHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/MenuButtonHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonsHandlers/MenuButtonHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/MenuButtonHandler.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonsHandlers/NewGameButtonHandlers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/NewGameButtonHandlers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonsHandlers/NewGameButtonHandlers.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/NewGameButtonHandlers.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonsHandlers/ResumeGameButtonHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/ResumeGameButtonHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonsHandlers/ResumeGameButtonHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/ResumeGameButtonHandler.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonsHandlers/SettingsButtonHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/SettingsButtonHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonsHandlers/SettingsButtonHandler.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/SettingsButtonHandler.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameMenuButtonHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameMenuButtonHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Video.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Video.renderTexture" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +32,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameSettingsButtonHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameSettingsButtonHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_ProjectFiles/Tools/AnimationCurveExtensions.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -144,6 +119,7 @@
       <workItem from="1737406428906" duration="745000" />
       <workItem from="1742986299960" duration="3496000" />
       <workItem from="1744215417446" duration="6431000" />
+      <workItem from="1744658062057" duration="361000" />
     </task>
     <servers />
   </component>
