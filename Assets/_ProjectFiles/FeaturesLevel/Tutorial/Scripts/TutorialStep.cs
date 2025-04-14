@@ -19,7 +19,6 @@ public class TutorialStep : MonoBehaviour
 
 	private void Awake()
 	{
-		Debug.LogError(displayText.Count);
 		text.text = string.Empty;
 		Color textColor = text.color;
 		textColor.a = 0f;
@@ -47,14 +46,18 @@ public class TutorialStep : MonoBehaviour
 
 			if (gameObject.activeInHierarchy)
 			{
-				if (displayText.Count > 1 && textIndex < displayText.Count - 1 && conditionChecker.CheckConditions())
+				if (conditionChecker != null && conditionChecker.CheckConditions())
 				{
-					textIndex++;
+					if (displayText.Count > 1 && textIndex < displayText.Count - 1)
+					{
+						textIndex++;
+					}
 				}
 				if (!string.IsNullOrEmpty(displayText[textIndex]))
 				{
 					currentFadeCoroutineImage = StartCoroutine(FadeInImage());
 					currentFadeCoroutine = StartCoroutine(FadeInText());
+
 				}
 			}
 
