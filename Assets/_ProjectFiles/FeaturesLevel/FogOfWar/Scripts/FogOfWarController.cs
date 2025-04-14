@@ -4,12 +4,15 @@ public class FogOfWarController : MonoBehaviour
 {
     public Texture2D fogOfWarTexture;
     public SpriteMask spriteMask;
+	[SerializeField] private SpriteRenderer fog;
 
     private Vector2 worldScale;
     private Vector2Int pixelScale;
 
     public void Awake()
     {
+		fog.gameObject.SetActive(true);
+
         pixelScale.x = fogOfWarTexture.width;
         pixelScale.y = fogOfWarTexture.height;
 

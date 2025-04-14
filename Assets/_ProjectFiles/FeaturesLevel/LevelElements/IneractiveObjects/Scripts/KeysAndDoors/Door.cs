@@ -13,7 +13,7 @@ public class Door : MonoBehaviour
 	{
 		if (key != null)
 		{
-			if (key.keyID == doorID)
+			if (key.keyID == doorID && !isDoorsOpened)
 			{
 				StartCoroutine(Open());
 				return true;

@@ -1,21 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class TutorialStep : MonoBehaviour
 {
 	public Text text;
-	public Image image; // Reference to the image that will fade in and out
-	[TextArea] public string displayText;
+	public Image image;
+	[TextArea] public List<string> displayText;
+	public int textIndex;
 	public float fadeDuration = 1f;
 	public float textDelay = 0.2f;
+
+	public ConditionChecker conditionChecker;
 
 	private Coroutine currentFadeCoroutine;
 	private Coroutine currentFadeCoroutineImage;
 
 	private void Awake()
 	{
-		// Initialize text and image transparency
+		Debug.LogError(displayText.Count);
 		text.text = string.Empty;
 		Color textColor = text.color;
 		textColor.a = 0f;
@@ -24,6 +28,8 @@ public class TutorialStep : MonoBehaviour
 		Color imageColor = image.color;
 		imageColor.a = 0f;
 		image.color = imageColor;
+
+		textIndex = 0;
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
@@ -38,11 +44,20 @@ public class TutorialStep : MonoBehaviour
 			{
 				StopCoroutine(currentFadeCoroutineImage);
 			}
+
 			if (gameObject.activeInHierarchy)
 			{
-				currentFadeCoroutineImage = StartCoroutine(FadeInImage());
-				currentFadeCoroutine = StartCoroutine(FadeInText());
+				if (displayText.Count > 1 && textIndex < displayText.Count - 1 && conditionChecker.CheckConditions())
+				{
+					textIndex++;
+				}
+				if (!string.IsNullOrEmpty(displayText[textIndex]))
+				{
+					currentFadeCoroutineImage = StartCoroutine(FadeInImage());
+					currentFadeCoroutine = StartCoroutine(FadeInText());
+				}
 			}
+
 		}
 	}
 
@@ -81,7 +96,7 @@ public class TutorialStep : MonoBehaviour
 	private IEnumerator FadeInText()
 	{
 		Color color = text.color;
-		text.text = displayText;
+		text.text = displayText[textIndex];
 
 		yield return new WaitForSeconds(textDelay);
 
