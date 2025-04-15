@@ -6,4 +6,8 @@ public class PlayerAttackEffectSpawner : MonoBehaviour
 {
     private ParticleSystem[] _playerAttackEffects;
     
+    private void SpawnEffect(int numberEffect)
+    {
+
+    }
 }
