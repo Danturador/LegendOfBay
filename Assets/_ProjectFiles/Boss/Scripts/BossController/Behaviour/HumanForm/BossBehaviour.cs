@@ -7,9 +7,19 @@ public class BossBehaviour : MonoBehaviour
 	[SerializeField] private float moveSpeed = 2f;
 	[SerializeField] private float attackRange = 2f;
 	[SerializeField] private float dashDistance = 7f;
+
+	[SerializeField] private Collider2D dashCollider;
+	[SerializeField] private Collider2D swordSlashCollider;
+
 	public bool isReadyToAttack = false;
 	public bool isPlayerNear = false;
-
+	private float[] attacksLength = new float[3] { 0.7f, 0.75f, 0.6f };
+	private void Awake()
+	{
+		isPlayerNear = false;
+		dashCollider.enabled = false;
+		swordSlashCollider.enabled = false;
+	}
 	public IEnumerator MoveTowardsPlayerCoroutine()
 	{
 		Debug.LogError("start walking");
@@ -44,7 +54,7 @@ public class BossBehaviour : MonoBehaviour
 
 	public IEnumerator DashTowardsPlayer()
 	{
-		float directionToPlayer = Mathf.Sign(player.position.x - transform.position.x); // 1 или -1
+		float directionToPlayer = Mathf.Sign(player.position.x - transform.position.x);
 
 		Vector3 targetPosition = transform.position + new Vector3(directionToPlayer * dashDistance, 0, 0);
 
@@ -53,7 +63,10 @@ public class BossBehaviour : MonoBehaviour
 		yield return new WaitForSeconds(0.5f);
 
 		float elapsedTime = 0f;
-		float dashDuration = 1.5f;
+		float dashDuration = 1f;
+
+		dashCollider.enabled = true;
+		Invoke(nameof(ChangeDashColliderState), dashDuration - 0.5f);
 
 		while (elapsedTime < dashDuration)
 		{
@@ -68,35 +81,34 @@ public class BossBehaviour : MonoBehaviour
 		}
 
 		transform.position = new Vector3(targetPosition.x, transform.position.y, transform.position.z);
+		dashCollider.enabled = false;
+	}
+	private void ChangeDashColliderState()
+	{
+		dashCollider.enabled = false;
 	}
 	public IEnumerator PerformComboAttack()
 	{
-		float attackDistance = 2.0f;
 		int comboCount = 3;
-		float[] attacksLength = new float[3] { 0.7f, 0.75f, 0.6f };
 
 		for (int i = 0; i < comboCount; i++)
 		{
 			Vector3 directionToPlayer = (player.position - transform.position).normalized;
 
-			Attack(attackDistance);
-
 			RotateToPlayer(directionToPlayer);
+			float colliderDuration = attacksLength[i] / 3;
 
-			yield return new WaitForSeconds(attacksLength[i]);
+			yield return new WaitForSeconds(colliderDuration);
+
+			swordSlashCollider.enabled = true;
+
+			yield return new WaitForSeconds(colliderDuration);
+
+			swordSlashCollider.enabled = false;
+
+			yield return new WaitForSeconds(colliderDuration);
 		}
-
-		Debug.Log("Combo attack completed.");
 	}
-
-	private void Attack(float distance)
-	{
-		Vector3 directionToPlayer = (player.position - transform.position).normalized;
-
-		Vector3 attackPosition = transform.position + directionToPlayer * distance;
-		Debug.Log($"Attack at position: {attackPosition}");
-	}
-
 	private void RotateToPlayer(Vector3 directionToPlayer)
 	{
 		transform.rotation = Quaternion.Euler(0, directionToPlayer.x < 0 ? 0 : 180, 0);
