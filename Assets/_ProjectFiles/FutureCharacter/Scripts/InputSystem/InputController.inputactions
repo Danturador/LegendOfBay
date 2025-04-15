@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "MovingItem",
+                    "type": "Button",
+                    "id": "5a21220b-a6eb-405b-b278-3cc1f50badf7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -203,11 +212,22 @@
                 {
                     "name": "",
                     "id": "f06c4b82-0624-4403-a2f8-02e88633b272",
-                    "path": "<Keyboard>/#(M)",
+                    "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "OpenMap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "51f6d129-bdad-4c76-8819-43701098ceab",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MovingItem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -297,7 +317,7 @@
                 {
                     "name": "",
                     "id": "7747912c-20f3-47b4-82c6-eceaf600706d",
-                    "path": "<Keyboard>/#(M)",
+                    "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

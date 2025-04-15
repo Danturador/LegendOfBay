@@ -17,6 +17,10 @@ public class PlayerDamageGiver : MonoBehaviour
         _damageGiverGameObject = GameObject.Find("PlayerDamageGiver");
     }
 
+    public void AttackSlash(int numberEffect)
+    {
+        CreateHitEffect(_damageGiverGameObject.transform, numberEffect);
+    }
     public void GiveDamage(int _damage)
     {
         var colliders = Physics2D.OverlapCircleAll(_damageGiverGameObject.transform.position, _attackRadius, _damageLayer);
@@ -27,17 +31,17 @@ public class PlayerDamageGiver : MonoBehaviour
             foreach (var item in foundItem)
             {
                 item.GetComponent<IDamageable>().TakeDamage(_damage);
-                CreateHitEffect(item.transform);
+                CreateHitEffect(item.transform,0);
                 CameraShake();
             }
         }
     }
-    private void CreateHitEffect(Transform itemPosition)
+    private void CreateHitEffect(Transform itemPosition,int numberEffect)
     {
         if(_hitEffects != null)
         {
             Vector2 hitPosition = itemPosition.position;
-            GameObject effect = Instantiate(_hitEffects[_currentEffectIndex], hitPosition, Quaternion.identity);
+            GameObject effect = Instantiate(_hitEffects[numberEffect], hitPosition, Quaternion.identity);
 
             ParticleSystemRenderer psRenderer = effect.GetComponent<ParticleSystemRenderer>();
             if (psRenderer != null)
@@ -45,7 +49,7 @@ public class PlayerDamageGiver : MonoBehaviour
                 psRenderer.sortingOrder = 9;
             }
             Destroy(effect, 2f);
-            _currentEffectIndex = (_currentEffectIndex + 1) % _hitEffects.Length;
+            //_currentEffectIndex = (_currentEffectIndex + 1) % _hitEffects.Length;
         }
     }
 
