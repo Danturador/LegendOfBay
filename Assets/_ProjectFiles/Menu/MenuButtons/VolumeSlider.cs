@@ -22,15 +22,9 @@ namespace _ProjectFiles.Menu.MenuButtons
             slider.onValueChanged.AddListener(VolumeChanged);
         }
 
-        private void Start()
-        {
-            float value = PlayerPrefs.GetFloat(VolumeValueKey, 1);
-            slider.value = value;
-            VolumeChanged(value);
-        }
-
         private void OnEnable()
         {
+            LoadVolumeValue();
             backLight.gameObject.SetActive(false);
         }
         
@@ -44,6 +38,13 @@ namespace _ProjectFiles.Menu.MenuButtons
             slider.onValueChanged.RemoveListener(VolumeChanged);
         }
 
+        private void LoadVolumeValue()
+        {
+            float value = PlayerPrefs.GetFloat(VolumeValueKey, 1);
+            slider.value = value;
+            VolumeChanged(value);
+        }
+        
         private void VolumeChanged(float value)
         {
             mixer.SetFloat(MusicVolume, Mathf.Log10(value) * 20);
