@@ -6,7 +6,7 @@ namespace _ProjectFiles.Menu
     {
         [SerializeField] private RenderTexture renderTexture;
 
-        private void Awake()
+        private void Start()
         {
             renderTexture.width = 3840;
             renderTexture.height = 1080;

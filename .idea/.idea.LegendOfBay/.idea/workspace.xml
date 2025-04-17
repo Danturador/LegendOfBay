@@ -5,11 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de615d76-5392-4624-a2d1-d4901732ccf9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/ButtonHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameMenu.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameMenuButtonHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameMenuButtonHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MENU LOOP.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MENU LOOP.wav.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Video.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Video.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/UI_Back_Light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/UI_Back_Light.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/UI_Exit game_Light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/UI_Exit game_Light.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/UI_Help &amp; settings_Light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/UI_Help &amp; settings_Light.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/UI_Instruction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/UI_Instruction.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/UI_Resume_Light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/UI_Resume_Light.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Video.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Video.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/VideoScaler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/VideoScaler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/menu_all.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/menu_all.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/menu_background_animation.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/menu_background_animation.mp4.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +49,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameSettingsButtonHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/VolumeSlider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_ProjectFiles/Tools/AnimationCurveExtensions.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -120,6 +137,7 @@
       <workItem from="1742986299960" duration="3496000" />
       <workItem from="1744215417446" duration="6431000" />
       <workItem from="1744658062057" duration="361000" />
+      <workItem from="1744876380269" duration="2220000" />
     </task>
     <servers />
   </component>
