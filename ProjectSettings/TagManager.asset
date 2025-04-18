@@ -50,6 +50,12 @@ TagManager:
   - name: Plan-03
     uniqueID: 4135896953
     locked: 0
+  - name: Enemy
+    uniqueID: 1458537267
+    locked: 0
+  - name: Player
+    uniqueID: 4137799411
+    locked: 0
   - name: Plan-02
     uniqueID: 3152278463
     locked: 0
