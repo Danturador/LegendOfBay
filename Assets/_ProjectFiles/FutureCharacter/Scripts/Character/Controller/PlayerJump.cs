@@ -30,7 +30,7 @@ public class PlayerJump : MonoBehaviour
     {
         _rb = rigidbody;
         _originalGravity = _rb.gravityScale;
-        groundLayers = 1 << 0 | 1 << 6;
+        groundLayers = 1 << 10 | 1 << 6;
         _jumpStartY = transform.position.y;
         jumpForce = Mathf.Sqrt(maxJumpHeight * (Physics2D.gravity.y * _rb.gravityScale) * -2) * _rb.mass;
         groundCheck = GetComponentInChildren<Transform>().Find("GroundCheck");
