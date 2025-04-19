@@ -4,7 +4,8 @@ namespace _ProjectFiles.Menu.InGameMenuButtons
 {
     public class InGameMenu : MonoBehaviour
     {
-        [SerializeField] [Min(0f)] private float fadeDuration;
+		[SerializeField] [Min(0f)] private float fadeDuration;
+		private InputController _inputController;
         private Transform _child;
         //private Image _background;
         //private bool _canToggle;
@@ -13,18 +14,15 @@ namespace _ProjectFiles.Menu.InGameMenuButtons
         {
             _child = transform.GetChild(0);
             _child.gameObject.SetActive(false);
-            //_background = _child.gameObject.GetComponent<Image>();
-            //_canToggle = true;
-        }
-
-        private void Update()
-        {
-            if (!Input.GetKeyDown(KeyCode.Escape))
-                return;
-
-            ToggleState();
-        }
-
+			//_background = _child.gameObject.GetComponent<Image>();
+			//_canToggle = true;
+			_inputController = FindAnyObjectByType<PlayerController>().inputController;
+			_inputController.Gameplay.Escape.performed += ctx => ToggleState();
+		}
+		private void OnDestroy()
+		{
+			_inputController.Gameplay.Escape.performed -= ctx => ToggleState();
+		}
         public void ToggleState()
         {
             // bool isActive = _child.gameObject.activeInHierarchy;

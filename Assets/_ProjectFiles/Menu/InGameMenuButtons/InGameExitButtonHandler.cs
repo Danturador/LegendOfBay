@@ -6,7 +6,7 @@ namespace _ProjectFiles.Menu.InGameMenuButtons
     {
         protected override void OnClick()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+			SceneTransition.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
 }
