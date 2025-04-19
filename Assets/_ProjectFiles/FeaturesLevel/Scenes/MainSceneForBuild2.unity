@@ -286,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 17655944}
   - component: {fileID: 17655945}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_Light3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -889,7 +889,7 @@ GameObject:
   m_Component:
   - component: {fileID: 105088563}
   - component: {fileID: 105088564}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1099,10 +1099,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 71072791061091893, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 260502271981577181, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
       propertyPath: fogOfWar
       value: 
@@ -1151,61 +1147,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3578785864603465052, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_SortingLayer
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3578785864603465052, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3578785864603465052, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -157167885
-      objectReference: {fileID: 0}
-    - target: {fileID: 4136002814234153152, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_Distance
-      value: 0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 4264027608226736845, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376941987155609052, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_BackSortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376941987155609052, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_FrontSortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376941987155609052, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_BackSortingLayerID
-      value: -955600431
-      objectReference: {fileID: 0}
-    - target: {fileID: 4376941987155609052, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_FrontSortingLayerID
-      value: -955600431
-      objectReference: {fileID: 0}
-    - target: {fileID: 4397508639857315595, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5895113884987048379, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6602768859082045752, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: impulseForce
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 6602768859082045752, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: maxGrappleDistance
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6602768859082045752, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: grapplePoints.Array.size
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6602768859082045752, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
       propertyPath: grapplePoints.Array.data[0]
@@ -1232,51 +1176,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2059134422}
     - target: {fileID: 7015909351424973492, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7015909351424973492, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1581233747}
-    - target: {fileID: 7015909351424973492, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: boxCollider2D
-      value: 
-      objectReference: {fileID: 1829878794}
-    - target: {fileID: 8218822512927097498, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8355836988990171049, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8355836988990171049, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 5048e1e89c576444183b74dcdba7aca2, type: 2}
-    - target: {fileID: 8355836988990171049, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7e42087e0e364e746bfc6812d7cf9d0c, type: 2}
-    - target: {fileID: 8355836988990171049, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: d9adef4f50d31fa45a615e0cb6d7fee7, type: 2}
-    - target: {fileID: 8355836988990171049, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      propertyPath: m_Materials.Array.data[3]
-      value: 
-      objectReference: {fileID: 2100000, guid: 7e42087e0e364e746bfc6812d7cf9d0c, type: 2}
-    m_RemovedComponents:
-    - {fileID: 0}
-    - {fileID: 2986733944780815057, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-    - {fileID: 5630036727673824779, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-    - {fileID: 7829203510114860918, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2356157325117755531, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 778148502}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
 --- !u!1 &111712956
@@ -1831,7 +1736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 171338712}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Plan-03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2205,7 +2110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 202182344}
   - component: {fileID: 202182345}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_root2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2742,7 +2647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 249444324}
   - component: {fileID: 249444325}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_GrassUnderPlatform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2826,7 +2731,7 @@ GameObject:
   m_Component:
   - component: {fileID: 264803656}
   - component: {fileID: 264803657}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_Platform_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3500,7 +3405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 339092244}
   - component: {fileID: 339092245}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: "\u043D\u0435\u0431\u043E color \u0441\u043B\u043E\u0439"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3609,7 +3514,7 @@ Transform:
   - {fileID: 402869505}
   - {fileID: 1996025811}
   - {fileID: 1681558881}
-  - {fileID: 1898740097}
+  - {fileID: 2039674946}
   - {fileID: 249301285}
   - {fileID: 291530252}
   - {fileID: 1170872637}
@@ -3980,7 +3885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 370893339}
   - component: {fileID: 370893340}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Map_End_Bounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4501,7 +4406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 419197818}
   - component: {fileID: 419197819}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_GrassOnPlatform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5008,7 +4913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 460299228}
   - component: {fileID: 460299229}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_rock5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5870,7 +5775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 555996669}
   - component: {fileID: 555996670}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_root5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6157,7 +6062,7 @@ GameObject:
   m_Component:
   - component: {fileID: 592224724}
   - component: {fileID: 592224725}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_rock3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7096,7 +7001,7 @@ GameObject:
   m_Component:
   - component: {fileID: 720478324}
   - component: {fileID: 720478325}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_Platform_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7934,121 +7839,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &778148501
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 778148502}
-  - component: {fileID: 778148504}
-  - component: {fileID: 778148503}
-  m_Layer: 11
-  m_Name: PlayerEdges
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &778148502
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778148501}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 425229586}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &778148503
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778148501}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: c80c9157554254a4ba7674faaf65afd9, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.53, y: -1}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 1, y: 2.46}
-  - {x: 1, y: -0.21}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
---- !u!68 &778148504
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 778148501}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: c80c9157554254a4ba7674faaf65afd9, type: 2}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -1.41, y: -1}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 1, y: 2.46}
-  - {x: 1, y: -0.21}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!1 &779845451
 GameObject:
   m_ObjectHideFlags: 0
@@ -8272,7 +8062,7 @@ GameObject:
   m_Component:
   - component: {fileID: 789827762}
   - component: {fileID: 789827763}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_rockUnderPlatform6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8441,7 +8231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 821239338}
   - component: {fileID: 821239339}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_Platform_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10096,7 +9886,7 @@ GameObject:
   m_Component:
   - component: {fileID: 949989516}
   - component: {fileID: 949989517}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_Light2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10179,7 +9969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 959296236}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Platform-3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10288,7 +10078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 969964668}
   - component: {fileID: 969964669}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_GrassUnderPlatform2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11116,7 +10906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1034600880}
   - component: {fileID: 1034600881}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStartmoss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12057,7 +11847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1139227654}
   - component: {fileID: 1139227655}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_rock2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12958,7 +12748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1266734428}
   - component: {fileID: 1266734429}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_rockUnderPlatform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13126,7 +12916,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1278347708}
   - component: {fileID: 1278347709}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_rock_4R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13500,7 +13290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1325516984}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Platform-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13922,7 +13712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1394878823}
   - component: {fileID: 1394878824}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Map_End_Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14441,7 +14231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1441784835}
   - component: {fileID: 1441784836}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_GrassOnPlatform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14524,7 +14314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1473048208}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Plan-05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14682,7 +14472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1487218513}
   - component: {fileID: 1487218514}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_rockOnPlatform5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14896,7 +14686,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1504818860}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Plan-04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15432,7 +15222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1583780053}
   - component: {fileID: 1583780054}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_fog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16004,6 +15794,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 343675157}
     m_Modifications:
+    - target: {fileID: 4160597743660631534, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6865931792635020628, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
       propertyPath: m_LocalPosition.x
       value: 35.19
@@ -16079,7 +15873,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1689903726}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Platform-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16119,7 +15913,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1695692120}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Platform-6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16474,7 +16268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1729528444}
   - component: {fileID: 1729528445}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_maingroundStart_thornsCave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16642,7 +16436,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1746827997}
   - component: {fileID: 1746827998}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_GrassUnderPlatform1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16986,6 +16780,10 @@ PrefabInstance:
     - target: {fileID: 2767404900831599099, guid: fcf21d2045ad17f4a8d0aba74deb6a12, type: 3}
       propertyPath: m_Name
       value: InGameMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2767404900831599099, guid: fcf21d2045ad17f4a8d0aba74deb6a12, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4543442215873962977, guid: fcf21d2045ad17f4a8d0aba74deb6a12, type: 3}
       propertyPath: m_Pivot.x
@@ -17355,11 +17153,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9a4422c7efb66a4780835de8256cf5d, type: 3}
---- !u!61 &1829878794 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 4773867853352063682, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
-  m_PrefabInstance: {fileID: 109039810}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1833525088
 GameObject:
   m_ObjectHideFlags: 0
@@ -17788,80 +17581,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9a4422c7efb66a4780835de8256cf5d, type: 3}
---- !u!1001 &1898740096
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 343675157}
-    m_Modifications:
-    - target: {fileID: 2646695717790269988, guid: 08c6c8dcd09e02a41beda1d297cfbc9a, type: 3}
-      propertyPath: m_SortingLayer
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2646695717790269988, guid: 08c6c8dcd09e02a41beda1d297cfbc9a, type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2646695717790269988, guid: 08c6c8dcd09e02a41beda1d297cfbc9a, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1142688833
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235687957332906457, guid: 08c6c8dcd09e02a41beda1d297cfbc9a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -11.335
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235687957332906457, guid: 08c6c8dcd09e02a41beda1d297cfbc9a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.05268
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235687957332906457, guid: 08c6c8dcd09e02a41beda1d297cfbc9a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.04603595
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235687957332906457, guid: 08c6c8dcd09e02a41beda1d297cfbc9a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235687957332906457, guid: 08c6c8dcd09e02a41beda1d297cfbc9a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235687957332906457, guid: 08c6c8dcd09e02a41beda1d297cfbc9a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235687957332906457, guid: 08c6c8dcd09e02a41beda1d297cfbc9a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235687957332906457, guid: 08c6c8dcd09e02a41beda1d297cfbc9a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235687957332906457, guid: 08c6c8dcd09e02a41beda1d297cfbc9a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4235687957332906457, guid: 08c6c8dcd09e02a41beda1d297cfbc9a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7742945062869015371, guid: 08c6c8dcd09e02a41beda1d297cfbc9a, type: 3}
-      propertyPath: m_Name
-      value: Stone_With_Moss_Bottom
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 08c6c8dcd09e02a41beda1d297cfbc9a, type: 3}
---- !u!4 &1898740097 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4235687957332906457, guid: 08c6c8dcd09e02a41beda1d297cfbc9a, type: 3}
-  m_PrefabInstance: {fileID: 1898740096}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1916798898
 GameObject:
   m_ObjectHideFlags: 0
@@ -17872,7 +17591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1916798899}
   - component: {fileID: 1916798900}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_trees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18045,7 +17764,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1932550334}
   - component: {fileID: 1932550335}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_SmokeOnTheWater
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18375,7 +18094,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1971865225}
   - component: {fileID: 1971865226}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18585,18 +18304,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stone_With_Moss_Left
       objectReference: {fileID: 0}
-    - target: {fileID: 8830178879060943707, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
-      propertyPath: m_SortingLayer
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8830178879060943707, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8830178879060943707, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1142688833
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18617,7 +18324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1999486478}
   - component: {fileID: 1999486479}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_rockUnderPlatform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19211,6 +18918,88 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &2039674945
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 343675157}
+    m_Modifications:
+    - target: {fileID: 4160597743660631534, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865931792635020628, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865931792635020628, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865931792635020628, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.04603595
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865931792635020628, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865931792635020628, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865931792635020628, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865931792635020628, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865931792635020628, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865931792635020628, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6865931792635020628, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382276486433029456, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_Name
+      value: Stone_With_Moss_Left (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8830178879060943707, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8830178879060943707, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8830178879060943707, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8830178879060943707, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1142688833
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+--- !u!4 &2039674946 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6865931792635020628, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
+  m_PrefabInstance: {fileID: 2039674945}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2040247014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19629,7 +19418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2085141628}
   - component: {fileID: 2085141629}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_ribbon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19802,7 +19591,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2092578870}
   - component: {fileID: 2092578871}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_rock_4L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20255,7 +20044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2127665556}
   - component: {fileID: 2127665557}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_GrassOnPlatform4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20339,7 +20128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2130638114}
   - component: {fileID: 2130638115}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Sprite_Enviroment_ maingroundStart_GrassUnderPlatform3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
