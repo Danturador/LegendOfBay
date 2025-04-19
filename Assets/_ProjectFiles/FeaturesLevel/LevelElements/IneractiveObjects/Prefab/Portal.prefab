@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9032641978776169785}
   - component: {fileID: 3046933372270084029}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: PortalMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 418826126140521875}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.11597734, w: 0.9932519}
-  m_LocalPosition: {x: 4.27, y: -1.21, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 3.89, y: -1.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8978416966526491131}
@@ -73,14 +73,14 @@ SpriteMask:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df47e087251ba3943bdfc65e9c3a1c4b, type: 3}
   m_MaskAlphaCutoff: 0.2
-  m_FrontSortingLayerID: 0
-  m_BackSortingLayerID: 0
-  m_FrontSortingLayer: 0
-  m_BackSortingLayer: 0
-  m_FrontSortingOrder: 0
-  m_BackSortingOrder: 0
+  m_FrontSortingLayerID: -955600431
+  m_BackSortingLayerID: -955600431
+  m_FrontSortingLayer: 1
+  m_BackSortingLayer: 1
+  m_FrontSortingOrder: 10
+  m_BackSortingOrder: 10
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1777637809610908601
