@@ -28,7 +28,7 @@ RectTransform:
   m_GameObject: {fileID: 1863217255397077743}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8138180148082990994}
@@ -131,15 +131,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5136927650112342568}
+  m_Children: []
   m_Father: {fileID: 8138180148082990994}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 3}
-  m_SizeDelta: {x: 75, y: 75}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 242.3, y: 108.8}
+  m_SizeDelta: {x: 485, y: 218}
+  m_Pivot: {x: 1, y: 1}
 --- !u!222 &6040716604133844640
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -161,18 +160,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.32168514, g: 0.9056604, b: 0.28622285, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8d7b8d496ae3ad846bf41d8da31bce57, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4c4cb2a6a8a35e64080b89f88d8586e9, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 1
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -203,18 +202,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2944064895824612977}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8651188859845640634}
+  m_Father: {fileID: 8138180148082990994}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 239.8, y: 110.1}
+  m_SizeDelta: {x: 485, y: 218}
+  m_Pivot: {x: 1, y: 1}
 --- !u!222 &6820566352499570710
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -243,7 +242,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 39bd90a79cf678245a5eed51234795c1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4c92bd9155cbe174c83dc0beb2665a87, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -281,17 +280,18 @@ RectTransform:
   m_GameObject: {fileID: 7856709967947415453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8651188859845640634}
+  - {fileID: 5136927650112342568}
   m_Father: {fileID: 1900460867234844289}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -15.5}
-  m_SizeDelta: {x: 343, y: 98}
-  m_Pivot: {x: 0.5, y: -0.3}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 5.5, y: -5}
+  m_SizeDelta: {x: 485, y: 218}
+  m_Pivot: {x: -0.02, y: 1.03}
 --- !u!222 &2602906875872025418
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c092b23c03847a841b2dddb96accd907, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8687ed57a7d143b4a913defc8bc7fdd7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -344,3 +344,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _healthBarImg: {fileID: 1382177145195257412}
   playerHealth: {fileID: 0}
+  _healthBarGradient:
+    serializedVersion: 2
+    key0: {r: 0.509434, g: 0.05526879, b: 0.05526879, a: 1}
+    key1: {r: 0.7831255, g: 0.8113208, b: 0.08036668, a: 1}
+    key2: {r: 0.32156864, g: 0.90588236, b: 0.28627452, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 13107
+    ctime1: 39321
+    ctime2: 64186
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_ColorSpace: -1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2

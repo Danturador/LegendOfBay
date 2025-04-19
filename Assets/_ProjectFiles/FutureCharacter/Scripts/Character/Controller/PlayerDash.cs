@@ -33,11 +33,13 @@ public class PlayerDash : MonoBehaviour
         _isDashing = true;
         _rb.gravityScale = 0f;
         _rb.velocity = new Vector2(moveDirection.x * dashPower, 0f);
+        Physics2D.IgnoreLayerCollision(7,9,true);
         yield return new WaitForSeconds(dashingTime);
        // _particleSystem.gameObject.SetActive(false);
         _rb.gravityScale = _originalGravity;
         _rb.velocity = Vector2.zero;
         _isDashing = false;
+        Physics2D.IgnoreLayerCollision(7, 9, false);
         yield return new WaitForSeconds(dashCooldown);
         _canDash = true;
     }

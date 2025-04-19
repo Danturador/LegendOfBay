@@ -98,6 +98,15 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MovingItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""5a21220b-a6eb-405b-b278-3cc1f50badf7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -225,11 +234,22 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f06c4b82-0624-4403-a2f8-02e88633b272"",
-                    ""path"": ""<Keyboard>/#(M)"",
+                    ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""OpenMap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""51f6d129-bdad-4c76-8819-43701098ceab"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MovingItem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -319,7 +339,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""7747912c-20f3-47b4-82c6-eceaf600706d"",
-                    ""path"": ""<Keyboard>/#(M)"",
+                    ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -364,6 +384,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         m_Gameplay_SmallAttack = m_Gameplay.FindAction("SmallAttack", throwIfNotFound: true);
         m_Gameplay_MediumAttack = m_Gameplay.FindAction("MediumAttack", throwIfNotFound: true);
         m_Gameplay_OpenMap = m_Gameplay.FindAction("OpenMap", throwIfNotFound: true);
+        m_Gameplay_MovingItem = m_Gameplay.FindAction("MovingItem", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Newaction = m_UI.FindAction("New action", throwIfNotFound: true);
@@ -442,6 +463,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_SmallAttack;
     private readonly InputAction m_Gameplay_MediumAttack;
     private readonly InputAction m_Gameplay_OpenMap;
+    private readonly InputAction m_Gameplay_MovingItem;
     public struct GameplayActions
     {
         private @InputController m_Wrapper;
@@ -454,6 +476,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         public InputAction @SmallAttack => m_Wrapper.m_Gameplay_SmallAttack;
         public InputAction @MediumAttack => m_Wrapper.m_Gameplay_MediumAttack;
         public InputAction @OpenMap => m_Wrapper.m_Gameplay_OpenMap;
+        public InputAction @MovingItem => m_Wrapper.m_Gameplay_MovingItem;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -487,6 +510,9 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             @OpenMap.started += instance.OnOpenMap;
             @OpenMap.performed += instance.OnOpenMap;
             @OpenMap.canceled += instance.OnOpenMap;
+            @MovingItem.started += instance.OnMovingItem;
+            @MovingItem.performed += instance.OnMovingItem;
+            @MovingItem.canceled += instance.OnMovingItem;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -515,6 +541,9 @@ public partial class @InputController: IInputActionCollection2, IDisposable
             @OpenMap.started -= instance.OnOpenMap;
             @OpenMap.performed -= instance.OnOpenMap;
             @OpenMap.canceled -= instance.OnOpenMap;
+            @MovingItem.started -= instance.OnMovingItem;
+            @MovingItem.performed -= instance.OnMovingItem;
+            @MovingItem.canceled -= instance.OnMovingItem;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -658,6 +687,7 @@ public partial class @InputController: IInputActionCollection2, IDisposable
         void OnSmallAttack(InputAction.CallbackContext context);
         void OnMediumAttack(InputAction.CallbackContext context);
         void OnOpenMap(InputAction.CallbackContext context);
+        void OnMovingItem(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
