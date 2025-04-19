@@ -2,7 +2,7 @@ using _ProjectFiles.SaveSystem;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace _ProjectFiles.Menu.ButtonsHandlers
+namespace _ProjectFiles.Menu.MenuButtons
 {
     public class ResumeGameButtonHandler : MenuButtonHandler
     {
