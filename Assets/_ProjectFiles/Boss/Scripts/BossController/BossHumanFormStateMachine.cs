@@ -36,7 +36,7 @@ public class BossHumanFormStateMachine : MonoBehaviour
 		isPassive = true;
 		isAttackEnded = false;
 		countOfAttack = 0;
-		nextAttack = ChooseNextAttack();
+		HandleHumanAttackCompletion();
 	}
 	private void Update()
 	{
@@ -54,10 +54,12 @@ public class BossHumanFormStateMachine : MonoBehaviour
 		/// From PassiveState
 		AddTransitionToState(passiveState, swordComboAttachState, () =>
 			!isPassive
+			&& nextAttack.Is(ComboTypeAttack)
 			//&& _animator.GetBool(nameof(IsComboAttackState))
 		);
 		AddTransitionToState(passiveState, dashState, () =>
 			!isPassive
+			&& nextAttack.Is(DashTypeAttack)
 			//&& _animator.GetBool(nameof(IsDashState))
 		);
 		///
