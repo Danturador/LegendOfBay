@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour
         inputController.Gameplay.Jump.performed += OnJump;
         inputController.Gameplay.Jump.canceled += exitJump;
         inputController.Gameplay.Dash.performed += OnDash;
-        inputController.Gameplay.Escape.performed += OnEscape;
         inputController.Gameplay.UseAction.performed += OnUseAction;
         inputController.Gameplay.MovingItem.performed += OnMovingItem;
     }
@@ -65,7 +64,6 @@ public class PlayerController : MonoBehaviour
         inputController.Gameplay.Jump.canceled -= exitJump;
         inputController.Gameplay.Dash.performed -= OnDash;
         inputController.Gameplay.UseAction.performed -= OnUseAction;
-        inputController.Gameplay.Escape.performed -= OnEscape;
     }
     private void Update()
     {
@@ -159,11 +157,6 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Colision exit");
             movableItem = false;
          }
-    }
-
-    private void OnEscape(InputAction.CallbackContext context) 
-    { 
-        Application.Quit();
     }
 
     private void OnUseAction(InputAction.CallbackContext context)

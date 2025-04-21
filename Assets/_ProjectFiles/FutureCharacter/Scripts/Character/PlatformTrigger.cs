@@ -27,6 +27,7 @@ public class PlatformTrigger : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer(_triggerLayername) && _rb.velocity.y <= 0)
         {
             Physics2D.IgnoreLayerCollision(6, 7, false);
+            Debug.Log(collision.name + " enter");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -34,6 +35,7 @@ public class PlatformTrigger : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer(_triggerLayername))
         {
             Physics2D.IgnoreLayerCollision(7, 6, true);
+            Debug.Log(collision.name + " exit");
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
