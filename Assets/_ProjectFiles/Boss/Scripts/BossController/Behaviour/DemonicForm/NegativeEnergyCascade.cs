@@ -1,5 +1,5 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
@@ -33,18 +33,23 @@ public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 		Destroy(projection);
 		Destroy(beam);
 	}
-	public IEnumerator AttackPattern()
+	public IEnumerator AttackPattern(Action<bool> setCascadeOfNeedles)
 	{
 		Initialize();
 
 		while (countOfAttacks > 0)
 		{
+			setCascadeOfNeedles(true);
+
 			projection.SetActive(true);
 
 			yield return new WaitForSeconds(projectionDuration);
 
 			projection.SetActive(false);
 			beam.SetActive(true);
+
+			setCascadeOfNeedles(false);
+			projection.SetActive(true);
 
 			yield return new WaitForSeconds(beamDuration);
 			beam.SetActive(false);
@@ -55,6 +60,7 @@ public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 
 			countOfAttacks--;
 			//StartCoroutine(CreateNegativeEnergyCascade());
+			setCascadeOfNeedles(false);
 		}
 
 		Deinitialize();

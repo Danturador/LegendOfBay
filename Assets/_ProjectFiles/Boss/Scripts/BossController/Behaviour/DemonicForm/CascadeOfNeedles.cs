@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,14 +21,18 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 		attackIndex = 0;
 	}
 
-	public IEnumerator AttackPattern()
+	public IEnumerator AttackPattern(Action<bool> setCascadeOfNeedles)
 	{
 		Initialize();
 
 		while (attackIndex < skipSpikes.Length)
 		{
+			setCascadeOfNeedles(true);
+
 			SpawnSpikes();
 			yield return new WaitForSeconds(attackDelay);
+
+			setCascadeOfNeedles(false);
 		}
 	}
 

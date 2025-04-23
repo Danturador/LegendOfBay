@@ -9,8 +9,7 @@ public class BossDemonicFormStateMachine : MonoBehaviour
 {
 	[SerializeField] private Animator _animator;
 	[SerializeField] private Rigidbody2D _rigidbody2D;
-	//[SerializeField] private InputController _inputController;
-	//public BossAnimationController bossAnimationController { get; private set; }
+	public DemonicFormAnimationController bossAnimationController { get; private set; }
 	private StateMachine2 _stateMachine;
 	public string currentState { 
 		get { 
@@ -21,7 +20,6 @@ public class BossDemonicFormStateMachine : MonoBehaviour
 	public CascadeOfNeedles cascadeOfNeedles;
 	public NegativeEnergyCascade negativeEnergyCascade;
 	public bool isAttackEnded;
-	public bool isAttackRepeated;
 	public TypesOfAttack previousAttack;
 	public TypesOfAttack currentAttack;
 
@@ -47,8 +45,10 @@ public class BossDemonicFormStateMachine : MonoBehaviour
 	}
 	private void InitializeStateMachine()
 	{
-		CascadeOfNeedlesState cascadeOfNeedlesState = new CascadeOfNeedlesState(this, cascadeOfNeedles);
-		NegativeEnergyCascadeState negativeEnergyCascadeState = new NegativeEnergyCascadeState(this, negativeEnergyCascade);
+		DemonicFormAnimationController animationController = new(_animator);
+
+		CascadeOfNeedlesState cascadeOfNeedlesState = new CascadeOfNeedlesState(this, cascadeOfNeedles, animationController);
+		NegativeEnergyCascadeState negativeEnergyCascadeState = new NegativeEnergyCascadeState(this, negativeEnergyCascade, animationController);
 
 		AddTransitionToState(cascadeOfNeedlesState, negativeEnergyCascadeState, () =>
 			isAttackEnded

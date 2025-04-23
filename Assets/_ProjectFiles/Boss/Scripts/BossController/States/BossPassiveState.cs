@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static BossAnimationType;
+using static HumanFormAnimationType;
 
 public class BossPassiveState : State2
 {
 	private BossHumanFormStateMachine _stateMachine;
-	private BossAnimationController _bossAnimationController;
-	public BossPassiveState(BossHumanFormStateMachine bossStateMachine, BossAnimationController bossAnimationController)
+	private HumanFormAnimationController _bossAnimationController;
+	public BossPassiveState(BossHumanFormStateMachine bossStateMachine, HumanFormAnimationController bossAnimationController)
 	{
 		_stateMachine = bossStateMachine;
 		_bossAnimationController = bossAnimationController;

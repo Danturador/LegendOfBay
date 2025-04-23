@@ -19,7 +19,7 @@ public class BossController : MonoBehaviour
 		if (collision.GetComponent<PlayerController>() && isBossInactive)
 		{
 			isBossInactive = false;
-			bossHumanForm.SetActive(true);
+			bossDemonicForm.SetActive(true);
 		}
 	}
 }

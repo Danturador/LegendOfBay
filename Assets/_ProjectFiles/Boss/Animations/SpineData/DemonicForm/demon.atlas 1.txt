@@ -1,0 +1,153 @@
+
+demon.png
+size: 1921,935
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Demon_0000_Mask_part1
+  rotate: true
+  xy: 2, 6
+  size: 217, 195
+  orig: 218, 196
+  offset: 1, 0
+  index: -1
+Demon_0001_Mask_part2
+  rotate: false
+  xy: 651, 40
+  size: 103, 79
+  orig: 103, 79
+  offset: 0, 0
+  index: -1
+Demon_0002_Leg_L
+  rotate: true
+  xy: 529, 393
+  size: 540, 140
+  orig: 541, 141
+  offset: 0, 1
+  index: -1
+Demon_0003_Led_R
+  rotate: true
+  xy: 671, 393
+  size: 540, 140
+  orig: 541, 141
+  offset: 1, 1
+  index: -1
+Demon_0004_Сlothes_2
+  rotate: false
+  xy: 995, 18
+  size: 156, 417
+  orig: 159, 418
+  offset: 2, 1
+  index: -1
+Demon_0005_Сlothes_1
+  rotate: true
+  xy: 1485, 22
+  size: 264, 258
+  orig: 306, 259
+  offset: 1, 1
+  index: -1
+Demon_0006_Hand_L
+  rotate: false
+  xy: 551, 7
+  size: 98, 112
+  orig: 100, 113
+  offset: 1, 1
+  index: -1
+Demon_0007_Mask
+  rotate: false
+  xy: 758, 53
+  size: 235, 338
+  orig: 239, 340
+  offset: 4, 1
+  index: -1
+Demon_0008_Hand_R
+  rotate: true
+  xy: 443, 42
+  size: 181, 106
+  orig: 182, 106
+  offset: 0, 0
+  index: -1
+Demon_0009_Elbow_L
+  rotate: false
+  xy: 1745, 184
+  size: 174, 109
+  orig: 174, 109
+  offset: 0, 0
+  index: -1
+Demon_0010_Elbow_R
+  rotate: false
+  xy: 551, 121
+  size: 176, 109
+  orig: 176, 109
+  offset: 0, 0
+  index: -1
+Demon_0011_Shoulder_L
+  rotate: true
+  xy: 1485, 288
+  size: 171, 240
+  orig: 171, 240
+  offset: 0, 0
+  index: -1
+Demon_0012_Shoulder_R
+  rotate: true
+  xy: 529, 232
+  size: 159, 227
+  orig: 159, 228
+  offset: 0, 1
+  index: -1
+Demon_0013_Слой91
+  rotate: false
+  xy: 1394, 461
+  size: 331, 472
+  orig: 331, 472
+  offset: 0, 0
+  index: -1
+Demon_0014_Hip_R
+  rotate: true
+  xy: 1727, 615
+  size: 318, 176
+  orig: 319, 177
+  offset: 1, 1
+  index: -1
+Demon_0015_Hip_L
+  rotate: true
+  xy: 1727, 295
+  size: 318, 176
+  orig: 319, 177
+  offset: 0, 1
+  index: -1
+Demon_0017_Pelvis
+  rotate: false
+  xy: 199, 36
+  size: 242, 187
+  orig: 242, 188
+  offset: 0, 1
+  index: -1
+Demon_0018_Hair_P1
+  rotate: true
+  xy: 1117, 444
+  size: 489, 275
+  orig: 490, 278
+  offset: 0, 2
+  index: -1
+Demon_0019_Hair_P2
+  rotate: true
+  xy: 813, 437
+  size: 496, 302
+  orig: 496, 305
+  offset: 0, 0
+  index: -1
+Demon_0020_Hair_P3
+  rotate: false
+  xy: 1153, 2
+  size: 330, 440
+  orig: 340, 441
+  offset: 0, 0
+  index: -1
+Demon_0021_Hair_P4
+  rotate: true
+  xy: 2, 225
+  size: 708, 525
+  orig: 709, 525
+  offset: 0, 0
+  index: -1

@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static BossAnimationType;
+using static HumanFormAnimationType;
 
 public class BossDashState : State2
 {
 	private BossHumanFormStateMachine _stateMachine;
 	private BossBehaviour _behaviour;
-	private BossAnimationController _animationController;
-	public BossDashState(BossHumanFormStateMachine stateMachine, BossBehaviour behaviour, BossAnimationController animationController)
+	private HumanFormAnimationController _animationController;
+	public BossDashState(BossHumanFormStateMachine stateMachine, BossBehaviour behaviour, HumanFormAnimationController animationController)
 	{
 		_stateMachine = stateMachine;
 		_behaviour = behaviour;
