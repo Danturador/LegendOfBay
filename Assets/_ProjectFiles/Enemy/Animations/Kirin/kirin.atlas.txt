@@ -1,0 +1,258 @@
+
+kirin.png
+size: 1652,622
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Kirin
+  rotate: false
+  xy: 779, 98
+  size: 523, 522
+  orig: 523, 522
+  offset: 0, 0
+  index: -1
+Kirin_0000_Ear
+  rotate: false
+  xy: 1128, 49
+  size: 70, 47
+  orig: 70, 47
+  offset: 0, 0
+  index: -1
+Kirin_0001_Head
+  rotate: false
+  xy: 1304, 231
+  size: 135, 191
+  orig: 136, 191
+  offset: 0, 0
+  index: -1
+Kirin_0002_Lower-jaw
+  rotate: true
+  xy: 985, 46
+  size: 50, 78
+  orig: 50, 78
+  offset: 0, 0
+  index: -1
+Kirin_0003_Shoulder_L
+  rotate: true
+  xy: 1200, 62
+  size: 34, 90
+  orig: 34, 90
+  offset: 0, 0
+  index: -1
+Kirin_0004_Elbow_L
+  rotate: true
+  xy: 779, 4
+  size: 22, 62
+  orig: 22, 62
+  offset: 0, 0
+  index: -1
+Kirin_0005_Hoof_hand_L
+  rotate: true
+  xy: 1525, 30
+  size: 36, 24
+  orig: 36, 24
+  offset: 0, 0
+  index: -1
+Kirin_0006_Hip_L
+  rotate: true
+  xy: 779, 28
+  size: 68, 100
+  orig: 68, 100
+  offset: 0, 0
+  index: -1
+Kirin_0007_Knee_L
+  rotate: true
+  xy: 1065, 48
+  size: 48, 61
+  orig: 48, 61
+  offset: 0, 0
+  index: -1
+Kirin_0008_Shin_L
+  rotate: true
+  xy: 1128, 7
+  size: 40, 70
+  orig: 40, 70
+  offset: 0, 0
+  index: -1
+Kirin_0009_Hoof_Leg_L
+  rotate: false
+  xy: 1510, 106
+  size: 40, 24
+  orig: 40, 24
+  offset: 0, 0
+  index: -1
+Kirin_0010_Tip_tail
+  rotate: true
+  xy: 1479, 425
+  size: 48, 96
+  orig: 48, 96
+  offset: 0, 0
+  index: -1
+Kirin_0011_Tail
+  rotate: false
+  xy: 1304, 27
+  size: 129, 90
+  orig: 129, 90
+  offset: 0, 0
+  index: -1
+Kirin_0012_Сhest
+  rotate: true
+  xy: 1304, 119
+  size: 110, 147
+  orig: 111, 148
+  offset: 0, 0
+  index: -1
+Kirin_0013_Neck
+  rotate: true
+  xy: 1435, 10
+  size: 87, 88
+  orig: 87, 88
+  offset: 0, 0
+  index: -1
+Kirin_0014_Horn
+  rotate: false
+  xy: 1479, 475
+  size: 75, 145
+  orig: 76, 145
+  offset: 0, 0
+  index: -1
+Kirin_0015_Neck_2
+  rotate: true
+  xy: 1441, 231
+  size: 97, 150
+  orig: 97, 151
+  offset: 0, 0
+  index: -1
+Kirin_0016_Pelvis
+  rotate: false
+  xy: 1510, 132
+  size: 122, 97
+  orig: 122, 97
+  offset: 0, 0
+  index: -1
+Kirin_0017_Shoulder_R
+  rotate: true
+  xy: 1200, 17
+  size: 43, 88
+  orig: 43, 88
+  offset: 0, 0
+  index: -1
+Kirin_0018_Elbow_R
+  rotate: true
+  xy: 1577, 428
+  size: 28, 61
+  orig: 28, 61
+  offset: 0, 0
+  index: -1
+Kirin_0019_Hoof_hand_R
+  rotate: true
+  xy: 1525, 68
+  size: 36, 25
+  orig: 36, 25
+  offset: 0, 0
+  index: -1
+Kirin_0020_Hip_R
+  rotate: true
+  xy: 881, 32
+  size: 64, 102
+  orig: 64, 102
+  offset: 0, 0
+  index: -1
+Kirin_0021_Knee_R
+  rotate: true
+  xy: 1593, 271
+  size: 57, 55
+  orig: 57, 55
+  offset: 0, 0
+  index: -1
+Kirin_0022_Shin_R
+  rotate: true
+  xy: 1577, 458
+  size: 27, 73
+  orig: 27, 73
+  offset: 0, 0
+  index: -1
+Kirin_0023_Hoof_Leg_R
+  rotate: false
+  xy: 881, 2
+  size: 39, 28
+  orig: 39, 28
+  offset: 0, 0
+  index: -1
+Kirin_0024_Light_Hoof_Leg_R
+  rotate: true
+  xy: 1611, 378
+  size: 48, 39
+  orig: 64, 52
+  offset: 7, 7
+  index: -1
+Kirin_0025_Light_Hoof_Leg_L
+  rotate: false
+  xy: 1593, 231
+  size: 49, 38
+  orig: 65, 52
+  offset: 7, 7
+  index: -1
+Kirin_0026_Light_Hoof_hand_L
+  rotate: false
+  xy: 1065, 6
+  size: 50, 40
+  orig: 65, 52
+  offset: 7, 6
+  index: -1
+Kirin_0027_Light_Hoof_hand_R
+  rotate: false
+  xy: 985, 4
+  size: 50, 40
+  orig: 65, 52
+  offset: 7, 6
+  index: -1
+Kirin_0028_Light_mane
+  rotate: false
+  xy: 1552, 14
+  size: 85, 116
+  orig: 109, 143
+  offset: 13, 18
+  index: -1
+Kirin_0029_Light_neck
+  rotate: false
+  xy: 1453, 99
+  size: 55, 130
+  orig: 74, 159
+  offset: 11, 13
+  index: -1
+Kirin_0030_Light_beard
+  rotate: false
+  xy: 1611, 334
+  size: 34, 42
+  orig: 51, 57
+  offset: 8, 7
+  index: -1
+Kirin_0031_Light_spine
+  rotate: false
+  xy: 1441, 330
+  size: 168, 92
+  orig: 196, 120
+  offset: 12, 19
+  index: -1
+Kirin_0032_Light_tail
+  rotate: false
+  xy: 1556, 487
+  size: 94, 133
+  orig: 152, 181
+  offset: 24, 29
+  index: -1
+Kirin_0033_Light_horns
+  rotate: false
+  xy: 1304, 424
+  size: 173, 196
+  orig: 222, 225
+  offset: 21, 20
+  index: -1
+shash_big01
+  rotate: false
+  xy: 2, 11
+  size: 775, 609
+  orig: 1280, 720
+  offset: 260, 73
+  index: -1

@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 275ef92192534aacb432e91223cdaf59, type: 3}
-  m_Name: HundunNavigationInfo
+  m_Script: {fileID: 11500000, guid: 58e9e13b58c3470ab3e3be32adb1c861, type: 3}
+  m_Name: AttackInfo
   m_EditorClassIdentifier: 
-  moveSpeed: 0
-  startDashDelay: 1
-  dashTimeInterval: 1
-  dashTime: 1
-  randomTargetOffset: {x: 0.5, y: 1.5}
+  attackRange: 0
+  attackSpeed: 0
+  damage: 0

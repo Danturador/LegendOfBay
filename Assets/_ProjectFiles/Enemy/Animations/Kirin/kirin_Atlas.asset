@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fdcafab49ae4a1daa882492d4da2e6d, type: 3}
-  m_Name: HundunEnemyInfo
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: kirin_Atlas
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  provocationRadius: 0
+  atlasFile: {fileID: 4900000, guid: cb048458c879ecd46b52a09bfe7394d9, type: 3}
+  materials:
+  - {fileID: 2100000, guid: a1847b3d74b900542abc4caf425a91d5, type: 2}

@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace _ProjectFiles.Enemy.Scripts.Core
 {
-    [CreateAssetMenu(menuName = "Enemy/Attack info", fileName = "AttackInfo")]
     public class EnemyAttackInfo : ScriptableObject
     {
         [SerializeField] private float attackRange;

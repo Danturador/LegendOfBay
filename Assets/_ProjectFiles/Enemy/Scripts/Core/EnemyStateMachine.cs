@@ -11,10 +11,10 @@ namespace _ProjectFiles.Enemy.Scripts.Core
 
         private bool _isVisibleByPlayer;
 
-        public EnemyStateMachine(EnemyInfoContainer infoContainer, EnemyContainer container)
+        public EnemyStateMachine(EnemyProfile profile, EnemyContainer container)
         {
-            _attackInfo = infoContainer.AttackInfo;
-            _navigationInfo = infoContainer.NavigationInfo;
+            _attackInfo = profile.AttackInfo;
+            _navigationInfo = profile.NavigationInfo;
             _container = container;
 
             var activeState = (ActiveState)_states.ToList().First(x => x.GetType() == typeof(ActiveState));

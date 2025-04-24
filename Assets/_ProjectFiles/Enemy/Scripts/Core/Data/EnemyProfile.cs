@@ -3,7 +3,7 @@ using UnityEngine;
 namespace _ProjectFiles.Enemy.Scripts.Core
 {
     [CreateAssetMenu(fileName = "InfoContainer", menuName = "Enemy/Info container", order = 0)]
-    public class EnemyInfoContainer : ScriptableObject
+    public class EnemyProfile : ScriptableObject
     {
         [SerializeField] private EnemyInfo enemyInfo;
         [SerializeField] private EnemyNavigationInfo navigationInfo;

@@ -1,5 +1,6 @@
 using _ProjectFiles.Enemy.Scripts._PLAYER_;
 using _ProjectFiles.Enemy.Scripts.Behaviour.Strategy;
+using _ProjectFiles.Enemy.Scripts.Core.Instances.Hundun;
 using UnityEngine;
 
 namespace _ProjectFiles.Enemy.Scripts.Core
@@ -13,9 +14,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
 
         [Header("Behaviour")] [SerializeField] private EnemyNavigation enemyNavigation;
 
-        [SerializeField] private AnimationCurve speedCurve;
-
-        [Header("Data")] [SerializeField] private EnemyInfoContainer infoContainer;
+        [Header("Data")] [SerializeField] private EnemyProfile profile;
 
         private Enemy _enemy;
         public EnemyNavigation Navigation => enemyNavigation;
@@ -46,10 +45,26 @@ namespace _ProjectFiles.Enemy.Scripts.Core
 
         private void Initialize()
         {
-            _enemy = new Enemy(infoContainer, this);
+            _enemy = new Enemy(profile, this);
 
-            enemyNavigation.Initialize(infoContainer.NavigationInfo,
-                new HundunNavigation(rigidbody, infoContainer.NavigationInfo, speedCurve));
+            switch (profile.EnemyInfo.Type)
+            {
+                case EnemyType.Hundun:
+                {
+                    var info = profile.NavigationInfo as HundunNavigationInfo;
+
+                    enemyNavigation.Initialize(profile.NavigationInfo,
+                        new HundunNavigation(rigidbody, info));
+                    break;
+                }
+
+                case EnemyType.Shishi:
+                {
+                    // enemyNavigation.Initialize(profile.NavigationInfo,
+                    //     new HundunNavigation(rigidbody, profile.NavigationInfo as HundunNavigationInfo));
+                    break;
+                }
+            }
         }
     }
 }
