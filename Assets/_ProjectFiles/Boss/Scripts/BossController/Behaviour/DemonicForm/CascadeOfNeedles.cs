@@ -9,6 +9,7 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 	[SerializeField] private float spikeSpacing;
 	[SerializeField] private int totalSpikes;
 	[SerializeField] private float attackDelay;
+	[SerializeField] private float animationDelay;
 	[SerializeField] private float spikeFallSpeed;
 	[SerializeField] private int[] skipSpikes;
 	[SerializeField] private int attackIndex;
@@ -28,11 +29,14 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 		while (attackIndex < skipSpikes.Length)
 		{
 			setCascadeOfNeedles(true);
+			Debug.Log("true");
 
 			SpawnSpikes();
 			yield return new WaitForSeconds(attackDelay);
 
+			Debug.Log("false");
 			setCascadeOfNeedles(false);
+			yield return new WaitForSeconds(animationDelay);
 		}
 	}
 

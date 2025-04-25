@@ -5219,11 +5219,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!95 &907377084 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 987403043269012810, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-  m_PrefabInstance: {fileID: 7780944408106295722}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1030963755
 GameObject:
   m_ObjectHideFlags: 0
@@ -5454,33 +5449,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossController
       objectReference: {fileID: 0}
-    - target: {fileID: 690007702083760485, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 811175050153443334, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3662117305898107758, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: m_Name
-      value: RigidbodyCollider
+    - target: {fileID: 2829471609964191233, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
+      propertyPath: attackDelay
+      value: 1.4
       objectReference: {fileID: 0}
-    - target: {fileID: 3668973241944085616, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: _animator
-      value: 
-      objectReference: {fileID: 907377084}
-    - target: {fileID: 3764004824669367464, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 2829471609964191233, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
+      propertyPath: animationDelay
+      value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 4218714685766083156, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: nextAttack
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5544132886645364531, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 2829471609964191233, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
+      propertyPath: spikeFallSpeed
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5642820169609560688, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: player
@@ -5525,10 +5508,6 @@ PrefabInstance:
     - target: {fileID: 6236074584863045121, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6582456983338530918, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

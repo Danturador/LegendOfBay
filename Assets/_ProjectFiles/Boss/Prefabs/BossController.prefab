@@ -256,6 +256,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6236074584863045121}
     m_Modifications:
+    - target: {fileID: -7938639562004219938, guid: e6817a256232e244fa01281582a2210e, type: 3}
+      propertyPath: nextAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841373631443212004, guid: e6817a256232e244fa01281582a2210e, type: 3}
+      propertyPath: m_Name
+      value: RigidbodyCollider
+      objectReference: {fileID: 0}
     - target: {fileID: 5445828444998645231, guid: e6817a256232e244fa01281582a2210e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -420,6 +428,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7023853388301007457, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 987403043269012810}
     - target: {fileID: 7471221892676928185, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
       propertyPath: m_Name
       value: BossDemon
@@ -440,11 +452,17 @@ PrefabInstance:
       propertyPath: spikeFallSpeed
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 110097639036240462, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
+--- !u!95 &987403043269012810 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6782569602549744475, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
+  m_PrefabInstance: {fileID: 6022283330788486673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1729394172218825726 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5445828444998645231, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}

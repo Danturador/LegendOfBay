@@ -18,13 +18,13 @@ public class NegativeEnergyCascadeState : State2
 	public override void OnStateEnter()
 	{
 		_stateMachine.isAttackEnded = false;
-		_animationController.SetBool(IsNegativeEnergyCascade, true);
+		//_animationController.SetBool(IsNegativeEnergyCascade, true);
 
 		_stateMachine.StartCoroutine(UseAttack());
 	}
 	public override void OnStateExit()
 	{
-		_animationController.SetBool(IsNegativeEnergyCascade, false);
+		//_animationController.SetBool(IsNegativeEnergyCascade, false);
 	}
 	private IEnumerator UseAttack()
 	{

@@ -19,13 +19,13 @@ public class CascadeOfNeedlesState : State2
 	public override void OnStateEnter()
 	{
 		_stateMachine.isAttackEnded = false;
-		_animationController.SetBool(IsCascadeOfNeedles, true);
+		//_animationController.SetBool(IsCascadeOfNeedles, true);
 
 		_stateMachine.StartCoroutine(UseAttack());
 	}
 	public override void OnStateExit()
 	{
-		_animationController.SetBool(IsCascadeOfNeedles, false);
+		//_animationController.SetBool(IsCascadeOfNeedles, false);
 	}
 	private IEnumerator UseAttack()
 	{
