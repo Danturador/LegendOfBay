@@ -29,7 +29,14 @@ public class CascadeOfNeedlesState : State2
 	}
 	private IEnumerator UseAttack()
 	{
+		_animationController.SetBool(IsCascadeOfNeedlesRepeat, true);
+
 		yield return _stateMachine.StartCoroutine(_demonicBehaviour.AttackPattern(SetCascadeOfNeedles));
+
+		_animationController.SetBool(IsCascadeOfNeedlesRepeat, false);
+
+		yield return new WaitForSeconds(3f);
+		
 		_stateMachine.HandleDemonicAttackCompletion();
 	}
 	private void SetCascadeOfNeedles(bool value)

@@ -29,14 +29,14 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 		while (attackIndex < skipSpikes.Length)
 		{
 			setCascadeOfNeedles(true);
-			Debug.Log("true");
 
 			SpawnSpikes();
-			yield return new WaitForSeconds(attackDelay);
-
-			Debug.Log("false");
+			if (attackIndex < skipSpikes.Length)
+			{
+				yield return new WaitForSeconds(attackDelay);
+			}
 			setCascadeOfNeedles(false);
-			yield return new WaitForSeconds(animationDelay);
+			//yield return new WaitForSeconds(animationDelay);
 		}
 	}
 

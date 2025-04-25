@@ -31,6 +31,8 @@ public class NegativeEnergyCascadeState : State2
 		//yield return _stateMachine.StartCoroutine(_demonicBehaviour.AttackPattern());
 		yield return _stateMachine.StartCoroutine(_demonicBehaviour.AttackPattern(SetCascadeOfNeedles));
 
+		yield return new WaitForSeconds(3f);
+
 		_stateMachine.HandleDemonicAttackCompletion();
 	}
 	private void SetCascadeOfNeedles(bool value)

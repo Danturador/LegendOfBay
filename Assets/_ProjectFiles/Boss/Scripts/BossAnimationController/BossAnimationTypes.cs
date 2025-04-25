@@ -10,6 +10,7 @@ public enum DemonicFormAnimationType
 {
 	IsPassive,
 	IsCascadeOfNeedles,
+	IsCascadeOfNeedlesRepeat,
 	IsNegativeEnergyCascade,
 	IsDead
 }

@@ -5455,11 +5455,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2829471609964191233, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: attackDelay
-      value: 1.4
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 2829471609964191233, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: animationDelay
-      value: 0.1
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 2829471609964191233, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: spikeFallSpeed

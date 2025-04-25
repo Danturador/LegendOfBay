@@ -56,36 +56,14 @@ public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 			RotateBeam(projection.transform, rotationAngle);
 			RotateBeam(beam.transform, rotationAngle);
 
+			projection.SetActive(false);
 			yield return new WaitForSeconds(attackDelay);
 
 			countOfAttacks--;
-			//StartCoroutine(CreateNegativeEnergyCascade());
 			setCascadeOfNeedles(false);
 		}
 
 		Deinitialize();
-	}
-	public IEnumerator CreateNegativeEnergyCascade()
-	{
-		while (countOfAttacks > 0)
-		{
-			projection.SetActive(true);
-
-			yield return new WaitForSeconds(projectionDuration);
-
-			projection.SetActive(false);
-			beam.SetActive(true);
-
-			yield return new WaitForSeconds(beamDuration);
-			beam.SetActive(false);
-			RotateBeam(projection.transform, rotationAngle);
-			RotateBeam(beam.transform, rotationAngle);
-
-			yield return new WaitForSeconds(attackDelay);
-
-			countOfAttacks--;
-			//StartCoroutine(CreateNegativeEnergyCascade());
-		}
 	}
 	private void RotateBeam(Transform transform, float angle)
 	{
