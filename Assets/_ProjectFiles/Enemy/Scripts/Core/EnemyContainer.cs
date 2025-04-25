@@ -1,8 +1,10 @@
 using _ProjectFiles.Enemy.Scripts._PLAYER_;
 using _ProjectFiles.Enemy.Scripts.Behaviour.Strategy;
 using _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Kirin;
+using _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Shishi;
 using _ProjectFiles.Enemy.Scripts.Core.Instances.Hundun;
 using UnityEngine;
+using ShishiAttack = _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Shishi.ShishiAttack;
 
 namespace _ProjectFiles.Enemy.Scripts.Core
 {
@@ -45,7 +47,6 @@ namespace _ProjectFiles.Enemy.Scripts.Core
             if (other.TryGetComponent(out EnemyDetectionZone zone))
             {
                 IsVisibleByPlayer = true;
-                //_enemy.State.SetVisibility(true);
                 Navigation.Target = zone.Player.transform;
             }
         }
@@ -53,7 +54,6 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         private void OnTriggerExit2D(Collider2D other)
         {
             if (other.TryGetComponent(out EnemyDetectionZone zone)) IsVisibleByPlayer = false;
-            //_enemy.State.SetVisibility(false);
         }
 
         private void Initialize()
@@ -79,6 +79,15 @@ namespace _ProjectFiles.Enemy.Scripts.Core
                         new KirinNavigation(this));
 
                     Attack.Initialize(this, new KirinAttack(this));
+                    break;
+                }
+                
+                case EnemyType.Shishi:
+                {
+                    enemyNavigation.Initialize(profile.NavigationInfo,
+                        new ShishiNavigation(this));
+
+                    Attack.Initialize(this, new ShishiAttack());
                     break;
                 }
             }

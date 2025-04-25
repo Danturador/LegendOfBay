@@ -22,7 +22,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
                     
                 case EnemyType.Shishi:
                 {
-                    State = new HundunStateMachine(profile, container);
+                    State = new ShishiStateMachine(profile, container);
                     break;
                 }
                 

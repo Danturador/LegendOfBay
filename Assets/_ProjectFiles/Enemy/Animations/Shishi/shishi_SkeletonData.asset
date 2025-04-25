@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1b3b4b945939a54ea0b23d3396115fb, type: 3}
-  m_Name: kirin_SkeletonData
+  m_Name: shishi_SkeletonData
   m_EditorClassIdentifier: 
   atlasAssets:
-  - {fileID: 11400000, guid: 53515cf18cd4321498d5387b7e00b066, type: 2}
-  scale: 0.013
-  skeletonJSON: {fileID: 4900000, guid: d69a9ee8098f89c4d80a5cf9062f640c, type: 3}
+  - {fileID: 11400000, guid: ede72c208515cef44a2bbde91427c893, type: 2}
+  scale: 0.007
+  skeletonJSON: {fileID: 4900000, guid: 073ea5cd3822acc4b899829672a13e42, type: 3}
   isUpgradingBlendModeMaterials: 0
   blendModeMaterials:
     requiresBlendModeMaterials: 0
@@ -28,4 +28,4 @@ MonoBehaviour:
   toAnimation: []
   duration: []
   defaultMix: 0.2
-  controller: {fileID: 9100000, guid: dcd203a0864656c40981c2f5e55c7d0a, type: 2}
+  controller: {fileID: 9100000, guid: 3e126e0aa3a6f2943bd2ddc5535602cf, type: 2}
