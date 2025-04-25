@@ -66,7 +66,6 @@ public class MonsterDamageGiver : MonoBehaviour
 
     private async Task Attack(Collider2D collision)
     {
-        Debug.Log("attack");
         ReloadAttack();
         _animator.SetTrigger("attack");
         await Task.Delay(TimeSpan.FromSeconds(attackStartDelay));
@@ -89,6 +88,5 @@ public class MonsterDamageGiver : MonoBehaviour
     {
         await Task.Delay(TimeSpan.FromSeconds(attackDelay));
         _damageDone = false;
-        Debug.Log("attack reloaded");
     }
 }

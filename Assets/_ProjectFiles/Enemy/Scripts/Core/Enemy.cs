@@ -12,9 +12,30 @@ namespace _ProjectFiles.Enemy.Scripts.Core
             _attackInfo = profile.AttackInfo;
             _navigationInfo = profile.NavigationInfo;
 
-            State = new EnemyStateMachine(profile, container);
+            switch (profile.EnemyInfo.Type)
+            {
+                case EnemyType.Hundun:
+                {
+                    State = new HundunStateMachine(profile, container);
+                    break;
+                }
+                    
+                case EnemyType.Shishi:
+                {
+                    State = new HundunStateMachine(profile, container);
+                    break;
+                }
+                
+                case EnemyType.Kirin:
+                {
+                    State = new KirinStateMachine(profile, container);
+                    break;
+                }
+            }
+            
+          
         }
 
-        public EnemyStateMachine State { get; }
+        public StateMachine State { get; }
     }
 }

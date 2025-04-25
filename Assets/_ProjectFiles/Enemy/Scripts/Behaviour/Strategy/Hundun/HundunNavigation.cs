@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
+using System.Threading;
+using System.Threading.Tasks;
 using _ProjectFiles.Enemy.Scripts.Core.Instances.Hundun;
 using UnityEngine;
+using Random = UnityEngine.Random;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
@@ -11,6 +15,7 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
         private readonly HundunNavigationInfo _info;
         private readonly Rigidbody2D _rigidbody;
         private readonly AnimationCurve _speedCurve;
+        private CancellationTokenSource _token;
 
         public HundunNavigation(Rigidbody2D rigidbody, HundunNavigationInfo info)
         {
@@ -19,11 +24,12 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
             _speedCurve = info.SpeedCurve;
         }
 
-        public override IEnumerator Execute(Transform target)
+        public IEnumerator Execute(Transform target)
         {
-            yield return new WaitForSeconds(_info.StartDashDelay);
+            _token = new CancellationTokenSource();
+            yield return new WaitForSeconds(_info.StartDashDelay); 
 
-            while (true)
+            while (!_token.IsCancellationRequested)
             {
                 var randomOffsetDirection = Random.Range(0, 2) == 1 ? -1 : 1;
                 Vector2 currentTargetPosition = target.position + new Vector3(1, 1, 0) *
@@ -41,11 +47,17 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
                     var currentVelocity = velocityMagnitude * _speedCurve.Evaluate(time) * moveDirection;
                     _rigidbody.velocity = currentVelocity;
 
-                    yield return null;
+                    yield return null; 
                 }
 
                 yield return new WaitForSeconds(_info.DashTimeInterval);
             }
+        }
+
+        public void Stop()
+        {
+            _token.Cancel();
+            _rigidbody.velocity = Vector2.zero;
         }
     }
 }

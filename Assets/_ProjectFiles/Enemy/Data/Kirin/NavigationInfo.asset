@@ -12,4 +12,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37dde4998feb45e9a920754ddf491adb, type: 3}
   m_Name: NavigationInfo
   m_EditorClassIdentifier: 
-  moveSpeed: 0
+  startDashDelay: 1
+  dashTimeInterval: 2
+  dashTime: 2
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -2.5758407
+      outSlope: -2.5758407
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.052144494
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

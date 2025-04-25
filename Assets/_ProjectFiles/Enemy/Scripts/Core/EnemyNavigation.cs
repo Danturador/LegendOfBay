@@ -18,20 +18,12 @@ namespace _ProjectFiles.Enemy.Scripts.Core
 
         public void Execute()
         {
-            try
-            {
-                StartCoroutine(_navigationExecutable.Execute(Target));
-            }
-            catch
-            {
-                Debug.Log("Chase target is null!");
-            }
+            StartCoroutine( _navigationExecutable.Execute(Target));
         }
 
         public void Stop()
         {
-            StopAllCoroutines();
-            _rigidbody.velocity = Vector2.zero;
+            _navigationExecutable.Stop();
         }
     }
 }

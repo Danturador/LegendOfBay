@@ -1,4 +1,4 @@
-public class PassiveState : IEnterState, IUpdateState, IExitState
+public class HundunPassiveState : IEnterState, IUpdateState, IExitState
 {
     public void Enter()
     {

@@ -259,32 +259,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collider: {fileID: 26710871264555142}
+  animator: {fileID: 0}
   rigidbody: {fileID: 716377433823225197}
   enemyNavigation: {fileID: 3897181793932938549}
-  speedCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: -4.911615
-      outSlope: -0.9960327
-      tangentMode: 65
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.03862048
-    - serializedVersion: 3
-      time: 1
-      value: 0.003967285
-      inSlope: -0.9960327
-      outSlope: -0.22578467
-      tangentMode: 5
-      weightedMode: 0
-      inWeight: 0.048151433
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  enemyAttack: {fileID: 0}
   profile: {fileID: 11400000, guid: 6e925fd61c56e294a85b20d9cd0e566f, type: 2}
 --- !u!114 &3897181793932938549
 MonoBehaviour:
@@ -313,6 +291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 716377433823225197}
   skeletonAnimation: {fileID: 565063608146890649}
+  velocityError: 0.1
 --- !u!114 &1912336449257122221
 MonoBehaviour:
   m_ObjectHideFlags: 0

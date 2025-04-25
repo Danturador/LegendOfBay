@@ -5,43 +5,62 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de615d76-5392-4624-a2d1-d4901732ccf9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyType.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances/Hundun.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances/Hundun/HundunAttackInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances/Hundun/HundunAttackInfo.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances/Hundun/HundunNavigationInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances/Hundun/HundunNavigationInfo.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances/Kirin.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances/Kirin/KirinAttackInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances/Kirin/KirinAttackInfo.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances/Kirin/KirinNavigationInfo.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances/Kirin/KirinNavigationInfo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Kirin.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Kirin/KirinActiveState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Kirin/KirinActiveState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Kirin/KirinAttackState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Kirin/KirinAttackState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Kirin/KirinPassiveState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Kirin/KirinPassiveState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Shishi.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Hundun/HundunAttack.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Hundun/HundunAttack.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/IAttackExecutable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/IAttackExecutable.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Kirin.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Kirin/KirinAttack.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Kirin/KirinAttack.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Kirin/KirinNavigation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Kirin/KirinNavigation.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyAttack.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyAttack.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/StateMachines.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/StateMachines/KirinStateMachine.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/StateMachines/KirinStateMachine.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/StateMachines/ShishiStateMachine.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/StateMachines/ShishiStateMachine.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.atlas.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.atlas.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun_Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Hundun/Hundun_Controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/HundunAttackInfo.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/HundunAttackInfo.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/HundunEnemyInfo.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/HundunEnemyInfo.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/HundunInfoContainer.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/HundunInfoContainer.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/HundunNavigationInfo.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/HundunNavigationInfo.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Kirin/kirin_SkeletonData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Kirin/kirin_SkeletonData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Kirin/EnemyInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Kirin/EnemyInfo.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Kirin/NavigationInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Kirin/NavigationInfo.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Kirin/Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Kirin/Profile.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Hundun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Hundun.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Kirin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Kirin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scenes/Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scenes/Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/ActiveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunActiveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/ActiveState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunActiveState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/AttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/AttackState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunAttackState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/PassiveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunPassiveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/PassiveState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunPassiveState.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Hundun/HundunNavigation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Hundun/HundunNavigation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/INavigationExecutable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/INavigationExecutable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyAttackInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyAttackInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyInfoContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyInfoContainer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyProfile.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyNavigationInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/EnemyNavigationInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances/Kirin/KirinAttackInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances/Kirin/KirinAttackInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances/Kirin/KirinNavigationInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances/Kirin/KirinNavigationInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Enemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyNavigation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyNavigation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyRenderer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyRenderer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/StateMachines/HundunStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyStateMachine.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/StateMachines/HundunStateMachine.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/FutureCharacter/Scripts/Combat System/MonsterDamageGiver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/FutureCharacter/Scripts/Combat System/MonsterDamageGiver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Manufacture/StateMachine/StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Manufacture/StateMachine/StateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,8 +83,14 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_ProjectFiles/Menu/InGameMenuButtons/InGameSettingsButtonHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/VolumeSlider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/26/759d0383/NullReferenceException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/779cc116a5954f1c9b92496e62345641175c00/7e/c3f7da28/Time.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/779cc116a5954f1c9b92496e62345641175c00/c3/ec890364/AnimationCurve.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/779cc116a5954f1c9b92496e62345641175c00/c6/3993424c/MonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7972c83a3a404377a5f87312a275658320a00/01/039ad553/Rigidbody2D.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e46e9bb88b78469fbd4d3d1c372264d61fe00/29/709e9dd7/CharacterController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Kirin/KirinPassiveState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_ProjectFiles/Tools/AnimationCurveExtensions.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -80,21 +105,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/Enemy/new",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "rider.code.cleanup.on.save": "true",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/Enemy/new&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rider.code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="E:\Frameworks\Unity\versions\2022.3.32f1\Editor\Unity.exe" />
@@ -122,10 +147,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="3036">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="2724">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="3036" />
+      <option name="pid" value="2724" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -154,6 +179,8 @@
       <workItem from="1744215417446" duration="6431000" />
       <workItem from="1744658062057" duration="361000" />
       <workItem from="1744876380269" duration="2671000" />
+      <workItem from="1745586839320" duration="6917000" />
+      <workItem from="1745612415196" duration="5869000" />
     </task>
     <servers />
   </component>
@@ -173,18 +200,44 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+        <line-breakpoint type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/_ProjectFiles/SaveSystem/SaveTrigger.cs</url>
           <line>12</line>
-          <properties documentPath="E:\UnityHub\Projects\LegendOfBay\Assets\_ProjectFiles\SaveSystem\SaveTrigger.cs" containingFunctionPresentation="Method 'OnTriggerEnter'">
+          <properties documentPath="E:\UnityHub\Projects\LegendOfBay\Assets\_ProjectFiles\SaveSystem\SaveTrigger.cs" containingFunctionPresentation="Method 'OnTriggerEnter2D'">
             <startOffsets>
-              <option value="335" />
+              <option value="339" />
             </startOffsets>
             <endOffsets>
-              <option value="402" />
+              <option value="406" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyContainer.cs</url>
+          <line>46</line>
+          <properties documentPath="E:\Repositories\Unity\LegendOfBay\Assets\_ProjectFiles\Enemy\Scripts\Core\EnemyContainer.cs" containingFunctionPresentation="Method 'OnTriggerEnter2D'">
+            <startOffsets>
+              <option value="1544" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1569" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyContainer.cs</url>
+          <line>54</line>
+          <properties documentPath="E:\Repositories\Unity\LegendOfBay\Assets\_ProjectFiles\Enemy\Scripts\Core\EnemyContainer.cs" containingFunctionPresentation="Method 'OnTriggerExit2D'">
+            <startOffsets>
+              <option value="1839" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1865" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

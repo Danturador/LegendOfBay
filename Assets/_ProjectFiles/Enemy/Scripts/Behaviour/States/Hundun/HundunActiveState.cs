@@ -1,6 +1,6 @@
 using _ProjectFiles.Enemy.Scripts.Core;
 
-public class ActiveState : IEnterState, IUpdateState, IExitState
+public class HundunActiveState : IEnterState, IExitState
 {
     public EnemyContainer Container { get; set; }
 
@@ -12,9 +12,5 @@ public class ActiveState : IEnterState, IUpdateState, IExitState
     public void Exit()
     {
         Container.Navigation.Stop();
-    }
-
-    public void Update()
-    {
     }
 }
