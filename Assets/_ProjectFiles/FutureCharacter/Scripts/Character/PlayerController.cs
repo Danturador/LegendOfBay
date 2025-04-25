@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using Zenject;
+using _ProjectFiles.SaveSystem;
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private PlayerMovement playerMovement;
+	[Inject] private SaveSystemController saveSystemController;
+	[SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PlayerDash playerDash;
     [SerializeField] private PlayerJump playerJump;
     [SerializeField] private GrapplingHook grapplingHook;
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+		transform.position = saveSystemController.gameData.Position;
         rb = GetComponent<Rigidbody2D>();
         grapplingHook = GetComponent<GrapplingHook>();
         playerMovement.Initialize(rb);

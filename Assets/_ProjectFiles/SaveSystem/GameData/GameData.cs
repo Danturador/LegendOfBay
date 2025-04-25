@@ -25,13 +25,6 @@ namespace _ProjectFiles.SaveSystem
         public void SetPlayerHealth(float playerHealth) => PlayerHealth = playerHealth;
         public void SetPosition(Vector3 position) => Position = position;
         public void SetSpawners(SpawnersHolderData data) => SpawnersHolderData = data;
-        public void SetTexture(Sprite sprite) => MapTexture = sprite.texture.EncodeToPNG();
-
-        public Sprite GetSprite()
-        {
-            Texture2D texture = new Texture2D(1024, 1024);
-            texture.LoadImage(MapTexture);
-            return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-        }
+        public void SetTexture(Texture2D sprite) => MapTexture = sprite.EncodeToPNG();
     }
 }
