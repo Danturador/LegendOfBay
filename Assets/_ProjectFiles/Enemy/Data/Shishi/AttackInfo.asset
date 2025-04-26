@@ -15,6 +15,6 @@ MonoBehaviour:
   attackRange: 7
   attackDelay: 3
   damage: 1
-  missileSpeed: 4.66
-  missileFireTime: 1.5
+  missileSpeed: 5
+  missileFireTime: 1.2
   missileRadius: 0.5
