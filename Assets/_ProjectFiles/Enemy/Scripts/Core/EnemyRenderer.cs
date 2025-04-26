@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Spine.Unity;
 using UnityEngine;
 
@@ -10,6 +11,8 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         [SerializeField] private float velocityError;
         private float _defaultScale;
 
+        
+        
         public float CurrentScale
         {
             get => skeletonAnimation.Skeleton.ScaleX;
@@ -19,6 +22,9 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         private void Awake()
         {
             _defaultScale = Mathf.Abs(skeletonAnimation.Skeleton.ScaleX);
+            var pos = transform.position;
+            pos.z = 0;
+            transform.position = pos;
         }
 
         private void Update()
