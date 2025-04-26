@@ -58,8 +58,6 @@ namespace _ProjectFiles.Enemy.Scripts.Core
 
         private void Initialize()
         {
-            _enemy = new Enemy(profile, this);
-
             switch (profile.EnemyInfo.Type)
             {
                 case EnemyType.Hundun:
@@ -81,16 +79,18 @@ namespace _ProjectFiles.Enemy.Scripts.Core
                     Attack.Initialize(this, new KirinAttack(this));
                     break;
                 }
-                
+
                 case EnemyType.Shishi:
                 {
                     enemyNavigation.Initialize(profile.NavigationInfo,
                         new ShishiNavigation(this));
 
-                    Attack.Initialize(this, new ShishiAttack());
+                    Attack.Initialize(this, new ShishiAttack(this));
                     break;
                 }
             }
+            
+            _enemy = new Enemy(profile, this);
         }
     }
 }

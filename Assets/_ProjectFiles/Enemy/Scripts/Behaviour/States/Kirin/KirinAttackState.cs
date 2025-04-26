@@ -18,7 +18,6 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.States.Kirin
 
         public void Enter()
         {
-            Debug.Log("attack state enter");
             currentAttackDelay = 0;
             _container.Animator.SetTrigger("attack");
             _container.Attack.Execute();
@@ -26,7 +25,6 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.States.Kirin
 
         public void Exit()
         {
-            Debug.Log("attack state exit");
             _container.Animator.SetTrigger("idle");
             _container.Attack.Stop();
         }

@@ -1,5 +1,6 @@
 using System.Linq;
 using _ProjectFiles.Enemy.Scripts.Behaviour.States.Shishi;
+using _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Shishi;
 using _ProjectFiles.Enemy.Scripts.Core.Instances.Shishi;
 using UnityEngine;
 
@@ -7,8 +8,10 @@ namespace _ProjectFiles.Enemy.Scripts.Core
 {
     public class ShishiStateMachine : StateMachine
     {
+        private readonly ShishiActiveState _activeState;
         private readonly ShishiNavigationInfo _navigationInfo;
-        private readonly ShishiActiveState _hundunActiveState;
+        private readonly ShishiAttackInfo _attackInfo;
+        private readonly ShishiAttack _attack;
         private bool _isVisibleByPlayer;
 
         public ShishiStateMachine(EnemyProfile profile, EnemyContainer container) : base(container)
@@ -16,6 +19,8 @@ namespace _ProjectFiles.Enemy.Scripts.Core
             var activeState = (ShishiActiveState)_states.ToList().First(x => x.GetType() == typeof(ShishiActiveState));
             activeState._container = _container;
             _navigationInfo = _container.Profile.NavigationInfo as ShishiNavigationInfo;
+            _attackInfo = _container.Profile.AttackInfo as ShishiAttackInfo;
+            _attack = container.Attack.AttackExecutable as ShishiAttack;
         }
 
         protected override (IState[] states, Transition[] transitions) SetMachineBehaviour()
@@ -29,7 +34,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
             };
 
             var states = new IState[]
-                { new ShishiPassiveState(), new ShishiActiveState(_container), new ShishiAttackState() };
+                { new ShishiPassiveState(_container), new ShishiActiveState(_container), new ShishiAttackState(_container) };
 
             return (states, transitions);
         }
@@ -45,7 +50,10 @@ namespace _ProjectFiles.Enemy.Scripts.Core
 
         private bool CanAttack()
         {
-            return _container.IsVisibleByPlayer;
+            var target  = _container.Navigation.Target;
+            var targetDelta = _container.transform.position.x - target.position.x;
+            var result = _container.IsVisibleByPlayer && Mathf.Abs(targetDelta) < _attackInfo.AttackRange;
+            return result;
         }
 
         private bool CannotEscape()
@@ -55,7 +63,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
 
         private bool CannotAttack()
         {
-            return !CanAttack();
+            return !CanAttack() && !_attack.IsAttacking;
         }
     }
 }

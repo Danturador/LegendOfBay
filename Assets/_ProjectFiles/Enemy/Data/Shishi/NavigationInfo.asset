@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a3e746f6f6f49e6ae60bce04df33190, type: 3}
   m_Name: NavigationInfo
   m_EditorClassIdentifier: 
+  escapeRange: 4
+  moveSpeed: 5

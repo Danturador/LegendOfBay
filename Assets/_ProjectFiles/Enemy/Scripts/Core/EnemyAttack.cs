@@ -1,4 +1,5 @@
 using _ProjectFiles.Enemy.Scripts.Behaviour.Strategy;
+using UnityEditorInternal;
 using UnityEngine;
 
 namespace _ProjectFiles.Enemy.Scripts.Core
@@ -10,6 +11,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         private EnemyContainer _container;
         private int _currentEffectIndex;
         private EnemyAttackInfo _info;
+        public IAttackExecutable AttackExecutable => _attack;
 
         public void Initialize(EnemyContainer container, IAttackExecutable executable)
         {

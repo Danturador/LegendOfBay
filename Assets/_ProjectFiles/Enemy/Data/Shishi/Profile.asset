@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f71748dc929463ca7b88896e0426f53, type: 3}
   m_Name: Profile
   m_EditorClassIdentifier: 
-  enemyInfo: {fileID: 11400000, guid: a296826d865fd0c4c984c8e4811b30bd, type: 2}
-  navigationInfo: {fileID: 11400000, guid: 82ca7e8f91801be48944f53b2d1ee7df, type: 2}
-  attackInfo: {fileID: 11400000, guid: be1d83b4fa779d84cbabd97a072f1c95, type: 2}
+  enemyInfo: {fileID: 11400000, guid: 52c8f8d3780273e48b9166c4266960c5, type: 2}
+  navigationInfo: {fileID: 11400000, guid: b9aeeefaf65b9684ba14e2fe16be3bfe, type: 2}
+  attackInfo: {fileID: 11400000, guid: 9309b839bbf3e4d43b7c7706a627542e, type: 2}

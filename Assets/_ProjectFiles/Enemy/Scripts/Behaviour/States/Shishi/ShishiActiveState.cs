@@ -1,9 +1,4 @@
-using _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Shishi;
 using _ProjectFiles.Enemy.Scripts.Core;
-using _ProjectFiles.Enemy.Scripts.Core.Instances.Shishi;
-using TMPro.EditorUtilities;
-using UnityEngine;
-using UnityEngine.Windows.WebCam;
 
 namespace _ProjectFiles.Enemy.Scripts.Behaviour.States.Shishi
 {
@@ -15,16 +10,17 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.States.Shishi
         {
             _container = container;
         }
+
         public void Enter()
         {
-            Debug.Log("Shishi Active");
+            _container.Animator.SetBool("active", true);
             _container.Navigation.Execute();
         }
 
         public void Exit()
         {
-            Debug.Log("Shishi active exit");
             _container.Navigation.Stop();
+            _container.Animator.SetBool("active", false);
         }
     }
 }

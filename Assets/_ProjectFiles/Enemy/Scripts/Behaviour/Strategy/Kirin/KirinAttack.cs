@@ -20,11 +20,8 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
 
         public IEnumerator Execute(Transform target)
         {
-            Debug.Log("attack enter");
-
             while (true)
             {
-                Debug.Log("attack start");
                 if ((_container.transform.position.x < target.transform.position.x &&
                      _container.Renderer.CurrentScale < 0) || (_container.transform.position.x > target.transform.position.x && _container.Renderer.CurrentScale > 0))
                 {
@@ -38,7 +35,6 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
                 }
                 
                 _container.Attack.Attack();
-                Debug.Log("attack performed");
                 yield return new WaitForSeconds(_info.AttackDelay);
             }
         }

@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93eac51dc502401aa20d2c6d003e44d0, type: 3}
   m_Name: AttackInfo
   m_EditorClassIdentifier: 
-  attackRange: 0
-  attackDelay: 0
-  damage: 0
+  attackRange: 7
+  attackDelay: 3
+  damage: 1
+  missileSpeed: 4.66
+  missileFireTime: 1.5
+  missileRadius: 0.5
