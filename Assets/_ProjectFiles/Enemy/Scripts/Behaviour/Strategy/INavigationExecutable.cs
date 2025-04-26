@@ -1,10 +1,12 @@
 using System.Collections;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
 {
-    public abstract class INavigationExecutable
+    public interface INavigationExecutable
     {
-        public abstract IEnumerator Execute(Transform target);
+        public IEnumerator Execute(Transform target);
+        public void Stop();
     }
 }
