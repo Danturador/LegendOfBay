@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace _ProjectFiles.Menu.InGameMenuButtons
 {
-    public class InGameSettingsButtonHandler : InGameMenuButtonHandler
+    public class InGameSettingsButtonHandler : ButtonHandler
     {
         [SerializeField] private GameObject panelToClose;
         [SerializeField] private GameObject panelToOpen;

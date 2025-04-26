@@ -5,11 +5,11 @@ namespace _ProjectFiles.Menu.MenuButtons
 {
     public class BackSettingButton : MenuButtonHandler
     {
-        [SerializeField] private RectTransform img;
+        [SerializeField] private RectTransform bgImgRect;
         
         protected override void OnClick()
         {
-            img.DOAnchorPosX(0, 2f).SetEase(Ease.InOutExpo);
+            bgImgRect.DOAnchorPosX(0, 2f).SetEase(Ease.InOutExpo);
         }
     }
 }

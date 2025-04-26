@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace _ProjectFiles.Menu.InGameMenuButtons
 {
-    public class InGameResumeButtonHandler : InGameMenuButtonHandler
+    public class InGameResumeButtonHandler : ButtonHandler
     {
         [SerializeField] private InGameMenu inGameMenu;
 

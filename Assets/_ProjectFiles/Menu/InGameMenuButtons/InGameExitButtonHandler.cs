@@ -2,7 +2,7 @@ using UnityEngine.SceneManagement;
 
 namespace _ProjectFiles.Menu.InGameMenuButtons
 {
-    public class InGameExitButtonHandler : InGameMenuButtonHandler
+    public class InGameExitButtonHandler : ButtonHandler
     {
         protected override void OnClick()
         {
