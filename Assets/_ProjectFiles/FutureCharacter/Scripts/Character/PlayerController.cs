@@ -13,7 +13,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool movableItem;
     [SerializeField] private GameObject moveItemGameobject;
     private Rigidbody2D rb;
-    public InputController inputController {  get; private set; }
+    [Inject] private InputController inputController;
+
+    //public InputController inputController {  get; private set; }
     private bool _platformTrigger;
     private string _platformtriggerName = "PlatformTrigger";
 	private Inventory inventory;
@@ -29,8 +31,8 @@ public class PlayerController : MonoBehaviour
         playerMovement.Initialize(rb);
         playerDash.Initialize(rb);
         playerJump.Initialize(rb);
-        inputController = new InputController();
-        inputController.Enable();
+        // inputController = new InputController();
+        // inputController.Enable();
 		inventory = GetComponent<Inventory>();
 	}
 
@@ -43,7 +45,7 @@ public class PlayerController : MonoBehaviour
 	//	}
 	//	else
 	//	{
-	//		Debug.Log("У вас нет подходящего ключа для этой двери.");
+	//		Debug.Log("пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.");
 	//	}
 	//}
 	private void Start()

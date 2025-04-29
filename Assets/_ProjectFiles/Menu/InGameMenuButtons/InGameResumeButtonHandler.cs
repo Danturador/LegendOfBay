@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace _ProjectFiles.Menu.InGameMenuButtons
 {
@@ -8,7 +9,7 @@ namespace _ProjectFiles.Menu.InGameMenuButtons
 
         protected override void OnClick()
         {
-            inGameMenu.ToggleState();
+            inGameMenu.ToggleState(new InputAction.CallbackContext());
         }
     }
 }
