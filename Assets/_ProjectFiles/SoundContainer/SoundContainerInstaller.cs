@@ -4,6 +4,7 @@ using Zenject;
 namespace _ProjectFiles.SoundContainer
 {
     // use on project context !!!
+    [CreateAssetMenu(menuName = "Installers/Sound Container installer")]
     public class SoundContainerInstaller : ScriptableObjectInstaller<SoundContainerInstaller>
     {
         [SerializeField] private SoundContainer soundContainer;

@@ -19,12 +19,14 @@ namespace _ProjectFiles.SaveSystem
         public void SaveProgress() => _storage.Save(_data);
 
         public object LoadProgress() => _storage.Load(_data);
-        public void UpdateTexture(Texture2D texture2D) => _data.SetTexture(texture2D);
+        
         
         public void UpdatePosition(Vector3 position) => _data.SetPosition(position);
 
         public void UpdateHealth(float health) => _data.SetPlayerHealth(health);
         
         public void UpdateSpawners(SpawnersHolderData data) => _data.SetSpawners(data);
+        
+        public void UpdateTexture(Texture2D texture2D) => _data.SetTexture(texture2D);
     }
 }
