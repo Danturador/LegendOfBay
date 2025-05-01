@@ -2381,7 +2381,7 @@ AnimationClip:
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: f55215aa721084d4d9fba1e6f1cad67a, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 7
     messageOptions: 0
 --- !u!1101 &5987031283542415620
 AnimatorStateTransition:

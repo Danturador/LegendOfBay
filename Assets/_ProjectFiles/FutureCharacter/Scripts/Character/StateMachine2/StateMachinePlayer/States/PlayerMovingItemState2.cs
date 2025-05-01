@@ -18,6 +18,6 @@ public class PlayerMovingItemState2 : State2
 
     public override void OnStateExit()
     {
-        
+      //  _playerAnimationController.SetBool(PlayerAnimationType.PlayerMovingItemStay, true);
     }
 }

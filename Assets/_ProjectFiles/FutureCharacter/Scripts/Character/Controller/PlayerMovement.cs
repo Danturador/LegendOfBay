@@ -28,22 +28,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         MoveUpdate();
-       /* if (_move != Vector2.zero)
-        {
-            Vector2 targetVelocity = new Vector2(_move.x, 0f) * moveSpeed;
-            if (_rb.velocity.y != 0) 
-            {
-                _rb.velocity = new Vector2(targetVelocity.x, _rb.velocity.y);
-            }
-            else
-            {
-                _rb.velocity = new Vector2(targetVelocity.x, _rb.velocity.y);
-            }
-        }
-        else
-        {
-                _rb.velocity = new Vector2(0f, _rb.velocity.y);   
-        }*/
     }
 
     public void Move(Vector2 input, int divisor)

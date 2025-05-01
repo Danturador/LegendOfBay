@@ -109,7 +109,8 @@ public class PlayerStateMachine2 : MonoBehaviour
 
         idleState.AddTransition(new StateTransition(movingItemState, new FuncStateCondition(() => _isMovingItem)));
         runState.AddTransition(new StateTransition(movingItemState, new FuncStateCondition(() => _isMovingItem)));
-        movingItemState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isMovingItem == false)));
+      //  movingItemState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isMovingItem == false)));
+        movingItemState.AddTransition(new StateTransition(movingItemStayState, new FuncStateCondition(() => _isMovingItem)));
         movingItemState.AddTransition(new StateTransition(movingItemForwardState, new FuncStateCondition(() => _isMovingItem && _inputController.Gameplay.Movement.ReadValue<Vector2>().x != 0)));
         movingItemForwardState.AddTransition(new StateTransition(movingItemStayState, new FuncStateCondition(() => _isMovingItem && _inputController.Gameplay.Movement.ReadValue<Vector2>().x == 0)));
         movingItemStayState.AddTransition(new StateTransition(movingItemForwardState, new FuncStateCondition(() => _isMovingItem && _inputController.Gameplay.Movement.ReadValue<Vector2>().x != 0)));

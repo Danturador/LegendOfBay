@@ -186,7 +186,7 @@ MonoBehaviour:
   dashPower: 30
   dashingTime: 0.2
   dashCooldown: 1
-  _particleSystem: {fileID: 0}
+  _sceletonGhost: {fileID: 0}
 --- !u!114 &4096132904660743118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   maxJumpHeight: 4
   coyoteTime: 0.2
   bufferTime: 0.2
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 3291079114186437682}
   groundLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -312,7 +312,7 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 4
       m_NumAlphaKeys: 2
     numCornerVertices: 0
@@ -603,6 +603,7 @@ GameObject:
   - component: {fileID: 1277107758285016689}
   - component: {fileID: 6821649979346372000}
   - component: {fileID: 2344471981751661694}
+  - component: {fileID: 238769808405219338}
   m_Layer: 7
   m_Name: Spine Mecanim GameObject (player)
   m_TagString: Untagged
@@ -801,6 +802,30 @@ MonoBehaviour:
   maxHealth: 25
   currentHealth: 0
   invulnerabilityDuration: 0.5
+--- !u!114 &238769808405219338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463624170065969880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f2fa991881c6d419500ccc40ad443f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ghostingEnabled: 1
+  spawnInterval: 0.033333335
+  maximumGhosts: 10
+  fadeSpeed: 10
+  ghostShader: {fileID: 4800000, guid: 3873d4699ee8a4b4da8fa6b8c229b94d, type: 3}
+  color:
+    serializedVersion: 2
+    rgba: 16777215
+  additive: 1
+  textureFade: 1
+  sortWithDistanceOnly: 0
+  zOffset: 0
 --- !u!1 &6538278633892836539
 GameObject:
   m_ObjectHideFlags: 0

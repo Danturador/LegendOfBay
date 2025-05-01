@@ -18,7 +18,9 @@ public class PlayerController : MonoBehaviour
     //public InputController inputController {  get; private set; }
     private bool _platformTrigger;
     private string _platformtriggerName = "PlatformTrigger";
-	private Inventory inventory;
+    private string _movableObjectTriggerLayerName = "MovableObjectTrigger";
+
+    private Inventory inventory;
     private Vector2 moveInput;
     public bool IsMovingItem { get; private set; }
 
@@ -139,11 +141,15 @@ public class PlayerController : MonoBehaviour
         {
             _platformTrigger = true;
         }
-        if(collision.GetComponent<MovableItem>() != null)
+        if(collision.GetComponent<MovableItem>() != null && collision.gameObject.layer == LayerMask.NameToLayer(_movableObjectTriggerLayerName))
         {
             Debug.Log("colision enter!!!");
             movableItem = true;
             moveItemGameobject = collision.gameObject;
+        }
+        if (collision.gameObject.name == "GrappingHook" && grappingHookEnable == false)
+        {
+            grappingHookEnable = true;
         }
 
     }
@@ -153,11 +159,8 @@ public class PlayerController : MonoBehaviour
          {
              _platformTrigger = false;
          }
-         if(collision.gameObject.name == "GrappingHook" && grappingHookEnable == false)
-         {
-            grappingHookEnable = true;
-         }
-         if(collision.GetComponent<MovableItem>() != null)
+        
+         if(collision.GetComponent<MovableItem>() != null && collision.gameObject.layer == LayerMask.NameToLayer(_movableObjectTriggerLayerName))
          {
             Debug.Log("Colision exit");
             movableItem = false;
@@ -182,12 +185,14 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+
             if (GetComponentInChildren<MovableItem>())
             {
-                moveItemGameobject.GetComponent<MovableItem>().DropItem();
-                IsMovingItem = false;
-                moveItemGameobject = null;
+                moveItemGameobject.GetComponent<MovableItem>()?.DropItem();
             }
+            IsMovingItem = false;
+            moveItemGameobject = null;
+
 
         }
     }

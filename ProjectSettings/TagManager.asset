@@ -21,7 +21,7 @@ TagManager:
   - Platform
   - NonTrigger
   - PlayerTransparentCollider
-  - 
+  - MovableObjectTrigger
   - 
   - 
   - 
