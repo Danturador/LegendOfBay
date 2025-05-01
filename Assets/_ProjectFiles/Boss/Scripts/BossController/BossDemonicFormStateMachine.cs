@@ -8,7 +8,6 @@ using static BossHumanFormStateMachine;
 public class BossDemonicFormStateMachine : MonoBehaviour
 {
 	[SerializeField] private Animator _animator;
-	[SerializeField] private Rigidbody2D _rigidbody2D;
 	public DemonicFormAnimationController bossAnimationController { get; private set; }
 	private StateMachine2 _stateMachine;
 	public string currentState { 
