@@ -23,7 +23,7 @@ public class PlayerDamageGiver : MonoBehaviour
     }
     public void GiveDamage(int _damage)
     {
-        var colliders = Physics2D.OverlapCircleAll(_damageGiverGameObject.transform.position, _attackRadius, _damageLayer);
+        var colliders = Physics2D.OverlapCircleAll(_damageGiverGameObject.transform.position, _attackRadius); //_damageLayer );
         var foundItem = colliders.Where(t => t.GetComponent<IDamageable>() != null).ToList();
         if (foundItem.Count != 0)
         {

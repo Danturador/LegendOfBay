@@ -15,6 +15,7 @@ namespace _ProjectFiles.SaveSystem
             
             _saveSystemController.UpdatePosition(player.transform.position);
             _saveSystemController.UpdateHealth(100);
+			_saveSystemController.SaveProgress();
             onSaveTriggered?.Invoke();
         }
     }

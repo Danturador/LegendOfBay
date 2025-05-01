@@ -1,0 +1,230 @@
+
+shishi.png
+size: 1953,747
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+attack_0000_Light_stone
+  rotate: false
+  xy: 1757, 241
+  size: 155, 64
+  orig: 167, 83
+  offset: 6, 10
+  index: -1
+fireball0000
+  rotate: false
+  xy: 763, 213
+  size: 330, 532
+  orig: 1280, 720
+  offset: 479, 67
+  index: -1
+fireball0001
+  rotate: false
+  xy: 1095, 215
+  size: 341, 530
+  orig: 1280, 720
+  offset: 474, 67
+  index: -1
+fireball0002
+  rotate: false
+  xy: 1438, 215
+  size: 317, 530
+  orig: 1280, 720
+  offset: 486, 69
+  index: -1
+fireball0003
+  rotate: false
+  xy: 483, 197
+  size: 278, 548
+  orig: 1280, 720
+  offset: 498, 68
+  index: -1
+shishi_standing
+  rotate: true
+  xy: 2, 98
+  size: 647, 479
+  orig: 647, 479
+  offset: 0, 0
+  index: -1
+sit_0016_Body
+  rotate: false
+  xy: 1031, 9
+  size: 264, 202
+  orig: 300, 202
+  offset: 34, 0
+  index: -1
+sit_0017_Tail_curl
+  rotate: true
+  xy: 68, 2
+  size: 94, 45
+  orig: 95, 48
+  offset: 0, 3
+  index: -1
+sit_0018_Tail
+  rotate: true
+  xy: 693, 4
+  size: 191, 115
+  orig: 192, 115
+  offset: 0, 0
+  index: -1
+stand_0000s_0000_Eye_L
+  rotate: false
+  xy: 1925, 333
+  size: 20, 19
+  orig: 24, 23
+  offset: 2, 2
+  index: -1
+stand_0000s_0001_Eye_R
+  rotate: true
+  xy: 1925, 354
+  size: 19, 20
+  orig: 22, 24
+  offset: 2, 2
+  index: -1
+stand_0000s_0002_Light_head
+  rotate: false
+  xy: 483, 98
+  size: 208, 97
+  orig: 219, 110
+  offset: 6, 6
+  index: -1
+stand_0000s_0003_Light_eyes
+  rotate: false
+  xy: 1757, 307
+  size: 166, 66
+  orig: 187, 74
+  offset: 17, 2
+  index: -1
+stand_0000s_0004_Head
+  rotate: true
+  xy: 1297, 12
+  size: 201, 134
+  orig: 201, 134
+  offset: 0, 0
+  index: -1
+stand_0000s_0005_Jaw
+  rotate: false
+  xy: 1757, 375
+  size: 175, 102
+  orig: 175, 104
+  offset: 0, 2
+  index: -1
+stand_0000s_0006_Сollar
+  rotate: false
+  xy: 1757, 479
+  size: 186, 142
+  orig: 186, 142
+  offset: 0, 0
+  index: -1
+stand_0000s_0007_Leg_L
+  rotate: true
+  xy: 1896, 142
+  size: 96, 52
+  orig: 96, 52
+  offset: 0, 0
+  index: -1
+stand_0000s_0008_Knee_L
+  rotate: false
+  xy: 577, 13
+  size: 100, 83
+  orig: 100, 85
+  offset: 0, 1
+  index: -1
+stand_0000s_0009_Heel_L
+  rotate: false
+  xy: 2, 2
+  size: 64, 94
+  orig: 65, 95
+  offset: 0, 0
+  index: -1
+stand_0000s_0010_Hip_L
+  rotate: false
+  xy: 362, 10
+  size: 112, 86
+  orig: 112, 87
+  offset: 0, 1
+  index: -1
+stand_0000s_0011_Hand_L
+  rotate: true
+  xy: 1815, 53
+  size: 79, 57
+  orig: 79, 59
+  offset: 0, 0
+  index: -1
+stand_0000s_0012_Elbow_L
+  rotate: true
+  xy: 1714, 26
+  size: 106, 99
+  orig: 107, 100
+  offset: 0, 0
+  index: -1
+stand_0000s_0013_Ass
+  rotate: false
+  xy: 1757, 134
+  size: 137, 105
+  orig: 141, 105
+  offset: 1, 0
+  index: -1
+stand_0000s_0014_Body
+  rotate: false
+  xy: 1433, 19
+  size: 279, 194
+  orig: 279, 194
+  offset: 0, 0
+  index: -1
+stand_0000s_0015_Mane
+  rotate: false
+  xy: 810, 7
+  size: 219, 204
+  orig: 219, 204
+  offset: 0, 0
+  index: -1
+stand_0000s_0016_Hand_R
+  rotate: true
+  xy: 1914, 240
+  size: 65, 31
+  orig: 66, 31
+  offset: 0, 0
+  index: -1
+stand_0000s_0017_Elbow_R
+  rotate: true
+  xy: 240, 6
+  size: 90, 120
+  orig: 90, 120
+  offset: 0, 0
+  index: -1
+stand_0000s_0018_Tail_curl
+  rotate: false
+  xy: 1874, 69
+  size: 77, 63
+  orig: 77, 64
+  offset: 0, 0
+  index: -1
+stand_0000s_0019_Tail
+  rotate: false
+  xy: 1757, 623
+  size: 190, 122
+  orig: 192, 122
+  offset: 0, 0
+  index: -1
+stand_0000s_0020_Heel_L
+  rotate: false
+  xy: 115, 4
+  size: 70, 92
+  orig: 71, 93
+  offset: 0, 1
+  index: -1
+stand_0000s_0021_Knee_L
+  rotate: false
+  xy: 476, 11
+  size: 99, 85
+  orig: 99, 85
+  offset: 0, 0
+  index: -1
+stand_0000s_0022_Leg_L
+  rotate: true
+  xy: 187, 4
+  size: 92, 51
+  orig: 94, 51
+  offset: 1, 0
+  index: -1

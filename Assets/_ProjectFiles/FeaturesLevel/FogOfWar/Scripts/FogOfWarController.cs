@@ -1,8 +1,12 @@
 using UnityEngine;
+using Zenject;
+using _ProjectFiles.SaveSystem;
 
 public class FogOfWarController : MonoBehaviour
 {
+	[Inject] private SaveSystemController saveSystemController;
     public Texture2D fogOfWarTexture;
+    public Texture2D texture;
     public SpriteMask spriteMask;
 	[SerializeField] private SpriteRenderer fog;
 
@@ -12,14 +16,23 @@ public class FogOfWarController : MonoBehaviour
     public void Awake()
     {
 		fog.gameObject.SetActive(true);
+		//saveSystemController.SaveProgress();
 
-        pixelScale.x = fogOfWarTexture.width;
+		byte[] tex = saveSystemController.gameData.MapTexture;
+		if (tex != null)
+		{
+			Texture2D texture = new Texture2D(4096, 4096);
+			texture.LoadImage(tex);
+			fogOfWarTexture = texture;
+		}
+
+		pixelScale.x = fogOfWarTexture.width;
         pixelScale.y = fogOfWarTexture.height;
 
         worldScale.x = pixelScale.x / 100f * transform.localScale.x;
         worldScale.y = pixelScale.y / 100f * transform.localScale.y;
 
-        CreateSprite();
+		CreateSprite();
     }
 
     private Vector2Int WorldToPixel(Vector2 position)
@@ -65,5 +78,8 @@ public class FogOfWarController : MonoBehaviour
     private void CreateSprite()
     {
         spriteMask.sprite = Sprite.Create(fogOfWarTexture, new Rect(0, 0, fogOfWarTexture.width, fogOfWarTexture.height), Vector2.one * 0.5f, 100);
-    }
+
+		saveSystemController.UpdateTexture(fogOfWarTexture);
+		saveSystemController.SaveProgress();
+	}
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.XInput;
+using Zenject;
 
 public class PlayerStateMachine2 : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class PlayerStateMachine2 : MonoBehaviour
     [SerializeField] private float velocityX;
     [SerializeField] private float velocityY;
     public PlayerAnimationController playerAnimationController { get; private set; }
-    private InputController _inputController;
+    [Inject] private InputController _inputController;
     private PlayerController _playerController;
     private StateMachine2 _stateMachine;
     private PlayerJump _playerJump;
@@ -32,7 +33,7 @@ public class PlayerStateMachine2 : MonoBehaviour
     }
     private void Start()
     {
-        _inputController = GetComponentInParent<PlayerController>().inputController;
+        //_inputController = GetComponentInParent<PlayerController>().inputController;
         _playerController = GetComponentInParent<PlayerController>();
         _playerJump = GetComponentInParent<PlayerJump>();
         _playerDash = GetComponentInParent<PlayerDash>();

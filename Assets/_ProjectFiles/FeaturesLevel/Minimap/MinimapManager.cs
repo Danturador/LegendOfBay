@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using Zenject;
 
 public class MinimapManager : MonoBehaviour
 {
     [SerializeField] private Camera minimapCamera;
     [SerializeField] private float zoomStep, minCameraSize, maxCameraSize;
     [SerializeField] private SpriteRenderer mapRenderer;
-    [SerializeField] private InputController _inputController;
+    [Inject] private InputController _inputController;
 
     private float mapMinX, mapMaxX, mapMinY, mapMaxY;
     private Vector3 dragOrigin;
@@ -26,7 +27,7 @@ public class MinimapManager : MonoBehaviour
 
     private void Start()
     {
-        _inputController = FindAnyObjectByType<PlayerController>().inputController;
+        //_inputController = FindAnyObjectByType<PlayerController>().inputController;
 
         isMinimapActive = true;
         ToggleMinimap();

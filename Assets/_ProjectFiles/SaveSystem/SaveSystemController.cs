@@ -8,6 +8,7 @@ namespace _ProjectFiles.SaveSystem
     {
         private readonly IStorage _storage;
         private readonly GameData _data;
+		public GameData gameData => _data;
         
         public SaveSystemController(IStorage storage)
         {
@@ -19,10 +20,13 @@ namespace _ProjectFiles.SaveSystem
 
         public object LoadProgress() => _storage.Load(_data);
         
+        
         public void UpdatePosition(Vector3 position) => _data.SetPosition(position);
 
         public void UpdateHealth(float health) => _data.SetPlayerHealth(health);
         
         public void UpdateSpawners(SpawnersHolderData data) => _data.SetSpawners(data);
+        
+        public void UpdateTexture(Texture2D texture2D) => _data.SetTexture(texture2D);
     }
 }

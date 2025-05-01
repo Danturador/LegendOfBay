@@ -6,15 +6,36 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         private EnemyInfo _enemyInfo;
         private EnemyNavigationInfo _navigationInfo;
 
-        public Enemy(EnemyInfoContainer infoContainer, EnemyContainer container)
+        public Enemy(EnemyProfile profile, EnemyContainer container)
         {
-            _enemyInfo = infoContainer.EnemyInfo;
-            _attackInfo = infoContainer.AttackInfo;
-            _navigationInfo = infoContainer.NavigationInfo;
+            _enemyInfo = profile.EnemyInfo;
+            _attackInfo = profile.AttackInfo;
+            _navigationInfo = profile.NavigationInfo;
 
-            State = new EnemyStateMachine(infoContainer, container);
+            switch (profile.EnemyInfo.Type)
+            {
+                case EnemyType.Hundun:
+                {
+                    State = new HundunStateMachine(profile, container);
+                    break;
+                }
+                    
+                case EnemyType.Shishi:
+                {
+                    State = new ShishiStateMachine(profile, container);
+                    break;
+                }
+                
+                case EnemyType.Kirin:
+                {
+                    State = new KirinStateMachine(profile, container);
+                    break;
+                }
+            }
+            
+          
         }
 
-        public EnemyStateMachine State { get; }
+        public StateMachine State { get; }
     }
 }

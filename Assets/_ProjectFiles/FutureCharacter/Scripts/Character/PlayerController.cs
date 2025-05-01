@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using Zenject;
+using _ProjectFiles.SaveSystem;
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private PlayerMovement playerMovement;
+	[Inject] private SaveSystemController saveSystemController;
+	[SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PlayerDash playerDash;
     [SerializeField] private PlayerJump playerJump;
     [SerializeField] private GrapplingHook grapplingHook;
@@ -11,7 +13,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool movableItem;
     [SerializeField] private GameObject moveItemGameobject;
     private Rigidbody2D rb;
-    public InputController inputController {  get; private set; }
+    [Inject] private InputController inputController;
+
+    //public InputController inputController {  get; private set; }
     private bool _platformTrigger;
     private string _platformtriggerName = "PlatformTrigger";
 	private Inventory inventory;
@@ -21,13 +25,14 @@ public class PlayerController : MonoBehaviour
 
     void Awake()
     {
+		transform.position = saveSystemController.gameData.Position;
         rb = GetComponent<Rigidbody2D>();
         grapplingHook = GetComponent<GrapplingHook>();
         playerMovement.Initialize(rb);
         playerDash.Initialize(rb);
         playerJump.Initialize(rb);
-        inputController = new InputController();
-        inputController.Enable();
+        // inputController = new InputController();
+        // inputController.Enable();
 		inventory = GetComponent<Inventory>();
 	}
 
@@ -40,7 +45,7 @@ public class PlayerController : MonoBehaviour
 	//	}
 	//	else
 	//	{
-	//		Debug.Log("У вас нет подходящего ключа для этой двери.");
+	//		Debug.Log("пїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.");
 	//	}
 	//}
 	private void Start()

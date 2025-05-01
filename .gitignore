@@ -71,3 +71,8 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 **/.DS_Store
+Assets/Epic Toon FX/Upgrade/ETFX 2019.4.24f1 URP Upgrade.unitypackage.meta
+Assets/JMO Assets/Cartoon FX FREE (old legacy effects).unitypackage.meta
+Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Zenject-ReflectionBaking.csproj.meta
+Assets/Plugins/Zenject/OptionalExtras/Signals/Zenject-Signals.csproj.meta
+Assets/Plugins/Zenject/Source/Zenject.csproj.meta
