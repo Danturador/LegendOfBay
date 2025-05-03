@@ -14,8 +14,10 @@ public class TutorialStep : MonoBehaviour
 
 	public ConditionChecker conditionChecker;
 
-	private Coroutine currentFadeCoroutine;
-	private Coroutine currentFadeCoroutineImage;
+	private static Coroutine currentFadeCoroutine;
+	private static Coroutine currentFadeCoroutineImage;
+
+	private static TutorialStep previousTutorialStep;
 
 	private void Awake()
 	{
@@ -37,11 +39,19 @@ public class TutorialStep : MonoBehaviour
 		{
 			if (currentFadeCoroutine != null)
 			{
-				StopCoroutine(currentFadeCoroutine);
+				if (previousTutorialStep != null)
+				{
+					previousTutorialStep.StopCoroutine(currentFadeCoroutine);
+				}
+				else this.StopCoroutine(currentFadeCoroutine);
 			}
 			if (currentFadeCoroutineImage != null)
 			{
-				StopCoroutine(currentFadeCoroutineImage);
+				if (previousTutorialStep != null)
+				{
+					previousTutorialStep.StopCoroutine(currentFadeCoroutineImage);
+				}
+				else this.StopCoroutine(currentFadeCoroutineImage);
 			}
 
 			if (gameObject.activeInHierarchy)
@@ -81,6 +91,7 @@ public class TutorialStep : MonoBehaviour
 				currentFadeCoroutine = StartCoroutine(FadeOutText());
 				currentFadeCoroutineImage = StartCoroutine(FadeOutImage());
 			}
+			previousTutorialStep = this;
 		}
 	}
 
