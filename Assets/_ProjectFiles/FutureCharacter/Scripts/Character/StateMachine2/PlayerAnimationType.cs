@@ -15,4 +15,10 @@ public enum PlayerAnimationType
     PlayerComboAttack2,
     PlayerComboAttack3,
     EmptyState,
+    PlayerMovingItem,
+    PlayerMovingItemForward,
+    PlayerMovingItemBack,
+    PlayerMovingItemCancel,
+    PlayerMovingItemStay,
+
 }

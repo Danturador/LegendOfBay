@@ -1,12 +1,13 @@
 using UnityEngine;
 using System.Collections;
+using Spine.Unity.Examples;
 
 public class PlayerDash : MonoBehaviour
 {
     [SerializeField] private float dashPower = 30f;
     [SerializeField] private float dashingTime = 0.2f;
     [SerializeField] private float dashCooldown = 1f;
-    [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private SkeletonGhost _sceletonGhost;
 
     private Rigidbody2D _rb;
     private bool _canDash = true;
@@ -17,6 +18,8 @@ public class PlayerDash : MonoBehaviour
     {
         _rb = rigidbody;
         _originalGravity = _rb.gravityScale;
+        _sceletonGhost = GetComponentInChildren<SkeletonGhost>();
+        _sceletonGhost.ghostingEnabled = false;
     }
 
     public void PerformDash(Vector2 moveDirection)
@@ -33,11 +36,20 @@ public class PlayerDash : MonoBehaviour
         _isDashing = true;
         _rb.gravityScale = 0f;
         _rb.velocity = new Vector2(moveDirection.x * dashPower, 0f);
+        Physics2D.IgnoreLayerCollision(7, 9, true);
+        if (_sceletonGhost != null)
+        {
+            _sceletonGhost.ghostingEnabled = true;
+        }
         yield return new WaitForSeconds(dashingTime);
-       // _particleSystem.gameObject.SetActive(false);
         _rb.gravityScale = _originalGravity;
         _rb.velocity = Vector2.zero;
         _isDashing = false;
+        Physics2D.IgnoreLayerCollision(7, 9, false);
+        if (_sceletonGhost != null)
+        {
+            _sceletonGhost.ghostingEnabled = false;
+        }
         yield return new WaitForSeconds(dashCooldown);
         _canDash = true;
     }

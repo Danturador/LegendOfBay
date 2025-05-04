@@ -8,13 +8,14 @@ namespace _ProjectFiles.SaveSystem
     {
         [Inject] private SaveSystemController _saveSystemController;
         public UnityEvent onSaveTriggered;
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             if (!other.gameObject.TryGetComponent(out PlayerController player)) 
                 return;
             
             _saveSystemController.UpdatePosition(player.transform.position);
             _saveSystemController.UpdateHealth(100);
+			_saveSystemController.SaveProgress();
             onSaveTriggered?.Invoke();
         }
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.XInput;
+using Zenject;
 
 public class PlayerStateMachine2 : MonoBehaviour
 {
@@ -12,14 +13,17 @@ public class PlayerStateMachine2 : MonoBehaviour
     [SerializeField] private float velocityX;
     [SerializeField] private float velocityY;
     public PlayerAnimationController playerAnimationController { get; private set; }
-    private InputController _inputController;
+    [Inject] private InputController _inputController;
+    private PlayerController _playerController;
     private StateMachine2 _stateMachine;
     private PlayerJump _playerJump;
     private PlayerDash _playerDash;
+    
     [SerializeField]private bool _isLanding;
     private bool _isGrounded => _playerJump._isGrounded;
     private bool _isDashing => _playerDash.IsDashing();
     private bool _isDoubleJump => _playerJump.isDoubleJump;
+    private bool _isMovingItem => _playerController.IsMovingItem;
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -29,7 +33,8 @@ public class PlayerStateMachine2 : MonoBehaviour
     }
     private void Start()
     {
-        _inputController = GetComponentInParent<PlayerController>().inputController;
+        //_inputController = GetComponentInParent<PlayerController>().inputController;
+        _playerController = GetComponentInParent<PlayerController>();
         _playerJump = GetComponentInParent<PlayerJump>();
         _playerDash = GetComponentInParent<PlayerDash>();
     }
@@ -68,6 +73,11 @@ public class PlayerStateMachine2 : MonoBehaviour
         var doubleJumpState = new PlayerDoubleJumpState2(playerAnimationController);
         var landingState = new PlayerLandingState2(playerAnimationController);
         var dashState = new PlayerDashState2(playerAnimationController);
+        var movingItemState = new PlayerMovingItemState2(playerAnimationController);
+        var movingItemForwardState = new PlayerMovingItemForwardState2(playerAnimationController);
+        var movingItemBackState = new PlayerMovingItemBackState2(playerAnimationController);
+        var movingItemCancelState = new PlayerMovingItemCancelState2(playerAnimationController);
+        var movingItemStayState = new PlayerMovingItemStayState2(playerAnimationController);
 
         idleState.AddTransition(new StateTransition(runState, new FuncStateCondition(() => _inputController.Gameplay.Movement.ReadValue<Vector2>().x !=0 && _isGrounded)));
         runState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _inputController.Gameplay.Movement.ReadValue<Vector2>().x == 0 && _isGrounded)));
@@ -95,6 +105,20 @@ public class PlayerStateMachine2 : MonoBehaviour
         dashState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isDashing == false && _isGrounded && _rigidbody2D.velocity.x == 0)));
         dashState.AddTransition(new StateTransition(runState, new FuncStateCondition(() => _isDashing == false && _isGrounded && _rigidbody2D.velocity.x != 0))); // fix it!
         dashState.AddTransition(new StateTransition(jumpFallState, new FuncStateCondition(() => _isDashing == false && _isGrounded == false && _rigidbody2D.velocity.y <= 0)));
+
+
+        idleState.AddTransition(new StateTransition(movingItemState, new FuncStateCondition(() => _isMovingItem)));
+        runState.AddTransition(new StateTransition(movingItemState, new FuncStateCondition(() => _isMovingItem)));
+      //  movingItemState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isMovingItem == false)));
+        movingItemState.AddTransition(new StateTransition(movingItemStayState, new FuncStateCondition(() => _isMovingItem)));
+        movingItemState.AddTransition(new StateTransition(movingItemForwardState, new FuncStateCondition(() => _isMovingItem && _inputController.Gameplay.Movement.ReadValue<Vector2>().x != 0)));
+        movingItemForwardState.AddTransition(new StateTransition(movingItemStayState, new FuncStateCondition(() => _isMovingItem && _inputController.Gameplay.Movement.ReadValue<Vector2>().x == 0)));
+        movingItemStayState.AddTransition(new StateTransition(movingItemForwardState, new FuncStateCondition(() => _isMovingItem && _inputController.Gameplay.Movement.ReadValue<Vector2>().x != 0)));
+
+        movingItemStayState.AddTransition(new StateTransition(movingItemCancelState, new FuncStateCondition(() => _isMovingItem == false)));
+        movingItemForwardState.AddTransition(new StateTransition(movingItemCancelState, new FuncStateCondition(() => _isMovingItem == false)));
+        movingItemCancelState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isMovingItem == false)));
+
 
 
 

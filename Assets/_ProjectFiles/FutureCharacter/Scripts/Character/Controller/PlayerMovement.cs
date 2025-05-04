@@ -27,10 +27,21 @@ public class PlayerMovement : MonoBehaviour
             _move = Vector2.zero;
         }
 
+        MoveUpdate();
+    }
+
+    public void Move(Vector2 input, int divisor)
+    {
+        _move = new Vector2(input.x/divisor,input.y);
+        MoveUpdate();
+    }
+
+    private void MoveUpdate()
+    {
         if (_move != Vector2.zero)
         {
             Vector2 targetVelocity = new Vector2(_move.x, 0f) * moveSpeed;
-            if (_rb.velocity.y != 0) 
+            if (_rb.velocity.y != 0)
             {
                 _rb.velocity = new Vector2(targetVelocity.x, _rb.velocity.y);
             }
@@ -41,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-                _rb.velocity = new Vector2(0f, _rb.velocity.y);   
+            _rb.velocity = new Vector2(0f, _rb.velocity.y);
         }
     }
 }

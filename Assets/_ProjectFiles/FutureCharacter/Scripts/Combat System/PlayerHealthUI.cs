@@ -5,6 +5,7 @@ public class PlayerHealthUI : MonoBehaviour
 {
     [SerializeField] private Image _healthBarImg;
     [SerializeField] private PlayerHealth playerHealth;
+    [SerializeField] private Gradient _healthBarGradient;
     private Camera _camera;
 
     private void Awake()
@@ -21,6 +22,7 @@ public class PlayerHealthUI : MonoBehaviour
     private void OnHealthChanger(float valueAsPercantage)
     {
         _healthBarImg.fillAmount = valueAsPercantage;
+        _healthBarImg.color = _healthBarGradient.Evaluate(_healthBarImg.fillAmount);
     }
 }
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
 public class PlayerBattleStateMachine2 : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class PlayerBattleStateMachine2 : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     public PlayerAnimationController playerAnimationController { get; private set; }
-    private InputController _inputController;
+    [Inject] private InputController _inputController;
     private StateMachine2 _stateMachine;
     private bool _isSmallAttack;
    [SerializeField] private bool comboWindow = true;
@@ -28,7 +29,7 @@ public class PlayerBattleStateMachine2 : MonoBehaviour
     }
     private void Start()
     {
-        _inputController = GetComponentInParent<PlayerController>().inputController;
+        //_inputController = GetComponentInParent<PlayerController>().inputController;
         _inputController.Gameplay.SmallAttack.performed += OnSmallAttack;
 
     }

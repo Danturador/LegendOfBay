@@ -1,5 +1,5 @@
+using System.Runtime.CompilerServices;
 using Spine.Unity;
-using System;
 using UnityEngine;
 
 namespace _ProjectFiles.Enemy.Scripts.Core
@@ -8,22 +8,30 @@ namespace _ProjectFiles.Enemy.Scripts.Core
     {
         [SerializeField] private new Rigidbody2D rigidbody;
         [SerializeField] private SkeletonMecanim skeletonAnimation;
+        [SerializeField] private float velocityError;
         private float _defaultScale;
+
+        
+        
+        public float CurrentScale
+        {
+            get => skeletonAnimation.Skeleton.ScaleX;
+            set => skeletonAnimation.Skeleton.ScaleX = value;
+        }
 
         private void Awake()
         {
             _defaultScale = Mathf.Abs(skeletonAnimation.Skeleton.ScaleX);
+            var pos = transform.position;
+            pos.z = 0;
+            transform.position = pos;
         }
 
         private void Update()
         {
-            var scale = rigidbody.velocity.x > 0 ? _defaultScale : -_defaultScale;
-            skeletonAnimation.Skeleton.ScaleX = scale;
-
-            // var scale = rigidbody.velocity.x > 0 ? new Vector3(1, 1, 1) : new Vector3(-1, 1, 1);
-            // transform.localScale = scale;
-            //
-            // Debug.Log(rigidbody.velocity.x > 0);
+            if (rigidbody.velocity.x > velocityError)
+                skeletonAnimation.Skeleton.ScaleX = _defaultScale;
+            else if (rigidbody.velocity.x < -velocityError) skeletonAnimation.Skeleton.ScaleX = -_defaultScale;
         }
     }
 }

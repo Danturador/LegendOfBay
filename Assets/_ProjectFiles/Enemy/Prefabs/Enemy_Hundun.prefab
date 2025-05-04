@@ -134,7 +134,7 @@ MonoBehaviour:
   fixDrawOrder: 0
   addNormals: 0
   calculateTangents: 0
-  maskInteraction: 0
+  maskInteraction: 2
   maskMaterials:
     materialsMaskDisabled: []
     materialsInsideMask: []
@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 7743745585983630010}
   - component: {fileID: 1912336449257122221}
   - component: {fileID: 5342948021666582843}
+  - component: {fileID: 2277293894931236860}
   m_Layer: 9
   m_Name: Enemy_Hundun
   m_TagString: Untagged
@@ -176,8 +177,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4757401579083615958}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -41.5, y: 11.7, z: -24.786106}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -259,33 +260,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collider: {fileID: 26710871264555142}
+  animator: {fileID: 8411131558361356979}
   rigidbody: {fileID: 716377433823225197}
+  renderer: {fileID: 7743745585983630010}
   enemyNavigation: {fileID: 3897181793932938549}
-  speedCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: -4.911615
-      outSlope: -0.9960327
-      tangentMode: 65
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.03862048
-    - serializedVersion: 3
-      time: 1
-      value: 0.003967285
-      inSlope: -0.9960327
-      outSlope: -0.22578467
-      tangentMode: 5
-      weightedMode: 0
-      inWeight: 0.048151433
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  infoContainer: {fileID: 11400000, guid: 6e925fd61c56e294a85b20d9cd0e566f, type: 2}
+  enemyAttack: {fileID: 2277293894931236860}
+  profile: {fileID: 11400000, guid: 6e925fd61c56e294a85b20d9cd0e566f, type: 2}
 --- !u!114 &3897181793932938549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 716377433823225197}
   skeletonAnimation: {fileID: 565063608146890649}
+  velocityError: 0.1
 --- !u!114 &1912336449257122221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,8 +306,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d04c4cec4219ee42aa0406a1a5f8f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitEffects: []
+  _hitEffects:
+  - {fileID: 8771972552311404799, guid: bbf9e36a48d6c5648a13889afab076fd, type: 3}
   _damage: 5
+  attackStartDelay: 0.7
+  attackDelay: 2
+  _animator: {fileID: 8411131558361356979}
 --- !u!114 &5342948021666582843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,3 +326,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 10
+--- !u!114 &2277293894931236860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4757401579083615958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0ad4f9693fc4711a5cb30cf57f1d971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitEffects:
+  - {fileID: 8771972552311404799, guid: bbf9e36a48d6c5648a13889afab076fd, type: 3}

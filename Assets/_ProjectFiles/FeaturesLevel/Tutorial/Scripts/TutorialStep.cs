@@ -1,22 +1,36 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 using System.Collections;
+using System.Collections.Generic;
 
 public class TutorialStep : MonoBehaviour
 {
-	public Text textMesh; // replace with TextMeshProUGUI
-	[TextArea] public string displayText;
+	public Text text;
+	public Image image;
+	[TextArea] public List<string> displayText;
+	public int textIndex;
 	public float fadeDuration = 1f;
+	public float textDelay = 0.2f;
 
-	private Coroutine currentFadeCoroutine;
+	public ConditionChecker conditionChecker;
+
+	private static Coroutine currentFadeCoroutine;
+	private static Coroutine currentFadeCoroutineImage;
+
+	private static TutorialStep previousTutorialStep;
 
 	private void Awake()
 	{
-		textMesh.text = string.Empty;
-		Color color = textMesh.color;
-		color.a = 0f;
-		textMesh.color = color;
+		text.text = string.Empty;
+		Color textColor = text.color;
+		textColor.a = 0f;
+		text.color = textColor;
+
+		Color imageColor = image.color;
+		imageColor.a = 0f;
+		image.color = imageColor;
+
+		textIndex = 0;
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
@@ -25,12 +39,38 @@ public class TutorialStep : MonoBehaviour
 		{
 			if (currentFadeCoroutine != null)
 			{
-				StopCoroutine(currentFadeCoroutine);
+				if (previousTutorialStep != null)
+				{
+					previousTutorialStep.StopCoroutine(currentFadeCoroutine);
+				}
+				else this.StopCoroutine(currentFadeCoroutine);
 			}
+			if (currentFadeCoroutineImage != null)
+			{
+				if (previousTutorialStep != null)
+				{
+					previousTutorialStep.StopCoroutine(currentFadeCoroutineImage);
+				}
+				else this.StopCoroutine(currentFadeCoroutineImage);
+			}
+
 			if (gameObject.activeInHierarchy)
 			{
-				currentFadeCoroutine = StartCoroutine(FadeIn());
+				if (conditionChecker != null && conditionChecker.CheckConditions())
+				{
+					if (displayText.Count > 1 && textIndex < displayText.Count - 1)
+					{
+						textIndex++;
+					}
+				}
+				if (!string.IsNullOrEmpty(displayText[textIndex]))
+				{
+					currentFadeCoroutineImage = StartCoroutine(FadeInImage());
+					currentFadeCoroutine = StartCoroutine(FadeInText());
+
+				}
 			}
+
 		}
 	}
 
@@ -42,37 +82,71 @@ public class TutorialStep : MonoBehaviour
 			{
 				StopCoroutine(currentFadeCoroutine);
 			}
+			if (currentFadeCoroutineImage != null)
+			{
+				StopCoroutine(currentFadeCoroutineImage);
+			}
 			if (gameObject.activeInHierarchy)
 			{
-				currentFadeCoroutine = StartCoroutine(FadeOut());
+				currentFadeCoroutine = StartCoroutine(FadeOutText());
+				currentFadeCoroutineImage = StartCoroutine(FadeOutImage());
 			}
+			previousTutorialStep = this;
 		}
 	}
 
-	private IEnumerator FadeIn()
+	private IEnumerator FadeInImage()
 	{
-		Color color = textMesh.color;
-		textMesh.text = displayText;
+		Color color = image.color;
 
 		while (color.a < 1f)
 		{
 			color.a += Time.deltaTime / fadeDuration;
-			textMesh.color = color;
+			image.color = color;
 			yield return null;
 		}
 	}
 
-	private IEnumerator FadeOut()
+	private IEnumerator FadeInText()
 	{
-		Color color = textMesh.color;
+		Color color = text.color;
+		text.text = displayText[textIndex];
+
+		yield return new WaitForSeconds(textDelay);
+
+		while (color.a < 1f)
+		{
+			color.a += Time.deltaTime / fadeDuration;
+			text.color = color;
+			yield return null;
+		}
+	}
+
+	private IEnumerator FadeOutText()
+	{
+		Color color = text.color;
 
 		while (color.a > 0f)
 		{
 			color.a -= Time.deltaTime / fadeDuration;
-			textMesh.color = color;
+			text.color = color;
 			yield return null;
 		}
 
-		textMesh.text = string.Empty;
+		text.text = string.Empty;
+	}
+
+	private IEnumerator FadeOutImage()
+	{
+		Color color = image.color;
+
+		yield return new WaitForSeconds(textDelay * 2);
+
+		while (color.a > 0f)
+		{
+			color.a -= Time.deltaTime / fadeDuration;
+			image.color = color;
+			yield return null;
+		}
 	}
 }
