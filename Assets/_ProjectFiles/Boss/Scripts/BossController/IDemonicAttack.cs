@@ -1,8 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public interface IDemonicAttack
 {
-	public IEnumerator AttackPattern();
+	public IEnumerator AttackPattern(Action<bool> setCascadeOfNeedles);
 }

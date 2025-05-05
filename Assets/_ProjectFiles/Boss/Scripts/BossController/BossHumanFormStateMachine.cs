@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using static BossHumanFormStateMachine.TypesOfAttack;
-using static BossAnimationType;
+using static HumanFormAnimationType;
 
 public class BossHumanFormStateMachine : MonoBehaviour
 {
 	[SerializeField] private Animator _animator;
-	public BossAnimationController bossAnimationController { get; private set; }
 	private StateMachine2 _stateMachine;
 	public string currentState { 
 		get { 
@@ -45,7 +44,7 @@ public class BossHumanFormStateMachine : MonoBehaviour
 	}
 	private void InitializeStateMachine()
 	{
-		BossAnimationController animationController = new(_animator);
+		HumanFormAnimationController animationController = new(_animator);
 
 		BossPassiveState passiveState = new BossPassiveState(this, animationController);
 		BossSwordComboAttachState swordComboAttachState = new BossSwordComboAttachState(this, humanBehaviour, animationController);

@@ -1,5 +1,5 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
@@ -17,6 +17,8 @@ public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 
 	[SerializeField] private int countOfAttacks;
 
+	private bool isDeinitialized = false;
+
 	private void Initialize()
 	{
 		projection = Instantiate(projectionPrefab, transform.position, Quaternion.identity);
@@ -28,17 +30,27 @@ public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 		rotationAngle = 15f;
 		countOfAttacks = 4;
 	}
-	private void Deinitialize()
+
+	public void Deinitialize()
 	{
-		Destroy(projection);
-		Destroy(beam);
+		isDeinitialized = true;
+		if (projection != null) Destroy(projection);
+		if (beam != null) Destroy(beam);
 	}
-	public IEnumerator AttackPattern()
+
+	public IEnumerator AttackPattern(Action<bool> setCascadeOfNeedles)
 	{
 		Initialize();
 
 		while (countOfAttacks > 0)
 		{
+			if (isDeinitialized || this == null)
+			{
+				yield break;
+			}
+
+			setCascadeOfNeedles(true);
+
 			projection.SetActive(true);
 
 			yield return new WaitForSeconds(projectionDuration);
@@ -46,41 +58,30 @@ public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 			projection.SetActive(false);
 			beam.SetActive(true);
 
+			setCascadeOfNeedles(false);
+			projection.SetActive(true);
+
 			yield return new WaitForSeconds(beamDuration);
+
+			if (isDeinitialized || this == null)
+			{
+				yield break;
+			}
+
 			beam.SetActive(false);
 			RotateBeam(projection.transform, rotationAngle);
 			RotateBeam(beam.transform, rotationAngle);
 
+			projection.SetActive(false);
 			yield return new WaitForSeconds(attackDelay);
 
 			countOfAttacks--;
-			//StartCoroutine(CreateNegativeEnergyCascade());
+			setCascadeOfNeedles(false);
 		}
 
 		Deinitialize();
 	}
-	public IEnumerator CreateNegativeEnergyCascade()
-	{
-		while (countOfAttacks > 0)
-		{
-			projection.SetActive(true);
 
-			yield return new WaitForSeconds(projectionDuration);
-
-			projection.SetActive(false);
-			beam.SetActive(true);
-
-			yield return new WaitForSeconds(beamDuration);
-			beam.SetActive(false);
-			RotateBeam(projection.transform, rotationAngle);
-			RotateBeam(beam.transform, rotationAngle);
-
-			yield return new WaitForSeconds(attackDelay);
-
-			countOfAttacks--;
-			//StartCoroutine(CreateNegativeEnergyCascade());
-		}
-	}
 	private void RotateBeam(Transform transform, float angle)
 	{
 		transform.Rotate(0, 0, angle);

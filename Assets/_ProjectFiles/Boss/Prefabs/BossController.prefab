@@ -48,7 +48,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossHumanForm: {fileID: 5544132886645364531}
+  humanFormHealthController: {fileID: 0}
   bossDemonicForm: {fileID: 3764004824669367464}
+  demonicFormHealthController: {fileID: 0}
+  healthBarGO: {fileID: 0}
+  healthBar: {fileID: 0}
+  fillDuration: 1
+  demonicFormBehaviour: {fileID: 3668973241944085616}
+  demonicFormCollider: {fileID: 4303475462078805469}
+  screenOverlay: {fileID: 0}
+  invulnerabilityDuration: 5
+  transitionDuration: 0.5
+  transitionDurationAfter: 3
+  transitionDelay: 1
 --- !u!61 &4651823315705462248
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -256,6 +268,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6236074584863045121}
     m_Modifications:
+    - target: {fileID: -7938639562004219938, guid: e6817a256232e244fa01281582a2210e, type: 3}
+      propertyPath: nextAttack
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841373631443212004, guid: e6817a256232e244fa01281582a2210e, type: 3}
+      propertyPath: m_Name
+      value: RigidbodyCollider
+      objectReference: {fileID: 0}
     - target: {fileID: 5445828444998645231, guid: e6817a256232e244fa01281582a2210e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -328,7 +348,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7471221892676928185, guid: e6817a256232e244fa01281582a2210e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6091588288427523940}
+      addedObject: {fileID: 409743570604865087}
     - targetCorrespondingSourceObject: {fileID: 7471221892676928185, guid: e6817a256232e244fa01281582a2210e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 918100457981482741}
@@ -338,7 +358,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7471221892676928185, guid: e6817a256232e244fa01281582a2210e, type: 3}
   m_PrefabInstance: {fileID: 3125405536115201418}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6091588288427523940
+--- !u!114 &409743570604865087
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -347,11 +367,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5544132886645364531}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c00bc22d29f659438f8aa6622384369, type: 3}
+  m_Script: {fileID: 11500000, guid: 214e929e85310dc48b78e381597597f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 20
   currentHealth: 0
+  _hpBarGameobject: {fileID: 0}
 --- !u!114 &918100457981482741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +388,9 @@ MonoBehaviour:
   _hitEffects:
   - {fileID: 153674, guid: 98e35bc5094f25441a4c3b405abf1870, type: 3}
   _damage: 5
+  attackStartDelay: 0
+  attackDelay: 0
+  _animator: {fileID: 0}
 --- !u!4 &6975182850592284773 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5445828444998645231, guid: e6817a256232e244fa01281582a2210e, type: 3}
@@ -420,6 +444,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7023853388301007457, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 987403043269012810}
     - target: {fileID: 7471221892676928185, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
       propertyPath: m_Name
       value: BossDemon
@@ -430,28 +458,92 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8419268088059441168, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
       propertyPath: attackDelay
-      value: 2
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 8419268088059441168, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
       propertyPath: totalSpikes
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 8419268088059441168, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
-      propertyPath: spikeFallSpeed
-      value: 8
+      propertyPath: animationDelay
+      value: 0.15
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8419268088059441168, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
+      propertyPath: spikeFallSpeed
+      value: 11
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 110097639036240462, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7471221892676928185, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 424602102140684240}
+    - targetCorrespondingSourceObject: {fileID: 7471221892676928185, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4949887822524319960}
   m_SourcePrefab: {fileID: 100100000, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
+--- !u!95 &987403043269012810 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6782569602549744475, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
+  m_PrefabInstance: {fileID: 6022283330788486673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1729394172218825726 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5445828444998645231, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
   m_PrefabInstance: {fileID: 6022283330788486673}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3668973241944085616 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7023853388301007457, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
+  m_PrefabInstance: {fileID: 6022283330788486673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3764004824669367464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c05d303997e7a574fb1530d93ca96668, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3764004824669367464 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7471221892676928185, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
+  m_PrefabInstance: {fileID: 6022283330788486673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &424602102140684240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3764004824669367464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214e929e85310dc48b78e381597597f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 50
+  currentHealth: 0
+  _hpBarGameobject: {fileID: 0}
+--- !u!114 &4949887822524319960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3764004824669367464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d04c4cec4219ee42aa0406a1a5f8f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hitEffects: []
+  _damage: 5
+  attackStartDelay: 0
+  attackDelay: 0
+  _animator: {fileID: 0}
+--- !u!61 &4303475462078805469 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7505942475902966732, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
   m_PrefabInstance: {fileID: 6022283330788486673}
   m_PrefabAsset: {fileID: 0}
