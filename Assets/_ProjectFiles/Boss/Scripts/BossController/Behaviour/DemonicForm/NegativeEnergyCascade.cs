@@ -17,6 +17,8 @@ public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 
 	[SerializeField] private int countOfAttacks;
 
+	private bool isDeinitialized = false;
+
 	private void Initialize()
 	{
 		projection = Instantiate(projectionPrefab, transform.position, Quaternion.identity);
@@ -28,17 +30,25 @@ public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 		rotationAngle = 15f;
 		countOfAttacks = 4;
 	}
-	private void Deinitialize()
+
+	public void Deinitialize()
 	{
-		Destroy(projection);
-		Destroy(beam);
+		isDeinitialized = true;
+		if (projection != null) Destroy(projection);
+		if (beam != null) Destroy(beam);
 	}
+
 	public IEnumerator AttackPattern(Action<bool> setCascadeOfNeedles)
 	{
 		Initialize();
 
 		while (countOfAttacks > 0)
 		{
+			if (isDeinitialized || this == null)
+			{
+				yield break;
+			}
+
 			setCascadeOfNeedles(true);
 
 			projection.SetActive(true);
@@ -52,6 +62,12 @@ public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 			projection.SetActive(true);
 
 			yield return new WaitForSeconds(beamDuration);
+
+			if (isDeinitialized || this == null)
+			{
+				yield break;
+			}
+
 			beam.SetActive(false);
 			RotateBeam(projection.transform, rotationAngle);
 			RotateBeam(beam.transform, rotationAngle);
@@ -65,6 +81,7 @@ public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 
 		Deinitialize();
 	}
+
 	private void RotateBeam(Transform transform, float angle)
 	{
 		transform.Rotate(0, 0, angle);

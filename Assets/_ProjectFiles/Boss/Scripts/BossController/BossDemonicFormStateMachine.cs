@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using static BossDemonicFormStateMachine.TypesOfAttack;
+using static DemonicFormAnimationType;
 using static BossHumanFormStateMachine;
 
 public class BossDemonicFormStateMachine : MonoBehaviour
 {
 	[SerializeField] private Animator _animator;
-	public DemonicFormAnimationController bossAnimationController { get; private set; }
+	public DemonicFormAnimationController animationController { get; private set; }
 	private StateMachine2 _stateMachine;
 	public string currentState { 
 		get { 
@@ -25,16 +26,35 @@ public class BossDemonicFormStateMachine : MonoBehaviour
 	private static System.Random random = new System.Random();
 	private Queue<TypesOfAttack> recentAttacks = new Queue<TypesOfAttack>();
 	private int maxRecentAttacks = 2;
+	public Action OnDeath;
 	public enum TypesOfAttack
 	{
 		CascadeOfNeedlesTypeAttack,
 		NegativeEnergyCascadeTypeAttack,
 	}
-
 	private void Awake()
 	{
-		InitializeStateMachine();
+		_stateMachine = new StateMachine2(new DemonicPassiveState());
+		animationController = new DemonicFormAnimationController(_animator);
+		OnDeath += HandleDeath;
+	}
+	private void OnDestroy()
+	{
+		OnDeath -= HandleDeath;
+	}
+	private void HandleDeath()
+	{
+		animationController.SetBool(IsDead, true);
 
+		cascadeOfNeedles.StopAllCoroutines();
+		negativeEnergyCascade.StopAllCoroutines();
+
+		cascadeOfNeedles.Deinitialize();
+		negativeEnergyCascade.Deinitialize();
+	}
+	public void InitializeDemonicForm()
+	{
+		InitializeStateMachine();
 		isAttackEnded = false;
 		currentAttack = ChooseNextAttack();
 	}
@@ -44,10 +64,10 @@ public class BossDemonicFormStateMachine : MonoBehaviour
 	}
 	private void InitializeStateMachine()
 	{
-		DemonicFormAnimationController animationController = new(_animator);
 
 		CascadeOfNeedlesState cascadeOfNeedlesState = new CascadeOfNeedlesState(this, cascadeOfNeedles, animationController);
 		NegativeEnergyCascadeState negativeEnergyCascadeState = new NegativeEnergyCascadeState(this, negativeEnergyCascade, animationController);
+		DeathState deathState = new DeathState();
 
 		AddTransitionToState(cascadeOfNeedlesState, negativeEnergyCascadeState, () =>
 			isAttackEnded
@@ -69,7 +89,14 @@ public class BossDemonicFormStateMachine : MonoBehaviour
 			&& previousAttack.Is(NegativeEnergyCascadeTypeAttack)
 		);
 
-		_stateMachine = new StateMachine2(cascadeOfNeedlesState);
+		AddTransitionToState(negativeEnergyCascadeState, deathState, () =>
+			animationController.GetBool(IsDead)
+		);
+		AddTransitionToState(cascadeOfNeedlesState, deathState, () =>
+			animationController.GetBool(IsDead)
+		);
+
+		_stateMachine.SetState(cascadeOfNeedlesState);
 	}
 	public void HandleDemonicAttackCompletion()
 	{

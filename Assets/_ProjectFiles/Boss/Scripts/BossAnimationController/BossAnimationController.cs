@@ -21,17 +21,10 @@ public class BossAnimationController<T> where T : Enum
 	{
 		_animator.SetBool(hashStorage[animationType], value);
 	}
-
-	public void SetFloat(T animationType, float value)
+	public bool GetBool(T animationType)
 	{
-		_animator.SetFloat(hashStorage[animationType], value);
+		return _animator.GetBool(hashStorage[animationType]);
 	}
-
-	public void SetPlay(T animationType)
-	{
-		_animator.Play(hashStorage[animationType]);
-	}
-
 	public void SetTrigger(T animationType)
 	{
 		_animator.SetTrigger(hashStorage[animationType]);

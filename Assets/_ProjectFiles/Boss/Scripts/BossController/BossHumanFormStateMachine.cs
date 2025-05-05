@@ -8,7 +8,6 @@ using static HumanFormAnimationType;
 public class BossHumanFormStateMachine : MonoBehaviour
 {
 	[SerializeField] private Animator _animator;
-	public HumanFormAnimationController bossAnimationController { get; private set; }
 	private StateMachine2 _stateMachine;
 	public string currentState { 
 		get { 

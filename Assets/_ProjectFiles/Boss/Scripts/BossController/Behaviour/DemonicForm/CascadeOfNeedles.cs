@@ -6,6 +6,7 @@ using UnityEngine;
 public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 {
 	[SerializeField] private GameObject spikePrefab;
+	[SerializeField] private List<GameObject> spikes = new List<GameObject>();
 	[SerializeField] private float spikeSpacing;
 	[SerializeField] private int totalSpikes;
 	[SerializeField] private float attackDelay;
@@ -15,11 +16,36 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 	[SerializeField] private int attackIndex;
 	[SerializeField] private float startFallingPoint;
 	[SerializeField] private float endFallingPoint;
+	private bool isDead;
 
 	private void Initialize()
 	{
 		skipSpikes = new int[4] { 2, 5, 10, 14 };
 		attackIndex = 0;
+		isDead = false;
+	}
+
+	public void Deinitialize()
+	{
+		isDead = true;
+
+		List<GameObject> spikesToRemove = new List<GameObject>(spikes);
+
+		foreach (var spike in spikesToRemove)
+		{
+			RemoveSpike(spike);
+		}
+
+		spikes.Clear();
+	}
+
+	private void RemoveSpike(GameObject spike)
+	{
+		if (spike != null)
+		{
+			spikes.Remove(spike);
+			Destroy(spike);
+		}
 	}
 
 	public IEnumerator AttackPattern(Action<bool> setCascadeOfNeedles)
@@ -36,7 +62,6 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 				yield return new WaitForSeconds(attackDelay);
 			}
 			setCascadeOfNeedles(false);
-			//yield return new WaitForSeconds(animationDelay);
 		}
 	}
 
@@ -49,6 +74,7 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 			if (i != skipSpikes[attackIndex])
 			{
 				Vector3 spawnPosition = transform.position + new Vector3(i * spikeSpacing - halfWidth, startFallingPoint, 0);
+				if (isDead) break;
 				SpawnSpike(spawnPosition);
 			}
 		}
@@ -58,16 +84,20 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 	private void SpawnSpike(Vector3 position)
 	{
 		GameObject spike = Instantiate(spikePrefab, position, Quaternion.identity);
+		spikes.Add(spike);
 		StartCoroutine(Fall(spike));
 	}
 
 	private IEnumerator Fall(GameObject spike)
 	{
-		while (spike.transform.position.y > endFallingPoint)
+		while (spike != null && spike.transform.position.y > endFallingPoint)
 		{
 			spike.transform.position += Vector3.down * spikeFallSpeed * Time.deltaTime;
 			yield return null;
 		}
-		Destroy(spike);
+		if (spike != null)
+		{
+			RemoveSpike(spike);
+		}
 	}
 }
