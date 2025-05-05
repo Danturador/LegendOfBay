@@ -48,9 +48,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossHumanForm: {fileID: 5544132886645364531}
-  humanFormHealthController: {fileID: 0}
+  humanFormHealthController: {fileID: 409743570604865087}
   bossDemonicForm: {fileID: 3764004824669367464}
-  demonicFormHealthController: {fileID: 0}
+  demonicFormHealthController: {fileID: 424602102140684240}
   healthBarGO: {fileID: 0}
   healthBar: {fileID: 0}
   fillDuration: 1
@@ -104,7 +104,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 30, y: 5}
+  m_Size: {x: 50, y: 5}
   m_EdgeRadius: 0
 --- !u!1 &816924405617512378
 GameObject:
@@ -373,6 +373,7 @@ MonoBehaviour:
   maxHealth: 20
   currentHealth: 0
   _hpBarGameobject: {fileID: 0}
+  isHumanForm: 1
 --- !u!114 &918100457981482741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -525,6 +526,7 @@ MonoBehaviour:
   maxHealth: 50
   currentHealth: 0
   _hpBarGameobject: {fileID: 0}
+  isHumanForm: 0
 --- !u!114 &4949887822524319960
 MonoBehaviour:
   m_ObjectHideFlags: 0

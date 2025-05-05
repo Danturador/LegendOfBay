@@ -79,7 +79,7 @@ public class FogOfWarController : MonoBehaviour
     {
         spriteMask.sprite = Sprite.Create(fogOfWarTexture, new Rect(0, 0, fogOfWarTexture.width, fogOfWarTexture.height), Vector2.one * 0.5f, 100);
 
-		saveSystemController.UpdateTexture(fogOfWarTexture);
-		saveSystemController.SaveProgress();
+		//saveSystemController.UpdateTexture(fogOfWarTexture);
+		//saveSystemController.SaveProgress();
 	}
 }
