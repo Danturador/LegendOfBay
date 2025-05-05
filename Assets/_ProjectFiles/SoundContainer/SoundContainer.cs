@@ -16,7 +16,15 @@ namespace _ProjectFiles.SoundContainer
 
     public enum SoundType
     {
-        AttackClip
+        PlayerAttackClip,
+        PlayerRunClip1,
+        PlayerRunClip2,
+        PlayerRunClip3,
+        PlayerRunClip4,
+        PlayerRunClip5,
+        PlayerHitEnemyClip1,
+        PlayerHitEnemyClip2,
+        PlayerHitEnemyClip3,
     }
 
     [Serializable]

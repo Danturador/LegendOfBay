@@ -10,11 +10,16 @@ public class PlayerDamageGiver : MonoBehaviour
     private float _attackRadius;
     private GameObject _damageGiverGameObject;
     private LayerMask _damageLayer;
+    private PlayerAudioInitializer _audioInitializer;
     private void Awake()
     {
         _attackRadius = 2f;
         _damageLayer = 1 << 9;
         _damageGiverGameObject = GameObject.Find("PlayerDamageGiver");
+    }
+    private void Start()
+    {
+        _audioInitializer = GetComponent<PlayerAudioInitializer>();
     }
 
     public void AttackSlash(int numberEffect)
@@ -32,6 +37,7 @@ public class PlayerDamageGiver : MonoBehaviour
             {
                 item.GetComponent<IDamageable>().TakeDamage(_damage);
                 CreateHitEffect(item.transform,0);
+                _audioInitializer.PlayerHitEnemySound(1);
                 CameraShake();
             }
         }

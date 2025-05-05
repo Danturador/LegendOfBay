@@ -22,7 +22,7 @@ TagManager:
   - NonTrigger
   - PlayerTransparentCollider
   - MovableObjectTrigger
-  - 
+  - InvisibleWalls
   - 
   - 
   - 

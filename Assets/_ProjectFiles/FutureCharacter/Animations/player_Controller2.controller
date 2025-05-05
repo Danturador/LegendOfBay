@@ -1626,6 +1626,13 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0.033333335
+    functionName: PlayerAttackSound
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: d8cfff4ec5aad3346ae24c2afbea3830, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.2
     functionName: GiveDamage
     data: 
@@ -2369,6 +2376,13 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0.083333336
+    functionName: PlayerAttackSound
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: d8cfff4ec5aad3346ae24c2afbea3830, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.35
     functionName: AttackSlash
     data: 

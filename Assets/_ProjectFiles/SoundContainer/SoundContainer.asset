@@ -15,3 +15,19 @@ MonoBehaviour:
   audios:
   - <SoundType>k__BackingField: 0
     <SoundClip>k__BackingField: {fileID: 8300000, guid: 94c63fa16e51dfb4aa460f64ab4ffb06, type: 3}
+  - <SoundType>k__BackingField: 1
+    <SoundClip>k__BackingField: {fileID: 8300000, guid: 2dab60cd08acc824da5586f236a72460, type: 3}
+  - <SoundType>k__BackingField: 2
+    <SoundClip>k__BackingField: {fileID: 8300000, guid: e94ad8b9e2c57f44bbde1f78b85f8fab, type: 3}
+  - <SoundType>k__BackingField: 3
+    <SoundClip>k__BackingField: {fileID: 8300000, guid: 83dfb4edaa7cb204e9f1183af55c3192, type: 3}
+  - <SoundType>k__BackingField: 4
+    <SoundClip>k__BackingField: {fileID: 8300000, guid: d4c788dd360f67d4db6fc61cb1d04196, type: 3}
+  - <SoundType>k__BackingField: 5
+    <SoundClip>k__BackingField: {fileID: 8300000, guid: 2f1b3ecc8d4e81b49baff8fcb3f93806, type: 3}
+  - <SoundType>k__BackingField: 6
+    <SoundClip>k__BackingField: {fileID: 8300000, guid: dca8f926aa60954499a95b18e117d0c9, type: 3}
+  - <SoundType>k__BackingField: 7
+    <SoundClip>k__BackingField: {fileID: 8300000, guid: 13507cffcc1c34e46823995bd4d1466c, type: 3}
+  - <SoundType>k__BackingField: 8
+    <SoundClip>k__BackingField: {fileID: 8300000, guid: 1998552d11897814d846663473ca1e46, type: 3}
