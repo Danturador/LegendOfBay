@@ -52,12 +52,12 @@ public class AudioTrigger : MonoBehaviour
 			case TriggerType.Transition:
 				if (isNewAmbientPlay)
 				{
-					soundManager.PlayAmbientEnd();
+					soundManager.PlayAmbientStart();
 					isNewAmbientPlay = false;
 				}
 				else
 				{
-					soundManager.PlayAmbientStart();
+					soundManager.PlayAmbientEnd();
 					isNewAmbientPlay = true;
 				}
 				break;

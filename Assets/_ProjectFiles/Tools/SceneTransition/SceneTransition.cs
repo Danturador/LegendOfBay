@@ -7,7 +7,7 @@ public class SceneTransition : MonoBehaviour
 {
 	public static SceneTransition Instance;
 	public Image fadeImage;
-	public Text loadingText;
+	public Image hundunImage;
 	public float fadeDuration = 2f;
 
 	private void Awake()
@@ -26,7 +26,7 @@ public class SceneTransition : MonoBehaviour
 	private void Start()
 	{
 		fadeImage.gameObject.SetActive(true);
-		loadingText.gameObject.SetActive(false);
+		hundunImage.gameObject.SetActive(false);
 		FadeIn();
 	}
 
@@ -38,18 +38,15 @@ public class SceneTransition : MonoBehaviour
 	private IEnumerator LoadSceneAsync(int sceneIndex)
 	{
 		yield return Fade(1f);
-		loadingText.gameObject.SetActive(true);
-		loadingText.text = "Загрузка...";
+		hundunImage.gameObject.SetActive(true);
 		AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
 		while (!operation.isDone)
 		{
-			float progress = Mathf.Clamp01(operation.progress / 0.9f);
-			loadingText.text = $"Загрузка... {progress * 100f}%";
 			yield return null;
 		}
 
-		loadingText.gameObject.SetActive(false);
+		hundunImage.gameObject.SetActive(false);
 		yield return Fade(0f);
 	}
 

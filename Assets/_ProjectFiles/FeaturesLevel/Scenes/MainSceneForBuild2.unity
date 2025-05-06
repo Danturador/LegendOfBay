@@ -8512,6 +8512,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 2829471609964191233, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
+      propertyPath: spikeFallSpeed
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2829471609964191233, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
+      propertyPath: startFallingPoint
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3662117305898107758, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -9811,7 +9819,7 @@ PrefabInstance:
     - target: {fileID: 7536409041396444916, guid: f9a4422c7efb66a4780835de8256cf5d, type: 3}
       propertyPath: displayText.Array.data[0]
       value: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439\u0442\u0435
-        \u043A\u043B\u0430\u0432\u0438\u0448\u0438 A \u0438 D \u0434\u043B\u044F
+        \u043A\u043B\u0430\u0432\u0438\u0448\u0438 \nA \u0438 D \u0434\u043B\u044F
         \u043F\u0435\u0440\u0435\u0434\u0432\u0438\u0436\u0435\u043D\u0438\u044F,
         SPACE \u0434\u043B\u044F \u043F\u0440\u044B\u0436\u043A\u0430"
       objectReference: {fileID: 0}
@@ -11351,6 +11359,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6713857070766533250, guid: d6947eca9a4f9074a84adc952fe2699b, type: 3}
+      propertyPath: isGates
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12364,7 +12376,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 13e0eb439eb35a84c8072fed03a14a8d, type: 3}
     - target: {fileID: 3344930490606709011, guid: d6947eca9a4f9074a84adc952fe2699b, type: 3}
       propertyPath: m_SortingLayer
-      value: -1
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 3344930490606709011, guid: d6947eca9a4f9074a84adc952fe2699b, type: 3}
       propertyPath: m_SortingOrder
@@ -18272,6 +18284,12 @@ PrefabInstance:
       propertyPath: fadeDuration
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 7536409041396444916, guid: f9a4422c7efb66a4780835de8256cf5d, type: 3}
+      propertyPath: displayText.Array.data[0]
+      value: "\u0412\u043E\u0440\u043E\u0442\u0430 \u0437\u0430\u043A\u0440\u044B\u0442\u044B.
+        \n\u042F \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C\u0441\u044F
+        \u0438 \u043F\u043E\u0438\u0441\u043A\u0430\u0442\u044C \u043A\u043B\u044E\u0447."
+      objectReference: {fileID: 0}
     - target: {fileID: 7745674184275590567, guid: f9a4422c7efb66a4780835de8256cf5d, type: 3}
       propertyPath: m_Name
       value: TutorialStep4
@@ -18940,6 +18958,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.211
       objectReference: {fileID: 0}
+    - target: {fileID: 8978416966526491131, guid: 3a060ea05f54b8342a1083f4fa5101c2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19135,7 +19157,7 @@ PrefabInstance:
     - target: {fileID: 7536409041396444916, guid: f9a4422c7efb66a4780835de8256cf5d, type: 3}
       propertyPath: displayText.Array.data[1]
       value: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 SPACE \u0432\u043E \u0432\u0440\u0435\u043C\u044F
-        \u043F\u0440\u044B\u0436\u043A\u0430, \u0447\u0442\u043E\u0431\u044B \u0441\u043E\u0432\u0435\u0440\u0448\u0438\u0442\u044C
+        \u043F\u0440\u044B\u0436\u043A\u0430, \n\u0447\u0442\u043E\u0431\u044B \u0441\u043E\u0432\u0435\u0440\u0448\u0438\u0442\u044C
         \u0434\u0432\u043E\u0439\u043D\u043E\u0439 \u043F\u0440\u044B\u0436\u043E\u043A."
       objectReference: {fileID: 0}
     - target: {fileID: 7745674184275590567, guid: f9a4422c7efb66a4780835de8256cf5d, type: 3}
@@ -20614,7 +20636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 589311926680028000, guid: 02ec254091c2e9e47b44da8a0c895b16, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -400
+      value: -900
       objectReference: {fileID: 0}
     - target: {fileID: 589311926680028000, guid: 02ec254091c2e9e47b44da8a0c895b16, type: 3}
       propertyPath: m_SizeDelta.y
@@ -20667,6 +20689,16 @@ PrefabInstance:
     - target: {fileID: 589311926680028000, guid: 02ec254091c2e9e47b44da8a0c895b16, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340716721988033717, guid: 02ec254091c2e9e47b44da8a0c895b16, type: 3}
+      propertyPath: m_Text
+      value: "\u042F \u0434\u043E\u043B\u0436\u0435\u043D \u0443\u0431\u0438\u0442\u044C
+        \u0432\u0441\u0435\u0445, \u043A\u0442\u043E \u0432\u044B\u043B\u0435\u0442\u0430\u0435\u0442
+        \u0438\u0437 \u043F\u043E\u0440\u0442\u0430\u043B\u0430."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340716721988033717, guid: 02ec254091c2e9e47b44da8a0c895b16, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 2509474994345552789, guid: 02ec254091c2e9e47b44da8a0c895b16, type: 3}
       propertyPath: m_Name
@@ -22478,6 +22510,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6264009559518114039, guid: f1de05173f49b1e489190b48a0a2e7a7, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 60021865507803974, guid: f1de05173f49b1e489190b48a0a2e7a7, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3973985746253869013, guid: f1de05173f49b1e489190b48a0a2e7a7, type: 3}
       propertyPath: m_Name
       value: EnviromentAudioInitializer

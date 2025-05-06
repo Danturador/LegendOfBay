@@ -39,7 +39,6 @@ public class BossController : MonoBehaviour
 		healthBar.fillAmount = currentHealth;
 		if (currentHealth <= 0)
 		{
-			EnviromentAudioInitializer.Instance.PlayBossPhase2();
 			StartCoroutine(TransitionToDemonicForm());
 		}
 	}
@@ -69,7 +68,6 @@ public class BossController : MonoBehaviour
 		screenOverlay.gameObject.SetActive(true);
 		float elapsedTime = 0f;
 
-		StartCoroutine(FillHealthBar(0, 1));
 		while (elapsedTime < transitionDuration)
 		{
 			float alpha = Mathf.Lerp(0, 1, elapsedTime / transitionDuration);
@@ -99,6 +97,8 @@ public class BossController : MonoBehaviour
 	{
 		yield return new WaitForSeconds(invulnerabilityDuration);
 		
+		EnviromentAudioInitializer.Instance.PlayBossPhase2();
+		StartCoroutine(FillHealthBar(0, 1));
 		demonicFormBehaviour.InitializeDemonicForm();
 		demonicFormCollider.enabled = true;
 	}

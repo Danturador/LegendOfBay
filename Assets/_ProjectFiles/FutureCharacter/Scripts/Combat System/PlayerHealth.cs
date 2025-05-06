@@ -4,7 +4,6 @@ using UnityEngine;
 using Cinemachine;
 using System;
 using _ProjectFiles.Menu.InGameMenuButtons;
-using Microsoft.Unity.VisualStudio.Editor;
 using Zenject;
 
 public class PlayerHealth : HealthManager
