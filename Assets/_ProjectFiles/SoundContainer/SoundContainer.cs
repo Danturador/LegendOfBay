@@ -25,6 +25,13 @@ namespace _ProjectFiles.SoundContainer
         PlayerHitEnemyClip1,
         PlayerHitEnemyClip2,
         PlayerHitEnemyClip3,
+        BossSwordAttack1,
+        BossSwordAttack2,
+        BossSwordAttack3,
+		AmbientStart,
+		AmbientEnd,
+		CaveClip,
+		GatesClip,
     }
 
     [Serializable]

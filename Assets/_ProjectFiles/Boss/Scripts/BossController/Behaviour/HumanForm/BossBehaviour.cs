@@ -22,11 +22,10 @@ public class BossBehaviour : MonoBehaviour
 	}
 	public IEnumerator MoveTowardsPlayerCoroutine()
 	{
-		Debug.LogError("start walking");
 		float randomTime = Random.Range(0f, 1f);
 		float elapsedTime = 0f;
 
-		while (/*!isReadyToAttack && */elapsedTime < randomTime)
+		while (elapsedTime < randomTime)
 		{
 			float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 			
@@ -42,14 +41,11 @@ public class BossBehaviour : MonoBehaviour
 			}
 			else
 			{
-				//isReadyToAttack = true;
-				//Debug.Log("Enemy attacks!");
 				break;
 			}
 
 			yield return null;
 		}
-		Debug.LogError("stop walking");
 	}
 
 	public IEnumerator DashTowardsPlayer()
@@ -102,6 +98,7 @@ public class BossBehaviour : MonoBehaviour
 
 			swordSlashCollider.enabled = true;
 
+			BossAudioInitializer.Instance.PlaySwordAttack(i + 1);
 			yield return new WaitForSeconds(colliderDuration);
 
 			swordSlashCollider.enabled = false;
