@@ -32,6 +32,7 @@ public class Door : MonoBehaviour
 
 	private IEnumerator Open()
 	{
+		EnviromentAudioInitializer.Instance.PlayGateOpenSound();
 		gatesOpenAnimation.Play();
 		
 		yield return new WaitForSeconds(gatesAnimationClip.length);

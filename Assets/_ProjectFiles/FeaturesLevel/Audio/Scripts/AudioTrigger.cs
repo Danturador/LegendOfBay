@@ -6,6 +6,7 @@ public class AudioTrigger : MonoBehaviour
 {
 	[SerializeField] private EnviromentAudioInitializer soundManager;
 	[SerializeField] private TriggerType triggerType;
+	[SerializeField] private bool needHandleColliderExit;
 	private bool isPlayerInside;
 	private bool isNewAmbientPlay;
 	private enum TriggerType 
@@ -27,7 +28,7 @@ public class AudioTrigger : MonoBehaviour
 	}
 	private void OnTriggerExit2D(Collider2D collision)
 	{
-		if (collision.GetComponent<PlayerController>() != null)
+		if (collision.GetComponent<PlayerController>() != null && needHandleColliderExit)
 		{
 			PlayAmbientByType();
 		}
@@ -56,6 +57,7 @@ public class AudioTrigger : MonoBehaviour
 				}
 				else
 				{
+					soundManager.PlayAmbientStart();
 					isNewAmbientPlay = true;
 				}
 				break;

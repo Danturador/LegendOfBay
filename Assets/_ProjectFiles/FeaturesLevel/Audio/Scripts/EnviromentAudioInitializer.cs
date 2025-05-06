@@ -8,7 +8,6 @@ using static _ProjectFiles.SoundContainer.SoundType;
 public class EnviromentAudioInitializer : MonoBehaviour
 {
 	[SerializeField] private SoundType soundType;
-	[SerializeField] private AudioClip currentClip;
 	[Inject] private SoundContainer _soundContainer;
 	[SerializeField] private AudioSource _ambientSource;
 	[SerializeField] private AudioSource _oneShotSource;
@@ -20,7 +19,7 @@ public class EnviromentAudioInitializer : MonoBehaviour
 		{
 			if (_instance == null)
 			{
-				Debug.LogError("BossAudioInitializer Instance is null");
+				Debug.LogError("EnviromentAudioInitializer Instance is null");
 			}
 
 			return _instance;
@@ -28,8 +27,8 @@ public class EnviromentAudioInitializer : MonoBehaviour
 	}
 	public float fadeDuration = 2.0f;
 
-	private bool _transitioned = false;
 	private bool _inCave = false;
+	private Coroutine _currentFadeCoroutine;
 
 	private void Awake()
 	{
@@ -53,18 +52,11 @@ public class EnviromentAudioInitializer : MonoBehaviour
 	}
 	private void Start()
 	{
-		currentClip = GetClip(AmbientStart);
-		if (currentClip != null)
-		{
-			_ambientSource.clip = currentClip;
-			_ambientSource.loop = true;
-			//_ambientSource.volume = 1.0f;
-			_ambientSource.Play();
-		}
-		else
-		{
-			Debug.LogWarning("Ambient Start Track is not assigned. No initial ambient sound will play.");
-		}
+		_ambientSource.clip = GetClip(AmbientStart);
+		_ambientSource.loop = true;
+//		_ambientSource.volume = 1.0f;
+		_ambientSource.Play();
+
 
 		if (_oneShotSource == null)
 		{
@@ -75,17 +67,20 @@ public class EnviromentAudioInitializer : MonoBehaviour
 
 	public void PlayAmbientStart()
 	{
-		if (_transitioned) return;
-		
-		_transitioned = true;
-		StartCoroutine(FadeAndSwitch(GetClip(AmbientStart)));
+		StartFadeAndSwitch(GetClip(AmbientStart));
 	}
+
 	public void PlayAmbientEnd()
 	{
-		if (_transitioned) return;
-
-		_transitioned = true;
-		StartCoroutine(FadeAndSwitch(GetClip(AmbientEnd)));
+		StartFadeAndSwitch(GetClip(AmbientEnd));
+	}
+	public void PlayBossPhase1()
+	{
+		StartFadeAndSwitch(GetClip(BossPhase1));
+	}
+	public void PlayBossPhase2()
+	{
+		StartFadeAndSwitch(GetClip(BossPhase2));
 	}
 
 	public void PlayGateOpenSound()
@@ -98,7 +93,7 @@ public class EnviromentAudioInitializer : MonoBehaviour
 		if (_inCave) return;
 
 		_inCave = true;
-		StartCoroutine(FadeAndSwitch(GetClip(CaveClip)));
+		StartFadeAndSwitch(GetClip(CaveClip));
 	}
 
 	public void ExitCave()
@@ -106,10 +101,20 @@ public class EnviromentAudioInitializer : MonoBehaviour
 		if (!_inCave) return;
 
 		_inCave = false;
-		StartCoroutine(FadeAndSwitch(GetClip(AmbientStart)));
+		StartFadeAndSwitch(GetClip(AmbientStart));
 	}
 
-	private IEnumerator FadeAndSwitch(AudioClip newClip)
+	private void StartFadeAndSwitch(AudioClip newClip)
+	{
+		if (_currentFadeCoroutine != null)
+		{
+			StopCoroutine(_currentFadeCoroutine);
+		}
+
+		_currentFadeCoroutine = StartCoroutine(FadeAndSwitch(newClip));
+	}
+
+	public IEnumerator FadeAndSwitch(AudioClip newClip)
 	{
 		float startVolume = _ambientSource.volume;
 
@@ -130,10 +135,11 @@ public class EnviromentAudioInitializer : MonoBehaviour
 		while (time < fadeDuration)
 		{
 			time += Time.deltaTime;
-			_ambientSource.volume = Mathf.Lerp(0, 1.0f, time / fadeDuration);
+			_ambientSource.volume = Mathf.Lerp(0, 1.0f, time / fadeDuration); // !
 			yield return null;
 		}
 
-		_ambientSource.volume = 1.0f;
+		_ambientSource.volume = 1.0f; //!
+		_currentFadeCoroutine = null;
 	}
 }

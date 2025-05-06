@@ -39,6 +39,7 @@ public class BossController : MonoBehaviour
 		healthBar.fillAmount = currentHealth;
 		if (currentHealth <= 0)
 		{
+			EnviromentAudioInitializer.Instance.PlayBossPhase2();
 			StartCoroutine(TransitionToDemonicForm());
 		}
 	}
@@ -55,6 +56,7 @@ public class BossController : MonoBehaviour
 	{
 		if (collision.GetComponent<PlayerController>() && isBossInactive)
 		{
+			EnviromentAudioInitializer.Instance.PlayBossPhase1();
 			bossHumanForm.SetActive(true);
 			healthBarGO.SetActive(true);
 			isBossInactive = false;

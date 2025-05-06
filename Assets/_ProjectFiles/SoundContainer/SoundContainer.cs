@@ -32,6 +32,8 @@ namespace _ProjectFiles.SoundContainer
 		AmbientEnd,
 		CaveClip,
 		GatesClip,
+		BossPhase1,
+		BossPhase2,
     }
 
     [Serializable]

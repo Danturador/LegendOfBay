@@ -83,7 +83,7 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 
 	private void SpawnSpike(Vector3 position)
 	{
-		GameObject spike = Instantiate(spikePrefab, position, Quaternion.identity);
+		GameObject spike = Instantiate(spikePrefab, position, Quaternion.identity, this.gameObject.transform);
 		spikes.Add(spike);
 		StartCoroutine(Fall(spike));
 	}
