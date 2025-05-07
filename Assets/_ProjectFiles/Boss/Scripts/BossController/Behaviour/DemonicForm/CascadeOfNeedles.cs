@@ -17,7 +17,14 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 	[SerializeField] private float startFallingPoint;
 	[SerializeField] private float endFallingPoint;
 	[SerializeField] private float delayBeforeFalling;
+	[SerializeField] private float cascadeDelay;
 	private bool isDead;
+
+	private enum AttackType { Line, Cascade }
+
+	[SerializeField] private List<AttackType> attackSequence = new List<AttackType> { AttackType.Line, AttackType.Cascade, AttackType.Line, AttackType.Cascade };
+	private int sequenceIndex = 0;
+
 
 	private void Initialize()
 	{
@@ -29,6 +36,7 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 		};
 		attackIndex = 0;
 		isDead = false;
+		sequenceIndex = 0;
 	}
 
 	public void Deinitialize()
@@ -58,20 +66,26 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 	{
 		Initialize();
 
-		while (attackIndex < skipSpikes.GetLength(0))
+		while (sequenceIndex < attackSequence.Count)
 		{
 			setCascadeOfNeedles(true);
 
-			SpawnSpikes();
-			if (attackIndex < skipSpikes.GetLength(0))
+			if (attackSequence[sequenceIndex] == AttackType.Line)
 			{
-				yield return new WaitForSeconds(attackDelay);
+				SpawnLineAttack();
 			}
+			else if (attackSequence[sequenceIndex] == AttackType.Cascade)
+			{
+				yield return StartCoroutine(SpawnCascadeAttack());
+			}
+
+			yield return new WaitForSeconds(attackDelay);
 			setCascadeOfNeedles(false);
+			sequenceIndex++;
 		}
 	}
 
-	private void SpawnSpikes()
+	private void SpawnLineAttack()
 	{
 		float halfWidth = (totalSpikes - 1) * spikeSpacing / 2;
 
@@ -81,17 +95,45 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 			{
 				Vector3 spawnPosition = transform.position + new Vector3(i * spikeSpacing - halfWidth, startFallingPoint, 0);
 				if (isDead) break;
-				SpawnSpike(spawnPosition);
+				GameObject spike = SpawnSpike(spawnPosition);
+				StartCoroutine(Fall(spike));
 			}
 		}
 		attackIndex++;
+		if (attackIndex >= skipSpikes.GetLength(0))
+		{
+			attackIndex = 0;
+		}
 	}
 
-	private void SpawnSpike(Vector3 position)
+	private IEnumerator SpawnCascadeAttack()
+	{
+		float halfWidth = (totalSpikes - 1) * spikeSpacing / 2;
+		List<GameObject> cascadeSpikes = new List<GameObject>();
+
+		for (int i = 0; i < totalSpikes; i++)
+		{
+			Vector3 spawnPosition = transform.position + new Vector3(i * spikeSpacing - halfWidth, startFallingPoint, 0);
+			if (isDead) break;
+			GameObject spike = SpawnSpike(spawnPosition);
+			cascadeSpikes.Add(spike);
+		}
+
+		foreach (GameObject spike in cascadeSpikes)
+		{
+			if (spike != null)
+			{
+				StartCoroutine(Fall(spike));
+				yield return new WaitForSeconds(cascadeDelay);
+			}
+		}
+	}
+
+	private GameObject SpawnSpike(Vector3 position)
 	{
 		GameObject spike = Instantiate(spikePrefab, position, Quaternion.identity, this.gameObject.transform);
 		spikes.Add(spike);
-		StartCoroutine(Fall(spike));
+		return spike;
 	}
 
 	private IEnumerator Fall(GameObject spike)
