@@ -12,15 +12,21 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 	[SerializeField] private float attackDelay;
 	[SerializeField] private float animationDelay;
 	[SerializeField] private float spikeFallSpeed;
-	[SerializeField] private int[] skipSpikes;
+	[SerializeField] private int[,] skipSpikes;
 	[SerializeField] private int attackIndex;
 	[SerializeField] private float startFallingPoint;
 	[SerializeField] private float endFallingPoint;
+	[SerializeField] private float delayBeforeFalling;
 	private bool isDead;
 
 	private void Initialize()
 	{
-		skipSpikes = new int[4] { 2, 5, 10, 14 };
+		skipSpikes = new int[4, 2] {
+			{ 2, 5 },
+			{ 5, 8 },
+			{ 10, 12 },
+			{ 6, 14 }
+		};
 		attackIndex = 0;
 		isDead = false;
 	}
@@ -52,12 +58,12 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 	{
 		Initialize();
 
-		while (attackIndex < skipSpikes.Length)
+		while (attackIndex < skipSpikes.GetLength(0))
 		{
 			setCascadeOfNeedles(true);
 
 			SpawnSpikes();
-			if (attackIndex < skipSpikes.Length)
+			if (attackIndex < skipSpikes.GetLength(0))
 			{
 				yield return new WaitForSeconds(attackDelay);
 			}
@@ -71,7 +77,7 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 
 		for (int i = 0; i < totalSpikes; i++)
 		{
-			if (i != skipSpikes[attackIndex])
+			if (i != skipSpikes[attackIndex, 0] && i != skipSpikes[attackIndex, 1])
 			{
 				Vector3 spawnPosition = transform.position + new Vector3(i * spikeSpacing - halfWidth, startFallingPoint, 0);
 				if (isDead) break;
@@ -90,7 +96,9 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 
 	private IEnumerator Fall(GameObject spike)
 	{
-		while (spike != null && spike.transform.position.y > endFallingPoint)
+		yield return new WaitForSeconds(delayBeforeFalling);
+
+		while (spike != null && spike.transform.localPosition.y > endFallingPoint)
 		{
 			spike.transform.position += Vector3.down * spikeFallSpeed * Time.deltaTime;
 			yield return null;

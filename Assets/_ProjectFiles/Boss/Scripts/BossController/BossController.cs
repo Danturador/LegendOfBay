@@ -12,7 +12,7 @@ public class BossController : MonoBehaviour
 
 	[SerializeField] private GameObject healthBarGO;
 	[SerializeField] private Image healthBar;
-	[SerializeField] private float fillDuration = 1f;
+	[SerializeField] private float fillDuration = 3f;
 
 
 	[SerializeField] private BossDemonicFormStateMachine demonicFormBehaviour;
@@ -56,7 +56,10 @@ public class BossController : MonoBehaviour
 		if (collision.GetComponent<PlayerController>() && isBossInactive)
 		{
 			EnviromentAudioInitializer.Instance.PlayBossPhase1();
-			bossHumanForm.SetActive(true);
+			bossDemonicForm.SetActive(true);
+			demonicFormBehaviour.InitializeDemonicForm();
+			demonicFormCollider.enabled = true;
+			//bossHumanForm.SetActive(true);
 			healthBarGO.SetActive(true);
 			isBossInactive = false;
 		}
@@ -90,6 +93,8 @@ public class BossController : MonoBehaviour
 		}
 
 		screenOverlay.gameObject.SetActive(false);
+
+		StartCoroutine(FillHealthBar(0, 1));
 		StartCoroutine(Invulnerability());
 	}
 
@@ -98,7 +103,6 @@ public class BossController : MonoBehaviour
 		yield return new WaitForSeconds(invulnerabilityDuration);
 		
 		EnviromentAudioInitializer.Instance.PlayBossPhase2();
-		StartCoroutine(FillHealthBar(0, 1));
 		demonicFormBehaviour.InitializeDemonicForm();
 		demonicFormCollider.enabled = true;
 	}
