@@ -22,7 +22,7 @@ namespace _GameAssets.Scripts.Spawner
         {
             for(int i = 0; i < spawners.Count; i++)
             {
-                spawners[i].IsActive = spawnersHolderData.spawnersData[i].isActive;
+                spawners[i].isActive = spawnersHolderData.spawnersData[i].isActive;
             }
         }
         
@@ -31,7 +31,7 @@ namespace _GameAssets.Scripts.Spawner
             List<SpawnerData> spawnersData = new List<SpawnerData>();
             foreach (var spawner in spawners)
             {
-                spawnersData.Add(new SpawnerData(spawner.IsActive));
+                spawnersData.Add(new SpawnerData(spawner.isActive));
             }
 
             return spawnersData;

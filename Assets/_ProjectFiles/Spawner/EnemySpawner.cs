@@ -13,7 +13,7 @@ namespace _GameAssets.Scripts.Spawner
 		[SerializeField] private List<Wave> waveProfiles;
 		private List<IEnemyForSpawner> _enemies;
 		public IReadOnlyCollection<IEnemyForSpawner> Enemies => _enemies;
-		public bool IsActive;
+		public bool isActive;
 		
 		public void SpawnEnemiesRandomly()
 		{
