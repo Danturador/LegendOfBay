@@ -6,8 +6,6 @@ using UnityEngine;
 
 namespace _GameAssets.Scripts.Spawner
 {
-    [Serializable]
-    
     public class KeysHolder : MonoBehaviour
     {
         [SerializeField] private List<Key> keys;
@@ -22,7 +20,7 @@ namespace _GameAssets.Scripts.Spawner
         {
             for(int i = 0; i < keys.Count; i++)
             {
-                keys[i].isActive = keysHolderData.keysData[i].isActive;
+                keys[i].gameObject.SetActive(keysHolderData.keysData[i].isActive);
             }
         }
         
@@ -31,7 +29,7 @@ namespace _GameAssets.Scripts.Spawner
             List<KeyData> keysData = new List<KeyData>();
             foreach (var key in keys)
             {
-                keysData.Add(new KeyData(key.isActive));
+                keysData.Add(new KeyData(key.gameObject.activeInHierarchy));
             }
 
             return keysData;

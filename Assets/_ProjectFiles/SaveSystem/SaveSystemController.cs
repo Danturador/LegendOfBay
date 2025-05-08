@@ -24,8 +24,14 @@ namespace _ProjectFiles.SaveSystem
         public void UpdatePosition(Vector3 position) => _data.SetPosition(position);
 
         public void UpdateHealth(float health) => _data.SetPlayerHealth(health);
+
+        public void UpdateKeysAmount(int amount) => _data.SetKeysAmount(amount);
         
         public void UpdateSpawners(SpawnersHolderData data) => _data.SetSpawners(data);
+        
+        public void UpdateKeys(KeysHolderData data) => _data.SetKeys(data);
+        
+        public void UpdateDoors(DoorsHolderData data) => _data.SetDoors(data);
         
         public void UpdateTexture(Texture2D texture2D) => _data.SetTexture(texture2D);
     }

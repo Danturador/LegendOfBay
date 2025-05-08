@@ -2,8 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 using _ProjectFiles.Spawner.Models;
 using UnityEngine;
+using Door = _ProjectFiles.FeaturesLevel.LevelElements.IneractiveObjects.Scripts.KeysAndDoors.Door;
 
-namespace _GameAssets.Scripts.Spawner.Door
+namespace _ProjectFiles.Spawner
 {
     public class DoorsHolder : MonoBehaviour
     {
@@ -19,7 +20,7 @@ namespace _GameAssets.Scripts.Spawner.Door
         {
             for(int i = 0; i < doors.Count; i++)
             {
-                doors[i].isOpened = doorsHolderData.doorsData[i].isOpened;
+                doors[i].SetState(doorsHolderData.doorsData[i].isOpened);
             }
         }
         
@@ -28,7 +29,7 @@ namespace _GameAssets.Scripts.Spawner.Door
             List<DoorData> doorsData = new List<DoorData>();
             foreach (var door in doors)
             {
-                doorsData.Add(new DoorData(door.isOpened));
+                doorsData.Add(new DoorData(door.IsDoorsOpened));
             }
 
             return doorsData;
