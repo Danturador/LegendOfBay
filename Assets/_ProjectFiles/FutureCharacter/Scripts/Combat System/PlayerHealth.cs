@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using System;
-using _ProjectFiles.Menu.InGameMenuButtons;
 using Zenject;
 
 public class PlayerHealth : HealthManager
 {
     public float invulnerabilityDuration = 1.0f;
     private bool isInvulnerable = false;
-    private ParticleSystem _particleSystem;
+    [SerializeField] private ParticleSystem _dieEffect;
     [SerializeField] private Animator _animator;
     private bool _die = false;
     [SerializeField] GameObject enableMenu;
@@ -62,9 +61,11 @@ public class PlayerHealth : HealthManager
     {
         if (_die == false)
         {
+            Transform diePosition = gameObject.transform;
             _die = true;
             _animator.SetTrigger("PlayerDie");
             inputController.Gameplay.Disable();
+            ParticleSystem effect = Instantiate(_dieEffect,diePosition.position, Quaternion.identity);
             StartCoroutine(PlayerDieCoroutine());
             Debug.Log("Player Die");
         }

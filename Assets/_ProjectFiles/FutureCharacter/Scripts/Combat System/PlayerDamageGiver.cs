@@ -63,4 +63,10 @@ public class PlayerDamageGiver : MonoBehaviour
     {
         CinemachineShake.Instance.ShakeCamera(5f, 0.1f);
     }
+
+    private void OnDrawGizmos()
+    {
+       // Gizmos.color = Color.green;
+       // Gizmos.DrawSphere(new Vector3(_damageGiverGameObject.transform.position.x, _damageGiverGameObject.transform.position.y, 0), _attackRadius);
+    }
 }
