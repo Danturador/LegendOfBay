@@ -1,41 +1,35 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using _ProjectFiles.SaveSystem;
-using _ProjectFiles.Spawner.Models;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
-namespace _GameAssets.Scripts.Spawner
+namespace _ProjectFiles.SaveSystem.InteractableHolders
 {
     public class KeysHolder : MonoBehaviour
     {
         [Inject] private SaveSystemController _saveSystem;
         [SerializeField] private List<Key> keysOnMap;
-
+        
         public void Awake()
         {
-            keysOnMap ??= GetComponentsInChildren<Key>().ToList();
-            UpdateSpawnersState(_saveSystem.gameData.KeysHolderData);
+            LoadKeysState(_saveSystem.gameData.KeysHolderData);
         }
 
-        private void UpdateSpawnersState(KeysHolderData keysHolderData)
+        private void LoadKeysState(KeysHolderData keysHolderData)
         {
             foreach (var data in keysHolderData.keysData)
             {
                 var key = keysOnMap.Find(k => k.keyID == data.id);
                 key.SetState(data.isActive);
-                key.OnKeyPickedUp += () => _saveSystem.gameData.SetKeys(GetKeysData());
+                key.OnKeyPickedUp += () => _saveSystem.UpdateKeys(GetKeysData());
             }
         }
         
-        public KeysHolderData GetKeysData()
+        private KeysHolderData GetKeysData()
         {
             List<KeyData> keysData = new List<KeyData>();
             foreach (var key in keysOnMap)
             {
-                keysData.Add(new KeyData(key.keyID, key.gameObject.activeInHierarchy));
+                keysData.Add(new KeyData(key.keyID, key.IsActive));
             }
 
             return new KeysHolderData(keysData);

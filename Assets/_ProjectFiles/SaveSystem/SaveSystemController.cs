@@ -1,5 +1,4 @@
 using _GameAssets.Scripts.Spawner;
-using _ProjectFiles.Spawner.Models;
 using UnityEngine;
 
 namespace _ProjectFiles.SaveSystem
@@ -25,7 +24,7 @@ namespace _ProjectFiles.SaveSystem
 
         public void UpdateHealth(float health) => _data.SetPlayerHealth(health);
 
-        public void UpdateKeysAmount(int amount) => _data.SetKeysAmount(amount);
+        public void UpdateHookState(bool hasHook) => _data.SetGrapplingHook(hasHook);
         
         public void UpdateSpawners(SpawnersHolderData data) => _data.SetSpawners(data);
         

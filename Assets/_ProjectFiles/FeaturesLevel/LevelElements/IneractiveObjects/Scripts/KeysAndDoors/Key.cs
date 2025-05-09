@@ -6,6 +6,8 @@ public class Key : MonoBehaviour
 	public string keyID;
 	public event Action OnKeyPickedUp;
 
+	public bool IsActive => gameObject.activeInHierarchy;
+	
 	private void OnDestroy()
 	{
 		OnKeyPickedUp = null;

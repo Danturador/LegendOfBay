@@ -1,31 +1,27 @@
 using System.Collections.Generic;
-using System.Linq;
-using _ProjectFiles.SaveSystem;
-using _ProjectFiles.Spawner.Models;
 using UnityEngine;
 using Zenject;
 using Door = _ProjectFiles.FeaturesLevel.LevelElements.IneractiveObjects.Scripts.KeysAndDoors.Door;
 
-namespace _ProjectFiles.Spawner
+namespace _ProjectFiles.SaveSystem.InteractableHolders
 {
     public class DoorsHolder : MonoBehaviour
     {
         [Inject] private SaveSystemController _saveSystem;
         [SerializeField] private List<Door> doors;
-
+        
         public void Awake()
         {
-            doors ??= GetComponentsInChildren<Door>().ToList();
-            UpdateDoorsState(_saveSystem.gameData.DoorsHolderData);
+            LoadDoorsState(_saveSystem.gameData.DoorsHolderData);
         }
 
-        private void UpdateDoorsState(DoorsHolderData doorsHolderData)
+        private void LoadDoorsState(DoorsHolderData doorsHolderData)
         {
             foreach (var data in doorsHolderData.doorsData)
             {
                 var door = doors.Find(d => d.Id == data.id);
                 door.SetState(data.isOpened);
-                door.OnDoorOpened += () => _saveSystem.gameData.SetDoors(GetDoorsData());
+                door.OnDoorOpened += () => _saveSystem.UpdateDoors(GetDoorsData());
             }
         }
         

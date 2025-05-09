@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using _ProjectFiles.Spawner.Models;
+using _GameAssets.Scripts.Spawner;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace _GameAssets.Scripts.Spawner
+namespace _ProjectFiles.SaveSystem.InteractableHolders
 {
     [Serializable]
     public class SpawnersHolder : MonoBehaviour

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using _GameAssets.Scripts.Spawner;
 using _ProjectFiles.SaveSystem;
+using _ProjectFiles.SaveSystem.InteractableHolders;
 using UnityEngine;
 using Zenject;
 

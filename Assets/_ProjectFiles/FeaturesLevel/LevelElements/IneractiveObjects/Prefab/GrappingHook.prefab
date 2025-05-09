@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4842365873618142187}
   - component: {fileID: 7138607820451987509}
   - component: {fileID: 9214898543262828011}
+  - component: {fileID: 7082144883353425685}
   m_Layer: 0
   m_Name: GrappingHook
   m_TagString: Untagged
@@ -147,6 +148,18 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &7082144883353425685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2328232859023301477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427d29644e694c5ab55dae5e45422c02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7881136031901361471
 GameObject:
   m_ObjectHideFlags: 0

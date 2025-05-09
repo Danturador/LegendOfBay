@@ -14,8 +14,6 @@ namespace _ProjectFiles.FeaturesLevel.LevelElements.IneractiveObjects.Scripts.Ke
 		public string Id => Id;
 
 		public event Action OnDoorOpened;
-		
-		//private void Awake() => IsDoorsOpened = false;
 
 		private void OnDestroy()
 		{
@@ -47,10 +45,11 @@ namespace _ProjectFiles.FeaturesLevel.LevelElements.IneractiveObjects.Scripts.Ke
 			return false;
 		}
 
-		private IEnumerator Open()
+		private IEnumerator Open(bool isStart = false)
 		{
 			OnDoorOpened?.Invoke();
-			EnviromentAudioInitializer.Instance.PlayGateOpenSound();
+			if(!isStart)
+				EnviromentAudioInitializer.Instance.PlayGateOpenSound();
 			gatesOpenAnimation.Play();
 		
 			yield return new WaitForSeconds(gatesAnimationClip.length);
@@ -59,10 +58,10 @@ namespace _ProjectFiles.FeaturesLevel.LevelElements.IneractiveObjects.Scripts.Ke
 			IsDoorsOpened = true;
 		}
 
-		public void SetState(bool enable)
+		public void SetState(bool enable, bool isStart = false)
 		{
 			if (enable)
-				StartCoroutine(Open());
+				StartCoroutine(Open(isStart));
 		}
 	}
 }

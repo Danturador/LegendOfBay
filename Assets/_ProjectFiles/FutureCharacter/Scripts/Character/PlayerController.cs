@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool movableItem;
     [SerializeField] private GameObject moveItemGameobject;
     private Rigidbody2D rb;
-    [Inject] private InputController inputController;
-
+    [Inject] private InputController _inputController;
+    
     //public InputController inputController {  get; private set; }
     private bool _platformTrigger;
     private string _platformtriggerName = "PlatformTrigger";
@@ -22,19 +22,19 @@ public class PlayerController : MonoBehaviour
 
     private Inventory inventory;
     private Vector2 moveInput;
+    
     public bool IsMovingItem { get; private set; }
-
+    public InputController InputController => _inputController;
 
     void Awake()
     {
 		transform.position = saveSystemController.gameData.Position;
+        grappingHookEnable = saveSystemController.gameData.HaveGrapplingHook;
         rb = GetComponent<Rigidbody2D>();
         grapplingHook = GetComponent<GrapplingHook>();
         playerMovement.Initialize(rb);
         playerDash.Initialize(rb);
         playerJump.Initialize(rb);
-        // inputController = new InputController();
-        // inputController.Enable();
 		inventory = GetComponent<Inventory>();
 	}
 
@@ -58,27 +58,27 @@ public class PlayerController : MonoBehaviour
     private void OnEnabled()
    {
         
-        inputController.Gameplay.Jump.performed += OnJump;
-        inputController.Gameplay.Jump.canceled += exitJump;
-        inputController.Gameplay.Dash.performed += OnDash;
-        inputController.Gameplay.UseAction.performed += OnUseAction;
-        inputController.Gameplay.MovingItem.performed += OnMovingItem;
+        _inputController.Gameplay.Jump.performed += OnJump;
+        _inputController.Gameplay.Jump.canceled += exitJump;
+        _inputController.Gameplay.Dash.performed += OnDash;
+        _inputController.Gameplay.UseAction.performed += OnUseAction;
+        _inputController.Gameplay.MovingItem.performed += OnMovingItem;
     }
 
     private void OnDisabled()
     {
-        inputController.Gameplay.Jump.performed -= OnJump;
-        inputController.Gameplay.Jump.canceled -= exitJump;
-        inputController.Gameplay.Dash.performed -= OnDash;
-        inputController.Gameplay.UseAction.performed -= OnUseAction;
+        _inputController.Gameplay.Jump.performed -= OnJump;
+        _inputController.Gameplay.Jump.canceled -= exitJump;
+        _inputController.Gameplay.Dash.performed -= OnDash;
+        _inputController.Gameplay.UseAction.performed -= OnUseAction;
     }
     private void Update()
     {
-        if (inputController.Gameplay.Movement.ReadValue<Vector2>().x < 0 && IsMovingItem == false)
+        if (_inputController.Gameplay.Movement.ReadValue<Vector2>().x < 0 && IsMovingItem == false)
         {
             gameObject.transform.localScale = new Vector2(-1, 1);
         }
-        else if (inputController.Gameplay.Movement.ReadValue<Vector2>().x > 0 && IsMovingItem == false)
+        else if (_inputController.Gameplay.Movement.ReadValue<Vector2>().x > 0 && IsMovingItem == false)
         {
             gameObject.transform.localScale = new Vector2(1, 1);
         }
@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-         Vector2 moveInput = inputController.Gameplay.Movement.ReadValue<Vector2>();
+         Vector2 moveInput = _inputController.Gameplay.Movement.ReadValue<Vector2>();
 
         if (!playerDash.IsDashing() && !grapplingHook.isGrappling)
         {
@@ -109,7 +109,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnJump(InputAction.CallbackContext context)
     {
-        if(inputController.Gameplay.Movement.ReadValue<Vector2>().y < 0 && _platformTrigger)
+        if(_inputController.Gameplay.Movement.ReadValue<Vector2>().y < 0 && _platformTrigger)
         {
             Physics2D.IgnoreLayerCollision(6, 7, true);
         }
@@ -196,8 +196,6 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-    public InputController GetInputController()
-    {
-        return inputController;
-    }
+
+    public void ReceiveHook() => grappingHookEnable = true;
 }
