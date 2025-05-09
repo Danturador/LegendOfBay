@@ -1,38 +1,44 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using _ProjectFiles.SaveSystem;
 using _ProjectFiles.Spawner.Models;
 using UnityEngine;
+using UnityEngine.Serialization;
+using Zenject;
 
 namespace _GameAssets.Scripts.Spawner
 {
     public class KeysHolder : MonoBehaviour
     {
-        [SerializeField] private List<Key> keys;
-        public List<Key> Keys => keys;
+        [Inject] private SaveSystemController _saveSystem;
+        [SerializeField] private List<Key> keysOnMap;
 
-        public void Init()
+        public void Awake()
         {
-            keys = GetComponentsInChildren<Key>().ToList();
+            keysOnMap ??= GetComponentsInChildren<Key>().ToList();
+            UpdateSpawnersState(_saveSystem.gameData.KeysHolderData);
         }
 
-        public void UpdateSpawnersState(KeysHolderData keysHolderData)
+        private void UpdateSpawnersState(KeysHolderData keysHolderData)
         {
-            for(int i = 0; i < keys.Count; i++)
+            foreach (var data in keysHolderData.keysData)
             {
-                keys[i].gameObject.SetActive(keysHolderData.keysData[i].isActive);
+                var key = keysOnMap.Find(k => k.keyID == data.id);
+                key.SetState(data.isActive);
+                key.OnKeyPickedUp += () => _saveSystem.gameData.SetKeys(GetKeysData());
             }
         }
         
-        public List<KeyData> GetKeysData()
+        public KeysHolderData GetKeysData()
         {
             List<KeyData> keysData = new List<KeyData>();
-            foreach (var key in keys)
+            foreach (var key in keysOnMap)
             {
-                keysData.Add(new KeyData(key.gameObject.activeInHierarchy));
+                keysData.Add(new KeyData(key.keyID, key.gameObject.activeInHierarchy));
             }
 
-            return keysData;
+            return new KeysHolderData(keysData);
         }
     }
 }

@@ -19,10 +19,12 @@ namespace _ProjectFiles.Spawner.Models
     [Serializable]
     public class KeyData
     {
+        public string id;
         public bool isActive = false;
 
-        public KeyData(bool isActive)
+        public KeyData(string id, bool isActive)
         {
+            this.id = id;
             this.isActive = isActive;
         }
     }
@@ -30,10 +32,12 @@ namespace _ProjectFiles.Spawner.Models
     [Serializable]
     public class DoorData
     {
+        public string id;
         public bool isOpened = false;
 
-        public DoorData(bool isOpened)
+        public DoorData(string id, bool isOpened)
         {
+            this.id = id;
             this.isOpened = isOpened;
         }
     }

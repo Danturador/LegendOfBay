@@ -1,23 +1,28 @@
+using System;
 using UnityEngine;
 
 public class Key : MonoBehaviour
 {
 	public string keyID;
-	private Inventory inventory;
+	public event Action OnKeyPickedUp;
 
-	public Key(string id)
+	private void OnDestroy()
 	{
-		keyID = id;
+		OnKeyPickedUp = null;
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		inventory = other.GetComponent<Inventory>();
+		if (!other.gameObject.TryGetComponent(out Inventory inventory)) 
+			return;
 		
-		if (inventory != null)
-		{
-			inventory.AddKey(this);
-			gameObject.SetActive(false);
-		}
+		OnKeyPickedUp?.Invoke();
+		inventory.AddKey(this);
+		gameObject.SetActive(false);
+	}
+
+	public void SetState(bool isEnabled)
+	{
+		gameObject.SetActive(isEnabled);
 	}
 }

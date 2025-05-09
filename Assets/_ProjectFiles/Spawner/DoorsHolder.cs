@@ -1,38 +1,43 @@
 using System.Collections.Generic;
 using System.Linq;
+using _ProjectFiles.SaveSystem;
 using _ProjectFiles.Spawner.Models;
 using UnityEngine;
+using Zenject;
 using Door = _ProjectFiles.FeaturesLevel.LevelElements.IneractiveObjects.Scripts.KeysAndDoors.Door;
 
 namespace _ProjectFiles.Spawner
 {
     public class DoorsHolder : MonoBehaviour
     {
+        [Inject] private SaveSystemController _saveSystem;
         [SerializeField] private List<Door> doors;
-        public List<Door> Spawners => doors;
 
-        public void Init()
+        public void Awake()
         {
-            doors = GetComponentsInChildren<Door>().ToList();
+            doors ??= GetComponentsInChildren<Door>().ToList();
+            UpdateDoorsState(_saveSystem.gameData.DoorsHolderData);
         }
 
-        public void UpdateDoorsState(DoorsHolderData doorsHolderData)
+        private void UpdateDoorsState(DoorsHolderData doorsHolderData)
         {
-            for(int i = 0; i < doors.Count; i++)
+            foreach (var data in doorsHolderData.doorsData)
             {
-                doors[i].SetState(doorsHolderData.doorsData[i].isOpened);
+                var door = doors.Find(d => d.Id == data.id);
+                door.SetState(data.isOpened);
+                door.OnDoorOpened += () => _saveSystem.gameData.SetDoors(GetDoorsData());
             }
         }
         
-        public List<DoorData> GetDoorsData()
+        private DoorsHolderData GetDoorsData()
         {
             List<DoorData> doorsData = new List<DoorData>();
             foreach (var door in doors)
             {
-                doorsData.Add(new DoorData(door.IsDoorsOpened));
+                doorsData.Add(new DoorData(door.Id, door.IsDoorsOpened));
             }
 
-            return doorsData;
+            return new DoorsHolderData(doorsData);
         }
     }
 }

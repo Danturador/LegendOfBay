@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,8 +11,25 @@ namespace _ProjectFiles.FeaturesLevel.LevelElements.IneractiveObjects.Scripts.Ke
 		[SerializeField] private AnimationClip gatesAnimationClip;
 		[SerializeField] private BoxCollider2D doorCollider;
 		public bool IsDoorsOpened { get; private set; }
-		private void Awake() => IsDoorsOpened = false;
-		public bool TryOpen(Key key)
+		public string Id => Id;
+
+		public event Action OnDoorOpened;
+		
+		//private void Awake() => IsDoorsOpened = false;
+
+		private void OnDestroy()
+		{
+			OnDoorOpened = null;
+		}
+		
+		private void OnTriggerEnter2D(Collider2D other)
+		{
+			if(other.gameObject.TryGetComponent(out Inventory inventory)
+			   && inventory.GetKey(doorID) is not null)
+				TryOpen(inventory.GetKey(doorID));
+		}
+
+		private bool TryOpen(Key key)
 		{
 			if (key != null)
 			{
@@ -20,10 +38,7 @@ namespace _ProjectFiles.FeaturesLevel.LevelElements.IneractiveObjects.Scripts.Ke
 					StartCoroutine(Open());
 					return true;
 				}
-				else
-				{
-					Debug.Log("���� ���� �� ��������.");
-				}
+				Debug.Log("���� ���� �� ��������.");
 			}
 			else
 			{
@@ -34,6 +49,7 @@ namespace _ProjectFiles.FeaturesLevel.LevelElements.IneractiveObjects.Scripts.Ke
 
 		private IEnumerator Open()
 		{
+			OnDoorOpened?.Invoke();
 			EnviromentAudioInitializer.Instance.PlayGateOpenSound();
 			gatesOpenAnimation.Play();
 		
@@ -42,15 +58,11 @@ namespace _ProjectFiles.FeaturesLevel.LevelElements.IneractiveObjects.Scripts.Ke
 			doorCollider.enabled = false;
 			IsDoorsOpened = true;
 		}
-		private void OnTriggerEnter2D(Collider2D collision)
-		{
-			if(collision.gameObject.TryGetComponent(out Inventory inventory))
-				TryOpen(inventory.GetKey(doorID));
-		}
 
 		public void SetState(bool enable)
 		{
-			IsDoorsOpened = enable;
+			if (enable)
+				StartCoroutine(Open());
 		}
 	}
 }
