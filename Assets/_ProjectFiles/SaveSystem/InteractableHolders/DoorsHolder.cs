@@ -20,10 +20,9 @@ namespace _ProjectFiles.SaveSystem.InteractableHolders
             foreach (var data in doorsHolderData.doorsData)
             {
                 var door = doors.Find(d => d.Id == data.id);
-                door.SetState(data.isOpened);
-                door.OnDoorOpened += () => _saveSystem.UpdateDoors(GetDoorsData());
+                door.SetState(data.isOpened, true);
             }
-            
+
             foreach (var door in doors)
             {
                 door.OnDoorOpened += () => _saveSystem.UpdateDoors(GetDoorsData());

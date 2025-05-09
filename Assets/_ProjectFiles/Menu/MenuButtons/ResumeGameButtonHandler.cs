@@ -10,7 +10,6 @@ namespace _ProjectFiles.Menu.MenuButtons
         {
             PlayerPrefs.SetInt(Storage.PrefsKey, 1);
 			SceneTransition.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-			//SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 		}
 	}
 }

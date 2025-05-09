@@ -1,4 +1,6 @@
 ﻿using System;
+using _ProjectFiles.Enemy.Scripts.Core;
+using UnityEngine.Serialization;
 
 namespace _GameAssets.Scripts.Spawner
 {
@@ -6,6 +8,6 @@ namespace _GameAssets.Scripts.Spawner
     public class EnemySpawnerProfile
     {
         public int amount;
-        //public IEnemyForSpawner EnemyForSpawnerPrefab;
+        public EnemyContainer enemyPrefab;
     }
 }

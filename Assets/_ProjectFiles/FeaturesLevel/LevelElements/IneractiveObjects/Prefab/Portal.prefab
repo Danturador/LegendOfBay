@@ -253,10 +253,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee68930b24ee834692112200d2bb210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
+  delayBetweenWaves: 3
+  animator: {fileID: 3623948089473439755}
   waveProfiles:
   - enemiesOfWave:
     - amount: 0
-  isActive: 0
+      enemyPrefab: {fileID: 0}
+  isClosed: 0
 --- !u!1 &9221989960536206047
 GameObject:
   m_ObjectHideFlags: 0
