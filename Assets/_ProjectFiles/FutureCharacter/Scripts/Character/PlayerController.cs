@@ -150,6 +150,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.name == "GrappingHook" && grappingHookEnable == false)
         {
             grappingHookEnable = true;
+            Destroy(collision.gameObject);
         }
 
     }

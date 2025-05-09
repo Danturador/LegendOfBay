@@ -23,6 +23,11 @@ namespace _ProjectFiles.SaveSystem.InteractableHolders
                 door.SetState(data.isOpened);
                 door.OnDoorOpened += () => _saveSystem.UpdateDoors(GetDoorsData());
             }
+            
+            foreach (var door in doors)
+            {
+                door.OnDoorOpened += () => _saveSystem.UpdateDoors(GetDoorsData());
+            }
         }
         
         private DoorsHolderData GetDoorsData()

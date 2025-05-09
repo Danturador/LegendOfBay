@@ -43,10 +43,10 @@ public class PlayerStateMachine2 : MonoBehaviour
     {
         velocityX = _rigidbody2D.velocity.x; //for test
         velocityY = _rigidbody2D.velocity.y; //for test
-        if (_rigidbody2D.velocity.y < -25f)
+      /*  if (_rigidbody2D.velocity.y < -25f)
         {
             _isLanding = true;
-        }
+        }*/
 
         _stateMachine.OnUpdate();
         currentState = _stateMachine.CurrentState.ToString();
@@ -95,7 +95,7 @@ public class PlayerStateMachine2 : MonoBehaviour
         jumpFallState.AddTransition(new StateTransition(runState, new FuncStateCondition(() => _isGrounded && _rigidbody2D.velocity.x != 0 && _isLanding == false)));
         jumpFallState.AddTransition(new StateTransition(jumpState, new FuncStateCondition(() => _rigidbody2D.velocity.y > 1f && _isGrounded == false)));
 
-        jumpFallState.AddTransition(new StateTransition(landingState, new FuncStateCondition(() =>  _isLanding && _isGrounded)));
+       // jumpFallState.AddTransition(new StateTransition(landingState, new FuncStateCondition(() =>  _isLanding && _isGrounded)));
         landingState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => { Landing();return true; } )));
 
         runState.AddTransition(new StateTransition(dashState, new FuncStateCondition(() => _isDashing)));

@@ -23,15 +23,15 @@ namespace _ProjectFiles.FeaturesLevel.LevelElements.IneractiveObjects.Scripts.Ke
 		private void OnTriggerEnter2D(Collider2D other)
 		{
 			if(other.gameObject.TryGetComponent(out Inventory inventory)
-			   && inventory.GetKey(doorID) is not null)
-				TryOpen(inventory.GetKey(doorID));
+			   && inventory.GetKeyId(doorID) is not null)
+				TryOpen(inventory.GetKeyId(doorID));
 		}
 
-		private bool TryOpen(Key key)
+		private bool TryOpen(string keyID)
 		{
-			if (key != null)
+			if (keyID != null)
 			{
-				if (key.keyID == doorID && !IsDoorsOpened)
+				if (keyID == doorID && !IsDoorsOpened)
 				{
 					StartCoroutine(Open());
 					return true;
@@ -47,7 +47,6 @@ namespace _ProjectFiles.FeaturesLevel.LevelElements.IneractiveObjects.Scripts.Ke
 
 		private IEnumerator Open(bool isStart = false)
 		{
-			OnDoorOpened?.Invoke();
 			if(!isStart)
 				EnviromentAudioInitializer.Instance.PlayGateOpenSound();
 			gatesOpenAnimation.Play();
@@ -56,6 +55,7 @@ namespace _ProjectFiles.FeaturesLevel.LevelElements.IneractiveObjects.Scripts.Ke
 		
 			doorCollider.enabled = false;
 			IsDoorsOpened = true;
+			OnDoorOpened?.Invoke();
 		}
 
 		public void SetState(bool enable, bool isStart = false)

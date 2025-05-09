@@ -25,7 +25,6 @@ public class PlayerJump : MonoBehaviour
     private float _jumpBufferCounter;
     private float _jumpImpulseTime;
 
-
     public void Initialize(Rigidbody2D rigidbody)
     {
         _rb = rigidbody;
@@ -84,7 +83,8 @@ public class PlayerJump : MonoBehaviour
     }
     private void CheckGroundedStatus()
     {
-        _isGrounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(transform.localScale.x, 0.4f), 0, groundLayers); 
+        _isGrounded = Physics2D.OverlapBox(groundCheck.position, new Vector2(1f, 0.5f), 0, groundLayers);
+
     }
 
     private void HandleJump()
@@ -190,6 +190,11 @@ public class PlayerJump : MonoBehaviour
         _isJumping = holdJump;
     }
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+      //  Gizmos.DrawCube(groundCheck.position, new Vector2(1f, 0.4f));
+    }
 }
 
 

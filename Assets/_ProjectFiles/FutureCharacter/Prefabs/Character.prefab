@@ -243,7 +243,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 47ee9e8ad57267147b9ce5dc6e2e8d6d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -804,6 +804,7 @@ MonoBehaviour:
   maxHealth: 25
   currentHealth: 0
   invulnerabilityDuration: 0.5
+  _dieEffect: {fileID: 198882543454184864, guid: 400b563c84eaeed449311a795eddb383, type: 3}
   _animator: {fileID: 0}
   enableMenu: {fileID: 0}
 --- !u!114 &238769808405219338
@@ -1093,7 +1094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1626263523022860155, guid: 28b69d961598d4946a17332b615b522f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8466963620435663769, guid: 28b69d961598d4946a17332b615b522f, type: 3}
       propertyPath: m_LocalPosition.x

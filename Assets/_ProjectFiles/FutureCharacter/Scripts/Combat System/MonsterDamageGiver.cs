@@ -21,6 +21,7 @@ public class MonsterDamageGiver : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.name + " enter Trigger");
         PerformAttack(collision);
     }
 
@@ -58,9 +59,12 @@ public class MonsterDamageGiver : MonoBehaviour
         if (_attackStarted) return;
 
         if (((1 << collision.gameObject.layer) & _damageLayer) != 0 && _damageDone == false)
+        //if (((collision.gameObject.layer) & _damageLayer) != 0 && _damageDone == false)
         {
+            Debug.Log(collision.name + " нужный слой");
             _attackStarted = true;
-            Attack(collision);
+        collision.GetComponentInChildren<IDamageable>().TakeDamage(_damage);
+        Attack(collision);
         }
     }
 
@@ -77,7 +81,7 @@ public class MonsterDamageGiver : MonoBehaviour
         }
 
         _damageDone = true;
-        Debug.Log(collision.name);
+        Debug.Log(collision.name + "должно ударить");
         collision.GetComponentInChildren<IDamageable>().TakeDamage(_damage);
         CreateHitEffect(collision.transform);
         CameraShake();
