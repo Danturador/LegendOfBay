@@ -158,7 +158,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6ed2c5d4167516d479349bbdc21de6ac, type: 3}
-  m_Color: {r: 1, g: 0.4481132, b: 0.4481132, a: 1}
+  m_Color: {r: 1, g: 0.2901961, b: 0.47843137, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -193,6 +193,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8978416966526491131}
+  - component: {fileID: 3623948089473439755}
+  - component: {fileID: 7875782185898044871}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -218,6 +220,43 @@ Transform:
   - {fileID: 9032641978776169785}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &3623948089473439755
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7915388705244097534}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0ff3c073f8db05648ab786a2275e4e53, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7875782185898044871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7915388705244097534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee68930b24ee834692112200d2bb210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveProfiles:
+  - enemiesOfWave:
+    - amount: 0
+  isActive: 0
 --- !u!1 &9221989960536206047
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +332,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: d8c0272ed37f26340b1dc2e5b98fed9e, type: 3}
-  m_Color: {r: 1, g: 0.41037738, b: 0.41037738, a: 1}
+  m_Color: {r: 1, g: 0.3726415, b: 0.53901255, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -312,7 +351,7 @@ Animation:
   m_GameObject: {fileID: 9221989960536206047}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 0}
+  m_Animation: {fileID: 7400000, guid: 90dc5b373530936459700a2ab1ca95d3, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: 90dc5b373530936459700a2ab1ca95d3, type: 2}
   m_WrapMode: 0

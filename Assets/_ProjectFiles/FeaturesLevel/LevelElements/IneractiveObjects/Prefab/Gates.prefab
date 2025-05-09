@@ -239,9 +239,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingLayerID: -955600431
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 609de06d3f4c4014d9f08275f00ca438, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -548,7 +548,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4886ee0030778c843bbafcc0394e2e77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -604,14 +604,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 3.2167377, y: 2.1765976}
-      - {x: 1.9624928, y: -0.4579984}
-      - {x: -2.0478337, y: -0.48700285}
-      - {x: -3.2093115, y: 2.1210303}
-      - {x: -2.2787294, y: 1.7262149}
-      - {x: -1.1978226, y: 3.0906906}
-      - {x: 1.0787945, y: 3.111393}
-      - {x: 2.256081, y: 1.6149528}
+    - - {x: 0.32572538, y: -0.22388296}
+      - {x: 0.32719803, y: -0.25268093}
+      - {x: -0.7310364, y: -0.25908408}
+      - {x: -0.7305817, y: -0.2283582}
   m_UseDelaunayMesh: 0
 --- !u!61 &7407688037049325517
 BoxCollider2D:
@@ -687,7 +683,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: c832c840c67093b49b38a31fd4bf684e, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!1 &6718586639972412775
