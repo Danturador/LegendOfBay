@@ -9,33 +9,27 @@ using Zenject;
 public class Inventory : MonoBehaviour
 {
 	[Inject] private SaveSystemController _saveSystem;
-	[SerializeField] private List<Key> keys = new List<Key>();
+	//[SerializeField] private List<Key> keys = new List<Key>();
 	[SerializeField] private KeysHolder keysHolder;
+
+	private readonly HashSet<string> _keys = new();
 	
 	private void Awake()
 	{
-		var activeKeys = _saveSystem.gameData.KeysHolderData.keysData.Where(k => k.isActive);
-		foreach (var key in activeKeys)
+		var ownedKeys = _saveSystem.gameData.KeysHolderData.keysData.Where(k => !k.isActive);
+		foreach (var key in ownedKeys)
 		{
-			AddKey(keys.Find(k => k.keyID == key.id));
+			AddKey(key.id);
 		}
 	}
 
-	public void AddKey(Key key)
+	public void AddKey(string id)
 	{
-		if (!HasKey(key.keyID))
-		{
-			keys.Add(key);
-		}
+		_keys.Add(id);
 	}
 
-	private bool HasKey(string keyID)
+	public string GetKeyId(string keyID)
 	{
-		return keys.Count > 0 && keys.Exists(k => k.keyID == keyID);
-	}
-
-	public Key GetKey(string keyID)
-	{
-		return keys.Count > 0 ? keys.Find(k => k.keyID == keyID) : null;
+		return _keys.TryGetValue(keyID, out string value) ? value : null;
 	}
 }

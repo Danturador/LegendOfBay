@@ -20,6 +20,10 @@ namespace _ProjectFiles.SaveSystem.InteractableHolders
             {
                 var key = keysOnMap.Find(k => k.keyID == data.id);
                 key.SetState(data.isActive);
+            }
+
+            foreach (var key in keysOnMap)
+            {
                 key.OnKeyPickedUp += () => _saveSystem.UpdateKeys(GetKeysData());
             }
         }

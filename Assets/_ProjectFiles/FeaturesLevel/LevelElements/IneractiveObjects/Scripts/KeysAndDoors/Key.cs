@@ -18,9 +18,9 @@ public class Key : MonoBehaviour
 		if (!other.gameObject.TryGetComponent(out Inventory inventory)) 
 			return;
 		
-		OnKeyPickedUp?.Invoke();
-		inventory.AddKey(this);
+		inventory.AddKey(keyID);
 		gameObject.SetActive(false);
+		OnKeyPickedUp?.Invoke();
 	}
 
 	public void SetState(bool isEnabled)
