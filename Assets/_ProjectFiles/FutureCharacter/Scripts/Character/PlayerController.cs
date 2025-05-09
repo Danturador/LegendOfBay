@@ -102,9 +102,7 @@ public class PlayerController : MonoBehaviour
             {
                 playerMovement.Move(moveInput);
             }
-            
         }
-
     }
 
     private void OnJump(InputAction.CallbackContext context)

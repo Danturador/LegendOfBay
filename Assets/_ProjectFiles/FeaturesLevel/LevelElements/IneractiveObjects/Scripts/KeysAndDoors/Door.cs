@@ -11,7 +11,7 @@ namespace _ProjectFiles.FeaturesLevel.LevelElements.IneractiveObjects.Scripts.Ke
 		[SerializeField] private AnimationClip gatesAnimationClip;
 		[SerializeField] private BoxCollider2D doorCollider;
 		public bool IsDoorsOpened { get; private set; }
-		public string Id => Id;
+		public string Id => doorID;
 
 		public event Action OnDoorOpened;
 
@@ -22,9 +22,13 @@ namespace _ProjectFiles.FeaturesLevel.LevelElements.IneractiveObjects.Scripts.Ke
 		
 		private void OnTriggerEnter2D(Collider2D other)
 		{
-			if(other.gameObject.TryGetComponent(out Inventory inventory)
-			   && inventory.GetKeyId(doorID) is not null)
-				TryOpen(inventory.GetKeyId(doorID));
+			if (!other.gameObject.TryGetComponent(out Inventory inventory) || inventory.GetKeyId(doorID) is null) 
+				return;
+
+			if (!TryOpen(inventory.GetKeyId(doorID))) 
+				return;
+
+			inventory.RemoveKey(doorID);
 		}
 
 		private bool TryOpen(string keyID)
@@ -58,7 +62,7 @@ namespace _ProjectFiles.FeaturesLevel.LevelElements.IneractiveObjects.Scripts.Ke
 			OnDoorOpened?.Invoke();
 		}
 
-		public void SetState(bool enable, bool isStart = false)
+		public void SetState(bool enable, bool isStart)
 		{
 			if (enable)
 				StartCoroutine(Open(isStart));

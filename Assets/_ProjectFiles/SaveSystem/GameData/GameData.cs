@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace _ProjectFiles.SaveSystem
@@ -12,6 +13,7 @@ namespace _ProjectFiles.SaveSystem
         public SpawnersHolderData SpawnersHolderData { get; private set; }
         public DoorsHolderData DoorsHolderData { get; private set; }
         public KeysHolderData KeysHolderData { get; private set; }
+        public List<string> Inventory { get; private set; }
         public byte[] MapTexture { get; private set; }
 
         public GameData()
@@ -22,6 +24,7 @@ namespace _ProjectFiles.SaveSystem
             SpawnersHolderData = new SpawnersHolderData();
             DoorsHolderData = new DoorsHolderData();
             KeysHolderData = new KeysHolderData();
+            Inventory = new List<string>();
             MapTexture = null;
         }
 
@@ -31,6 +34,7 @@ namespace _ProjectFiles.SaveSystem
         public void SetSpawners(SpawnersHolderData data) => SpawnersHolderData = data;
         public void SetDoors(DoorsHolderData data) => DoorsHolderData = data;
         public void SetKeys(KeysHolderData data) => KeysHolderData = data;
+        public void SetInventory(List<string> data) => Inventory = data;
         public void SetTexture(Texture2D sprite) => MapTexture = sprite.EncodeToPNG();
     }
 }

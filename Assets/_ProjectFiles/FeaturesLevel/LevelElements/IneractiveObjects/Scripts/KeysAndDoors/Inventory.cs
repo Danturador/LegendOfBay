@@ -1,31 +1,37 @@
 using System.Collections.Generic;
 using System.Linq;
-using _GameAssets.Scripts.Spawner;
 using _ProjectFiles.SaveSystem;
-using _ProjectFiles.SaveSystem.InteractableHolders;
 using UnityEngine;
 using Zenject;
 
 public class Inventory : MonoBehaviour
 {
 	[Inject] private SaveSystemController _saveSystem;
-	//[SerializeField] private List<Key> keys = new List<Key>();
-	[SerializeField] private KeysHolder keysHolder;
 
-	private readonly HashSet<string> _keys = new();
+	private HashSet<string> _keys = new();
+	private bool _initialized;
 	
 	private void Awake()
 	{
-		var ownedKeys = _saveSystem.gameData.KeysHolderData.keysData.Where(k => !k.isActive);
-		foreach (var key in ownedKeys)
-		{
-			AddKey(key.id);
-		}
+		_keys = _saveSystem.gameData.Inventory.ToHashSet();
 	}
 
-	public void AddKey(string id)
+	public bool AddKey(string id)
 	{
-		_keys.Add(id);
+		if (!_keys.Add(id)) 
+			return false;
+		
+		_saveSystem.UpdateInventory(_keys.ToList());
+		return true;
+	}
+
+	public bool RemoveKey(string id)
+	{
+		if (!_keys.Remove(id)) 
+			return false;
+		
+		_saveSystem.UpdateInventory(_keys.ToList());
+		return true;
 	}
 
 	public string GetKeyId(string keyID)
