@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IDemonicAttack
 {
-	public IEnumerator AttackPattern(Action<bool> setCascadeOfNeedles);
+	public IEnumerator AttackPattern(Action<bool, bool> setCascadeOfNeedles);
 }

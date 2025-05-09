@@ -15,7 +15,7 @@ public class BossController : MonoBehaviour
 	[SerializeField] private float fillDuration = 3f;
 
 
-	[SerializeField] private BossDemonicFormStateMachine demonicFormBehaviour;
+	[SerializeField] private BossDemonicFormStateMachine  demonicFormBehaviour;
 	[SerializeField] private BoxCollider2D demonicFormCollider;
 	[SerializeField] private Image screenOverlay;
 	[SerializeField] private float invulnerabilityDuration = 5f;
