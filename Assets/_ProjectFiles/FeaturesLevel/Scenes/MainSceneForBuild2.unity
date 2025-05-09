@@ -20618,6 +20618,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2767404900831599099, guid: fcf21d2045ad17f4a8d0aba74deb6a12, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3210557972367000161, guid: fcf21d2045ad17f4a8d0aba74deb6a12, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4543442215873962977, guid: fcf21d2045ad17f4a8d0aba74deb6a12, type: 3}
