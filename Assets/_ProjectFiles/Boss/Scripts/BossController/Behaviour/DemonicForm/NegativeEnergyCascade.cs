@@ -38,7 +38,7 @@ public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 		if (beam != null) Destroy(beam);
 	}
 
-	public IEnumerator AttackPattern(Action<bool> setCascadeOfNeedles)
+	public IEnumerator AttackPattern(Action<bool, bool> SetNegativeEnergyCascade)
 	{
 		Initialize();
 
@@ -49,7 +49,7 @@ public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 				yield break;
 			}
 
-			setCascadeOfNeedles(true);
+			SetNegativeEnergyCascade(true, false);
 
 			projection.SetActive(true);
 
@@ -58,7 +58,7 @@ public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 			projection.SetActive(false);
 			beam.SetActive(true);
 
-			setCascadeOfNeedles(false);
+			SetNegativeEnergyCascade(false, false);
 			projection.SetActive(true);
 
 			yield return new WaitForSeconds(beamDuration);
@@ -76,7 +76,7 @@ public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 			yield return new WaitForSeconds(attackDelay);
 
 			countOfAttacks--;
-			setCascadeOfNeedles(false);
+			SetNegativeEnergyCascade(false, false);
 		}
 
 		Deinitialize();

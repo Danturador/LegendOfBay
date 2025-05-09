@@ -62,25 +62,26 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 		}
 	}
 
-	public IEnumerator AttackPattern(Action<bool> setCascadeOfNeedles)
+	public IEnumerator AttackPattern(Action<bool, bool> setCascadeOfNeedles)
 	{
 		Initialize();
 
 		while (sequenceIndex < attackSequence.Count)
 		{
-			setCascadeOfNeedles(true);
 
 			if (attackSequence[sequenceIndex] == AttackType.Line)
 			{
+				setCascadeOfNeedles(true, false);
 				SpawnLineAttack();
 			}
 			else if (attackSequence[sequenceIndex] == AttackType.Cascade)
 			{
+				setCascadeOfNeedles(true, true);
 				yield return StartCoroutine(SpawnCascadeAttack());
 			}
 
+			setCascadeOfNeedles(false, false);
 			yield return new WaitForSeconds(attackDelay);
-			setCascadeOfNeedles(false);
 			sequenceIndex++;
 		}
 	}

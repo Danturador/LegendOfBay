@@ -29,14 +29,14 @@ public class NegativeEnergyCascadeState : State2
 	private IEnumerator UseAttack()
 	{
 		//yield return _stateMachine.StartCoroutine(_demonicBehaviour.AttackPattern());
-		yield return _stateMachine.StartCoroutine(_demonicBehaviour.AttackPattern(SetCascadeOfNeedles));
+		yield return _stateMachine.StartCoroutine(_demonicBehaviour.AttackPattern(SetNegativeEnergyCascade));
 
 		yield return new WaitForSeconds(3f);
 
 		_stateMachine.HandleDemonicAttackCompletion();
 	}
-	private void SetCascadeOfNeedles(bool value)
+	private void SetNegativeEnergyCascade(bool isNegativeEnergyCascade, bool empty = false)
 	{
-		_animationController.SetBool(IsNegativeEnergyCascade, value);
+		_animationController.SetBool(IsNegativeEnergyCascade, isNegativeEnergyCascade);
 	}
 }

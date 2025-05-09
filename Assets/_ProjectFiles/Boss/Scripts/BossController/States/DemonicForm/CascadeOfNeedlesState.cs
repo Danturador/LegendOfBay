@@ -39,8 +39,9 @@ public class CascadeOfNeedlesState : State2
 		
 		_stateMachine.HandleDemonicAttackCompletion();
 	}
-	private void SetCascadeOfNeedles(bool value)
+	private void SetCascadeOfNeedles(bool isAttack, bool isLongAttack)
 	{
-		_animationController.SetBool(IsCascadeOfNeedles, value);
+		_animationController.SetBool(IsCascadeOfNeedles, isAttack);
+		_animationController.SetBool(IsCascadeOfNeedlesLong, isLongAttack);
 	}
 }

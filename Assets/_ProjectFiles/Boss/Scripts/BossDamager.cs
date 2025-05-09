@@ -12,7 +12,6 @@ public class BossDamager : MonoBehaviour
 	{
 		if (collision.GetComponent<PlayerController>() == null) return;
 
-		Debug.Log("dfkdjk");
 		//collision.GetComponent<IDamageable>().TakeDamage(_damage);
 		playerHealth.TakeDamage(_damage);
 		EffectSpawner.Instance.SpawnEffect(EffectSpawner.EffectType.Bleeding, collision.gameObject);
