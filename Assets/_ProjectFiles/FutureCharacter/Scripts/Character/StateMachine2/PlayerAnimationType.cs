@@ -20,5 +20,6 @@ public enum PlayerAnimationType
     PlayerMovingItemBack,
     PlayerMovingItemCancel,
     PlayerMovingItemStay,
+    PlayerGrapplingHook,
 
 }

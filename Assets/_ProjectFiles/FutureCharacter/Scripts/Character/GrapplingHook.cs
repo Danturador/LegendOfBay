@@ -38,9 +38,11 @@ public class GrapplingHook : MonoBehaviour
              float distanceToClosestPoint = Vector2.Distance(transform.position, closestPoint.position);
              if (distanceToClosestPoint <= maxGrappleDistance)
              {
-                 distanceJoint.connectedAnchor = closestPoint.position;
-                 distanceJoint.enabled = true;
                  isGrappling = true;
+               
+                 distanceJoint.connectedAnchor = closestPoint.position;
+                  distanceJoint.enabled = true;
+                 
                  lineRenderer.enabled = true;
                  lastGrapplePoint = closestPoint;
 
@@ -149,4 +151,6 @@ public class GrapplingHook : MonoBehaviour
             rb.gravityScale = defaultGravityScale;
         }
     }
+
+   
 }
