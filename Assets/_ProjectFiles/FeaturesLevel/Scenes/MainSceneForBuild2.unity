@@ -2096,11 +2096,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8118393265103105493, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8118393265103105493, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
       propertyPath: m_SortingLayerID
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118393265103105493, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8989739416741763235, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
       propertyPath: m_LocalScale.x
@@ -19099,11 +19103,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6970589144344519373, guid: b43278a0f44e1494b9bbd344d2009a34, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.43
+      value: 17.76
       objectReference: {fileID: 0}
     - target: {fileID: 6970589144344519373, guid: b43278a0f44e1494b9bbd344d2009a34, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 56.08
+      value: 57.1
       objectReference: {fileID: 0}
     - target: {fileID: 6970589144344519373, guid: b43278a0f44e1494b9bbd344d2009a34, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20051,7 +20055,7 @@ MonoBehaviour:
   - {fileID: 755413931}
   parallaxScales:
   - 0.2
-  - 0.1
+  - 0.15
   - 0.1
   - -0.1
   - 0.1
