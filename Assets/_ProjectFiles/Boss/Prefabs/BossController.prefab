@@ -139,7 +139,7 @@ AudioSource:
   m_GameObject: {fileID: 690007702083760485}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -1486550699786577899, guid: 085da32419dab864389ebb0f17d9c12a, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -316,6 +316,129 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.2, y: 2.4}
   m_EdgeRadius: 0
+--- !u!1 &2731312984633805865
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6881612410952448909}
+  - component: {fileID: 2149936350044504047}
+  - component: {fileID: 7995815637882022069}
+  - component: {fileID: 3233137004641832906}
+  - component: {fileID: 1678119431331438567}
+  m_Layer: 9
+  m_Name: BossDamager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6881612410952448909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2731312984633805865}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1729394172218825726}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2149936350044504047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2731312984633805865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1accbf2b875594787c9194a9c15a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectSpawner: {fileID: 0}
+  playerHealth: {fileID: 0}
+  _damage: 5
+--- !u!50 &7995815637882022069
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2731312984633805865}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &3233137004641832906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2731312984633805865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f1f15c2f7313324ca9a5cfef1e8d379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spikePrefab: {fileID: 7038089764963806523, guid: 0b376499296f8294cbf616970c44bda2, type: 3}
+  spikes: []
+  spikeSpacing: 1.5
+  totalSpikes: 16
+  attackDelay: 2.1
+  animationDelay: 0.15
+  spikeFallSpeed: 18
+  attackIndex: 0
+  startFallingPoint: 5
+  endFallingPoint: -20
+  delayBeforeFalling: 0
+  cascadeDelay: 0.2
+  attackSequence: 00000000010000000000000001000000
+--- !u!114 &1678119431331438567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2731312984633805865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 417c729f2be5e244eb5b6b4af7544ef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectionPrefab: {fileID: 1644013801563162775, guid: 4e5ea45b67d667c48b1bfb0f4ec84825, type: 3}
+  beamPrefab: {fileID: 7459493261088460664, guid: 3225f59d342096046a8b77454a0f22d6, type: 3}
+  projection: {fileID: 0}
+  beam: {fileID: 0}
+  projectionDuration: 2
+  beamDuration: 2
+  attackDelay: 0.5
+  rotationAngle: 15
+  countOfAttacks: 0
 --- !u!1 &7044423237233419830
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +706,14 @@ PrefabInstance:
       propertyPath: _animator
       value: 
       objectReference: {fileID: 987403043269012810}
+    - target: {fileID: 7023853388301007457, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
+      propertyPath: cascadeOfNeedles
+      value: 
+      objectReference: {fileID: 3233137004641832906}
+    - target: {fileID: 7023853388301007457, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
+      propertyPath: negativeEnergyCascade
+      value: 
+      objectReference: {fileID: 1678119431331438567}
     - target: {fileID: 7471221892676928185, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
       propertyPath: m_Name
       value: BossDemon
@@ -625,15 +756,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 110097639036240462, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
+    - {fileID: 8419268088059441168, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
+    - {fileID: 4799260754992543511, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5445828444998645231, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6881612410952448909}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7471221892676928185, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
       insertIndex: -1
       addedObject: {fileID: 424602102140684240}
-    - targetCorrespondingSourceObject: {fileID: 7471221892676928185, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6406446128879516110}
   m_SourcePrefab: {fileID: 100100000, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}
 --- !u!95 &987403043269012810 stripped
 Animator:
@@ -677,21 +810,6 @@ MonoBehaviour:
   currentHealth: 0
   _hpBarGameobject: {fileID: 0}
   isHumanForm: 0
---- !u!114 &6406446128879516110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3764004824669367464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be1accbf2b875594787c9194a9c15a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectSpawner: {fileID: 0}
-  playerHealth: {fileID: 0}
-  _damage: 5
 --- !u!61 &4303475462078805469 stripped
 BoxCollider2D:
   m_CorrespondingSourceObject: {fileID: 7505942475902966732, guid: 77de96be9d092e94f837abfb9bfbbb84, type: 3}

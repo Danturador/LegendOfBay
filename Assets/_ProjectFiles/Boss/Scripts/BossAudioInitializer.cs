@@ -11,6 +11,7 @@ public class BossAudioInitializer : MonoBehaviour
 	[SerializeField] private SoundType soundType;
 	[Inject] private SoundContainer _soundContainer;
 	private AudioSource _audioSource;
+	private bool isHitPlaying;
 
 	private static BossAudioInitializer _instance;
 	public static BossAudioInitializer Instance
@@ -30,16 +31,25 @@ public class BossAudioInitializer : MonoBehaviour
 	{
 		_instance = this;
 		_audioSource = GetComponent<AudioSource>();
+
+		isHitPlaying = false;
 	}
 
-	private void PlaySound(SoundType sound)
+	public void PlaySound(SoundType sound)
 	{
-		if (!_soundContainer.SoundsStorage.TryGetValue(sound, out AudioClip clip))
+		AudioClip clip = GetClip(sound);
+		if (clip != null)
 		{
-			Debug.LogError("Sound Type not found");
-			return;
+			_audioSource.PlayOneShot(clip);
 		}
-		_audioSource.PlayOneShot(clip);
+	}
+	private AudioClip GetClip(SoundType sound)
+	{
+		if (_soundContainer.SoundsStorage.TryGetValue(sound, out AudioClip clip))
+		{
+			return clip;
+		}
+		return null;
 	}
 
 	public void PlaySwordAttack(int attackIndex)
@@ -59,5 +69,21 @@ public class BossAudioInitializer : MonoBehaviour
 				break;
 		}
 		PlaySound(soundType);
+	}
+	public void PlayHitOnBoss()
+	{
+		if (!isHitPlaying)
+		{
+			StartCoroutine(PlayHitOnBossSeq());
+		}
+	}
+	private IEnumerator PlayHitOnBossSeq()
+	{
+		isHitPlaying = true;
+
+		yield return new WaitForSeconds(GetClip(HitOnBoss).length);
+
+		PlaySound(HitOnBoss);
+		isHitPlaying = false;
 	}
 }

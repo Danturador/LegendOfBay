@@ -28,12 +28,16 @@ namespace _ProjectFiles.SoundContainer
         BossSwordAttack1,
         BossSwordAttack2,
         BossSwordAttack3,
-		AmbientStart,
-		AmbientEnd,
+		Ambient,
 		CaveClip,
 		GatesClip,
 		BossPhase1,
 		BossPhase2,
+		HitOnBoss,
+		FireAttack,
+		SwordAttack,
+		SwordFallen,
+		Death,
     }
 
     [Serializable]
