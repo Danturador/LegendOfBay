@@ -1,13 +1,14 @@
 using System;
 using System.Linq;
 using _ProjectFiles.Enemy.Scripts.Core;
+using UnityEngine;
 
 public abstract class StateMachine
 {
     protected readonly EnemyContainer _container;
     protected readonly IState[] _states;
     private readonly Transition[] _transitions;
-    private IState _current;
+    protected IState _current;
 
     public StateMachine(EnemyContainer container)
     {
@@ -28,6 +29,8 @@ public abstract class StateMachine
         foreach (var transition in _transitions)
             if (transition.From == _current.GetType() && transition.Condition())
                 TranslateTo(transition.To);
+
+        Debug.Log(_current.GetType().Name);
     }
 
     private void TranslateTo(Type targetType)

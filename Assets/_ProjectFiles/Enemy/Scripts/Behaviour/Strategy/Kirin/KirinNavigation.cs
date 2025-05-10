@@ -11,6 +11,7 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Kirin
         private readonly EnemyContainer _container;
         private readonly KirinNavigationInfo _naviInfo;
         private readonly AnimationCurve _speedCurve;
+        public bool IsPreparing { get; private set; }
 
         public KirinNavigation(EnemyContainer container)
         {
@@ -20,12 +21,16 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Kirin
             _speedCurve = _naviInfo.SpeedCurve;
         }
 
-        public IEnumerator Execute(Transform target)
+        public IEnumerator Execute(PlayerController target)
         {
             while (true)
             {
                 _container.Animator.SetTrigger("prepare");
+                _container.Renderer.CurrentScale = target.transform.position.x < _container.transform.position.x ? -1 : 1;
+                
+                IsPreparing = true;
                 yield return new WaitForSeconds(_naviInfo.StartDashDelay);
+                IsPreparing = false;
                 _container.Animator.SetBool("active", true);
 
                 var targetDelta = target.transform.position.x - _container.Rigidbody.transform.position.x;

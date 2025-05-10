@@ -19,13 +19,14 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.States.Kirin
         public void Enter()
         {
             currentAttackDelay = 0;
-            _container.Animator.SetTrigger("attack");
+            //_container.Animator.SetBool("attack", true);
             _container.Attack.Execute();
         }
 
         public void Exit()
         {
-            _container.Animator.SetTrigger("idle");
+            //_container.Animator.SetTrigger("idle");
+            //_container.Animator.SetBool("attack", false);
             _container.Attack.Stop();
         }
 
