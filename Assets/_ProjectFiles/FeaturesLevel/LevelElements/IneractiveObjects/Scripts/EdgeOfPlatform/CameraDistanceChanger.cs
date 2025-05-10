@@ -57,7 +57,7 @@ public class CameraDistanceChanger : MonoBehaviour
 			isChangingDistance = true;
 
 			followOffsetX = 0;
-			followOffsetY = 0;
+			followOffsetY = 2;
 		}
 	}
 }
