@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58e9e13b58c3470ab3e3be32adb1c861, type: 3}
   m_Name: AttackInfo
   m_EditorClassIdentifier: 
-  attackRange: 1
+  attackRange: 3
   attackDelay: 2
   damage: 5
   attackStartDelay: 0.7

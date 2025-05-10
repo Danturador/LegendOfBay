@@ -1,13 +1,19 @@
+using _ProjectFiles.Enemy.Scripts.Core;
+using UnityEngine;
 
-public class KirinPassiveState: IEnterState, IExitState
+public class KirinPassiveState : IUpdateState
 {
-    public void Enter()
+    private readonly EnemyContainer _container;
+
+    public KirinPassiveState(EnemyContainer container)
     {
-        
+        _container = container;
     }
 
-    public void Exit()
+    public void Update()
     {
-        
+        var velocity = _container.Rigidbody.velocity;
+        velocity.x = 0;
+        _container.Rigidbody.velocity = velocity;
     }
 }

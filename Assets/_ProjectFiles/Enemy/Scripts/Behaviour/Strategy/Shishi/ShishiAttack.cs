@@ -26,7 +26,7 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Shishi
             set => _isAttacking = value;
         }
 
-        public IEnumerator Execute(Transform target)
+        public IEnumerator Execute(PlayerController target)
         {
             _container.Animator.SetBool("attack", true);
             _container.Rigidbody.velocity = Vector2.zero;

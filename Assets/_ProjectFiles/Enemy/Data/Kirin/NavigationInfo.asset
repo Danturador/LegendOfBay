@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37dde4998feb45e9a920754ddf491adb, type: 3}
   m_Name: NavigationInfo
   m_EditorClassIdentifier: 
-  startDashDelay: 1
+  startDashDelay: 1.7
   dashTimeInterval: 2
   dashTime: 2
   speedCurve:

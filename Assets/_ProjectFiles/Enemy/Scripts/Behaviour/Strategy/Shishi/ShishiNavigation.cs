@@ -7,21 +7,22 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Shishi
 {
     public class ShishiNavigation : INavigationExecutable
     {
-        private EnemyContainer _enemyContainer;
-        private ShishiNavigationInfo _navigationInfo;
-        
+        private readonly EnemyContainer _enemyContainer;
+        private readonly ShishiNavigationInfo _navigationInfo;
+
         public ShishiNavigation(EnemyContainer container)
         {
             _enemyContainer = container;
             _navigationInfo = container.Profile.NavigationInfo as ShishiNavigationInfo;
         }
-        
-        public IEnumerator Execute(Transform target)
+
+        public IEnumerator Execute(PlayerController target)
         {
-            var targetDelta =  _enemyContainer.transform.position.x - target.transform.position.x;
+            var targetDelta = _enemyContainer.transform.position.x - target.transform.position.x;
             var escapeDirection = targetDelta / Mathf.Abs(targetDelta);
+
             _enemyContainer.Rigidbody.velocity = new Vector2(escapeDirection, 0) * _navigationInfo.MoveSpeed;
-            yield break; 
+            yield break;
         }
 
         public void Stop()

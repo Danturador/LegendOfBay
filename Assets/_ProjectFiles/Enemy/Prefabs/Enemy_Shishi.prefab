@@ -288,7 +288,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &5998898287507721114
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -409,3 +409,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 10
+  _hpBarGameobject: {fileID: 0}

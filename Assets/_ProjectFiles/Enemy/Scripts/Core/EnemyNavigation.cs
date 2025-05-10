@@ -8,7 +8,8 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         [SerializeField] private Rigidbody2D _rigidbody;
         private EnemyNavigationInfo _info;
         private INavigationExecutable _navigationExecutable;
-        public Transform Target { get; set; }
+        public PlayerController Target { get; set; }
+        public INavigationExecutable NavigationExecutable => _navigationExecutable;
 
         public void Initialize(EnemyNavigationInfo info, INavigationExecutable executable)
         {
