@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static _ProjectFiles.SoundContainer.SoundType;
 
 public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 {
@@ -68,7 +69,7 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 
 		while (sequenceIndex < attackSequence.Count)
 		{
-
+			BossAudioInitializer.Instance.PlaySound(SwordAttack);
 			if (attackSequence[sequenceIndex] == AttackType.Line)
 			{
 				setCascadeOfNeedles(true, false);
@@ -148,6 +149,8 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 		}
 		if (spike != null)
 		{
+			BossAudioInitializer.Instance.PlaySound(SwordFallen);
+
 			RemoveSpike(spike);
 		}
 	}

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using static _ProjectFiles.SoundContainer.SoundType;
 
 public class BossController : MonoBehaviour
 {
@@ -47,6 +48,7 @@ public class BossController : MonoBehaviour
 		healthBar.fillAmount = currentHealth;
 		if (currentHealth <= 0)
 		{
+			BossAudioInitializer.Instance.PlaySound(Death);
 			demonicFormBehaviour.OnDeath?.Invoke();
 		}
 	}

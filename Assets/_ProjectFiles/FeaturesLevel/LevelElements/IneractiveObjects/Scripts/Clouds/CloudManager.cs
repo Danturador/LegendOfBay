@@ -7,17 +7,22 @@ public class CloudManager : MonoBehaviour
 	[SerializeField] private float _xEndPosition;
 	[SerializeField] private float _speed = 5.0f;
 	[SerializeField] private float _delay = 1.0f;
+	[SerializeField] private GameObject player;
 
 	private bool _movingRight = true;
 	private Vector3 _startPosition;
 	private Vector3 _endPosition;
 
+	private Vector3 _lastCloudPosition; // Store the cloud's previous position
+
 	private void Awake()
 	{
+		player = FindAnyObjectByType<PlayerController>().gameObject;
 		_startPosition = transform.parent.TransformPoint(new Vector3(_xStartPosition, transform.localPosition.y, transform.localPosition.z));
 		_endPosition = transform.parent.TransformPoint(new Vector3(_xEndPosition, transform.localPosition.y, transform.localPosition.z));
 
 		transform.position = _startPosition;
+		_lastCloudPosition = transform.position; // Initialize last position
 
 		Invoke(nameof(StartMovement), _delay);
 	}
@@ -48,5 +53,38 @@ public class CloudManager : MonoBehaviour
 			_movingRight = !_movingRight;
 			yield return null;
 		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.GetComponent<PlayerController>() != null)
+		{
+			_playerAttached = true;
+		}
+	}
+
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+		if (collision.GetComponent<PlayerController>() != null)
+		{
+			_playerAttached = false;
+		}
+	}
+
+	private bool _playerAttached = false;
+
+	private void FixedUpdate() // Use FixedUpdate for physics
+	{
+		if (_playerAttached && player != null)
+		{
+			// Calculate the cloud's movement since the last frame
+			Vector3 cloudMovement = transform.position - _lastCloudPosition;
+
+			// Apply the cloud's movement to the player
+			player.transform.position += cloudMovement; // Or player.GetComponent<Rigidbody2D>().MovePosition(player.transform.position + cloudMovement);
+
+		}
+
+		_lastCloudPosition = transform.position; // Update last position
 	}
 }

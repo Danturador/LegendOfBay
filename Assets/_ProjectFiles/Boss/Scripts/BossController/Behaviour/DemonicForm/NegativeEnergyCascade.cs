@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using static _ProjectFiles.SoundContainer.SoundType;
 
 public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 {
@@ -57,6 +58,8 @@ public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 
 			projection.SetActive(false);
 			beam.SetActive(true);
+
+			BossAudioInitializer.Instance.PlaySound(FireAttack);
 
 			SetNegativeEnergyCascade(false, false);
 			projection.SetActive(true);

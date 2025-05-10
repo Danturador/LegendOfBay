@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.XInput;
 using Zenject;
 
 public class PlayerStateMachine2 : MonoBehaviour
@@ -18,12 +17,14 @@ public class PlayerStateMachine2 : MonoBehaviour
     private StateMachine2 _stateMachine;
     private PlayerJump _playerJump;
     private PlayerDash _playerDash;
+    private GrapplingHook _grapplinglingHook;
     
     [SerializeField]private bool _isLanding;
     private bool _isGrounded => _playerJump._isGrounded;
     private bool _isDashing => _playerDash.IsDashing();
     private bool _isDoubleJump => _playerJump.isDoubleJump;
     private bool _isMovingItem => _playerController.IsMovingItem;
+    private bool _isGrapplingHook => _grapplinglingHook.isGrappling;
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -37,6 +38,7 @@ public class PlayerStateMachine2 : MonoBehaviour
         _playerController = GetComponentInParent<PlayerController>();
         _playerJump = GetComponentInParent<PlayerJump>();
         _playerDash = GetComponentInParent<PlayerDash>();
+        _grapplinglingHook = GetComponentInParent<GrapplingHook>();
     }
 
     private void Update()
@@ -78,6 +80,7 @@ public class PlayerStateMachine2 : MonoBehaviour
         var movingItemBackState = new PlayerMovingItemBackState2(playerAnimationController);
         var movingItemCancelState = new PlayerMovingItemCancelState2(playerAnimationController);
         var movingItemStayState = new PlayerMovingItemStayState2(playerAnimationController);
+        var hookState = new PlayerGrapplingHookState2(playerAnimationController);
 
         idleState.AddTransition(new StateTransition(runState, new FuncStateCondition(() => _inputController.Gameplay.Movement.ReadValue<Vector2>().x !=0 && _isGrounded)));
         runState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _inputController.Gameplay.Movement.ReadValue<Vector2>().x == 0 && _isGrounded)));
@@ -120,7 +123,13 @@ public class PlayerStateMachine2 : MonoBehaviour
         movingItemCancelState.AddTransition(new StateTransition(idleState, new FuncStateCondition(() => _isMovingItem == false)));
 
 
+        idleState.AddTransition(new StateTransition(hookState, new FuncStateCondition(() => _isGrapplingHook)));
+        runState.AddTransition(new StateTransition(hookState, new FuncStateCondition(() => _isGrapplingHook)));
+        jumpState.AddTransition(new StateTransition(hookState, new FuncStateCondition(() => _isGrapplingHook)));
+        dashState.AddTransition(new StateTransition(hookState, new FuncStateCondition(() => _isGrapplingHook)));
+        doubleJumpState.AddTransition(new StateTransition(hookState, new FuncStateCondition(() => _isGrapplingHook)));
 
+        hookState.AddTransition(new StateTransition(jumpState, new FuncStateCondition(() => _isGrapplingHook == false)));
 
 
 
