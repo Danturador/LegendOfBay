@@ -8,11 +8,13 @@ namespace _ProjectFiles.SaveSystem
     [Serializable]
     public class SpawnerData
     {
-        public bool isActive = false;
+        public string id;
+        public bool isClosed = false;
 
-        public SpawnerData(bool isActive)
+        public SpawnerData(string id, bool isClosed)
         {
-            this.isActive = isActive;
+            this.id = id;
+            this.isClosed = isClosed;
         }
     }
     

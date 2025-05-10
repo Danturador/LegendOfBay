@@ -1,39 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using _GameAssets.Scripts.Spawner;
 using UnityEngine;
+using Zenject;
 
 namespace _ProjectFiles.SaveSystem.InteractableHolders
 {
-    [Serializable]
     public class SpawnersHolder : MonoBehaviour
     {
+        [Inject] private SaveSystemController _saveSystem;
         [SerializeField] private List<EnemySpawner> spawners;
-        public List<EnemySpawner> Spawners => spawners;
 
-        public void Init()
+        private void Awake()
         {
-            spawners = GetComponentsInChildren<EnemySpawner>().ToList();
+            LoadSpawnersState(_saveSystem.gameData.SpawnersHolderData);
         }
 
-        public void UpdateSpawnersState(SpawnersHolderData spawnersHolderData)
+        private void LoadSpawnersState(SpawnersHolderData spawnersHolderData)
         {
-            for(int i = 0; i < spawners.Count; i++)
+            foreach (var data in spawnersHolderData.spawnersData)
             {
-                spawners[i].isActive = spawnersHolderData.spawnersData[i].isActive;
+                var spawner = spawners.Find(s => s.id == data.id);
+                spawner.Init(data.isClosed);
+            }
+
+            foreach (var spawner in spawners)
+            {
+                spawner.OnPortalClosed += () => _saveSystem.UpdateSpawners(GetSpawnersData());
             }
         }
         
-        public List<SpawnerData> GetSpawnersData()
+        private SpawnersHolderData GetSpawnersData()
         {
             List<SpawnerData> spawnersData = new List<SpawnerData>();
             foreach (var spawner in spawners)
             {
-                spawnersData.Add(new SpawnerData(spawner.isActive));
+                spawnersData.Add(new SpawnerData(spawner.id, spawner.isClosed));
             }
 
-            return spawnersData;
+            return new SpawnersHolderData(spawnersData);
         }
     }
 }

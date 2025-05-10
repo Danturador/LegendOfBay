@@ -1,4 +1,4 @@
-using _GameAssets.Scripts.Spawner;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace _ProjectFiles.SaveSystem
@@ -31,6 +31,8 @@ namespace _ProjectFiles.SaveSystem
         public void UpdateKeys(KeysHolderData data) => _data.SetKeys(data);
         
         public void UpdateDoors(DoorsHolderData data) => _data.SetDoors(data);
+
+        public void UpdateInventory(List<string> data) => _data.SetInventory(data);
         
         public void UpdateTexture(Texture2D texture2D) => _data.SetTexture(texture2D);
     }
