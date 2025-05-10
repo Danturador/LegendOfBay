@@ -141,7 +141,8 @@ public class GrapplingHook : MonoBehaviour
             rb.gravityScale = 0;
             Vector2 directionToGrapplePoint = (distanceJoint.connectedAnchor - (Vector2)transform.position).normalized;
             Vector2 currentVelocity = rb.velocity.normalized;
-            Vector2 finalDirection = (directionToGrapplePoint + currentVelocity).normalized;
+            // Vector2 finalDirection = (directionToGrapplePoint + currentVelocity).normalized;
+            Vector2 finalDirection = new Vector2(0, 1.2f);
 
             rb.AddForce(finalDirection * impulseForce, ForceMode2D.Impulse);
             yield return new WaitForSeconds(0.5f);
