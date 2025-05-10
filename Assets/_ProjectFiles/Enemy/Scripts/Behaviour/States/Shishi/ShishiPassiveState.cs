@@ -2,22 +2,21 @@ using _ProjectFiles.Enemy.Scripts.Core;
 
 namespace _ProjectFiles.Enemy.Scripts.Behaviour.States.Shishi
 {
-    public class ShishiPassiveState : IEnterState, IExitState
+    public class ShishiPassiveState : IUpdateState
     {
-        private EnemyContainer _container;
+        private readonly EnemyContainer _container;
 
         public ShishiPassiveState(EnemyContainer container)
         {
             _container = container;
         }
 
-        public void Enter()
+        public void Update()
         {
-            //_container.Animator.SetBool("");
-        }
+            var velocity = _container.Rigidbody.velocity;
+            velocity.x = 0;
 
-        public void Exit()
-        {
+            _container.Rigidbody.velocity = velocity;
         }
     }
 }

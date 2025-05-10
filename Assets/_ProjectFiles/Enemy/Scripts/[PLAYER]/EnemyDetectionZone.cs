@@ -8,6 +8,7 @@ namespace _ProjectFiles.Enemy.Scripts._PLAYER_
         [SerializeField] private BoxCollider2D boxCollider2D;
         [SerializeField] private Camera playerCamera;
         public PlayerController Player => _player;
+        public BoxCollider2D Collider => boxCollider2D;
 
         private void Start()
         {

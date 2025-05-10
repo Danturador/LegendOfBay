@@ -15,7 +15,7 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.States.Shishi
         public void Enter()
         {
             var target = _container.Navigation.Target;
-            var targetDelta = _container.transform.position.x - target.position.x;
+            var targetDelta = _container.transform.position.x - target.transform.position.x;
             var lookDirection = -(int)(targetDelta / Mathf.Abs(targetDelta));
 
             _container.Renderer.CurrentScale = lookDirection;

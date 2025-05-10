@@ -24,12 +24,16 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         [Header("Data")] [SerializeField] private EnemyProfile profile;
 
         private Enemy _enemy;
+        private EnemyDetectionZone _targetZone;
         public EnemyNavigation Navigation => enemyNavigation;
         public EnemyAttack Attack => enemyAttack;
         public EnemyRenderer Renderer => renderer;
         public Animator Animator => animator;
         public Rigidbody2D Rigidbody => rigidbody;
         public EnemyProfile Profile => profile;
+        public Collider2D Collider => collider;
+        public Collider2D GroundCollider { get; private set; }
+
         public bool IsVisibleByPlayer { get; private set; }
 
         private void Start()
@@ -40,20 +44,43 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         private void Update()
         {
             _enemy.State.Update();
+
+            if (_targetZone != null)
+            {
+                var zoneCollider = _targetZone.Collider;
+                var largerBounds = zoneCollider.bounds;
+                var smallerBounds = collider.bounds;
+
+                var isFit = largerBounds.Contains(smallerBounds.min) && largerBounds.Contains(smallerBounds.max);
+
+                IsVisibleByPlayer = isFit;
+                Navigation.Target = _targetZone.Player;
+            }
+            else
+            {
+                IsVisibleByPlayer = false;
+                Navigation.Target = null;
+            }
+        }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            GroundCollider = other.collider;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.TryGetComponent(out EnemyDetectionZone zone))
-            {
-                IsVisibleByPlayer = true;
-                Navigation.Target = zone.Player.transform;
-            }
+            if (other.TryGetComponent(out EnemyDetectionZone zone)) _targetZone = zone;
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.TryGetComponent(out EnemyDetectionZone zone)) IsVisibleByPlayer = false;
+            if (other.TryGetComponent(out EnemyDetectionZone zone)) _targetZone = null;
+        }
+
+        public bool IsOutOfBounds()
+        {
+            return true;
         }
 
         private void Initialize()
@@ -89,7 +116,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
                     break;
                 }
             }
-            
+
             _enemy = new Enemy(profile, this);
         }
     }
