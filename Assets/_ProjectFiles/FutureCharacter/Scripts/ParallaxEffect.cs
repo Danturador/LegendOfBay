@@ -1,16 +1,17 @@
+using Cinemachine;
 using UnityEngine;
 
 public class ParallaxEffect : MonoBehaviour
 {
     [SerializeField] private Transform[] layers;
     [SerializeField] private float[] parallaxScales;
-    [SerializeField] private Camera mainCamera;
+    [SerializeField] private GameObject mainCamera;
 
     private Vector3 previousCameraPosition;
 
     private void Awake()
     {
-        mainCamera = GetComponent<Camera>();
+        mainCamera = FindAnyObjectByType<CinemachineBrain>().gameObject;
     }
     private void Start()
     {
