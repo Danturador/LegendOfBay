@@ -15,17 +15,27 @@ namespace _ProjectFiles.Menu.InGameMenuButtons
             _child = transform.GetChild(0);
             _child.gameObject.SetActive(false);
 			//_inputController = FindAnyObjectByType<PlayerController>().inputController;
-			_inputController.Gameplay.Escape.performed += ToggleState;
+			_inputController.UI.Escape.performed += ToggleState;
 		}
 		private void OnDestroy()
 		{
-			_inputController.Gameplay.Escape.performed -= ToggleState;
+			_inputController.UI.Escape.performed -= ToggleState;
 		}
         public void ToggleState(InputAction.CallbackContext context)
         {
             var isActive = _child.gameObject.activeInHierarchy;
             _child.gameObject.SetActive(!isActive);
-            ResetMenu();
+
+			if (!isActive)
+			{
+				_inputController.Gameplay.Disable();
+			}
+			else
+			{
+				_inputController.Gameplay.Enable(); 
+			}
+
+			ResetMenu();
         }
 
         private void ResetMenu()

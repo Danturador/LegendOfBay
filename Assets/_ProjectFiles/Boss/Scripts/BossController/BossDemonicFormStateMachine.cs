@@ -22,7 +22,6 @@ public class BossDemonicFormStateMachine : MonoBehaviour
 	public bool isAttackEnded;
 	public TypesOfAttack currentAttack;
 	public TypesOfAttack nextAttack;
-	public string currentState_;
 
 	private static System.Random random = new System.Random();
 	private Queue<TypesOfAttack> recentAttacks = new Queue<TypesOfAttack>();
@@ -35,7 +34,7 @@ public class BossDemonicFormStateMachine : MonoBehaviour
 	}
 	private void Awake()
 	{
-		//_stateMachine = new StateMachine2(new DemonicPassiveState());
+		_stateMachine = new StateMachine2(new DemonicPassiveState());
 		animationController = new DemonicFormAnimationController(_animator);
 		OnDeath += HandleDeath;
 	}
@@ -64,7 +63,6 @@ public class BossDemonicFormStateMachine : MonoBehaviour
 	private void Update()
 	{
 		_stateMachine.OnUpdate();
-		currentState_ = currentState;
 	}
 	private void InitializeStateMachine()
 	{
@@ -100,8 +98,8 @@ public class BossDemonicFormStateMachine : MonoBehaviour
 			animationController.GetBool(IsDead)
 		);
 
-		_stateMachine = new StateMachine2(cascadeOfNeedlesState);
-		//_stateMachine.SetState(cascadeOfNeedlesState);
+		//_stateMachine = new StateMachine2(cascadeOfNeedlesState);
+		_stateMachine.SetState(cascadeOfNeedlesState);
 	}
 	public void HandleDemonicAttackCompletion()
 	{

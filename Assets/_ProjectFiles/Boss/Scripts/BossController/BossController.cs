@@ -18,6 +18,7 @@ public class BossController : MonoBehaviour
 
 	[SerializeField] private BossHumanFormStateMachine humanFormMachine;
 	[SerializeField] private BossDemonicFormStateMachine  demonicFormBehaviour;
+	[SerializeField] private GameObject finishScreen;
 	[SerializeField] private BoxCollider2D demonicFormCollider;
 	[SerializeField] private Image screenOverlay;
 	[SerializeField] private float invulnerabilityDuration = 5f;
@@ -50,6 +51,7 @@ public class BossController : MonoBehaviour
 		if (currentHealth <= 0)
 		{
 			BossAudioInitializer.Instance.PlaySound(Death);
+			finishScreen.SetActive(true);
 			demonicFormBehaviour.OnDeath?.Invoke();
 		}
 	}
