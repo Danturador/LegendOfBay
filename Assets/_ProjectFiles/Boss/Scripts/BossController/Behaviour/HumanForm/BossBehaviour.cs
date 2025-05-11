@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BossBehaviour : MonoBehaviour
 {
-	[SerializeField] private Transform player;
+	public Transform player;
 	[SerializeField] private float moveSpeed = 2f;
 	[SerializeField] private float attackRange = 2f;
 	[SerializeField] private float dashDistance = 7f;

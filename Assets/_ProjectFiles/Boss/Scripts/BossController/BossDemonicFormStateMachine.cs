@@ -20,8 +20,9 @@ public class BossDemonicFormStateMachine : MonoBehaviour
 	public CascadeOfNeedles cascadeOfNeedles;
 	public NegativeEnergyCascade negativeEnergyCascade;
 	public bool isAttackEnded;
-	public TypesOfAttack previousAttack;
 	public TypesOfAttack currentAttack;
+	public TypesOfAttack nextAttack;
+	public string currentState_;
 
 	private static System.Random random = new System.Random();
 	private Queue<TypesOfAttack> recentAttacks = new Queue<TypesOfAttack>();
@@ -34,7 +35,7 @@ public class BossDemonicFormStateMachine : MonoBehaviour
 	}
 	private void Awake()
 	{
-		_stateMachine = new StateMachine2(new DemonicPassiveState());
+		//_stateMachine = new StateMachine2(new DemonicPassiveState());
 		animationController = new DemonicFormAnimationController(_animator);
 		OnDeath += HandleDeath;
 	}
@@ -50,17 +51,20 @@ public class BossDemonicFormStateMachine : MonoBehaviour
 		negativeEnergyCascade.StopAllCoroutines();
 
 		cascadeOfNeedles.Deinitialize();
-		negativeEnergyCascade.Deinitialize();
+		negativeEnergyCascade.DeinitializeComplitely();
 	}
 	public void InitializeDemonicForm()
 	{
 		InitializeStateMachine();
 		isAttackEnded = false;
-		currentAttack = ChooseNextAttack();
+
+		//currentAttack = ChooseNextAttack();
+		//nextAttack = ChooseNextAttack();
 	}
 	private void Update()
 	{
 		_stateMachine.OnUpdate();
+		currentState_ = currentState;
 	}
 	private void InitializeStateMachine()
 	{
@@ -71,22 +75,22 @@ public class BossDemonicFormStateMachine : MonoBehaviour
 
 		AddTransitionToState(cascadeOfNeedlesState, negativeEnergyCascadeState, () =>
 			isAttackEnded
-			&& currentAttack.Is(NegativeEnergyCascadeTypeAttack)
+			&& nextAttack.Is(NegativeEnergyCascadeTypeAttack)
 		);
 		AddTransitionToState(cascadeOfNeedlesState, cascadeOfNeedlesState, () =>
 			isAttackEnded
+			&& nextAttack.Is(CascadeOfNeedlesTypeAttack)
 			&& currentAttack.Is(CascadeOfNeedlesTypeAttack)
-			&& previousAttack.Is(CascadeOfNeedlesTypeAttack)
 		);
 
 		AddTransitionToState(negativeEnergyCascadeState, cascadeOfNeedlesState, () =>
 			isAttackEnded
-			&& currentAttack.Is(CascadeOfNeedlesTypeAttack)
+			&& nextAttack.Is(CascadeOfNeedlesTypeAttack)
 		);
 		AddTransitionToState(negativeEnergyCascadeState, negativeEnergyCascadeState, () =>
 			isAttackEnded
+			&& nextAttack.Is(NegativeEnergyCascadeTypeAttack)
 			&& currentAttack.Is(NegativeEnergyCascadeTypeAttack)
-			&& previousAttack.Is(NegativeEnergyCascadeTypeAttack)
 		);
 
 		AddTransitionToState(negativeEnergyCascadeState, deathState, () =>
@@ -96,21 +100,23 @@ public class BossDemonicFormStateMachine : MonoBehaviour
 			animationController.GetBool(IsDead)
 		);
 
-		_stateMachine.SetState(cascadeOfNeedlesState);
+		_stateMachine = new StateMachine2(cascadeOfNeedlesState);
+		//_stateMachine.SetState(cascadeOfNeedlesState);
 	}
 	public void HandleDemonicAttackCompletion()
 	{
 		isAttackEnded = true;
-		previousAttack = currentAttack;
-		currentAttack = ChooseNextAttack();
-	}
-	public static TypesOfAttack GetRandomAttackType()
-	{
-		Array values = Enum.GetValues(typeof(TypesOfAttack));
-		return (TypesOfAttack)values.GetValue(random.Next(values.Length));
+		currentAttack = nextAttack;
+		nextAttack = ChooseNextAttack();
 	}
 	public TypesOfAttack ChooseNextAttack()
 	{
+		//if (currentState == nameof(CascadeOfNeedlesState))
+		//{
+		//	return NegativeEnergyCascadeTypeAttack;
+		//}
+
+		//return CascadeOfNeedlesTypeAttack;
 		List<TypesOfAttack> availableAttacks = new List<TypesOfAttack>();
 
 		foreach (TypesOfAttack attack in Enum.GetValues(typeof(TypesOfAttack)))
@@ -127,14 +133,14 @@ public class BossDemonicFormStateMachine : MonoBehaviour
 			availableAttacks.AddRange(Enum.GetValues(typeof(TypesOfAttack)) as TypesOfAttack[]);
 		}
 
-		currentAttack = availableAttacks[random.Next(availableAttacks.Count)];
+		nextAttack = availableAttacks[random.Next(availableAttacks.Count)];
 
-		recentAttacks.Enqueue(currentAttack);
+		recentAttacks.Enqueue(nextAttack);
 		if (recentAttacks.Count > maxRecentAttacks)
 		{
 			recentAttacks.Dequeue();
 		}
 
-		return currentAttack;
+		return nextAttack;
 	}
 }
