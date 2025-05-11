@@ -16,6 +16,7 @@ public class BossController : MonoBehaviour
 	[SerializeField] private float fillDuration = 3f;
 
 
+	[SerializeField] private BossHumanFormStateMachine humanFormMachine;
 	[SerializeField] private BossDemonicFormStateMachine  demonicFormBehaviour;
 	[SerializeField] private BoxCollider2D demonicFormCollider;
 	[SerializeField] private Image screenOverlay;
@@ -58,10 +59,12 @@ public class BossController : MonoBehaviour
 		if (collision.GetComponent<PlayerController>() && isBossInactive)
 		{
 			EnviromentAudioInitializer.Instance.PlayBossPhase1();
-			bossDemonicForm.SetActive(true);
-			demonicFormBehaviour.InitializeDemonicForm();
-			demonicFormCollider.enabled = true;
-			//bossHumanForm.SetActive(true);
+			//bossDemonicForm.SetActive(true);
+			//demonicFormBehaviour.InitializeDemonicForm();
+			//demonicFormCollider.enabled = true;
+			bossHumanForm.SetActive(true);
+			humanFormMachine.humanBehaviour.player = collision.transform;
+
 			healthBarGO.SetActive(true);
 			isBossInactive = false;
 		}

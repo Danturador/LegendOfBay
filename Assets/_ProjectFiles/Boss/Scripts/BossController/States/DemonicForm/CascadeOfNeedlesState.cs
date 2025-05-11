@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static DemonicFormAnimationType;
 
 public class CascadeOfNeedlesState : State2
 {
@@ -19,7 +18,6 @@ public class CascadeOfNeedlesState : State2
 	public override void OnStateEnter()
 	{
 		_stateMachine.isAttackEnded = false;
-		//_animationController.SetBool(IsCascadeOfNeedles, true);
 
 		_stateMachine.StartCoroutine(UseAttack());
 	}
@@ -29,19 +27,20 @@ public class CascadeOfNeedlesState : State2
 	}
 	private IEnumerator UseAttack()
 	{
-		_animationController.SetBool(IsCascadeOfNeedlesRepeat, true);
+		//_animationController.SetBool(IsCascadeOfNeedlesRepeat, true);
+		//_animationController.SetBool(DemonicFormAnimationType.IsCascadeOfNeedles, true);
 
 		yield return _stateMachine.StartCoroutine(_demonicBehaviour.AttackPattern(SetCascadeOfNeedles));
 
-		_animationController.SetBool(IsCascadeOfNeedlesRepeat, false);
+		//_animationController.SetBool(IsCascadeOfNeedlesRepeat, false);
 
 		yield return new WaitForSeconds(3f);
 		
 		_stateMachine.HandleDemonicAttackCompletion();
 	}
-	private void SetCascadeOfNeedles(bool isAttack, bool isLongAttack)
+	public void SetCascadeOfNeedles(bool isAttack, bool isLongAttack)
 	{
-		_animationController.SetBool(IsCascadeOfNeedles, isAttack);
-		_animationController.SetBool(IsCascadeOfNeedlesLong, isLongAttack);
+		_animationController.SetBool(DemonicFormAnimationType.IsCascadeOfNeedles, isAttack);
+		_animationController.SetBool(DemonicFormAnimationType.IsCascadeOfNeedlesLong, isLongAttack);
 	}
 }

@@ -20,6 +20,7 @@ public class BossHumanFormStateMachine : MonoBehaviour
 	public int countOfAttack;
 	public bool isAttackEnded;
 	public TypesOfAttack nextAttack;
+	public string currentState_; 
 
 	private static System.Random random = new System.Random();
 	public enum TypesOfAttack
@@ -40,7 +41,7 @@ public class BossHumanFormStateMachine : MonoBehaviour
 	private void Update()
 	{
 		_stateMachine.OnUpdate();
-		//currentState = _stateMachine.CurrentState.ToString();
+		currentState_ = currentState;
 	}
 	private void InitializeStateMachine()
 	{

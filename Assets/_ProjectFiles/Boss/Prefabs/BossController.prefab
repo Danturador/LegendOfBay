@@ -57,6 +57,7 @@ MonoBehaviour:
   healthBarGO: {fileID: 0}
   healthBar: {fileID: 0}
   fillDuration: 1
+  humanFormMachine: {fileID: 4218714685766083156}
   demonicFormBehaviour: {fileID: 3668973241944085616}
   demonicFormCollider: {fileID: 4303475462078805469}
   screenOverlay: {fileID: 0}
@@ -415,7 +416,7 @@ MonoBehaviour:
   attackIndex: 0
   startFallingPoint: 5
   endFallingPoint: -20
-  delayBeforeFalling: 0
+  delayBeforeFalling: 1.5
   cascadeDelay: 0.2
   attackSequence: 00000000010000000000000001000000
 --- !u!114 &1678119431331438567
@@ -430,8 +431,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 417c729f2be5e244eb5b6b4af7544ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  beamParentPrefab: {fileID: 193285921277189844, guid: bc3c9609301e27345b717b29a0cbead8, type: 3}
   projectionPrefab: {fileID: 1644013801563162775, guid: 4e5ea45b67d667c48b1bfb0f4ec84825, type: 3}
   beamPrefab: {fileID: 7459493261088460664, guid: 3225f59d342096046a8b77454a0f22d6, type: 3}
+  beamParent: {fileID: 0}
   projection: {fileID: 0}
   beam: {fileID: 0}
   projectionDuration: 2
@@ -613,6 +616,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4171157461126285120}
   m_SourcePrefab: {fileID: 100100000, guid: e6817a256232e244fa01281582a2210e, type: 3}
+--- !u!114 &4218714685766083156 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -7938639562004219938, guid: e6817a256232e244fa01281582a2210e, type: 3}
+  m_PrefabInstance: {fileID: 3125405536115201418}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5544132886645364531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbb16b06f5d5e234c8c0828ae49d525a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5544132886645364531 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7471221892676928185, guid: e6817a256232e244fa01281582a2210e, type: 3}
