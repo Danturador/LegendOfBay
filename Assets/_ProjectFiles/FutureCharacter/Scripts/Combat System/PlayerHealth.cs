@@ -66,6 +66,7 @@ public class PlayerHealth : HealthManager
             _animator.SetTrigger("PlayerDie");
             inputController.Gameplay.Disable();
             ParticleSystem effect = Instantiate(_dieEffect,diePosition.position, Quaternion.identity);
+            gameObject.GetComponentInParent<BoxCollider2D>().enabled = false;
             StartCoroutine(PlayerDieCoroutine());
             Debug.Log("Player Die");
         }
