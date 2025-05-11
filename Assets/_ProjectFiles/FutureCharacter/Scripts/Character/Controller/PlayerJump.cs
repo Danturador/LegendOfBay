@@ -111,6 +111,9 @@ public class PlayerJump : MonoBehaviour
         _isGrounded = false;
         _coyoteTimer = 0;
         _jumpBufferCounter = 0;
+
+        _rb.velocity = new Vector2(_rb.velocity.x, 0);
+
         _rb.AddForce(Vector2.up * jumpForce*3, ForceMode2D.Impulse);
         _jumpImpulseTime = 0.1f;
     }
