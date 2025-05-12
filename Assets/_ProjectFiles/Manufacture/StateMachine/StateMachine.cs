@@ -1,7 +1,6 @@
 using System;
 using System.Linq;
 using _ProjectFiles.Enemy.Scripts.Core;
-using UnityEngine;
 
 public abstract class StateMachine
 {
@@ -29,8 +28,6 @@ public abstract class StateMachine
         foreach (var transition in _transitions)
             if (transition.From == _current.GetType() && transition.Condition())
                 TranslateTo(transition.To);
-
-        Debug.Log(_current.GetType().Name);
     }
 
     private void TranslateTo(Type targetType)

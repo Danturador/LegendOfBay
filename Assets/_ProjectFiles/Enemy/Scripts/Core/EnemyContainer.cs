@@ -4,6 +4,7 @@ using _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Kirin;
 using _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Shishi;
 using _ProjectFiles.Enemy.Scripts.Core.Instances.Hundun;
 using UnityEngine;
+using Zenject.SpaceFighter;
 using ShishiAttack = _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Shishi.ShishiAttack;
 
 namespace _ProjectFiles.Enemy.Scripts.Core
@@ -16,6 +17,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         [SerializeField] private Animator animator;
         [SerializeField] private new Rigidbody2D rigidbody;
         [SerializeField] private new EnemyRenderer renderer;
+        [SerializeField] private MonsterHealth monsterHealth;
 
         [Header("Behaviour")] [SerializeField] private EnemyNavigation enemyNavigation;
 
@@ -27,6 +29,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         private EnemyDetectionZone _targetZone;
         public EnemyNavigation Navigation => enemyNavigation;
         public EnemyAttack Attack => enemyAttack;
+        public MonsterHealth Health => monsterHealth;
         public EnemyRenderer Renderer => renderer;
         public Animator Animator => animator;
         public Rigidbody2D Rigidbody => rigidbody;
@@ -35,6 +38,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         public Collider2D GroundCollider { get; private set; }
 
         public bool IsVisibleByPlayer { get; private set; }
+        public bool IsInitialized { get; private set; }
 
         private void Start()
         {
@@ -78,11 +82,6 @@ namespace _ProjectFiles.Enemy.Scripts.Core
             if (other.TryGetComponent(out EnemyDetectionZone zone)) _targetZone = null;
         }
 
-        public bool IsOutOfBounds()
-        {
-            return true;
-        }
-
         private void Initialize()
         {
             switch (profile.EnemyInfo.Type)
@@ -118,6 +117,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
             }
 
             _enemy = new Enemy(profile, this);
+            IsInitialized = true;
         }
     }
 }

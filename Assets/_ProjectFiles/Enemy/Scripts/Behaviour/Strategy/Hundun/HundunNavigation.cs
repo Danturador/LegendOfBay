@@ -60,5 +60,24 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
             _token.Cancel();
             _rigidbody.velocity = Vector2.zero;
         }
+
+        public IEnumerator SendToPoint(Vector3 point)
+        {
+            Vector2 moveDirection = (point - _rigidbody.transform.position).normalized;
+            var moveTime = _info.DashTime;
+            var distanceToTarget = Vector2.Distance(point, _rigidbody.transform.position);
+            var velocityMagnitude = distanceToTarget / _speedCurve.FunctionSquare(100);
+            var time = 0f;
+
+            while (time < moveTime)
+            {
+                time += Time.deltaTime;
+
+                var currentVelocity = velocityMagnitude * _speedCurve.Evaluate(time) * moveDirection;
+                _rigidbody.velocity = currentVelocity;
+
+                yield return null;
+            }
+        }
     }
 }

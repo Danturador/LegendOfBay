@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escapeRange: 4
   moveSpeed: 5
+  stopEdgeValue: 3

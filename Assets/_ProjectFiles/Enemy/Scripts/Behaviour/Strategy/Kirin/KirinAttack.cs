@@ -14,20 +14,20 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
 
         public KirinAttack(EnemyContainer container)
         {
-            //Time.timeScale = 0.2f;
             _container = container;
             _info = container.Profile.AttackInfo as KirinAttackInfo;
-            
         }
 
         public IEnumerator Execute(PlayerController target)
         {
             _token = new CancellationTokenSource();
-            
+
             while (!_token.IsCancellationRequested)
             {
                 if ((_container.transform.position.x < target.transform.position.x &&
-                     _container.Renderer.CurrentScale < 0) || (_container.transform.position.x > target.transform.position.x && _container.Renderer.CurrentScale > 0))
+                     _container.Renderer.CurrentScale < 0) ||
+                    (_container.transform.position.x > target.transform.position.x &&
+                     _container.Renderer.CurrentScale > 0))
                 {
                     _container.Animator.SetBool("backAttack", true);
                     yield return new WaitForSeconds(_info.BackAttackStartDelay);
@@ -39,14 +39,10 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
                 }
 
                 if (!_token.IsCancellationRequested)
-                {
                     _container.Attack.Attack();
-                }
                 else
-                {
                     yield break;
-                }
-                
+
                 yield return new WaitForSeconds(_info.AttackDelay);
             }
         }

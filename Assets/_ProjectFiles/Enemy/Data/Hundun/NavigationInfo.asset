@@ -15,7 +15,7 @@ MonoBehaviour:
   startDashDelay: 0.5
   dashTimeInterval: 1
   dashTime: 2
-  randomTargetOffset: {x: 0.5, y: 0.5}
+  randomTargetOffset: {x: 1, y: 1}
   speedCurve:
     serializedVersion: 2
     m_Curve:

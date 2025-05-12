@@ -1,13 +1,11 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class MonsterHealth : HealthManager, IDamageable
 {
     [SerializeField] private GameObject _hpBarGameobject;
     public event Action<float> HealthChanged;
+    public Action OnDeath { get; set; }
 
     private void Start()
     {
@@ -34,7 +32,8 @@ public class MonsterHealth : HealthManager, IDamageable
 
     protected override void Die()
     {
-        Debug.Log("Monster Die");
+        OnDeath?.Invoke();
+        OnDeath = null;
         Destroy(this.gameObject);
     }
 }
