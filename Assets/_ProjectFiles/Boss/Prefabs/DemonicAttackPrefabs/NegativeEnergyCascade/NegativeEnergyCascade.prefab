@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309654997508441839}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.4848096, w: 0.8746197}
+  m_LocalRotation: {x: 0, y: 0, z: -0.4694715, w: 0.8829476}
   m_LocalPosition: {x: -0.89, y: -0.34, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32,7 +32,7 @@ Transform:
   - {fileID: 7853643194809239642}
   - {fileID: 3663637718303749237}
   m_Father: {fileID: 7259541784163795682}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -58}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -56}
 --- !u!1 &690900931348043077
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +57,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690900931348043077}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.47715867, w: 0.8788172}
+  m_LocalRotation: {x: 0, y: 0, z: 0.45554492, w: 0.89021283}
   m_LocalPosition: {x: 0.59, y: -0.52, z: 0.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -65,7 +65,7 @@ Transform:
   - {fileID: 1637574968114034812}
   - {fileID: 2531015730700256474}
   m_Father: {fileID: 7259541784163795682}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 57}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 54.2}
 --- !u!1 &847478162599524023
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,16 +686,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7459493261088460664}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.5, z: 0, w: 0.8660254}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 1.3333334, z: 2.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4895012626610679048}
   - {fileID: 1173936528363721187}
   - {fileID: 4823483698455715997}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 60, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &8175710512534836989
 PolygonCollider2D:
   m_ObjectHideFlags: 0

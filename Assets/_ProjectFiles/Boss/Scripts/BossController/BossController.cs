@@ -19,6 +19,7 @@ public class BossController : MonoBehaviour
 	[SerializeField] private BossHumanFormStateMachine humanFormMachine;
 	[SerializeField] private BossDemonicFormStateMachine  demonicFormBehaviour;
 	[SerializeField] private GameObject finishScreen;
+	[SerializeField] private BoxCollider2D arenaDoorCollider;
 	[SerializeField] private BoxCollider2D demonicFormCollider;
 	[SerializeField] private Image screenOverlay;
 	[SerializeField] private float invulnerabilityDuration = 5f;
@@ -33,6 +34,8 @@ public class BossController : MonoBehaviour
 		healthBarGO.SetActive(false);
 		bossDemonicForm.SetActive(false);
 		isBossInactive = true;
+
+		arenaDoorCollider.gameObject.SetActive(false);
 
 		humanFormHealthController.HealthChanged += HandleHumanFormDeath;
 		demonicFormHealthController.HealthChanged += HandleDemonFormDeath;
@@ -64,6 +67,9 @@ public class BossController : MonoBehaviour
 			//bossDemonicForm.SetActive(true);
 			//demonicFormBehaviour.InitializeDemonicForm();
 			//demonicFormCollider.enabled = true;
+
+			arenaDoorCollider.gameObject.SetActive(true);
+
 			bossHumanForm.SetActive(true);
 			humanFormMachine.humanBehaviour.player = collision.transform;
 
@@ -74,6 +80,8 @@ public class BossController : MonoBehaviour
 
 	private IEnumerator TransitionToDemonicForm()
 	{
+		EnviromentAudioInitializer.Instance.PlayBossPhase2();
+
 		screenOverlay.color = new Color(1, 1, 1, 0);
 		screenOverlay.gameObject.SetActive(true);
 		float elapsedTime = 0f;
@@ -109,7 +117,6 @@ public class BossController : MonoBehaviour
 	{
 		yield return new WaitForSeconds(invulnerabilityDuration);
 		
-		EnviromentAudioInitializer.Instance.PlayBossPhase2();
 		demonicFormBehaviour.InitializeDemonicForm();
 		demonicFormCollider.enabled = true;
 	}

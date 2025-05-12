@@ -19,7 +19,7 @@ namespace _ProjectFiles.SaveSystem
         public GameData()
         {
             PlayerHealth = 100f;
-            Position = Vector3.zero;
+            Position = new Vector3(0, -0.68f, 0);
             HaveGrapplingHook = false;
             SpawnersHolderData = new SpawnersHolderData();
             DoorsHolderData = new DoorsHolderData();

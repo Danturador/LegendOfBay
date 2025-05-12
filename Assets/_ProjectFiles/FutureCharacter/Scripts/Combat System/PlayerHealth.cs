@@ -40,7 +40,11 @@ public class PlayerHealth : HealthManager
         }
         
     }
-
+	public void UpdateHealth()
+	{
+		currentHealth = maxHealth;
+		HealthChanged?.Invoke(currentHealth);
+	}
     private IEnumerator InvulnerabilityCoroutine()
     {
         isInvulnerable = true;

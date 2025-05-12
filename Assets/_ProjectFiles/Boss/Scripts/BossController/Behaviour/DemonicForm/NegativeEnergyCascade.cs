@@ -25,6 +25,7 @@ public class NegativeEnergyCascade : MonoBehaviour, IDemonicAttack
 	private void Initialize()
 	{
 		beamParent = Instantiate(beamParentPrefab, transform.position, Quaternion.identity);
+		beamParent.transform.SetParent(this.transform);
 
 		projectionDuration = 0.5f;
 		beamDuration = 1f;
