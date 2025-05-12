@@ -94,8 +94,7 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-         Vector2 moveInput = _inputController.Gameplay.Movement.ReadValue<Vector2>();
-
+        moveInput = _inputController.Gameplay.Movement.ReadValue<Vector2>();
         if (!playerDash.IsDashing() && !grapplingHook.isGrappling)
         {
             if (IsMovingItem)
@@ -134,7 +133,7 @@ public class PlayerController : MonoBehaviour
     {
         if(IsMovingItem == false)
         {
-            playerDash.PerformDash(new Vector2(rb.velocity.x, 0f).normalized);
+            playerDash.PerformDash(moveInput);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

@@ -24,7 +24,7 @@ public class PlayerDash : MonoBehaviour
 
     public void PerformDash(Vector2 moveDirection)
     {
-        if (_canDash)
+        if (_canDash && moveDirection.x != 0)
         {
             StartCoroutine(Dash(moveDirection));
         }
