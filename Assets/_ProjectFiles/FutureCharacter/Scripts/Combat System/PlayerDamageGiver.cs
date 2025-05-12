@@ -11,6 +11,7 @@ public class PlayerDamageGiver : MonoBehaviour
     private GameObject _damageGiverGameObject;
     private LayerMask _damageLayer;
     private PlayerAudioInitializer _audioInitializer;
+    [SerializeField]private PlayerJump _playerJump;
     private void Awake()
     {
         _attackRadius = 2f;
@@ -20,6 +21,8 @@ public class PlayerDamageGiver : MonoBehaviour
     private void Start()
     {
         _audioInitializer = GetComponent<PlayerAudioInitializer>();
+        _playerJump = GetComponentInParent<PlayerJump>();
+
     }
 
     public void AttackSlash(int numberEffect)
@@ -62,6 +65,18 @@ public class PlayerDamageGiver : MonoBehaviour
     private void CameraShake()
     {
         CinemachineShake.Instance.ShakeCamera(5f, 0.1f);
+    }
+
+    public void StopGravity(int number)
+    {
+        if(number == 1)
+        {
+            _playerJump.StopGravity(true);
+        }
+        else
+        {
+            _playerJump.StopGravity(false);
+        }
     }
 
     private void OnDrawGizmos()

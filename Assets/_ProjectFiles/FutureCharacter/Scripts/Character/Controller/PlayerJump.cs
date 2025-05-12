@@ -24,6 +24,7 @@ public class PlayerJump : MonoBehaviour
     private float _coyoteTimer;
     private float _jumpBufferCounter;
     private float _jumpImpulseTime;
+    private bool _stopGravityScale;
 
     public void Initialize(Rigidbody2D rigidbody)
     {
@@ -45,7 +46,10 @@ public class PlayerJump : MonoBehaviour
     private void FixedUpdate()
     {
         CheckGroundedStatus();
-        AdjustGravityScale();
+        if(_stopGravityScale == false)
+        {
+            AdjustGravityScale();
+        }
         HandleJump();
         HandleHoldJump();
         HandleDoubleJump();
@@ -188,6 +192,19 @@ public class PlayerJump : MonoBehaviour
         }
     }
 
+    public void StopGravity(bool stopGravity)
+    {
+        if (stopGravity)
+        {
+            _rb.gravityScale = 0;
+            _stopGravityScale = true;
+        }
+        else
+        {    
+            _rb.gravityScale = 3;
+            _stopGravityScale = false;
+        }
+    }
     public void HoldJump(bool holdJump)
     {
         _isJumping = holdJump;
