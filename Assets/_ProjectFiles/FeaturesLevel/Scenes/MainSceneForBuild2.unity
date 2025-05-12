@@ -1054,11 +1054,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -714679701355179268, guid: e52f4e8c182370245a62afd6b365ad63, type: 3}
       propertyPath: followOffsetX
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -714679701355179268, guid: e52f4e8c182370245a62afd6b365ad63, type: 3}
       propertyPath: followOffsetY
-      value: 50
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: -714679701355179268, guid: e52f4e8c182370245a62afd6b365ad63, type: 3}
       propertyPath: virtualCamera
@@ -12486,8 +12486,8 @@ Transform:
   m_GameObject: {fileID: 930876131}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 124.13, y: -5.8, z: 0}
-  m_LocalScale: {x: 2.2254696, y: 2.1814945, z: 1}
+  m_LocalPosition: {x: 127, y: -5.8, z: 0}
+  m_LocalScale: {x: 3.8, y: 2.1814945, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 111712957}

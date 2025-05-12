@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerDash playerDash;
     [SerializeField] private PlayerJump playerJump;
     [SerializeField] private GrapplingHook grapplingHook;
+    [SerializeField] private BackLightGrapplingPoints backLightGrapplingPoints;
     [SerializeField] private bool grappingHookEnable;
     [SerializeField] private bool possibleUseGrapplingHook;
     [SerializeField] private bool movableItem;
@@ -39,7 +40,7 @@ public class PlayerController : MonoBehaviour
         playerJump.Initialize(rb);
 		inventory = GetComponent<Inventory>();
         Collider = GetComponent<Collider2D>();
-
+        backLightGrapplingPoints = FindAnyObjectByType<BackLightGrapplingPoints>();
     }
 
 	//public void TryOpenDoor(Door door)
@@ -176,6 +177,13 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.GetComponent<BackLightGrapplingTrigger>() != null)
         {
+            bool activateBacklight;
+            activateBacklight = backLightGrapplingPoints.BackLightEnabled();
+            if (grappingHookEnable && activateBacklight == false)
+            {
+                backLightGrapplingPoints.EnableBacklight();
+                backLightGrapplingPoints.BackLightActivate();
+            }
             possibleUseGrapplingHook = true;
         }
     }
