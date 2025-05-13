@@ -11,9 +11,21 @@ public class CutscenePlayer : MonoBehaviour
     [SerializeField] private float dropSpeed;
     private float _currentFill;
     private Action _onPlayEnd;
+    private bool _isEnded;
+    
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
 
     private void Update()
     {
+        if (_isEnded)
+        {
+            skipProgress.fillAmount = 1;
+            return;
+        }
+        
         if (Input.GetKey(KeyCode.Escape))
         {
             _currentFill += Time.deltaTime;
@@ -26,7 +38,11 @@ public class CutscenePlayer : MonoBehaviour
 
         skipProgress.fillAmount = _currentFill / fillDuration;
 
-        if (skipProgress.fillAmount >= 1) PlayerOnloopPointReached(player);
+        if (skipProgress.fillAmount >= 1)
+        {
+            PlayerOnloopPointReached(player);
+            _isEnded = true;
+        }
     }
 
     public void Play(Action onPlayEnd)
@@ -42,10 +58,7 @@ public class CutscenePlayer : MonoBehaviour
     {
         player.loopPointReached -= PlayerOnloopPointReached;
         source.Stop();
-        
-        gameObject.SetActive(false);
-        if (_onPlayEnd != null) _onPlayEnd();
 
-        Debug.Log("stopped");
+        if (_onPlayEnd != null) _onPlayEnd();
     }
 }

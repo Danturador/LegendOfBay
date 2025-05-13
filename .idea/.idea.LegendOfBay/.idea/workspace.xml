@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de615d76-5392-4624-a2d1-d4901732ccf9" name="Changes" comment="" />
+    <list default="true" id="de615d76-5392-4624-a2d1-d4901732ccf9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Cutscenes/Prefabs/EntryCutscene_Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Cutscenes/Prefabs/EntryCutscene_Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Cutscenes/Scripts/CutscenePlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Cutscenes/Scripts/CutscenePlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/NewGameButtonHandlers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/NewGameButtonHandlers.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Sprites/Video.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Sprites/Video.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Tools/SceneTransition/SceneTransition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Tools/SceneTransition/SceneTransition.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,6 +35,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/26/759d0383/NullReferenceException.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/779cc116a5954f1c9b92496e62345641175c00/12/eccef20c/SetupCoroutine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/779cc116a5954f1c9b92496e62345641175c00/7e/c3f7da28/Time.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/779cc116a5954f1c9b92496e62345641175c00/c3/ec890364/AnimationCurve.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/779cc116a5954f1c9b92496e62345641175c00/c6/3993424c/MonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
@@ -101,10 +110,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14376">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="13992">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="14376" />
+      <option name="pid" value="13992" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -140,6 +149,7 @@
       <workItem from="1746732833986" duration="562000" />
       <workItem from="1746875768972" duration="3210000" />
       <workItem from="1747081111717" duration="5736000" />
+      <workItem from="1747140930122" duration="6635000" />
     </task>
     <servers />
   </component>
