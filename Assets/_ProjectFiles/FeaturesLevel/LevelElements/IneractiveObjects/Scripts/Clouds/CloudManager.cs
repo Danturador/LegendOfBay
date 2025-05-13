@@ -5,7 +5,7 @@ public class CloudManager : MonoBehaviour
 {
 	[SerializeField] private float _xStartPosition;
 	[SerializeField] private float _xEndPosition;
-	[SerializeField] private float _speed = 5.0f;
+	[SerializeField] private AnimationCurve _speedCurve;
 	[SerializeField] private float _delay = 1.0f;
 	[SerializeField] private GameObject player;
 
@@ -38,15 +38,17 @@ public class CloudManager : MonoBehaviour
 		{
 			Vector3 targetPosition = _movingRight ? _endPosition : _startPosition;
 			float distance = Vector3.Distance(transform.position, targetPosition);
-			float duration = distance / _speed;
+			float duration = distance / _speedCurve.Evaluate(0);
 
 			float time = 0;
 			Vector3 startPosition = transform.position;
 
-			while (time < 1)
+			while (time < duration)
 			{
-				time += Time.deltaTime / duration;
-				transform.position = Vector3.Lerp(startPosition, targetPosition, time);
+				time += Time.deltaTime;
+				float normalizedTime = time / duration;
+				float speed = _speedCurve.Evaluate(normalizedTime);
+				transform.position = Vector3.Lerp(startPosition, targetPosition, normalizedTime);
 				yield return null;
 			}
 
