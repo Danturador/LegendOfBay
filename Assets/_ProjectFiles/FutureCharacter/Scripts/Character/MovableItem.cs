@@ -17,7 +17,7 @@ public class MovableItem : MonoBehaviour
         {
             
             transform.SetParent(player);
-            transform.localPosition = new Vector2(2f, 0.2f);
+            transform.localPosition = new Vector2(1.8f, 0.15f);
             isChild = true;
         }
     }
