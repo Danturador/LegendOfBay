@@ -52,7 +52,7 @@ public class EnviromentAudioInitializer : MonoBehaviour
 	}
 	private void Start()
 	{
-		_ambientSource.clip = GetClip(Ambient);
+		_ambientSource.clip = GetClip(AmbientStart);
 		_ambientSource.loop = true;
 //		_ambientSource.volume = 1.0f;
 		_ambientSource.Play();
@@ -65,9 +65,9 @@ public class EnviromentAudioInitializer : MonoBehaviour
 		}
 	}
 
-	public void PlayAmbientStart()
+	public void PlayAmbient(SoundType soundType)
 	{
-		StartFadeAndSwitch(GetClip(Ambient));
+		StartFadeAndSwitch(GetClip(soundType));
 	}
 	public void PlayBossPhase1()
 	{
@@ -96,7 +96,7 @@ public class EnviromentAudioInitializer : MonoBehaviour
 		if (!_inCave) return;
 
 		_inCave = false;
-		StartFadeAndSwitch(GetClip(Ambient));
+		StartFadeAndSwitch(GetClip(AmbientStart));
 	}
 
 	private void StartFadeAndSwitch(AudioClip newClip)

@@ -81,7 +81,8 @@ namespace _GameAssets.Scripts.Spawner
 
 				enemyAmounts[enemyIndex]--;
 
-				EnemyContainer enemy = Instantiate(enemyProfiles.enemiesOfWave[enemyIndex].enemyPrefab);
+				EnemyContainer enemyPrefab = enemyProfiles.enemiesOfWave[enemyIndex].enemyPrefab;
+				EnemyContainer enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
 				enemy.transform.position += Vector3.right * Random.Range(-2, 2);
 				_enemies.Add(enemy);
 				

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -1561922974103141592}
   - component: {fileID: 7784037256654853742}
   - component: {fileID: 8118393265103105493}
+  - component: {fileID: 3302543779367356375}
   m_Layer: 0
   m_Name: SpikePit
   m_TagString: Untagged
@@ -142,9 +143,24 @@ SpriteRenderer:
   m_Size: {x: 1.61, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3302543779367356375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3176376314952951481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be1accbf2b875594787c9194a9c15a5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectSpawner: {fileID: 0}
+  playerHealth: {fileID: 0}
+  _damage: 5
 --- !u!1 &5578476301813963840
 GameObject:
   m_ObjectHideFlags: 0

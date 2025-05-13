@@ -33,6 +33,7 @@ namespace _ProjectFiles.SaveSystem
         public void UpdateDoors(DoorsHolderData data) => _data.SetDoors(data);
 
         public void UpdateInventory(List<string> data) => _data.SetInventory(data);
+        public void UpdateCollectedKeysCount(int data) => _data.SetCollectedKeyCount(data);
         
         public void UpdateTexture(Texture2D texture2D) => _data.SetTexture(texture2D);
     }

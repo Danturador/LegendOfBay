@@ -8,6 +8,11 @@ public class BossDamager : MonoBehaviour
 	[SerializeField] private PlayerHealth playerHealth;
 	[SerializeField] private int _damage = 5;
 
+	private void Awake()
+	{
+		playerHealth = FindFirstObjectByType<PlayerHealth>();
+		effectSpawner = FindFirstObjectByType<EffectSpawner>();
+	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.GetComponent<PlayerController>() == null) return;

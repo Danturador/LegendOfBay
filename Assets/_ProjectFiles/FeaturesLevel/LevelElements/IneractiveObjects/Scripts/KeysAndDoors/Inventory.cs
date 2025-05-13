@@ -12,11 +12,12 @@ public class Inventory : MonoBehaviour
 	[SerializeField] private Image redKey;
 
 	private HashSet<string> _keys = new();
-	private bool _initialized;
+	private int _keysCollected;
 	
 	private void Awake()
 	{
 		_keys = _saveSystem.gameData.Inventory.ToHashSet();
+		_keysCollected = _saveSystem.gameData.keysCollected;
 		ShowKeyIcons();
 	}
 
@@ -24,8 +25,11 @@ public class Inventory : MonoBehaviour
 	{
 		if (!_keys.Add(id)) 
 			return false;
-		
+
+		_keysCollected++;
+
 		_saveSystem.UpdateInventory(_keys.ToList());
+		_saveSystem.UpdateCollectedKeysCount(_keysCollected);
 		ShowKeyIcons();
 		return true;
 	}

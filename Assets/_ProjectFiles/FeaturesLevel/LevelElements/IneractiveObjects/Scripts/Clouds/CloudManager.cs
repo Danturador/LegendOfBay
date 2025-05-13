@@ -13,7 +13,7 @@ public class CloudManager : MonoBehaviour
 	private Vector3 _startPosition;
 	private Vector3 _endPosition;
 
-	private Vector3 _lastCloudPosition; // Store the cloud's previous position
+	private Vector3 _lastCloudPosition;
 
 	private void Awake()
 	{
@@ -22,7 +22,7 @@ public class CloudManager : MonoBehaviour
 		_endPosition = transform.parent.TransformPoint(new Vector3(_xEndPosition, transform.localPosition.y, transform.localPosition.z));
 
 		transform.position = _startPosition;
-		_lastCloudPosition = transform.position; // Initialize last position
+		_lastCloudPosition = transform.position;
 
 		Invoke(nameof(StartMovement), _delay);
 	}
@@ -73,18 +73,16 @@ public class CloudManager : MonoBehaviour
 
 	private bool _playerAttached = false;
 
-	private void FixedUpdate() // Use FixedUpdate for physics
+	private void FixedUpdate()
 	{
 		if (_playerAttached && player != null)
 		{
-			// Calculate the cloud's movement since the last frame
 			Vector3 cloudMovement = transform.position - _lastCloudPosition;
 
-			// Apply the cloud's movement to the player
-			player.transform.position += cloudMovement; // Or player.GetComponent<Rigidbody2D>().MovePosition(player.transform.position + cloudMovement);
-
+			//player.transform.position += cloudMovement;
+			player.transform.position = Vector3.Lerp(player.transform.position, player.transform.position + cloudMovement, Time.fixedDeltaTime * 2);
 		}
 
-		_lastCloudPosition = transform.position; // Update last position
+		_lastCloudPosition = transform.position;
 	}
 }
