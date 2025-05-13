@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="de615d76-5392-4624-a2d1-d4901732ccf9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Cutscenes/Prefabs/EntryCutscene_Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Cutscenes/Prefabs/EntryCutscene_Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Cutscenes/Scripts/CutscenePlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Cutscenes/Scripts/CutscenePlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/NewGameButtonHandlers.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/MenuButtons/NewGameButtonHandlers.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Sprites/Video.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Menu/Sprites/Video.renderTexture" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Tools/SceneTransition/SceneTransition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Tools/SceneTransition/SceneTransition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Hundun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Hundun.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Kirin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Kirin.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Shishi.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Shishi.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scenes/Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scenes/Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scenes/Test.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scenes/Test.unity.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +148,7 @@
       <workItem from="1746732833986" duration="562000" />
       <workItem from="1746875768972" duration="3210000" />
       <workItem from="1747081111717" duration="5736000" />
-      <workItem from="1747140930122" duration="6635000" />
+      <workItem from="1747140930122" duration="8361000" />
     </task>
     <servers />
   </component>
@@ -165,5 +164,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyAttack.cs</url>
+          <line>24</line>
+          <properties documentPath="E:\Repositories\Unity\LegendOfBay\Assets\_ProjectFiles\Enemy\Scripts\Core\EnemyAttack.cs" containingFunctionPresentation="Method 'Attack'">
+            <startOffsets>
+              <option value="766" />
+            </startOffsets>
+            <endOffsets>
+              <option value="858" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
