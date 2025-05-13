@@ -78,7 +78,10 @@ public class SceneTransition : MonoBehaviour
             var color = fadeImage.color;
             color.a = alpha;
             fadeImage.color = color;
-            menuAudio.volume = 1 - alpha;
+			if (menuAudio != null)
+			{
+				menuAudio.volume = 1 - alpha;
+			}
             yield return null;
         }
 
