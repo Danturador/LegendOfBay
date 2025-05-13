@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="de615d76-5392-4624-a2d1-d4901732ccf9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/NavigationInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/NavigationInfo.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Shishi/NavigationInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Shishi/NavigationInfo.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Hundun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Hundun.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scenes/Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scenes/Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Kirin/KirinAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Kirin/KirinAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Hundun/HundunNavigation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Hundun/HundunNavigation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Kirin/KirinAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Kirin/KirinAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Kirin/KirinNavigation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Kirin/KirinNavigation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyContainer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/FeaturesLevel/LevelElements/IneractiveObjects/Animations/Portal/PortalAnimatorController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/FeaturesLevel/LevelElements/IneractiveObjects/Animations/Portal/PortalAnimatorController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/FutureCharacter/Scripts/Combat System/MonsterHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/FutureCharacter/Scripts/Combat System/MonsterHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Manufacture/StateMachine/StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Manufacture/StateMachine/StateMachine.cs" afterDir="false" />
-    </list>
+    <list default="true" id="de615d76-5392-4624-a2d1-d4901732ccf9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,7 +139,7 @@
       <workItem from="1746616085522" duration="6712000" />
       <workItem from="1746732833986" duration="562000" />
       <workItem from="1746875768972" duration="3210000" />
-      <workItem from="1747081111717" duration="5372000" />
+      <workItem from="1747081111717" duration="5736000" />
     </task>
     <servers />
   </component>
