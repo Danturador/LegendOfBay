@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossHumanForm: {fileID: 5544132886645364531}
-  humanFormHealthController: {fileID: 409743570604865087}
+  humanFormHealthController: {fileID: 1168974980189594074}
   bossDemonicForm: {fileID: 3764004824669367464}
   demonicFormHealthController: {fileID: 424602102140684240}
   healthBarGO: {fileID: 0}
@@ -243,83 +243,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundType: 0
---- !u!1 &816924405617512378
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5480093634677450986}
-  - component: {fileID: 529188691974508801}
-  m_Layer: 9
-  m_Name: DashCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5480093634677450986
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816924405617512378}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6975182850592284773}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &529188691974508801
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 816924405617512378}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.7, y: -0.27}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 3.2, y: 2.4}
-  m_EdgeRadius: 0
 --- !u!1 &1878924963987708325
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,83 +445,6 @@ MonoBehaviour:
   attackDelay: 0.5
   rotationAngle: 15
   countOfAttacks: 0
---- !u!1 &7044423237233419830
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4153292846167681210}
-  - component: {fileID: 5784737280442228800}
-  m_Layer: 9
-  m_Name: SwordSlashCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4153292846167681210
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7044423237233419830}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6975182850592284773}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &5784737280442228800
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7044423237233419830}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.6, y: 2.5}
-  m_EdgeRadius: 0
 --- !u!1001 &3125405536115201418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -607,18 +453,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6236074584863045121}
     m_Modifications:
-    - target: {fileID: -7938639562004219938, guid: e6817a256232e244fa01281582a2210e, type: 3}
-      propertyPath: nextAttack
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1841373631443212004, guid: e6817a256232e244fa01281582a2210e, type: 3}
-      propertyPath: m_Name
-      value: RigidbodyCollider
-      objectReference: {fileID: 0}
-    - target: {fileID: 1841373631443212004, guid: e6817a256232e244fa01281582a2210e, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 5445828444998645231, guid: e6817a256232e244fa01281582a2210e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -659,43 +493,27 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7282594147076364282, guid: e6817a256232e244fa01281582a2210e, type: 3}
-      propertyPath: dashCollider
-      value: 
-      objectReference: {fileID: 529188691974508801}
-    - target: {fileID: 7282594147076364282, guid: e6817a256232e244fa01281582a2210e, type: 3}
-      propertyPath: swordSlashCollider
-      value: 
-      objectReference: {fileID: 5784737280442228800}
     - target: {fileID: 7471221892676928185, guid: e6817a256232e244fa01281582a2210e, type: 3}
       propertyPath: m_Name
       value: BossHuman
       objectReference: {fileID: 0}
-    - target: {fileID: 7471221892676928185, guid: e6817a256232e244fa01281582a2210e, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8072207581457755628, guid: e6817a256232e244fa01281582a2210e, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6243638278299434658, guid: e6817a256232e244fa01281582a2210e, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5445828444998645231, guid: e6817a256232e244fa01281582a2210e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5480093634677450986}
-    - targetCorrespondingSourceObject: {fileID: 5445828444998645231, guid: e6817a256232e244fa01281582a2210e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4153292846167681210}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7471221892676928185, guid: e6817a256232e244fa01281582a2210e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 409743570604865087}
-    - targetCorrespondingSourceObject: {fileID: 7471221892676928185, guid: e6817a256232e244fa01281582a2210e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4171157461126285120}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6817a256232e244fa01281582a2210e, type: 3}
+--- !u!114 &1168974980189594074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4280288041243423824, guid: e6817a256232e244fa01281582a2210e, type: 3}
+  m_PrefabInstance: {fileID: 3125405536115201418}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5544132886645364531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214e929e85310dc48b78e381597597f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4218714685766083156 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -7938639562004219938, guid: e6817a256232e244fa01281582a2210e, type: 3}
@@ -712,37 +530,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7471221892676928185, guid: e6817a256232e244fa01281582a2210e, type: 3}
   m_PrefabInstance: {fileID: 3125405536115201418}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &409743570604865087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5544132886645364531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 214e929e85310dc48b78e381597597f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 50
-  currentHealth: 0
-  _hpBarGameobject: {fileID: 0}
-  isHumanForm: 1
---- !u!114 &4171157461126285120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5544132886645364531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be1accbf2b875594787c9194a9c15a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectSpawner: {fileID: 0}
-  playerHealth: {fileID: 0}
-  _damage: 1
 --- !u!4 &6975182850592284773 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5445828444998645231, guid: e6817a256232e244fa01281582a2210e, type: 3}

@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Zenject;
 using UnityEngine;
+using _ProjectFiles.SaveSystem;
 using static _ProjectFiles.SoundContainer.SoundType;
 
 public class AudioTrigger : MonoBehaviour
 {
+	[Inject] private SaveSystemController _saveSystemController;
 	[SerializeField] private EnviromentAudioInitializer soundManager;
 	[SerializeField] private TriggerType triggerType;
 	[SerializeField] private bool needHandleColliderExit;
@@ -55,11 +58,13 @@ public class AudioTrigger : MonoBehaviour
 				if (isNewAmbientPlay)
 				{
 					soundManager.PlayAmbient(AmbientStart);
+					_saveSystemController.UpdateCurrentAmbient(AmbientStart);
 					isNewAmbientPlay = false;
 				}
 				else
 				{
 					soundManager.PlayAmbient(AmbientEnd);
+					_saveSystemController.UpdateCurrentAmbient(AmbientEnd);
 					isNewAmbientPlay = true;
 				}
 				break;

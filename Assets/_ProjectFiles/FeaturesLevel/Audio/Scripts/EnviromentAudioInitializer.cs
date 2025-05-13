@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.Collections;
 using Zenject;
+using _ProjectFiles.SaveSystem;
 using _ProjectFiles.SoundContainer;
 using static _ProjectFiles.SoundContainer.SoundType;
 
 [RequireComponent(typeof(AudioSource))]
 public class EnviromentAudioInitializer : MonoBehaviour
 {
+	[Inject] private SaveSystemController _saveSystemController;
 	[SerializeField] private SoundType soundType;
 	[Inject] private SoundContainer _soundContainer;
 	[SerializeField] private AudioSource _ambientSource;
@@ -52,11 +54,11 @@ public class EnviromentAudioInitializer : MonoBehaviour
 	}
 	private void Start()
 	{
-		_ambientSource.clip = GetClip(AmbientStart);
+		_ambientSource.clip = GetClip(_saveSystemController.gameData.currentAmbient);
+		
 		_ambientSource.loop = true;
 //		_ambientSource.volume = 1.0f;
 		_ambientSource.Play();
-
 
 		if (_oneShotSource == null)
 		{

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using _ProjectFiles.SoundContainer;
 
 namespace _ProjectFiles.SaveSystem
 {
@@ -15,6 +16,7 @@ namespace _ProjectFiles.SaveSystem
 		public KeysHolderData KeysHolderData { get; private set; }
 		public List<string> Inventory { get; private set; }
 		public int keysCollected { get; private set; }
+		public SoundType currentAmbient { get; private set; }
         public byte[] MapTexture { get; private set; }
 
         public GameData()
@@ -27,7 +29,8 @@ namespace _ProjectFiles.SaveSystem
             KeysHolderData = new KeysHolderData();
             Inventory = new List<string>();
 			keysCollected = 0;
-            MapTexture = null;
+			currentAmbient = SoundType.AmbientStart;
+			MapTexture = null;
         }
 
         public void SetPlayerHealth(float playerHealth) => PlayerHealth = playerHealth;
@@ -38,6 +41,7 @@ namespace _ProjectFiles.SaveSystem
         public void SetKeys(KeysHolderData data) => KeysHolderData = data;
         public void SetInventory(List<string> data) => Inventory = data;
         public void SetCollectedKeyCount(int data) => keysCollected = data;
+        public void SetCurrentAmbient(SoundType data) => currentAmbient = data;
         public void SetTexture(Texture2D sprite) => MapTexture = sprite.EncodeToPNG();
     }
 }

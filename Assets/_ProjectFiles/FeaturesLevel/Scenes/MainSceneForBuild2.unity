@@ -1511,6 +1511,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.12042242
       objectReference: {fileID: 0}
+    - target: {fileID: 8050830594169447756, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -1486550699786577899, guid: 085da32419dab864389ebb0f17d9c12a, type: 2}
     - target: {fileID: 8266598087498866293, guid: 39eaa2530152ed749ba557f2a9468348, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.17093125
@@ -10530,7 +10534,8 @@ PrefabInstance:
       propertyPath: invulnerabilityDuration
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4171157461126285120, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11125,7 +11130,6 @@ Transform:
   - {fileID: 1110263720}
   - {fileID: 2021618496}
   - {fileID: 1625881369}
-  - {fileID: 1674645680}
   - {fileID: 1275225783}
   m_Father: {fileID: 226755397}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18208,7 +18212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 718713127412263063, guid: 3bc541c6e3308c34eaa6944ae57fb86e, type: 3}
       propertyPath: _xEndPosition
-      value: 4
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 718713127412263063, guid: 3bc541c6e3308c34eaa6944ae57fb86e, type: 3}
       propertyPath: _xStartPosition
@@ -18244,7 +18248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1563709722137545489, guid: 3bc541c6e3308c34eaa6944ae57fb86e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.75
+      value: 23.3
       objectReference: {fileID: 0}
     - target: {fileID: 1563709722137545489, guid: 3bc541c6e3308c34eaa6944ae57fb86e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19576,7 +19580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3976554071549793295, guid: e52f4e8c182370245a62afd6b365ad63, type: 3}
       propertyPath: m_Size.y
-      value: 24.805008
+      value: 37.20903
       objectReference: {fileID: 0}
     - target: {fileID: 3976554071549793295, guid: e52f4e8c182370245a62afd6b365ad63, type: 3}
       propertyPath: m_Offset.x
@@ -19584,7 +19588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3976554071549793295, guid: e52f4e8c182370245a62afd6b365ad63, type: 3}
       propertyPath: m_Offset.y
-      value: 1.8234634
+      value: 8.025475
       objectReference: {fileID: 0}
     - target: {fileID: 3976554071549793295, guid: e52f4e8c182370245a62afd6b365ad63, type: 3}
       propertyPath: m_IsTrigger
@@ -22408,7 +22412,7 @@ Transform:
   m_GameObject: {fileID: 1674645679}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.619999, y: 25.109999, z: 0}
+  m_LocalPosition: {x: 18.23, y: 62.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22416,7 +22420,7 @@ Transform:
   - {fileID: 1381027563}
   - {fileID: 700964482}
   - {fileID: 1661397073}
-  m_Father: {fileID: 856557309}
+  m_Father: {fileID: 1952775112}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1674645681
 BoxCollider2D:
@@ -22481,6 +22485,7 @@ MonoBehaviour:
   spawnOffsetsY: {x: -3, y: 3}
   spawnDelay: 0.2
   waveDelay: 3
+  waveCount: 0
   spawnPosition: {fileID: 1661397073}
 --- !u!1 &1676146475
 GameObject:
@@ -24088,6 +24093,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal
       objectReference: {fileID: 0}
+    - target: {fileID: 7915388705244097534, guid: 3a060ea05f54b8342a1083f4fa5101c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8663236721162784367, guid: 3a060ea05f54b8342a1083f4fa5101c2, type: 3}
       propertyPath: m_Color.b
       value: 0.53901255
@@ -25601,6 +25610,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1674645680}
   - {fileID: 1796617944}
   m_Father: {fileID: 1586030958}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25963,11 +25973,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4864112164275982428, guid: dbed9a880d21f5a43b92af50d798b203, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8875852345511702825, guid: dbed9a880d21f5a43b92af50d798b203, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28
+      value: 29.73
       objectReference: {fileID: 0}
     - target: {fileID: 8875852345511702825, guid: dbed9a880d21f5a43b92af50d798b203, type: 3}
       propertyPath: m_LocalPosition.y
@@ -28461,10 +28471,18 @@ PrefabInstance:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -6264009559518114039, guid: f1de05173f49b1e489190b48a0a2e7a7, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 7481007576878474129, guid: 085da32419dab864389ebb0f17d9c12a, type: 2}
     - target: {fileID: 60021865507803974, guid: f1de05173f49b1e489190b48a0a2e7a7, type: 3}
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 60021865507803974, guid: f1de05173f49b1e489190b48a0a2e7a7, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -1486550699786577899, guid: 085da32419dab864389ebb0f17d9c12a, type: 2}
     - target: {fileID: 3973985746253869013, guid: f1de05173f49b1e489190b48a0a2e7a7, type: 3}
       propertyPath: m_Name
       value: EnviromentAudioInitializer

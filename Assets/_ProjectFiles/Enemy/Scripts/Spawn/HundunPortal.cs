@@ -14,6 +14,7 @@ public class HundunPortal : MonoBehaviour
     [SerializeField] private Vector2 spawnOffsetsY;
     [SerializeField] private float spawnDelay;
     [SerializeField] private float waveDelay;
+    [SerializeField] private int waveCount;
     [SerializeField] private Transform spawnPosition;
     
     private bool _allowSpawn;
@@ -63,9 +64,14 @@ public class HundunPortal : MonoBehaviour
 
     private IEnumerator WaveDelay()
     {
-        yield return new WaitForSeconds(waveDelay);
+		if (waveCount > 1)
+		{
+			yield return new WaitForSeconds(waveDelay);
 
-        _allowSpawn = true;
+			_allowSpawn = true;
+			waveCount--;
+		}
+
     }
     
     private void OnEnemyDeath()

@@ -1,8 +1,10 @@
 using UnityEngine;
 using System.Collections;
+using Zenject;
 
 public class CloudManager : MonoBehaviour
 {
+	[Inject] private InputController _inputController;
 	[SerializeField] private float _xStartPosition;
 	[SerializeField] private float _xEndPosition;
 	[SerializeField] private AnimationCurve _speedCurve;
@@ -12,8 +14,9 @@ public class CloudManager : MonoBehaviour
 	private bool _movingRight = true;
 	private Vector3 _startPosition;
 	private Vector3 _endPosition;
-
 	private Vector3 _lastCloudPosition;
+	private bool _isPlayerAttached = false;
+	private bool _isInput = false;
 
 	private void Awake()
 	{
@@ -25,8 +28,19 @@ public class CloudManager : MonoBehaviour
 		_lastCloudPosition = transform.position;
 
 		Invoke(nameof(StartMovement), _delay);
-	}
 
+		_inputController.Gameplay.Movement.started += ctx => ToggleMovement(true);
+		_inputController.Gameplay.Dash.started += ctx => ToggleMovement(true);
+		_inputController.Gameplay.Jump.started += ctx => ToggleMovement(true);
+
+		_inputController.Gameplay.Movement.canceled += ctx => ToggleMovement(false);
+		_inputController.Gameplay.Dash.canceled += ctx => ToggleMovement(false);
+		_inputController.Gameplay.Jump.canceled += ctx => ToggleMovement(false);
+	}
+	private void ToggleMovement(bool needMove)
+	{
+		_isInput = needMove;
+	}
 	private void StartMovement()
 	{
 		StartCoroutine(Move());
@@ -47,8 +61,14 @@ public class CloudManager : MonoBehaviour
 			{
 				time += Time.deltaTime;
 				float normalizedTime = time / duration;
-				float speed = _speedCurve.Evaluate(normalizedTime);
 				transform.position = Vector3.Lerp(startPosition, targetPosition, normalizedTime);
+				if (_isPlayerAttached && !_isInput && player != null)
+				{
+					Vector3 cloudMovement = transform.position - _lastCloudPosition;
+
+					player.transform.position += cloudMovement;
+				}
+				_lastCloudPosition = transform.position;
 				yield return null;
 			}
 
@@ -61,7 +81,8 @@ public class CloudManager : MonoBehaviour
 	{
 		if (collision.GetComponent<PlayerController>() != null)
 		{
-			_playerAttached = true;
+			_isPlayerAttached = true;
+			_isInput = false;
 		}
 	}
 
@@ -69,22 +90,22 @@ public class CloudManager : MonoBehaviour
 	{
 		if (collision.GetComponent<PlayerController>() != null)
 		{
-			_playerAttached = false;
+			_isPlayerAttached = false;
+			_isInput = true;
 		}
 	}
-
-	private bool _playerAttached = false;
 
 	private void FixedUpdate()
 	{
-		if (_playerAttached && player != null)
-		{
-			Vector3 cloudMovement = transform.position - _lastCloudPosition;
+		//if (_playerAttached && player != null)
+		//{
+		//	Vector3 cloudMovement = transform.position - _lastCloudPosition;
 
-			//player.transform.position += cloudMovement;
-			player.transform.position = Vector3.Lerp(player.transform.position, player.transform.position + cloudMovement, Time.fixedDeltaTime * 2);
-		}
+		//	// Smoothly move the player with the cloud movement
+		//	Debug.LogError($"{player.transform.position} + {cloudMovement} = { player.transform.position + cloudMovement}");
+		//	player.transform.position = Vector3.Lerp(player.transform.position, player.transform.position + cloudMovement, Time.fixedDeltaTime * 5);
+		//}
 
-		_lastCloudPosition = transform.position;
+		//_lastCloudPosition = transform.position;
 	}
-}
+} 

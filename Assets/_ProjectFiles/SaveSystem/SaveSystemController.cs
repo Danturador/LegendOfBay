@@ -34,6 +34,7 @@ namespace _ProjectFiles.SaveSystem
 
         public void UpdateInventory(List<string> data) => _data.SetInventory(data);
         public void UpdateCollectedKeysCount(int data) => _data.SetCollectedKeyCount(data);
+        public void UpdateCurrentAmbient(SoundContainer.SoundType data) => _data.SetCurrentAmbient(data);
         
         public void UpdateTexture(Texture2D texture2D) => _data.SetTexture(texture2D);
     }

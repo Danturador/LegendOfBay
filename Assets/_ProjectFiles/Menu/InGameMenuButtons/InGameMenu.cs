@@ -9,7 +9,7 @@ namespace _ProjectFiles.Menu.InGameMenuButtons
 		[SerializeField] [Min(0f)] private float fadeDuration;
 		[Inject] private InputController _inputController;
         private Transform _child;
-        private float timeScaleValue = 0;
+        private static float timeScaleValue = 0;
 
         private void Awake()
         {
@@ -35,12 +35,16 @@ namespace _ProjectFiles.Menu.InGameMenuButtons
 			}
 			else
 			{
-				Time.timeScale = timeScaleValue;
+				RestoreTime();
 				_inputController.Gameplay.Enable(); 
 			}
 
 			ResetMenu();
         }
+		public static void RestoreTime()
+		{
+			Time.timeScale = timeScaleValue;
+		}
 
         private void ResetMenu()
         {

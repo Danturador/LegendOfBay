@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using _ProjectFiles.Enemy.Scripts.Behaviour.Strategy;
 using _ProjectFiles.Enemy.Scripts.Core;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,26 +12,31 @@ namespace _GameAssets.Scripts.Spawner
 	[Serializable]
 	public class EnemySpawner : MonoBehaviour
 	{
-		private static readonly int ClosePortal = Animator.StringToHash("ClosePortal");
-
+		private static readonly int ClosePortal = Animator.StringToHash("Close");
 		public string id;
 		[SerializeField, Min(0f)] private float delayBetweenWaves = 3f;
 		[SerializeField] private Animator animator;
-		[SerializeField] private List<Wave> waveProfiles;
-		private List<EnemyContainer> _enemies;
+
+		[SerializeField] private EnemyContainer hundunPrefab;
+		[SerializeField] private Vector2Int spawnCounts;
+		[SerializeField] private Vector2 spawnOffsetsX;
+		[SerializeField] private Vector2 spawnOffsetsY;
+		[SerializeField] private float spawnDelay;
+		[SerializeField] private float waveDelay;
+		[SerializeField] private int waveCount;
 		private bool _startedSpawn;
-		
+		private int _currentEnemiesCount;
+
 		public bool isClosed;
 		public event Action OnPortalClosed;
 
 		public void Init(bool isClosed)
 		{
 			this.isClosed = isClosed;
-			
-			if(this.isClosed)
-				gameObject.SetActive(false);
+			if (this.isClosed)
+				Destroy(gameObject);
 		}
-		
+
 		private void OnDestroy()
 		{
 			OnPortalClosed = null;
@@ -47,46 +53,45 @@ namespace _GameAssets.Scripts.Spawner
 
 		private void SpawnEnemies()
 		{
-			_enemies = new List<EnemyContainer>();
-			StartCoroutine(TogglePortal());
+			StartCoroutine(SpawnWave());
 		}
 
-		private IEnumerator TogglePortal()
+		private IEnumerator SpawnWave()
 		{
-			foreach (var wave in waveProfiles)
+			var spawnCount = Random.Range(spawnCounts.x, spawnCounts.y + 1);
+			for (var i = 0; i < spawnCount; i++)
 			{
-				yield return StartCoroutine(SpawnWave(wave));
-				yield return new WaitForSeconds(delayBetweenWaves);
+				var hundun = Instantiate(hundunPrefab, transform.position, Quaternion.identity);
+				_currentEnemiesCount++;
+
+				var targetPosition = transform.position;
+				targetPosition.x += Random.Range(spawnOffsetsX.x, spawnOffsetsX.y);
+				targetPosition.y += Random.Range(spawnOffsetsY.x, spawnOffsetsY.y);
+
+				yield return new WaitUntil(() => hundun.IsInitialized);
+				var navigation = hundun.Navigation.NavigationExecutable as HundunNavigation;
+				hundun.StartCoroutine(navigation.SendToPoint(targetPosition));
+				hundun.Health.OnDeath += OnEnemyDeath;
+
+				yield return new WaitForSeconds(spawnDelay);
 			}
-
-			yield return new WaitUntil(() => !_enemies.Any(e => e is null));
-
-			Debug.Log("finish");
-			
-			animator.Play("Close");
-			isClosed = true;
-			OnPortalClosed?.Invoke();
+			yield return new WaitForSeconds(waveDelay);
 		}
 
-		private IEnumerator SpawnWave(Wave enemyProfiles)
+
+		private void OnEnemyDeath()
 		{
-			List<int> enemyAmounts = enemyProfiles.enemiesOfWave
-				.Select(enemySpawnerProfile => enemySpawnerProfile.amount).ToList();
-
-			while (enemyAmounts.Any(x => x > 0))
+			_currentEnemiesCount--;
+			if (_currentEnemiesCount == 0 && waveCount == 0)
 			{
-				int enemyIndex = Random.Range(0, enemyProfiles.enemiesOfWave.Count);
-				while (enemyAmounts[enemyIndex] == 0)
-					enemyIndex = Random.Range(0, enemyProfiles.enemiesOfWave.Count);
-
-				enemyAmounts[enemyIndex]--;
-
-				EnemyContainer enemyPrefab = enemyProfiles.enemiesOfWave[enemyIndex].enemyPrefab;
-				EnemyContainer enemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-				enemy.transform.position += Vector3.right * Random.Range(-2, 2);
-				_enemies.Add(enemy);
-				
-				yield return new WaitForSeconds(Random.Range(1f, 2f));
+				animator.Play(ClosePortal);
+				isClosed = true;
+				OnPortalClosed?.Invoke();
+			}
+			else if (_currentEnemiesCount == 0)
+			{
+				waveCount--;
+				SpawnEnemies();
 			}
 		}
 	}

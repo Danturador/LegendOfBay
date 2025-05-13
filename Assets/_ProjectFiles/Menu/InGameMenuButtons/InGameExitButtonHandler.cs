@@ -6,6 +6,7 @@ namespace _ProjectFiles.Menu.InGameMenuButtons
     {
         protected override void OnClick()
         {
+			InGameMenu.RestoreTime();
 			SceneTransition.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
     }
