@@ -39,6 +39,21 @@ namespace _ProjectFiles.SoundContainer
 		SwordAttack,
 		SwordFallen,
 		Death,
+		
+		KirinDamageTaken,
+		KirinDash,
+		KirinDeath,
+		KirinRearing,
+		KirinSprint,
+		KirinSteps,
+		
+		ShishiActive,
+		ShishiDamageTaken1,
+		ShishiDamageTaken2,
+		ShishiDeath,
+		ShishiFire,
+		ShishiFireLong,
+		ShishiSteps,
     }
 
     [Serializable]

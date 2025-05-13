@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Threading;
+using _ProjectFiles.Enemy.Scripts.Core;
 using _ProjectFiles.Enemy.Scripts.Core.Instances.Hundun;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -14,10 +15,12 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
         private readonly Rigidbody2D _rigidbody;
         private readonly AnimationCurve _speedCurve;
         private CancellationTokenSource _token;
+        private EnemyContainer _container;
 
-        public HundunNavigation(Rigidbody2D rigidbody, HundunNavigationInfo info)
+        public HundunNavigation(EnemyContainer container, HundunNavigationInfo info)
         {
-            _rigidbody = rigidbody;
+            _container = container;
+            _rigidbody = container.Rigidbody;
             _info = info;
             _speedCurve = info.SpeedCurve;
         }
@@ -37,7 +40,8 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
                 var distanceToTarget = Vector2.Distance(currentTargetPosition, _rigidbody.transform.position);
                 var velocityMagnitude = distanceToTarget / _speedCurve.FunctionSquare(100);
                 var time = 0f;
-
+                _container.Renderer.CurrentScale = -moveDirection.x / Mathf.Abs(moveDirection.x);
+                
                 while (time < moveTime)
                 {
                     time += Time.deltaTime;

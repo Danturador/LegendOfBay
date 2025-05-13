@@ -31,11 +31,13 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
                 {
                     _container.Animator.SetBool("backAttack", true);
                     yield return new WaitForSeconds(_info.BackAttackStartDelay);
+                    _container.Animator.SetBool("backAttack", false);
                 }
                 else
                 {
                     _container.Animator.SetBool("attack", true);
                     yield return new WaitForSeconds(_info.AttackStartDelay);
+                    _container.Animator.SetBool("attack", false);
                 }
 
                 if (!_token.IsCancellationRequested)

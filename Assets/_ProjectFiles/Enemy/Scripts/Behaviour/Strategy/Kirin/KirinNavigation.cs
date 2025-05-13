@@ -1,6 +1,7 @@
 using System.Collections;
 using _ProjectFiles.Enemy.Scripts.Core;
 using _ProjectFiles.Enemy.Scripts.Core.Instances.Kirin;
+using _ProjectFiles.SoundContainer;
 using UnityEngine;
 
 namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Kirin
@@ -34,6 +35,8 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Kirin
                 yield return new WaitForSeconds(_naviInfo.StartDashDelay);
                 IsPreparing = false;
                 _container.Animator.SetBool("active", true);
+                _container.Animator.SetTrigger("run");
+                _container.Audio.PlaySoundEffect(SoundType.KirinDash);
 
                 var targetDelta = target.transform.position.x - _container.Rigidbody.transform.position.x;
                 var moveDirection = (int)(targetDelta / Mathf.Abs(targetDelta));

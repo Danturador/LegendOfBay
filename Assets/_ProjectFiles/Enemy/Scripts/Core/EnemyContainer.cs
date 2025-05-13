@@ -18,6 +18,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         [SerializeField] private new Rigidbody2D rigidbody;
         [SerializeField] private new EnemyRenderer renderer;
         [SerializeField] private MonsterHealth monsterHealth;
+        [SerializeField] private new EnemyAudio audio;
 
         [Header("Behaviour")] [SerializeField] private EnemyNavigation enemyNavigation;
 
@@ -31,6 +32,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
         public EnemyAttack Attack => enemyAttack;
         public MonsterHealth Health => monsterHealth;
         public EnemyRenderer Renderer => renderer;
+        public EnemyAudio Audio => audio;
         public Animator Animator => animator;
         public Rigidbody2D Rigidbody => rigidbody;
         public EnemyProfile Profile => profile;
@@ -91,7 +93,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
                     var info = profile.NavigationInfo as HundunNavigationInfo;
 
                     enemyNavigation.Initialize(profile.NavigationInfo,
-                        new HundunNavigation(rigidbody, info));
+                        new HundunNavigation(this, info));
 
                     Attack.Initialize(this, new HundunAttack());
                     break;
