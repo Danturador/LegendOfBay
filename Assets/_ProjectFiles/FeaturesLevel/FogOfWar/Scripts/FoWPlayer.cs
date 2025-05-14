@@ -14,21 +14,19 @@ public class FoWPlayer : MonoBehaviour
 	private void Start()
 	{
 		fogOfWarMark.localScale = new Vector2(sightDistance, sightDistance) * 10f;
-		StartCoroutine(CheckFogOfWar(checkInterval));
+		//StartCoroutine(CheckFogOfWar());
+		_ = CheckFogOfWar();
 	}
 
-	private IEnumerator CheckFogOfWar(float checkInterval)
+	//private IEnumerator CheckFogOfWar()
+	private async Task CheckFogOfWar()
 	{
 		while (true)
 		{
-			_ = MakeHoleAsync(transform.position, sightDistance);
-
-			yield return new WaitForSeconds(checkInterval);
+			//fogOfWar.MakeHole(transform.position, sightDistance);
+			//yield return null;
+			await fogOfWar.MakeHole(transform.position, sightDistance);
+			await Task.Delay((int)(checkInterval * 1000));
 		}
-	}
-
-	private async Task MakeHoleAsync(Vector2 position, float holeRadius)
-	{
-		await Task.Run(() => fogOfWar.MakeHole(position, holeRadius));
 	}
 }

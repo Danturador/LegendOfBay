@@ -6,6 +6,7 @@ using _ProjectFiles.SaveSystem;
 public class FogOfWarController : MonoBehaviour
 {
 	[Inject] private SaveSystemController saveSystemController;
+	[Inject] private InputController inputController;
 	public Texture2D fogOfWarTexture;
 	public Texture2D texture;
 	public SpriteMask spriteMask;
@@ -17,29 +18,33 @@ public class FogOfWarController : MonoBehaviour
 	public void Awake()
 	{
 		fog.gameObject.SetActive(true);
-		// saveSystemController.SaveProgress();
+		LoadTexture();
+		InitializeWorldScale();
 
+		inputController.Gameplay.OpenMap.performed += ctx => CreateSprite();
+	}
+
+	private void LoadTexture()
+	{
 		byte[] tex = saveSystemController.gameData.MapTexture;
 		if (tex != null)
 		{
-			Texture2D texture = new Texture2D(4096, 4096);
-			texture.LoadImage(tex);
-			fogOfWarTexture = texture;
+			fogOfWarTexture = new Texture2D(1024, 1024);
+			fogOfWarTexture.LoadImage(tex);
 		}
+	}
 
+	private void InitializeWorldScale()
+	{
 		pixelScale.x = fogOfWarTexture.width;
 		pixelScale.y = fogOfWarTexture.height;
-
 		worldScale.x = pixelScale.x / 100f * transform.localScale.x;
 		worldScale.y = pixelScale.y / 100f * transform.localScale.y;
-
-		CreateSprite();
 	}
 
 	private Vector2Int WorldToPixel(Vector2 position)
 	{
 		Vector2Int pixelPosition = Vector2Int.zero;
-
 		float dx = position.x - transform.position.x;
 		float dy = position.y - transform.position.y;
 
@@ -49,7 +54,8 @@ public class FogOfWarController : MonoBehaviour
 		return pixelPosition;
 	}
 
-	public async void MakeHole(Vector2 position, float holeRadius)
+	//public void MakeHole(Vector2 position, float holeRadius)
+	public async Task MakeHole(Vector2 position, float holeRadius)
 	{
 		Vector2Int pixelPosition = WorldToPixel(position);
 		int radius = Mathf.RoundToInt(holeRadius * pixelScale.x / worldScale.x);
@@ -67,19 +73,24 @@ public class FogOfWarController : MonoBehaviour
 					int py = Mathf.Clamp(pixelPosition.y + j, 0, pixelScale.y - 1);
 					int ny = Mathf.Clamp(pixelPosition.y - j, 0, pixelScale.y - 1);
 
-					fogOfWarTexture.SetPixel(px, py, Color.black);
-					fogOfWarTexture.SetPixel(nx, py, Color.black);
-					fogOfWarTexture.SetPixel(px, ny, Color.black);
-					fogOfWarTexture.SetPixel(nx, ny, Color.black);
+					lock (fogOfWarTexture)
+					{
+						fogOfWarTexture.SetPixel(px, py, Color.black);
+						fogOfWarTexture.SetPixel(nx, py, Color.black);
+						fogOfWarTexture.SetPixel(px, ny, Color.black);
+						fogOfWarTexture.SetPixel(nx, ny, Color.black);
+					}
 				}
 			}
 
-			fogOfWarTexture.Apply();
+			ApplyTexture();
 		});
-
-		CreateSprite();
 	}
 
+	private void ApplyTexture()
+	{
+		fogOfWarTexture.Apply();
+	}
 	private void CreateSprite()
 	{
 		spriteMask.sprite = Sprite.Create(fogOfWarTexture, new Rect(0, 0, fogOfWarTexture.width, fogOfWarTexture.height), Vector2.one * 0.5f, 100);

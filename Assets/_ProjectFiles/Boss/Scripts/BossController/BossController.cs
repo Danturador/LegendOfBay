@@ -26,7 +26,9 @@ public class BossController : MonoBehaviour
 	[SerializeField] private float transitionDuration;
 	[SerializeField] private float transitionDurationAfter;
 	[SerializeField] private float transitionDelay;
+	[SerializeField] private EndCutsceneManager endCutsceneManager;
 	private bool isBossInactive;
+	private bool isBossDead;
 
 	private void Awake()
 	{
@@ -34,6 +36,7 @@ public class BossController : MonoBehaviour
 		healthBarGO.SetActive(false);
 		bossDemonicForm.SetActive(false);
 		isBossInactive = true;
+		isBossDead = false;
 
 		arenaDoorCollider.gameObject.SetActive(false);
 
@@ -51,11 +54,13 @@ public class BossController : MonoBehaviour
 	private void HandleDemonFormDeath(float currentHealth)
 	{
 		healthBar.fillAmount = currentHealth;
-		if (currentHealth <= 0)
+		if (currentHealth <= 0 && !isBossDead)
 		{
 			BossAudioInitializer.Instance.PlaySound(Death);
 			finishScreen.SetActive(true);
 			demonicFormBehaviour.OnDeath?.Invoke();
+			endCutsceneManager.Launch();
+			isBossDead = true;
 		}
 	}
 
