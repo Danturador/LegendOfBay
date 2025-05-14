@@ -23,7 +23,7 @@ TagManager:
   - PlayerTransparentCollider
   - MovableObjectTrigger
   - InvisibleWalls
-  - 
+  - InvisibleWallsForStote
   - 
   - 
   - 
