@@ -10672,7 +10672,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 424602102140684240, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: maxHealth
-      value: 2
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 690007702083760485, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: m_Name
@@ -10680,7 +10680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1168974980189594074, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: maxHealth
-      value: 2
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2149936350044504047, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: _damage
