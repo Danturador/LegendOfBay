@@ -29450,9 +29450,21 @@ PrefabInstance:
       propertyPath: subtitlesCanvas
       value: 
       objectReference: {fileID: 1967399565}
+    - target: {fileID: 3518250290319547895, guid: 1ea92f14f6d91db4d87de056f48084d0, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6546953720362915507, guid: 1ea92f14f6d91db4d87de056f48084d0, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6801248244772777413, guid: 1ea92f14f6d91db4d87de056f48084d0, type: 3}
       propertyPath: m_Name
       value: EndCutscene
+      objectReference: {fileID: 0}
+    - target: {fileID: 7840024785247110442, guid: 1ea92f14f6d91db4d87de056f48084d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
