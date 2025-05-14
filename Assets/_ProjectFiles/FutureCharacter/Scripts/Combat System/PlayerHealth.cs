@@ -14,12 +14,14 @@ public class PlayerHealth : HealthManager
     private bool _die = false;
     [SerializeField] GameObject enableMenu;
     [Inject] private InputController inputController;
+    [SerializeField] private PlayerAudioInitializer playerAudioInitializer;
 
     public event Action<float> HealthChanged;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        playerAudioInitializer = GetComponent<PlayerAudioInitializer>();
       
     }
     public override void TakeDamage(int damage)
@@ -29,6 +31,10 @@ public class PlayerHealth : HealthManager
             currentHealth -= damage;
             CinemachineShake.Instance.ShakeCamera(5f, 0.1f);
             StartCoroutine(InvulnerabilityCoroutine());
+            if(playerAudioInitializer != null)
+            {
+                playerAudioInitializer.PlayerDamageSound();
+            }
             float curentHealthPercantage = (float) currentHealth/maxHealth;
             HealthChanged?.Invoke(curentHealthPercantage);
             

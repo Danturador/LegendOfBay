@@ -68,7 +68,9 @@ namespace _ProjectFiles.SoundContainer
         HundunDamageTaken3,
         HundunActive,
         HundunAttack,
-        HundunDeath
+        HundunDeath,
+
+        PlayerDamageClip,
     }
 
     [Serializable]

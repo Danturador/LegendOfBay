@@ -106,4 +106,10 @@ public class PlayerAudioInitializer : MonoBehaviour
         soundType = SoundType.PlayerDoubleJump;
         PlaySoundEffect(soundType);
     }
+
+    public void PlayerDamageSound()
+    {
+        soundType = SoundType.PlayerDamageClip;
+        PlaySoundEffect(soundType);
+    }
 }
