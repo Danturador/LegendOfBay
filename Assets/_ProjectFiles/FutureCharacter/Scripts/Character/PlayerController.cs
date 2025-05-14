@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool possibleUseGrapplingHook;
     [SerializeField] private bool movableItem;
     [SerializeField] private GameObject moveItemGameobject;
+    [SerializeField] private PlayerBattleStateMachine2 playerBattleStateMachine;
     private Rigidbody2D rb;
     [Inject] private InputController _inputController;
     
@@ -57,6 +58,7 @@ public class PlayerController : MonoBehaviour
 	//}
 	private void Start()
     {
+        playerBattleStateMachine = GetComponentInChildren<PlayerBattleStateMachine2>();
         OnEnabled();
     }
 
@@ -200,6 +202,7 @@ public class PlayerController : MonoBehaviour
     {
         if (movableItem)
         {
+            playerBattleStateMachine.enabled = false;
             moveItemGameobject.GetComponent<MovableItem>().ToggleParent(transform);
             IsMovingItem = true;
             movableItem = false;
@@ -213,7 +216,7 @@ public class PlayerController : MonoBehaviour
             }
             IsMovingItem = false;
             moveItemGameobject = null;
-
+            playerBattleStateMachine.enabled = true;
 
         }
     }
