@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace _ProjectFiles.Enemy.Scripts._PLAYER_
@@ -14,6 +15,11 @@ namespace _ProjectFiles.Enemy.Scripts._PLAYER_
         {
             boxCollider2D.size = new Vector2(2 * playerCamera.orthographicSize * playerCamera.aspect,
                 2 * playerCamera.orthographicSize);
+        }
+
+        private void Update()
+        {
+            transform.position = playerCamera.transform.position;
         }
     }
 }

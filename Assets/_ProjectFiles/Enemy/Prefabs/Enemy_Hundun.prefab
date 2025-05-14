@@ -315,6 +315,7 @@ MonoBehaviour:
   _hpBarGameobject: {fileID: 0}
   _destroyableSound: {fileID: 858660819612513422, guid: d4e4543701ff37248a91cb7e4e08bd9f, type: 3}
   _container: {fileID: 6343016726998229691}
+  _soundContainer: {fileID: 11400000, guid: bc248ac4ee81acc4988a97680197145a, type: 2}
 --- !u!114 &2277293894931236860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,6 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233326b1c6fe41da926d51d9750c6bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundContainer: {fileID: 11400000, guid: bc248ac4ee81acc4988a97680197145a, type: 2}
 --- !u!82 &7366714566191303727
 AudioSource:
   m_ObjectHideFlags: 0

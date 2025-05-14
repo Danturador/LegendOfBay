@@ -1,13 +1,12 @@
 using _ProjectFiles.SoundContainer;
 using UnityEngine;
-using Zenject;
 
 namespace _ProjectFiles.Enemy.Scripts.Core
 {
     public class EnemyAudio : MonoBehaviour
     {
+        [SerializeField] private SoundContainer.SoundContainer soundContainer;
         private AudioSource _audioSource;
-        [Inject] private SoundContainer.SoundContainer _soundContainer;
 
         private void Awake()
         {
@@ -16,7 +15,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
 
         public void PlaySoundEffect(SoundType sound)
         {
-            if (!_soundContainer.SoundsStorage.TryGetValue(sound, out var clip))
+            if (!soundContainer.SoundsStorage.TryGetValue(sound, out var clip))
             {
                 Debug.LogError("Sound Type not found");
                 return;

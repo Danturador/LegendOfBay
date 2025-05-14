@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a1847b3d74b900542abc4caf425a91d5, type: 2}
+  - {fileID: 2100000, guid: 90cc1abdf04c9ac4499a1251c1022dd7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,9 +138,11 @@ MonoBehaviour:
   calculateTangents: 0
   maskInteraction: 2
   maskMaterials:
-    materialsMaskDisabled: []
+    materialsMaskDisabled:
+    - {fileID: 2100000, guid: a1847b3d74b900542abc4caf425a91d5, type: 2}
     materialsInsideMask: []
-    materialsOutsideMask: []
+    materialsOutsideMask:
+    - {fileID: 2100000, guid: 90cc1abdf04c9ac4499a1251c1022dd7, type: 2}
   disableRenderingOnOverride: 1
   translator:
     autoReset: 1
@@ -159,6 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233326b1c6fe41da926d51d9750c6bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundContainer: {fileID: 11400000, guid: bc248ac4ee81acc4988a97680197145a, type: 2}
 --- !u!82 &8173217324690745930
 AudioSource:
   m_ObjectHideFlags: 0
@@ -448,6 +451,7 @@ MonoBehaviour:
   _hpBarGameobject: {fileID: 0}
   _destroyableSound: {fileID: 858660819612513422, guid: d4e4543701ff37248a91cb7e4e08bd9f, type: 3}
   _container: {fileID: 1138394491849305072}
+  _soundContainer: {fileID: 11400000, guid: bc248ac4ee81acc4988a97680197145a, type: 2}
 --- !u!1 &7282241808731183012
 GameObject:
   m_ObjectHideFlags: 0

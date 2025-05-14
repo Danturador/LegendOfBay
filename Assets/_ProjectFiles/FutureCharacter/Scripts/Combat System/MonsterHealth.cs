@@ -2,7 +2,6 @@ using System;
 using _ProjectFiles.Enemy.Scripts.Core;
 using _ProjectFiles.SoundContainer;
 using UnityEngine;
-using Zenject;
 using EnemyType = _ProjectFiles.Enemy.Scripts.Core.EnemyType;
 using Random = UnityEngine.Random;
 using SoundType = _ProjectFiles.SoundContainer.SoundType;
@@ -12,7 +11,7 @@ public class MonsterHealth : HealthManager, IDamageable
     [SerializeField] private GameObject _hpBarGameobject;
     [SerializeField] private DestroyableSound _destroyableSound;
     [SerializeField] private EnemyContainer _container;
-    [Inject] private SoundContainer _soundContainer;
+    [SerializeField] private SoundContainer _soundContainer;
     public Action OnDeath { get; set; }
 
     private void Start()
