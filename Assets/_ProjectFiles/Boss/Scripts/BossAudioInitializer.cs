@@ -34,7 +34,11 @@ public class BossAudioInitializer : MonoBehaviour
 
 		isHitPlaying = false;
 	}
-
+	public void Deinitialize()
+	{
+		_audioSource.Stop();
+		_audioSource.enabled = false;
+	}
 	public void PlaySound(SoundType sound)
 	{
 		AudioClip clip = GetClip(sound);

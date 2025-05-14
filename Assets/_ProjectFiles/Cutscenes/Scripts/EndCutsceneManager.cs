@@ -16,9 +16,12 @@ public class EndCutsceneManager : MonoBehaviour
 
     [SerializeField] private Image fadeImage;
     [SerializeField] private Text fadeText;
+    [SerializeField] private Image fadeTextBG;
 
 
+    [SerializeField] private Image subtitlesImage;
     [SerializeField] private CutscenePlayer subtitlesCanvas;
+    [SerializeField] private VideoPlayer videoPlayer;
 
 	private bool canGoNext;
 	private void Awake()
@@ -53,15 +56,17 @@ public class EndCutsceneManager : MonoBehaviour
 			canGoNext = false;
 
 			yield return StartCoroutine(FadeOut(2f));
-			yield return new WaitForSeconds(0.5f);
-			yield return StartCoroutine(FadeIn(2f));
+			goodEnd.gameObject.SetActive(false);
+			badEnd.gameObject.SetActive(false);
+			subtitlesImage.gameObject.SetActive(true);
 
-			subtitlesCanvas.gameObject.SetActive(true);
-			yield return new WaitForSeconds(0.1f);
-			subtitlesCanvas.gameObject.SetActive(true);
+			//yield return StartCoroutine(WaitForVideoPreparation());
+			yield return StartCoroutine(FadeIn(1f));
+
 			subtitlesCanvas.Play(OnCutsceneEnd);
 		}
 	}
+
 	private void OnCutsceneEnd()
 	{
 		SceneTransition.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
@@ -101,16 +106,21 @@ public class EndCutsceneManager : MonoBehaviour
 		canGoNext = true;
 
         Color startColor = fadeText.color;
+        Color startColorBG = fadeTextBG.color;
         startColor.a = 0;
+		startColorBG.a = 0;
         fadeText.color = startColor;
+		fadeTextBG.color = startColorBG;
 
         for (float t = 0; t < duration; t += Time.deltaTime)
         {
             float alpha = Mathf.Lerp(0, 1, t / duration);
             fadeText.color = new Color(fadeText.color.r, fadeText.color.g, fadeText.color.b, alpha);
+			fadeTextBG.color = new Color(fadeTextBG.color.r, fadeTextBG.color.g, fadeTextBG.color.b, alpha);
             yield return null;
         }
 
         fadeText.color = new Color(fadeText.color.r, fadeText.color.g, fadeText.color.b, 1);
+		fadeTextBG.color = new Color(fadeTextBG.color.r, fadeTextBG.color.g, fadeTextBG.color.b, 1);
     }
 }

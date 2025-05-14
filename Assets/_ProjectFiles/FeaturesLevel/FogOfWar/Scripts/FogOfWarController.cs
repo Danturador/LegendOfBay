@@ -54,14 +54,13 @@ public class FogOfWarController : MonoBehaviour
 		return pixelPosition;
 	}
 
-	//public void MakeHole(Vector2 position, float holeRadius)
-	public async Task MakeHole(Vector2 position, float holeRadius)
+	public void MakeHole(Vector2 position, float holeRadius)
+	//public async Task MakeHole(Vector2 position, float holeRadius)
 	{
 		Vector2Int pixelPosition = WorldToPixel(position);
 		int radius = Mathf.RoundToInt(holeRadius * pixelScale.x / worldScale.x);
 
-		await Task.Run(() =>
-		{
+		
 			for (int i = 0; i < radius; i++)
 			{
 				int distance = Mathf.RoundToInt(Mathf.Sqrt(radius * radius - i * i));
@@ -84,7 +83,7 @@ public class FogOfWarController : MonoBehaviour
 			}
 
 			ApplyTexture();
-		});
+		
 	}
 
 	private void ApplyTexture()

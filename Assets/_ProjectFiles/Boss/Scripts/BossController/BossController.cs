@@ -60,6 +60,8 @@ public class BossController : MonoBehaviour
 			finishScreen.SetActive(true);
 			demonicFormBehaviour.OnDeath?.Invoke();
 			endCutsceneManager.Launch();
+			BossAudioInitializer.Instance.Deinitialize();
+			StartCoroutine(EnviromentAudioInitializer.Instance.FadeAndSwitch(null));
 			isBossDead = true;
 		}
 	}
