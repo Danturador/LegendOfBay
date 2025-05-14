@@ -2296,6 +2296,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3302543779367356375, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
+      propertyPath: _damage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5578476301813963840, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -5591,6 +5595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikePit
       objectReference: {fileID: 0}
+    - target: {fileID: 3302543779367356375, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
+      propertyPath: _damage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7784037256654853742, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
       propertyPath: m_Size.x
       value: 2.688304
@@ -8027,6 +8035,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikePit (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3302543779367356375, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
+      propertyPath: _damage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7784037256654853742, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
       propertyPath: m_Size.x
       value: 8.013184
@@ -9447,6 +9459,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikePit (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3302543779367356375, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
+      propertyPath: _damage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7784037256654853742, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
       propertyPath: m_Size.x
       value: 5.37
@@ -10474,30 +10490,6 @@ PrefabInstance:
       propertyPath: effectSpawner
       value: 
       objectReference: {fileID: 1178482477}
-    - target: {fileID: 3662117305898107758, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 4171157461126285120, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: playerHealth
-      value: 
-      objectReference: {fileID: 930829559}
-    - target: {fileID: 4171157461126285120, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: effectSpawner
-      value: 
-      objectReference: {fileID: 1178482477}
-    - target: {fileID: 4651823315705462248, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: m_Size.x
-      value: 43.571014
-      objectReference: {fileID: 0}
-    - target: {fileID: 4651823315705462248, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: m_Offset.x
-      value: 3.2144928
-      objectReference: {fileID: 0}
-    - target: {fileID: 5544132886645364531, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5642820169609560688, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: player
       value: 
@@ -10542,18 +10534,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6582456983338530918, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6975182850592284773, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 6975182850592284773, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.68
-      objectReference: {fileID: 0}
     - target: {fileID: 7325517133869958540, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: healthBar
       value: 
@@ -10570,12 +10550,7 @@ PrefabInstance:
       propertyPath: screenOverlay
       value: 
       objectReference: {fileID: 1640208466}
-    - target: {fileID: 7325517133869958540, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
-      propertyPath: invulnerabilityDuration
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -11879,6 +11854,10 @@ PrefabInstance:
     - target: {fileID: 3176376314952951481, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
       propertyPath: m_Name
       value: SpikePit (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302543779367356375, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
+      propertyPath: _damage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784037256654853742, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
       propertyPath: m_Size.x
@@ -15058,6 +15037,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpikePit (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3302543779367356375, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
+      propertyPath: _damage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7784037256654853742, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
       propertyPath: m_Size.x
       value: 8.013184
@@ -16839,6 +16822,10 @@ PrefabInstance:
     - target: {fileID: 3176376314952951481, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
       propertyPath: m_Name
       value: SpikePit (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302543779367356375, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
+      propertyPath: _damage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784037256654853742, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
       propertyPath: m_Size.x
@@ -24945,6 +24932,10 @@ PrefabInstance:
     - target: {fileID: 3176376314952951481, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
       propertyPath: m_Name
       value: SpikePit (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3302543779367356375, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
+      propertyPath: _damage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7784037256654853742, guid: 3eea07cafa0ed574fa40d5841c2063a1, type: 3}
       propertyPath: m_Size.x
