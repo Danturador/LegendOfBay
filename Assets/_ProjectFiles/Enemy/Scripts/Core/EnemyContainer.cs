@@ -4,7 +4,6 @@ using _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Kirin;
 using _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Shishi;
 using _ProjectFiles.Enemy.Scripts.Core.Instances.Hundun;
 using UnityEngine;
-using Zenject.SpaceFighter;
 using ShishiAttack = _ProjectFiles.Enemy.Scripts.Behaviour.Strategy.Shishi.ShishiAttack;
 
 namespace _ProjectFiles.Enemy.Scripts.Core
@@ -95,7 +94,7 @@ namespace _ProjectFiles.Enemy.Scripts.Core
                     enemyNavigation.Initialize(profile.NavigationInfo,
                         new HundunNavigation(this, info));
 
-                    Attack.Initialize(this, new HundunAttack());
+                    Attack.Initialize(this, new HundunAttack(this));
                     break;
                 }
 

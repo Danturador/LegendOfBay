@@ -5,20 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="de615d76-5392-4624-a2d1-d4901732ccf9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyAudio.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyAudio.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LegendOfBay/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Kirin/kirin_Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Kirin/kirin_Controller.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Shishi/shishi_Controller.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Animations/Shishi/shishi_Controller.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/AttackInfo.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Data/Hundun/AttackInfo.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Hundun.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Hundun.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Kirin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Kirin.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Shishi.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Prefabs/Enemy_Shishi.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scenes/Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scenes/Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunActiveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunActiveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunPassiveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/States/Hundun/HundunPassiveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Hundun/HundunAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Hundun/HundunAttack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Hundun/HundunNavigation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Hundun/HundunNavigation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Kirin/KirinAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Kirin/KirinAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Kirin/KirinNavigation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Kirin/KirinNavigation.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Shishi/ShishiNavigation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Behaviour/Strategy/Shishi/ShishiNavigation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances/Hundun/HundunAttackInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/Data/Instances/Hundun/HundunAttackInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyAttack.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/EnemyContainer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/StateMachines/HundunStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Core/StateMachines/HundunStateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/FeaturesLevel/LevelElements/LittleBird_Decoration/Bird_1_most.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/FeaturesLevel/LevelElements/LittleBird_Decoration/Bird_2_most.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/FeaturesLevel/LevelElements/LittleBird_Decoration/Bird_anim.unitypackage.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/FeaturesLevel/Scenes/MainSceneForBuild2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/FeaturesLevel/Scenes/MainSceneForBuild2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/FutureCharacter/Scripts/Character/PlatformTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/FutureCharacter/Scripts/Character/PlatformTrigger.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/FutureCharacter/Scripts/Combat System/MonsterHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/FutureCharacter/Scripts/Combat System/MonsterHealth.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/SoundContainer/SoundContainer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/SoundContainer/SoundContainer.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_ProjectFiles/SoundContainer/SoundContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_ProjectFiles/SoundContainer/SoundContainer.cs" afterDir="false" />
@@ -121,10 +124,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="13716">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="9048">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="13716" />
+      <option name="pid" value="9048" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -161,7 +164,8 @@
       <workItem from="1746875768972" duration="3210000" />
       <workItem from="1747081111717" duration="5736000" />
       <workItem from="1747140930122" duration="11917000" />
-      <workItem from="1747169004962" duration="3501000" />
+      <workItem from="1747169004962" duration="3966000" />
+      <workItem from="1747241733447" duration="4999000" />
     </task>
     <servers />
   </component>
@@ -177,24 +181,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/_ProjectFiles/Enemy/Scripts/Spawn/HundunPortal.cs</url>
-          <line>47</line>
-          <properties documentPath="E:\Repositories\Unity\LegendOfBay\Assets\_ProjectFiles\Enemy\Scripts\Spawn\HundunPortal.cs" containingFunctionPresentation="Method 'SpawnEnemies'">
-            <startOffsets>
-              <option value="1452" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1486" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

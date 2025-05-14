@@ -159,7 +159,6 @@ GameObject:
   - component: {fileID: 6343016726998229691}
   - component: {fileID: 3897181793932938549}
   - component: {fileID: 7743745585983630010}
-  - component: {fileID: 1912336449257122221}
   - component: {fileID: 5342948021666582843}
   - component: {fileID: 2277293894931236860}
   - component: {fileID: 5840183681474007870}
@@ -299,24 +298,6 @@ MonoBehaviour:
   rigidbody: {fileID: 716377433823225197}
   skeletonAnimation: {fileID: 565063608146890649}
   velocityError: 0.1
---- !u!114 &1912336449257122221
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4757401579083615958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d04c4cec4219ee42aa0406a1a5f8f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hitEffects:
-  - {fileID: 8771972552311404799, guid: bbf9e36a48d6c5648a13889afab076fd, type: 3}
-  _damage: 5
-  attackStartDelay: 0.7
-  attackDelay: 2
-  _animator: {fileID: 8411131558361356979}
 --- !u!114 &5342948021666582843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,6 +313,8 @@ MonoBehaviour:
   maxHealth: 15
   currentHealth: 15
   _hpBarGameobject: {fileID: 0}
+  _destroyableSound: {fileID: 858660819612513422, guid: d4e4543701ff37248a91cb7e4e08bd9f, type: 3}
+  _container: {fileID: 6343016726998229691}
 --- !u!114 &2277293894931236860
 MonoBehaviour:
   m_ObjectHideFlags: 0

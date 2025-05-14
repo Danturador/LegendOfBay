@@ -1,4 +1,5 @@
 using _ProjectFiles.Enemy.Scripts.Core;
+using UnityEngine;
 
 public class HundunActiveState : IEnterState, IExitState
 {
@@ -6,6 +7,7 @@ public class HundunActiveState : IEnterState, IExitState
 
     public void Enter()
     {
+        Debug.Log("Hundun Active");
         Container.Navigation.Execute();
     }
 

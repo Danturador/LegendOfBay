@@ -4,6 +4,8 @@ using _ProjectFiles.SoundContainer;
 using UnityEngine;
 using Zenject;
 using EnemyType = _ProjectFiles.Enemy.Scripts.Core.EnemyType;
+using Random = UnityEngine.Random;
+using SoundType = _ProjectFiles.SoundContainer.SoundType;
 
 public class MonsterHealth : HealthManager, IDamageable
 {
@@ -34,8 +36,18 @@ public class MonsterHealth : HealthManager, IDamageable
                 _soundContainer.SoundsStorage.TryGetValue(SoundType.ShishiDamageTaken1, out var shishiClip);
                 sound.PlaySound(shishiClip);
                 break;
+
+            case EnemyType.Hundun:
+                var sounds = new[]
+                    { SoundType.HundunDamageTaken1, SoundType.HundunDamageTaken3, SoundType.HundunDamageTaken3 };
+
+                var randomSound = sounds[Random.Range(0, sounds.Length)];
+
+                _soundContainer.SoundsStorage.TryGetValue(randomSound, out var hundunClip);
+                sound.PlaySound(hundunClip);
+                break;
         }
-        
+
         base.TakeDamage(damage);
         var curentHealthPercantage = (float)currentHealth / maxHealth;
         HealthChanged?.Invoke(curentHealthPercantage);
@@ -65,6 +77,11 @@ public class MonsterHealth : HealthManager, IDamageable
             case EnemyType.Shishi:
                 _soundContainer.SoundsStorage.TryGetValue(SoundType.ShishiDeath, out var shishiClip);
                 sound.PlaySound(shishiClip);
+                break;
+
+            case EnemyType.Hundun:
+                _soundContainer.SoundsStorage.TryGetValue(SoundType.HundunDeath, out var hundunDeath);
+                sound.PlaySound(hundunDeath);
                 break;
         }
 

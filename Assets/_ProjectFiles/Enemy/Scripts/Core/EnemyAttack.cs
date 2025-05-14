@@ -1,23 +1,22 @@
 using _ProjectFiles.Enemy.Scripts.Behaviour.Strategy;
-//using UnityEditorInternal;
 using UnityEngine;
+//using UnityEditorInternal;
 
 namespace _ProjectFiles.Enemy.Scripts.Core
 {
     public class EnemyAttack : MonoBehaviour
     {
         [SerializeField] private GameObject[] _hitEffects;
-        private IAttackExecutable _attack;
         private EnemyContainer _container;
         private int _currentEffectIndex;
         private EnemyAttackInfo _info;
-        public IAttackExecutable AttackExecutable => _attack;
+        public IAttackExecutable AttackExecutable { get; private set; }
 
         public void Initialize(EnemyContainer container, IAttackExecutable executable)
         {
             _info = container.Profile.AttackInfo;
             _container = container;
-            _attack = executable;
+            AttackExecutable = executable;
         }
 
         public void Attack()
@@ -29,12 +28,12 @@ namespace _ProjectFiles.Enemy.Scripts.Core
 
         public void Execute()
         {
-            StartCoroutine(_attack.Execute(_container.Navigation.Target));
+            StartCoroutine(AttackExecutable.Execute(_container.Navigation.Target));
         }
 
         public void Stop()
         {
-            _attack.Stop();
+            AttackExecutable.Stop();
         }
 
         private void CreateHitEffect(Transform itemPosition)

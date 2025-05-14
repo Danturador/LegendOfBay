@@ -99,3 +99,13 @@ MonoBehaviour:
     <SoundClip>k__BackingField: {fileID: 8300000, guid: be12cbea9bccbc04db041baa9f1c1c9c, type: 3}
   - <SoundType>k__BackingField: 42
     <SoundClip>k__BackingField: {fileID: 8300000, guid: 4d6e0d5ecb591f948b83b4beb595195f, type: 3}
+  - <SoundType>k__BackingField: 43
+    <SoundClip>k__BackingField: {fileID: 8300000, guid: 313b514ae5801e44fbb78f20d8109acd, type: 3}
+  - <SoundType>k__BackingField: 44
+    <SoundClip>k__BackingField: {fileID: 8300000, guid: 8641845f0bc80b64eaddd07d4f6bf8fc, type: 3}
+  - <SoundType>k__BackingField: 45
+    <SoundClip>k__BackingField: {fileID: 8300000, guid: 09b264e9d588ee844912164663eb477d, type: 3}
+  - <SoundType>k__BackingField: 46
+    <SoundClip>k__BackingField: {fileID: 8300000, guid: cbe45e22f96114d4a81c37f6bc9fa97d, type: 3}
+  - <SoundType>k__BackingField: 47
+    <SoundClip>k__BackingField: {fileID: 8300000, guid: 57b82eba57b3e22468bebb69d328c1c6, type: 3}

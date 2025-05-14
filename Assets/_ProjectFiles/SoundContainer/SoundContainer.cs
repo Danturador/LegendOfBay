@@ -9,8 +9,8 @@ namespace _ProjectFiles.SoundContainer
     public class SoundContainer : ScriptableObject
     {
         [SerializeField] private List<AudioModel> audios;
-            
-        public IReadOnlyDictionary<SoundType, AudioClip> SoundsStorage => 
+
+        public IReadOnlyDictionary<SoundType, AudioClip> SoundsStorage =>
             audios.ToDictionary(x => x.SoundType, x => x.SoundClip);
     }
 
@@ -28,32 +28,32 @@ namespace _ProjectFiles.SoundContainer
         BossSwordAttack1,
         BossSwordAttack2,
         BossSwordAttack3,
-		AmbientStart,
-		AmbientEnd,
-		CaveClip,
-		GatesClip,
-		BossPhase1,
-		BossPhase2,
-		HitOnBoss,
-		FireAttack,
-		SwordAttack,
-		SwordFallen,
-		Death,
-		
-		KirinDamageTaken,
-		KirinDash,
-		KirinDeath,
-		KirinRearing,
-		KirinSprint,
-		KirinSteps,
-		
-		ShishiActive,
-		ShishiDamageTaken1,
-		ShishiDamageTaken2,
-		ShishiDeath,
-		ShishiFire,
-		ShishiFireLong,
-		ShishiSteps,
+        AmbientStart,
+        AmbientEnd,
+        CaveClip,
+        GatesClip,
+        BossPhase1,
+        BossPhase2,
+        HitOnBoss,
+        FireAttack,
+        SwordAttack,
+        SwordFallen,
+        Death,
+
+        KirinDamageTaken,
+        KirinDash,
+        KirinDeath,
+        KirinRearing,
+        KirinSprint,
+        KirinSteps,
+
+        ShishiActive,
+        ShishiDamageTaken1,
+        ShishiDamageTaken2,
+        ShishiDeath,
+        ShishiFire,
+        ShishiFireLong,
+        ShishiSteps,
 
         PlayerAttackClip1,
         PlayerAttackClip2,
@@ -62,6 +62,13 @@ namespace _ProjectFiles.SoundContainer
         PlayerDash,
         PlayerJump,
         PlayerDoubleJump,
+
+        HundunDamageTaken1,
+        HundunDamageTaken2,
+        HundunDamageTaken3,
+        HundunActive,
+        HundunAttack,
+        HundunDeath
     }
 
     [Serializable]

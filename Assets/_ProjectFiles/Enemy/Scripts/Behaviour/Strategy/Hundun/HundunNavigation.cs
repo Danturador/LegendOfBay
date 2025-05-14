@@ -2,6 +2,7 @@ using System.Collections;
 using System.Threading;
 using _ProjectFiles.Enemy.Scripts.Core;
 using _ProjectFiles.Enemy.Scripts.Core.Instances.Hundun;
+using _ProjectFiles.SoundContainer;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using Vector2 = UnityEngine.Vector2;
@@ -11,11 +12,11 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
 {
     public class HundunNavigation : INavigationExecutable
     {
+        private readonly EnemyContainer _container;
         private readonly HundunNavigationInfo _info;
         private readonly Rigidbody2D _rigidbody;
         private readonly AnimationCurve _speedCurve;
         private CancellationTokenSource _token;
-        private EnemyContainer _container;
 
         public HundunNavigation(EnemyContainer container, HundunNavigationInfo info)
         {
@@ -41,13 +42,11 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
                 var velocityMagnitude = distanceToTarget / _speedCurve.FunctionSquare(100);
                 var time = 0f;
                 _container.Renderer.CurrentScale = -moveDirection.x / Mathf.Abs(moveDirection.x);
-                
+                _container.Audio.PlaySoundEffect(SoundType.HundunActive);
+
                 while (time < moveTime)
                 {
                     time += Time.deltaTime;
-
-                    // distanceToTarget = Vector2.Distance(currentTargetPosition, _rigidbody.transform.position);
-                    // velocityMagnitude = distanceToTarget / _speedCurve.FunctionSquare(100);
 
                     var currentVelocity = velocityMagnitude * _speedCurve.Evaluate(time) * moveDirection;
                     _rigidbody.velocity = currentVelocity;
@@ -62,6 +61,7 @@ namespace _ProjectFiles.Enemy.Scripts.Behaviour.Strategy
         public void Stop()
         {
             _token.Cancel();
+            _container.Navigation.StopAllCoroutines();
             _rigidbody.velocity = Vector2.zero;
         }
 
