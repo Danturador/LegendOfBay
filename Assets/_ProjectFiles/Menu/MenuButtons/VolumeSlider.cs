@@ -24,7 +24,6 @@ namespace _ProjectFiles.Menu.MenuButtons
 
         private void OnEnable()
         {
-            LoadVolumeValue();
             backLight.gameObject.SetActive(false);
         }
         
@@ -38,7 +37,7 @@ namespace _ProjectFiles.Menu.MenuButtons
             slider.onValueChanged.RemoveListener(VolumeChanged);
         }
 
-        private void LoadVolumeValue()
+        public void LoadVolumeValue()
         {
             float value = PlayerPrefs.GetFloat(VolumeValueKey, 1);
             slider.value = value;
