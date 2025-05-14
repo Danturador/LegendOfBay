@@ -94,4 +94,16 @@ public class PlayerAudioInitializer : MonoBehaviour
         soundType = SoundType.PlayerGraplingHook;
         PlaySoundEffect(soundType);
     }
+
+    public void PlayerJumpSound()
+    {
+        soundType = SoundType.PlayerJump;
+        PlaySoundEffect(soundType);
+    }
+
+    public void PlayerDoubleJumpSound()
+    {
+        soundType = SoundType.PlayerDoubleJump;
+        PlaySoundEffect(soundType);
+    }
 }

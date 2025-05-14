@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,7 +11,7 @@ public class PlayerJump : MonoBehaviour
     [SerializeField] private float bufferTime = 0.2f;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayers;
-
+    [SerializeField] private PlayerAudioInitializer audioInitializer;
     [SerializeField] private bool g;
 
     private Rigidbody2D _rb;
@@ -25,6 +26,7 @@ public class PlayerJump : MonoBehaviour
     private float _jumpBufferCounter;
     private float _jumpImpulseTime;
     private bool _stopGravityScale;
+    private bool jumpSoundReload;
 
     public void Initialize(Rigidbody2D rigidbody)
     {
@@ -34,6 +36,7 @@ public class PlayerJump : MonoBehaviour
         _jumpStartY = transform.position.y;
         jumpForce = Mathf.Sqrt(maxJumpHeight * (Physics2D.gravity.y * _rb.gravityScale) * -2) * _rb.mass;
         groundCheck = GetComponentInChildren<Transform>().Find("GroundCheck");
+        audioInitializer = GetComponentInChildren<PlayerAudioInitializer>();
     }
 
     private void Update()
@@ -115,7 +118,11 @@ public class PlayerJump : MonoBehaviour
         _isGrounded = false;
         _coyoteTimer = 0;
         _jumpBufferCounter = 0;
-
+        if(audioInitializer != null && jumpSoundReload == false)
+        {
+            audioInitializer.PlayerJumpSound();
+            StartCoroutine(JumpSoundReload());
+        }
         _rb.velocity = new Vector2(_rb.velocity.x, 0);
 
         _rb.AddForce(Vector2.up * jumpForce*3, ForceMode2D.Impulse);
@@ -144,6 +151,10 @@ public class PlayerJump : MonoBehaviour
         {
             isDoubleJump = true;
             _doubleJumpCount += 2;
+            if(audioInitializer != null)
+            {
+                audioInitializer.PlayerDoubleJumpSound();
+            }
             _rb.velocity = new Vector2(_rb.velocity.x, 0);
             _rb.velocity = Vector2.up * jumpForce * 2f;
             _doubleJump = false;
@@ -208,6 +219,13 @@ public class PlayerJump : MonoBehaviour
     public void HoldJump(bool holdJump)
     {
         _isJumping = holdJump;
+    }
+
+    IEnumerator JumpSoundReload()
+    {
+        jumpSoundReload = true;
+        yield return new WaitForSeconds(0.7f);
+        jumpSoundReload = false;
     }
 
     void OnDrawGizmos()

@@ -8,6 +8,7 @@ public class PlayerDash : MonoBehaviour
     [SerializeField] private float dashingTime = 0.2f;
     [SerializeField] private float dashCooldown = 1f;
     [SerializeField] private SkeletonGhost _sceletonGhost;
+    [SerializeField] private PlayerAudioInitializer _audioInitializer;
 
     private Rigidbody2D _rb;
     private bool _canDash = true;
@@ -20,6 +21,7 @@ public class PlayerDash : MonoBehaviour
         _originalGravity = _rb.gravityScale;
         _sceletonGhost = GetComponentInChildren<SkeletonGhost>();
         _sceletonGhost.ghostingEnabled = false;
+        _audioInitializer = GetComponentInChildren<PlayerAudioInitializer>();
     }
 
     public void PerformDash(Vector2 moveDirection)
@@ -40,6 +42,10 @@ public class PlayerDash : MonoBehaviour
         if (_sceletonGhost != null)
         {
             _sceletonGhost.ghostingEnabled = true;
+        }
+        if (_audioInitializer != null) 
+        {
+            _audioInitializer.PlayerDashSound();
         }
         yield return new WaitForSeconds(dashingTime);
         _rb.gravityScale = _originalGravity;

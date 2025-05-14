@@ -60,6 +60,8 @@ namespace _ProjectFiles.SoundContainer
         PlayerAttackClip3,
         PlayerGraplingHook,
         PlayerDash,
+        PlayerJump,
+        PlayerDoubleJump,
     }
 
     [Serializable]
