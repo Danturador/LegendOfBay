@@ -1,3 +1,5 @@
+using _ProjectFiles.Menu.MenuButtons;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
@@ -7,6 +9,7 @@ namespace _ProjectFiles.Menu.InGameMenuButtons
     public class InGameMenu : MonoBehaviour
     {
 		[SerializeField] [Min(0f)] private float fadeDuration;
+		[SerializeField] private VolumeSlider volumeSlider;
 		[Inject] private InputController _inputController;
         private Transform _child;
         private static float timeScaleValue = 0;
@@ -15,9 +18,9 @@ namespace _ProjectFiles.Menu.InGameMenuButtons
         {
             _child = transform.GetChild(0);
             _child.gameObject.SetActive(false);
-			//_inputController = FindAnyObjectByType<PlayerController>().inputController;
 			_inputController.UI.Escape.performed += ToggleState;
-		}
+			DOVirtual.DelayedCall(0.1f, () => volumeSlider.LoadVolumeValue()) ;
+        }
 		private void OnDestroy()
 		{
 			_inputController.UI.Escape.performed -= ToggleState;
