@@ -64,9 +64,22 @@ public class PlayerAudioInitializer : MonoBehaviour
         }
     }
 
-    public void PlayerAttackSound()
+    public void PlayerAttackSound(int numberClip)
     {
-        soundType = SoundType.PlayerAttackClip;
-        PlaySoundEffect(soundType);
+        if (numberClip == 1)
+        {
+            soundType = SoundType.PlayerAttackClip1;
+            PlaySoundEffect(soundType);
+        }
+        else if (numberClip == 2)
+        {
+            soundType = SoundType.PlayerAttackClip2;
+            PlaySoundEffect(soundType);
+        }
+        else
+        {
+            soundType = SoundType.PlayerAttackClip3;
+            PlaySoundEffect(soundType);
+        }
     }
 }

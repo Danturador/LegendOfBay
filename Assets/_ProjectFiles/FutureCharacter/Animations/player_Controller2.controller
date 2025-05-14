@@ -334,7 +334,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 787981275573576339}
+  m_Motion: {fileID: -8583116009651406876, guid: dbd7d9dd2f7452d4b8caa4c58b6a32cb, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -1638,7 +1638,7 @@ AnimationClip:
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: d8cfff4ec5aad3346ae24c2afbea3830, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 1
     messageOptions: 0
   - time: 0.2
     functionName: GiveDamage
@@ -2402,7 +2402,7 @@ AnimationClip:
     data: 
     objectReferenceParameter: {fileID: 11500000, guid: d8cfff4ec5aad3346ae24c2afbea3830, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 3
     messageOptions: 0
   - time: 0.35
     functionName: AttackSlash

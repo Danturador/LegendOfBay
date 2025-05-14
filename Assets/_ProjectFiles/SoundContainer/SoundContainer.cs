@@ -54,6 +54,10 @@ namespace _ProjectFiles.SoundContainer
 		ShishiFire,
 		ShishiFireLong,
 		ShishiSteps,
+
+        PlayerAttackClip1,
+        PlayerAttackClip2,
+        PlayerAttackClip3,
     }
 
     [Serializable]
