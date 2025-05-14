@@ -6,7 +6,12 @@ public class EffectSpawner : MonoBehaviour
 {
 	public enum EffectType
 	{
-		Bleeding
+		Bleeding,
+		PlayerAttackEffect1,
+		PlayerAttackEffect2,
+		PlayerAttackEffect3,
+		PlayerJump,
+		SaveEffect,
 	}
 
 	[System.Serializable]

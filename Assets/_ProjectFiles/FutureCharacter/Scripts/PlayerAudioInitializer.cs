@@ -82,4 +82,16 @@ public class PlayerAudioInitializer : MonoBehaviour
             PlaySoundEffect(soundType);
         }
     }
+
+    public void PlayerDashSound()
+    {
+        soundType = SoundType.PlayerDash;
+        PlaySoundEffect(soundType);
+    }
+
+    public void PlayerGrapplingHookSound()
+    {
+        soundType = SoundType.PlayerGraplingHook;
+        PlaySoundEffect(soundType);
+    }
 }

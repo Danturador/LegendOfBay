@@ -8,9 +8,11 @@ public class GrapplingHook : MonoBehaviour
     [SerializeField] private float grappleSpeed = 10f;
     [SerializeField] private float impulseForce = 75f;
     [SerializeField] private float maxGrappleDistance = 25f;
+    [SerializeField] private PlayerAudioInitializer _audioInitializer;
     private RaycastHit2D _raycastHit2D;
     private DistanceJoint2D distanceJoint;
     private float defaultGravityScale;
+    
 
     private LineRenderer lineRenderer;
     private Rigidbody2D rb;
@@ -25,6 +27,7 @@ public class GrapplingHook : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         distanceJoint = GetComponent<DistanceJoint2D>();
         lineRenderer = GetComponent<LineRenderer>();
+        _audioInitializer = GetComponentInChildren<PlayerAudioInitializer>();
         lineRenderer.positionCount = 2;
         distanceJoint.enabled = false;
         lineRenderer.enabled = false;
@@ -38,6 +41,7 @@ public class GrapplingHook : MonoBehaviour
              float distanceToClosestPoint = Vector2.Distance(transform.position, closestPoint.position);
              if (distanceToClosestPoint <= maxGrappleDistance)
              {
+                _audioInitializer.PlayerGrapplingHookSound();
                  isGrappling = true;
                
                  distanceJoint.connectedAnchor = closestPoint.position;

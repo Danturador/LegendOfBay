@@ -58,6 +58,8 @@ namespace _ProjectFiles.SoundContainer
         PlayerAttackClip1,
         PlayerAttackClip2,
         PlayerAttackClip3,
+        PlayerGraplingHook,
+        PlayerDash,
     }
 
     [Serializable]

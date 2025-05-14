@@ -71,11 +71,11 @@ public class PlayerDamageGiver : MonoBehaviour
     {
         if(number == 1)
         {
-            _playerJump.StopGravity(true);
+            //_playerJump.StopGravity(true);
         }
         else
         {
-            _playerJump.StopGravity(false);
+           // _playerJump.StopGravity(false);
         }
     }
 
