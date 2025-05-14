@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 279472e5a0714ab46bef6b2eaf72ef0c, type: 2}
+  - {fileID: 2100000, guid: c7259095fccf3c847b244038ec536418, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -138,11 +138,9 @@ MonoBehaviour:
   calculateTangents: 0
   maskInteraction: 2
   maskMaterials:
-    materialsMaskDisabled:
-    - {fileID: 2100000, guid: c7259095fccf3c847b244038ec536418, type: 2}
+    materialsMaskDisabled: []
     materialsInsideMask: []
-    materialsOutsideMask:
-    - {fileID: 2100000, guid: 279472e5a0714ab46bef6b2eaf72ef0c, type: 2}
+    materialsOutsideMask: []
   disableRenderingOnOverride: 1
   translator:
     autoReset: 1
@@ -321,7 +319,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.065135956, y: 0.42303324}
+  m_Offset: {x: -0.065135956, y: -0.32818276}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -332,7 +330,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.928688, y: 2.4628725}
+  m_Size: {x: 2.928688, y: 0.9604403}
   m_EdgeRadius: 0
 --- !u!1 &5046217495589697777
 GameObject:
@@ -434,7 +432,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.065135956, y: 0.42303324}
+  m_Offset: {x: -0.065135956, y: -0.32541656}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -445,7 +443,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.928688, y: 2.4628725}
+  m_Size: {x: 2.928688, y: 0.9659729}
   m_EdgeRadius: 0
 --- !u!114 &5794749104502389123
 MonoBehaviour:
