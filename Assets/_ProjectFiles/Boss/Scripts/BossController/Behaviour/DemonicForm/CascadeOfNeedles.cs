@@ -72,19 +72,16 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 			BossAudioInitializer.Instance.PlaySound(SwordAttack);
 			if (attackSequence[sequenceIndex] == AttackType.Line)
 			{
-			Debug.LogWarning("true, false");
 				setCascadeOfNeedles(true, false);
 				SpawnLineAttack();
 			}
 			else if (attackSequence[sequenceIndex] == AttackType.Cascade)
 			{
-			Debug.LogWarning("false, true");
 				setCascadeOfNeedles(false, true);
 				yield return StartCoroutine(SpawnCascadeAttack());
 			}
 
 			yield return new WaitForSeconds(attackDelay);
-			Debug.LogWarning("false false");
 			setCascadeOfNeedles(false, false);
 			sequenceIndex++;
 		}
