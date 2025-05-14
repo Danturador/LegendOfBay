@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Zenject;
 using System.Collections;
+using _ProjectFiles.Menu.MenuButtons;
 
 namespace _ProjectFiles.SaveSystem
 {
@@ -9,6 +10,8 @@ namespace _ProjectFiles.SaveSystem
 	{
 		[Inject] private SaveSystemController _saveSystemController;
 		[Inject] private InputController _inputController;
+		[Inject] private ButtonsSoundContainer _buttonsSoundContainer;
+		[SerializeField] private AudioSource audioSource;
 		[SerializeField] private Animation showMessageAnimation;
 		public UnityEvent onSaveTriggered;
 		private PlayerController player;
@@ -62,6 +65,7 @@ namespace _ProjectFiles.SaveSystem
 		{
 			_saveSystemController.UpdatePosition(player.transform.position);
 			_saveSystemController.SaveProgress();
+			audioSource.PlayOneShot(_buttonsSoundContainer.saveSound);
 			showMessageAnimation.Play();
 		}
 

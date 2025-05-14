@@ -7,5 +7,6 @@ namespace _ProjectFiles.Menu.MenuButtons
     {
         public AudioClip hoverSound;
         public AudioClip clickSound;
+        public AudioClip saveSound;
     }
 }
