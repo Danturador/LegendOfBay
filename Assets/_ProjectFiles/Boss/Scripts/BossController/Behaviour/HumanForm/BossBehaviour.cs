@@ -8,6 +8,10 @@ public class BossBehaviour : MonoBehaviour
 	[SerializeField] private float attackRange = 2f;
 	[SerializeField] private float dashDistance = 7f;
 
+	[SerializeField] private float rightBoundary = 5f;
+	[SerializeField] private float leftBoundary = 23f;
+
+
 	[SerializeField] private Collider2D dashCollider;
 	[SerializeField] private Collider2D swordSlashCollider;
 
@@ -51,8 +55,9 @@ public class BossBehaviour : MonoBehaviour
 	public IEnumerator DashTowardsPlayer()
 	{
 		float directionToPlayer = Mathf.Sign(player.position.x - transform.position.x);
-
 		Vector3 targetPosition = transform.position + new Vector3(directionToPlayer * dashDistance, 0, 0);
+
+		targetPosition.x = Mathf.Clamp(targetPosition.x, leftBoundary, rightBoundary);
 
 		RotateToPlayer(new Vector3(directionToPlayer, 0, 0));
 

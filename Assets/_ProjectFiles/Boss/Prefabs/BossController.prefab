@@ -64,7 +64,7 @@ MonoBehaviour:
   arenaDoorCollider: {fileID: 3211253540885666514}
   demonicFormCollider: {fileID: 4303475462078805469}
   screenOverlay: {fileID: 0}
-  invulnerabilityDuration: 5
+  invulnerabilityDuration: 3
   transitionDuration: 0.5
   transitionDurationAfter: 3
   transitionDelay: 1
@@ -100,7 +100,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 3.2144928, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -111,7 +111,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 5}
+  m_Size: {x: 43.571014, y: 5}
   m_EdgeRadius: 0
 --- !u!95 &1448598730775276325
 Animator:
@@ -453,13 +453,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6236074584863045121}
     m_Modifications:
+    - target: {fileID: 1841373631443212004, guid: e6817a256232e244fa01281582a2210e, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 5445828444998645231, guid: e6817a256232e244fa01281582a2210e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.48
       objectReference: {fileID: 0}
     - target: {fileID: 5445828444998645231, guid: e6817a256232e244fa01281582a2210e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.68
       objectReference: {fileID: 0}
     - target: {fileID: 5445828444998645231, guid: e6817a256232e244fa01281582a2210e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -493,6 +497,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7282594147076364282, guid: e6817a256232e244fa01281582a2210e, type: 3}
+      propertyPath: leftBoundary
+      value: 133
+      objectReference: {fileID: 0}
+    - target: {fileID: 7282594147076364282, guid: e6817a256232e244fa01281582a2210e, type: 3}
+      propertyPath: rightBoundary
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 7471221892676928185, guid: e6817a256232e244fa01281582a2210e, type: 3}
       propertyPath: m_Name
       value: BossHuman
@@ -501,7 +513,10 @@ PrefabInstance:
     - {fileID: 6243638278299434658, guid: e6817a256232e244fa01281582a2210e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6007132787673075766, guid: e6817a256232e244fa01281582a2210e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1000920950928409055}
   m_SourcePrefab: {fileID: 100100000, guid: e6817a256232e244fa01281582a2210e, type: 3}
 --- !u!114 &1168974980189594074 stripped
 MonoBehaviour:
@@ -535,6 +550,38 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5445828444998645231, guid: e6817a256232e244fa01281582a2210e, type: 3}
   m_PrefabInstance: {fileID: 3125405536115201418}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8647532198594119100 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6007132787673075766, guid: e6817a256232e244fa01281582a2210e, type: 3}
+  m_PrefabInstance: {fileID: 3125405536115201418}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1000920950928409055
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8647532198594119100}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &6022283330788486673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -692,7 +739,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  _hpBarGameobject: {fileID: 0}
   isHumanForm: 0
 --- !u!50 &6289949127523819191
 Rigidbody2D:

@@ -119,6 +119,12 @@ public class CascadeOfNeedles : MonoBehaviour, IDemonicAttack
 		for (int i = 0; i < totalSpikes; i++)
 		{
 			Vector3 spawnPosition = transform.position + new Vector3(i * spikeSpacing - halfWidth, startFallingPoint, 0);
+
+			if (i == 0)
+			{
+				spawnPosition.y -= 2f;
+			}
+
 			if (isDead) break;
 			GameObject spike = SpawnSpike(spawnPosition);
 			cascadeSpikes.Add(spike);
