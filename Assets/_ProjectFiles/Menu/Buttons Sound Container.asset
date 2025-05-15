@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverSound: {fileID: 8300000, guid: 58fdbaba4119a564885a62ef4761da5e, type: 3}
   clickSound: {fileID: 8300000, guid: 6f10edde84c5b6c478ab8e1bb5dd88a1, type: 3}
+  saveSound: {fileID: 8300000, guid: ccc7b957ca50ed04680df4b9e32894d2, type: 3}
