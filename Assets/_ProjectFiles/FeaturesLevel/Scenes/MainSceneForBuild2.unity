@@ -5375,6 +5375,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3531821221815268675, guid: 7e8146f6e8afe9e4398d6aac457c6b0a, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3850736283540083620, guid: 7e8146f6e8afe9e4398d6aac457c6b0a, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -6820,7 +6824,7 @@ PolygonCollider2D:
       - {x: 13.275909, y: -17.019566}
       - {x: 13.131027, y: -15.232613}
       - {x: 11.3088455, y: -13.768291}
-      - {x: 10.346442, y: -13.301666}
+      - {x: 10.009879, y: -13.956089}
   m_UseDelaunayMesh: 0
 --- !u!1 &479515262
 GameObject:
@@ -10574,7 +10578,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 424602102140684240, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: maxHealth
-      value: 2
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 690007702083760485, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: m_Name
@@ -10582,7 +10586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1168974980189594074, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: maxHealth
-      value: 2
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 2149936350044504047, guid: f6b0718ebd8fad44cb7abbc06d674fb4, type: 3}
       propertyPath: _damage
@@ -12659,7 +12663,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.47833633, y: -0.8389015}
+  m_Offset: {x: -0.47833633, y: -1.0779762}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -12670,7 +12674,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.07282257, y: 8.859184}
+  m_Size: {x: 0.07282257, y: 8.381035}
   m_EdgeRadius: 0
 --- !u!1 &926771005
 GameObject:
@@ -21296,6 +21300,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1227100208795914682, guid: 90546a3b491d2e94d93dcf045cf6f507, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a1847b3d74b900542abc4caf425a91d5, type: 2}
     - target: {fileID: 3698357279447821361, guid: 90546a3b491d2e94d93dcf045cf6f507, type: 3}
       propertyPath: m_LocalPosition.x
       value: 45.81691
@@ -23135,7 +23143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6865931792635020628, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 47.31
+      value: 45.39
       objectReference: {fileID: 0}
     - target: {fileID: 6865931792635020628, guid: 6857936f0e5905c4f88fc192f41c8d46, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27401,12 +27409,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2144280297228070244, guid: 4f20310962d1285439d970a23dced105, type: 3}
+      propertyPath: effects.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144280297228070244, guid: 4f20310962d1285439d970a23dced105, type: 3}
       propertyPath: effects.Array.data[0].prefab
       value: 
       objectReference: {fileID: 153674, guid: 98e35bc5094f25441a4c3b405abf1870, type: 3}
     - target: {fileID: 2144280297228070244, guid: 4f20310962d1285439d970a23dced105, type: 3}
+      propertyPath: effects.Array.data[1].prefab
+      value: 
+      objectReference: {fileID: 193062, guid: 01949c12a89de284792dc4b7b7128404, type: 3}
+    - target: {fileID: 2144280297228070244, guid: 4f20310962d1285439d970a23dced105, type: 3}
       propertyPath: effects.Array.data[0].poolSize
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144280297228070244, guid: 4f20310962d1285439d970a23dced105, type: 3}
+      propertyPath: effects.Array.data[1].poolSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2144280297228070244, guid: 4f20310962d1285439d970a23dced105, type: 3}
+      propertyPath: effects.Array.data[1].effectType
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6015934865562262970, guid: 4f20310962d1285439d970a23dced105, type: 3}
       propertyPath: m_Name

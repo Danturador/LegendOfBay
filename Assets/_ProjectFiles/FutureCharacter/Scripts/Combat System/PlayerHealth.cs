@@ -31,10 +31,11 @@ public class PlayerHealth : HealthManager
             currentHealth -= damage;
             CinemachineShake.Instance.ShakeCamera(5f, 0.1f);
             StartCoroutine(InvulnerabilityCoroutine());
-            if(playerAudioInitializer != null)
+            if(playerAudioInitializer != null && _die == false)
             {
                 playerAudioInitializer.PlayerDamageSound();
             }
+            EffectSpawner.Instance.SpawnEffect(EffectSpawner.EffectType.PlayerDamageEffect, gameObject);
             float curentHealthPercantage = (float) currentHealth/maxHealth;
             HealthChanged?.Invoke(curentHealthPercantage);
             

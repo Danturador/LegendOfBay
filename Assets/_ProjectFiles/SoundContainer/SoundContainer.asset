@@ -111,3 +111,5 @@ MonoBehaviour:
     <SoundClip>k__BackingField: {fileID: 8300000, guid: 57b82eba57b3e22468bebb69d328c1c6, type: 3}
   - <SoundType>k__BackingField: 48
     <SoundClip>k__BackingField: {fileID: 8300000, guid: a4bd45f815fac884c8cbbcb3f31cd22e, type: 3}
+  - <SoundType>k__BackingField: 49
+    <SoundClip>k__BackingField: {fileID: 8300000, guid: b9a8930e0a69ecc439c5176327d4cdc4, type: 3}

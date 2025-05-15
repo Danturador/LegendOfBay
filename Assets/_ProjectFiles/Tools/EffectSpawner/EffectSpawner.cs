@@ -12,6 +12,7 @@ public class EffectSpawner : MonoBehaviour
 		PlayerAttackEffect3,
 		PlayerJump,
 		SaveEffect,
+		PlayerDamageEffect,
 	}
 
 	[System.Serializable]
