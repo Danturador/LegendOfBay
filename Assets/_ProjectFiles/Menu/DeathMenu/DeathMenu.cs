@@ -9,6 +9,8 @@ namespace _ProjectFiles.Menu.DeathMenu
     {
         [SerializeField] private Image backgroundImage;
         [SerializeField, Min(0f)] private float fadeDuration;
+
+        public bool IsActive => backgroundImage.gameObject.activeInHierarchy;
         
         private void Awake()
         {

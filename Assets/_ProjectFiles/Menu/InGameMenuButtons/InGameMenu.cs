@@ -10,6 +10,7 @@ namespace _ProjectFiles.Menu.InGameMenuButtons
     {
 		[SerializeField] [Min(0f)] private float fadeDuration;
 		[SerializeField] private VolumeSlider volumeSlider;
+		[SerializeField] private DeathMenu.DeathMenu deathMenu;
 		[Inject] private InputController _inputController;
         private Transform _child;
         private static float timeScaleValue = 0;
@@ -27,6 +28,9 @@ namespace _ProjectFiles.Menu.InGameMenuButtons
 		}
         public void ToggleState(InputAction.CallbackContext context)
         {
+	        if (deathMenu.IsActive)
+		        return;
+	        
             var isActive = _child.gameObject.activeInHierarchy;
             _child.gameObject.SetActive(!isActive);
 
