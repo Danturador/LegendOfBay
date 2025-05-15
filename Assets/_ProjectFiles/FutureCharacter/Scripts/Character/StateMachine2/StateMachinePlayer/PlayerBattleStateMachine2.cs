@@ -49,7 +49,7 @@ public class PlayerBattleStateMachine2 : MonoBehaviour
 
             if(currentComboCount == 3)
             {
-                currentCoroutine = StartCoroutine(AttackTime(0.7f));
+                currentCoroutine = StartCoroutine(AttackTime(0.6f));
             }
             else
             {
