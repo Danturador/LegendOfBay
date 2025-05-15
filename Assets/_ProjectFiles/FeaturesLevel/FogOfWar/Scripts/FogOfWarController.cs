@@ -22,15 +22,17 @@ public class FogOfWarController : MonoBehaviour
 		InitializeWorldScale();
 
 		inputController.Gameplay.OpenMap.performed += ctx => CreateSprite();
-	}
 
+		CreateSprite();
+	}
 	private void LoadTexture()
 	{
 		byte[] tex = saveSystemController.gameData.MapTexture;
 		if (tex != null)
 		{
-			fogOfWarTexture = new Texture2D(1024, 1024);
-			fogOfWarTexture.LoadImage(tex);
+			Texture2D texture = new Texture2D(1024, 1024);
+			texture.LoadImage(tex);
+			fogOfWarTexture = texture;
 		}
 	}
 
